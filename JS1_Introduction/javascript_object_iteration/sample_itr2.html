@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var bird=
+        {
+            name:'parrot',
+            color:'green',
+        }
+        bird.weight='300gm';
+        bird.gender='male';
+        bird['type']='flying';
+        bird['wings']='short';
+        for(a in bird)
+        {
+            document.write(bird[a]+"<br/>");
+        }
+        var tiger=({color:'yellow',weight:'350kg'})
+        tiger.gender='male';
+        tiger.cubs="3to4";
+        tiger['eyes']='small';
+        tiger['height']='2ft';
+        for (b in tiger)
+        {
+            document.write(tiger[b]+"<br/>");
+        }
+        function largeanimal(name,color)
+        {
+            this.name=name;
+            this.color=color;
+        }
+        var animal1 = new largeanimal("elephant","black")
+        animal1.weight='4000kg';
+        animal1.height='10ft';
+        animal1['gender']='male';
+        animal1['livesin']='group';
+        for(c in animal1)
+        {
+            document.write(animal1[c]+"<br/>");
+        }
+        class fish
+        {
+            constructor(color,weight)
+            {
+                this.color=color;
+                this.weight=weight;
+            }
+        }
+        var whale = new fish("white","10000kg");
+        whale.name='bluewhale';
+        whale.livesin='water';
+        whale['long']='150ft';
+        whale['height']='5ft';
+        for(d in whale)
+        {
+            document.write(whale[d]+"<br/>");
+        }
+
+        </script>
+    
+</body>
+</html>

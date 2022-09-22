@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var actor={
+            name:"darshan",
+            industry:"film"
+        }
+        actor.language="kannada";
+        actor.height="6.3";
+        actor['religion']='hindu';
+        actor['weight']='98kg';
+
+        for(k in actor)
+        {
+            document.write(actor[k]+"<br/>");
+        }
+         var actres=({name:"rachitha",industry:"film"})
+         actres.language='kannada';
+         actres.height='5.5';
+         actres['color']="white";
+         actres['weight']="65kg";
+         for(b in actres)
+         {
+            document.write(actres[b]+"<br/>");
+         }
+         function director(name,language)
+         {
+            this.name=name;
+            this.language=language;
+         }
+         var director1 = new director("mouli","telugu")
+         director1.movies="bahubali";
+         director1.hitmovie="RRR";
+         director1['firstmovie']='appu';
+         director1['secondmovie']='abhi';
+         for(c in director1)
+         {
+            document.write(director1[c]+"<br/>");
+         }
+         class sandalwood
+         {
+            constructor(type,language)
+            {
+                this.type=type;
+                this.language=language;
+            }
+         }
+         var kannada1= new sandalwood("film","kannada");
+         kannada1.firstactor="rajkumar";
+         kannada1.ladyactor='manjula';
+         kannada1['movie']='gandadagudi';
+         kannada1['hitmovie']='yarivanu';
+         for(d in kannada1)
+         {
+            document.write(kannada1[d]+"<br/>");
+         }
+
+    </script>
+    
+</body>
+</html>
