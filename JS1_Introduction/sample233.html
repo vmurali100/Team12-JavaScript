@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function bird(name,color,weight,gender){
+            this.name=name;
+            this.color=color;
+            this.weight=weight;
+            this.gender=gender;
+        }
+        var animal = new bird("parrot","green","1.5kg","male")
+        document.write(animal.name+"<br>");
+        document.write(animal.color+"<br>");
+        document.write(animal.weight+"<br>");
+        document.write(animal.gender)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var company=
+        {
+            name:'shatabdi',
+            location:'12375'
+        }
+        company.emp='rashid',
+        company['type']='software'
+        document.write(company.name+"<br>");
+        document.write(company.emp+"<br>");
+        document.write(company.location+"<br>");
+        document.write(company.type+"<br>");
+        var infosys=({founder:"murthy",year:"1976"})
+        infosys.empname='kushi',
+        infosys['area']="hsrlayout"
+        document.write(infosys.founder+"<br>");
+        document.write(infosys.year+"<br>");
+        document.write(infosys.empname+"<br>");
+        document.write(infosys.area+"<br>");
+        function work(domain,experience,salary,place)
+        {
+            this.domain=domain;
+            this.experience=experience;
+            this.salary=salary;
+            this.place=place;
+        }
+        var job = new work("softeng",4,100000,"banglore")
+        document.write(job.domain+"<br>");
+        document.write(job.experience+"<br>");
+        document.write(job.salary+"<br>");
+        document.write(job.place+"<br>");
+
+        class tour
+        {
+            constructor(type,price,number,via)
+            {
+                this.type=type;
+                this.price=price;
+                this.number=number;
+                this.via=via;
+            }
+                    }
+                    var trip = new tour("familytrip","20000","4","hyderabad");
+            document.write(trip.type+"<br>");
+            document.write(trip.price+"<br>");
+            document.write(trip.number+"<br>");
+            document.write(trip.via+"<br>");
+
+    </script>
+    
+</body>
+</html>

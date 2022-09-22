@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var school=
+        {
+            name:'sainik',
+            village:'banglore'
+        }
+        school.teachers='10',
+        school['bus']='5'
+        document.write(school.name+"<br>");
+        document.write(school.village+"<br>");
+        document.write(school.teachers+"<br>");
+        document.write(school.bus+"<br>");
+        var school1=({name:"public",village:"hoskote"})
+        school1.students='1500',
+        school1['taluk']='ckj'
+        document.write(school1.name+"<br>");
+        document.write(school1.village+"<br>");
+        document.write(school1.students+"<br>");
+        document.write(school1.taluk+"<br>");
+        function education(institution,stdname,clas,year)
+        {
+            this.institution=institution;
+            this.stdname=stdname;
+            this.clas=clas;
+            this.year=year;
+        }
+        var sch = new education("msm","ayush","2","2022")
+        document.write(sch.institution+"<br>");
+        document.write(sch.stdname+"<br>");
+        document.write(sch.clas+"<br>");
+        document.write(sch.year+"<br>");
+
+        class institution
+        {
+            constructor(name,year,clas,std)
+            {
+                this.name=name;
+                this.year=year;
+                this.clas=clas;
+                this.std=std;
+            }
+        }
+        var school3 = new institution("agv",2022,"8","aadarsh");
+        document.write(school3.name+"<br>");
+        document.write(school3.year+"<br>");
+        document.write(school3.clas+"<br>");
+        document.write(school3.std+"<br>");
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var Bird={
+            Birdname:'peacock',
+            Birdcolor:'blue'
+        }
+        Bird.name='parrot',
+        Bird['color']='green'
+        console.log(Bird);
+        var mobile=({name:'samsung', memory:'4GB', price:'20000'});
+        console.log(mobile);
+        function account(name,accountnumber,balance){
+            this.name=name;
+            this.accountnumber=accountnumber;
+            this.balance=balance;
+        }
+        var bankaccount = new account("kumar","11223344",156677)
+        console.log(bankaccount);
+
+        class Subject{
+            constructor(subname,language,edition){
+                this.subname=subname;
+                this.language=language;
+                this.edition=edition;
+
+            }
+        }
+        var sub=new Subject("history","english",22);
+        console.log(sub); 
+    </script>
+    
+</body>
+</html>

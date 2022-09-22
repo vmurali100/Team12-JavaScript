@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var book=
+        {
+            name:'the great soul',
+            author:'william'
+
+        }
+        book.price='250',
+        book['edition']='5'
+        document.write(book.name+"<br>");
+        document.write(book.author+"<br>");
+        document.write(book.price+"<br>");
+        document.write(book.edition+"<br>");
+         
+        var edit=({fname:'king',lname:'queen'})
+         edit.rate='500',
+         edit['edition']='4'
+         document.write(edit.fname+"<br>");
+         document.write(edit.lname+"<br>");
+         document.write(edit.rate+"<br>");
+         document.write(edit.edition+"<br>");
+          function magzine(name,type,price,edition)
+          {
+            this.name=name;
+            this.type=type;
+            this.price=price;
+            this.edition;
+          }
+          var book2 = new magzine("the soul","monthly","250","6")
+          document.write(book2.name+"<br>");
+          document.write(book2.type+"<br>");
+          document.write(book2.price+"<br>");
+          document.write(book2.edition+"<br>");
+
+          class lesson
+          {
+            constructor(name,author,edition,language)
+            {
+                this.name=name;
+                this.author=author;
+                this.edition=edition;
+                this.language=language;
+            }
+          }
+           var lesson1 = new lesson("human","krs","3","english");
+           document.write(lesson1.name+"<br>");
+           document.write(lesson1.author+"<br>");
+           document.write(lesson1.edition+"<br>");
+           document.write(lesson1.language+"<br>");
+
+    </script>
+    
+</body>
+</html>

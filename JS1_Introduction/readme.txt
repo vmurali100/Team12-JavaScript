@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
 
-hi hello
-this examplethis line i created for sample
+<body>
+
+</body>
+</html>

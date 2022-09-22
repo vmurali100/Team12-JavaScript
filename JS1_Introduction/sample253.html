@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var movie=
+        {
+            name:'kgf',
+            hero:'yash'
+        }
+        movie.actress="rachitha",
+        movie["language"]='kannada'
+        document.write(movie.name+"<br>");
+        document.write(movie.hero+"<br>");
+        document.write(movie.actress+"<br>");
+        document.write(movie.language+"<br>");
+        var kannadamovie=({name:'mansoonraaga',hero:'dhananjaya'})
+        kannadamovie.director='yogaraj',
+        kannadamovie['songs']='5'
+        document.write(kannadamovie.name+"<br>");
+        document.write(kannadamovie.hero+"<br>");
+        document.write(kannadamovie.director+"<br>");
+        document.write(kannadamovie.songs+"<br>");
+        function film(name,language,villain,master)
+        {
+            this.name=name;
+            this.language=language;
+            this.villain=villain;
+            this.master=master;
+        }
+        var video =new film("eega","telugu","sudeep","prabhudeva")
+        document.write(video.name+"<br>");
+        document.write(video.language+"<br>");
+        document.write(video.villain+"<br>");
+        document.write(video.master+"<br>");
+
+        class telugu
+        {
+            constructor(hero,name,songs,director)
+            {
+                this.name=name;
+                this.hero=hero;
+                this.songs=songs;
+                this.director=director;
+            }
+
+        }
+        var telugumovie = new telugu("bahubali","prabhas","5","rajmouli");
+        document.write(telugumovie.name+"<br>");
+        document.write(telugumovie.hero+"<br>");
+        document.write(telugumovie.songs+"<br>");
+        document.write(telugumovie.director+"<br>");
+
+    </script>
+    
+</body>
+</html>

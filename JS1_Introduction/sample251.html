@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var train=
+        {
+            name:'shatabdi',
+            number:'12375'
+        }
+        train.reservation='available',
+        train['Route']='blr to hbl'
+        document.write(train.name+"<br>");
+        document.write(train.number+"<br>");
+        document.write(train.reservation+"<br>");
+        document.write(train.Route+"<br>")
+        var truck=({name:'goods carrier',number:'ka-55-a-8899'});
+        truck.color='blue',
+        truck['state']='karnataka'
+        document.write(truck.name+"<br>");
+        document.write(truck.number+"<br>");
+        document.write(truck.color+"<br>");
+        document.write(truck.state+"<br>");
+        function bank(bankname,area,account,balance)
+        {
+            this.bankname=bankname;
+            this.area=area;
+            this.account=account;
+            this.balance=balance;
+        }
+        var account = new bank("baroda","nayandahalli","savings","234352")
+        document.write(account.bankname+"<br>");
+        document.write(account.area+"<br>");
+        document.write(account.account+"<br>");
+        document.write(account.balance+"<br>");
+        class fan
+        {
+            constructor(name,wings,color,price)
+            {
+                this.name=name;
+                this.wings=wings;
+                this.color=color;
+                this.price=price;
+            }
+        }
+        var ac = new fan("kmc","5","green","455");
+        document.write(ac.name+"<br>");
+        document.write(ac.wings+"<br>");
+        document.write(ac.color+"<br>");
+        document.write(ac.price)
+    </script>
+    
+</body>
+</html>
