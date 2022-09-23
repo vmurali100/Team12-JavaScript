@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //For Loop in Built_In_Method 
+        var house_contruct=new Object({item1:"Bricks", item2:"Sand",item3:"Cement"})
+        house_contruct.item4="Wood";
+        house_contruct.item5="Tails";
+
+        house_contruct["item6"]=["ElectricItems"];
+        house_contruct["item7"]=["PlummingItems"];
+
+        for(a in house_contruct){
+            document.write(house_contruct[a]+"<br>")
+        }
+        document.write("<hr>")
+
+
+        var TravelBag=new Object({key:"PrimaryGip", key2:"LapTopGIp", key3:"waterBOtelSpace"})
+        TravelBag.key4="MobileHolder";
+        TravelBag.key5="PenHolder";
+
+        TravelBag["key7"]=["CardHolder"];
+        TravelBag["key8"]=["MoneyHolder"];
+        for(a in TravelBag){
+            document.write(TravelBag[a]+"<br>")
+        }
+        document.write("<hr>")
+
+        var mobile=new Object({brand:"Apple",model:"Iphone 13", Storage:"256GB"})
+        mobile.display="RETINA";
+        mobile.ram="16GB";
+
+        mobile["Secreen Size"]="6.3In";
+        mobile["OS"]=["IOS"]
+
+        for(a in mobile){
+            document.write(mobile[a] +"<br>")
+        }
+        document.write("<hr>")
+
+
+        var google=new Object({Option1:"Google Gmail",Option2:"Google Drive", Option3:"Google MAPS", Option4:"Google News"})
+        google.Option5="Google Meet";
+        google.Option6="Google Chat";
+
+        google["Option7"]=["Google Calender"];
+        google["Option8"]=["Google Contacts"];
+
+        for(a in google){
+            document.write(google[a]+"<br>")
+        }
+        document.write("<hr>")
+
+        var instgram=new Object({page1:"HomePage",page2:"Explore/Search"})
+        instgram.page3="Instgram Messages";
+        instgram.page4="Instgram Notifications";
+
+        instgram["page5"]=["Creat/New"];
+        instgram["Page6"]=["Profile"];
+
+            for(a in instgram){
+                document.write(instgram[a]+"<br>")
+            }
+            document.write("<hr>")
+    </script>
+</body>
+</html>

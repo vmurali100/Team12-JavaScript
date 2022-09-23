@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class YahooMail{
+            constructor(feature1,feature2,feature3){
+                this.feature1=feature1;
+                this.feature2=feature2;
+                this.feature3=feature3;
+            }
+        }
+        var yahoo=new YahooMail("MAIL","WEATHER","SEARCH");
+
+        yahoo.feature4="FINANCE";
+        yahoo.feature5="SPORTS";
+
+        yahoo["feature6"]="NEWS";
+        yahoo["feature6"]="Politics";
+
+        for(a in yahoo){
+            document.write(yahoo[a]+"<br>")
+        }
+        document.write("<hr>")
+
+        ////////////////////////////////////////
+        class JavaScript{
+            constructor(topic1,topic2,topic3){
+                this.topic1=topic1;
+                this.topic2=topic2;
+                this.topic3=topic3;
+            }
+        }
+        var JS_Topics=new JavaScript("OBJECTS", "FUNCTIONS", "FOR_LOOPS");
+        JS_Topics.topic4="ARRAY S";
+        JS_Topics.topic15="OOPS";
+
+        JS_Topics["topic6"]=["Operators"];
+        JS_Topics["topic7"]=["EVENTS"];
+
+        for(a in JS_Topics){
+            document.write(JS_Topics[a]+"<br>")
+        }
+        document.write("<hr>")
+
+
+        class W3School{
+            constructor(sub1,sub2,sub3){
+                this.sub1=sub1;
+                this.sub2=sub2;
+                this.sub3=sub3;
+            }
+        }
+        var W3tTraining= new W3School("HTML5","CSS","JAVASCRPIT");
+        W3tTraining.sub4="SQL";
+        W3tTraining.sub5="PYTHON";
+
+        W3tTraining["sub6"]=["JAVA"];
+        W3tTraining["sub7"]=["PHP"];
+        for( a in W3tTraining){
+            document.write(W3tTraining[a] + "<br>")
+            console.log(W3tTraining[a])
+        }
+        document.write("<hr>")
+
+        class YouTube{
+            constructor(tab1,tab2,tab3){
+                this.tab1=tab1;
+                this.tab2=tab2;
+                this.tab3=tab3;
+            }
+        }
+        var YouTubeChannel= new YouTube("MOVIES", "GAMING" , "LIVE");
+
+        YouTubeChannel.tab4="YouTube Music";
+        YouTubeChannel.tab4="YouTube Kids";
+
+        YouTubeChannel["tab5"]=["Creator Studio"];
+        YouTubeChannel["tab6"]=["Learning"];
+
+        for(a in YouTubeChannel){
+            document.write(YouTubeChannel[a] +"<br>")
+        }
+        document.write("<hr>")
+    </script>
+</body>
+</html>

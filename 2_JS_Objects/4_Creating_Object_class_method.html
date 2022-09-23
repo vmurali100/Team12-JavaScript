@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating_Object_class_method</title>
+</head>
+<body>
+
+    <h3>Creating_Object_class_method</h3>
+    <script>
+        class Media{
+            constructor(image,mp3,mp4){
+                this.image=image;
+                this.mp3=mp3;
+                this.mp4=mp4;
+            }
+        }
+        var play= new Media("PICS","SONGS","VIDEO")
+        console.log(play)
+
+        document.write(play.image+"<br>")
+        document.write(play.mp3+"<br>")
+        document.write(play.mp4+"<br>")
+
+        class Shoping{
+            constructor(product,price,cart,buy){
+                this.product=product;
+                this.price=price;
+                this.cart=cart;
+                this.buy=buy;
+            }
+        }
+        var purches= new Shoping("Iphone-13",60000,"Done","Purchesed")
+        console.log(purches)
+
+        document.write("<h3>")
+            document.write(purches.product+"<br>")
+            document.write(purches.price+"<br>")
+            document.write(purches.cart+"<br>")
+            document.write(purches.buy+"<br>")
+
+            class Emplyoee{
+                constructor(fname,lname,email,id){
+                    this.fname=fname;
+                    this.lname=lname;
+                    this.email=email;
+                    this.id=id;
+                }
+            }
+            var details=new Emplyoee("VIJAY","EVN","vijay@gmail",2219)
+            console.log(details)
+
+            document.write("<h3>")
+            document.write(details.fname+"<br>")
+            document.write(details.lname+"<br>")
+            document.write(details.email+"<br>")
+            document.write(details.id+"<br>")
+
+    </script>
+</body>
+</html>

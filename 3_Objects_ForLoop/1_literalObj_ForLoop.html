@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+
+
+        var myDetails={
+            fname:"Vijay",
+            lname:"EVN",
+        }
+        myDetails.phNo=8688881677;
+        myDetails.email="vijay@gmail.com";
+
+        myDetails["vehicle"]="Scrpio";
+        myDetails["bike"]="RoyalEnfeild";
+        console.log(myDetails)
+
+        for (a in myDetails){
+            document.write(myDetails[a]+"<h3>")
+        }
+
+        document.write("<hr>")
+        var msOffice={
+            word:"MS_WORD",
+            excel:"MS_EXCEL",
+        }
+        msOffice.email="OutLook";
+
+        msOffice["Presentation"]="POWERPOINT";
+        msOffice["publisher"]="MicroSoft Publisher";
+        console.log(msOffice)
+
+        for(a in msOffice){
+            document.write("<h2>"+msOffice[a])
+        }
+        document.write("<hr>")
+
+        var emplyoee={
+            fname:"Saksthi",
+            lname:"Surya",
+        }
+        emplyoee.id=7676;
+        emplyoee.email="surya@gmail.com";
+        for(a in emplyoee){
+            document.write("<h4>"+emplyoee[a])
+        }
+        document.write("<hr>")
+
+        var shop={
+            coolDrink:"ThumsUp",
+            chocklet:"Dairy Milk",
+        }
+        shop.Fruites="Grapes";
+        shop.snacks="Mixture";
+
+        shop["Grocesry"]=["Provisionls"];
+        shop["vegetables"]=["Tomato"];
+
+        for(a in shop){
+            document.write("<br>"+shop[a])
+        }
+        document.write("<hr>")
+
+        var media={
+            theater:"MOVIES",
+            ott:"WEB Serious"
+        }
+        media.news="BBC";
+        media.localNews="TV-9";
+
+        media["songs"]=["FM"];
+
+        for(a in media){
+            document.write("<h3>"+media[a])
+        }
+        document.write("<hr>")
+    </script>
+</body>
+</html>
