@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creating a Object With Constructor Function</title>
 </head>
+
 <body>
     <h1>Creating a Object With Constructor Function</h1>
 
@@ -13,65 +15,76 @@
     <script>
         //creating a Object with CONSTRUCTOR Function
 
-        function CalAFriend(name,contactNo,to,sub){
-            this.name=name;
-            this.contactNo=contactNo;
-            this.to=to;
-            this.sub=sub;
+        function CalAFriend(name, contactNo, to, sub) {
+            this.name = name;
+            this.contactNo = contactNo;
+            this.to = to;
+            this.sub = sub;
         }
-        var call= new CalAFriend("Raj",8688881677,"bang","JOBChnaging")
+        var call = new CalAFriend("Raj", 8688881677, "bang", "JOBChnaging")
         console.log(call)
 
         document.write("<h2>")
-        document.write(call.name+"<br>")
-        document.write(call.contactNo+"<br>")
-        document.write(call.to+"<br>")
-        document.write(call.sub+"<br>")
+        document.write(call.name + "<br>")
+        document.write(call.contactNo + "<br>")
+        document.write(call.to + "<br>")
+        document.write(call.sub + "<br>")
 
 
-        function Car(brand,type,model,fual){
-            this.brand=brand;
-            this.type=type;
-            this.model=model;
-            this.fual=fual;
+        function Car(brand, type, model, fual) {
+            this.brand = brand;
+            this.type = type;
+            this.model = model;
+            this.fual = fual;
         }
-        var purchese=new Car("Mahenra","SCRPOIO",2022,"DISEL")
+        var purchese = new Car("Mahenra", "SCRPOIO", 2022, "DISEL")
         console.log(purchese)
         document.write("<h2>")
-        document.write(purchese.brand+"<br>")
-        document.write(purchese.type+"<br>")
-        document.write(purchese.model+"<br>")
-        document.write(purchese.fual+"<br>")
+        document.write(purchese.brand + "<br>")
+        document.write(purchese.type + "<br>")
+        document.write(purchese.model + "<br>")
+        document.write(purchese.fual + "<br>")
 
-
-
-
-        function Movie(hero,herione,villain,story){
-            this.hero=hero;
-            this.herione=herione;
-            this.villain=villain;
-            this.story=story;
+        function Movie(hero, herione, villain, story) {
+            this.hero = hero;
+            this.herione = herione;
+            this.villain = villain;
+            this.story = story;
         }
-        var concept=new Movie("YASH","srinidhi","SanjayDath","Action")
-        console.log(concept)
+        var concept = new Movie("YASH", "srinidhi", "SanjayDath", "Action")
+        document.write("<h2>")
+        document.write(concept.hero + "<br>")
+        document.write(concept.herione + "<br>")
+        document.write(concept.villain + "<br>")
+        document.write(concept.story + "<br>")
 
-        function Email(userName,Passsword,composeMail,Sent){
-            this.userName=userName;
-            this.Passsword=Passsword;
-            this.composeMail=composeMail;
-            this.Sent=Sent;
+        function Email(userName, Passsword, composeMail, Sent) {
+            this.userName = userName;
+            this.Passsword = Passsword;
+            this.composeMail = composeMail;
+            this.Sent = Sent;
         }
-        var gmail=new Email("VijayEVN","xxxxxxx","Regardingjob","sent")
-        console.log(gmail)
+        var gmail = new Email("VijayEVN", "xxxxxxx", "Regardingjob", "sent")
+        document.write("<h2>")
+        document.write(gmail.userName + "<br>")
+        document.write(gmail.Passsword + "<br>")
+        document.write(gmail.composeMail + "<br>")
+        document.write(gmail.Sent + "<br>")
 
-        function Cricket(captain,v_captain,batsman,bowler){
-            this.captain=captain;
-            this.v_captain=v_captain;
-            this.batsman=batsman;
-            this.bowler=bowler;
+
+        function Cricket(captain, v_captain, batsman, bowler) {
+            this.captain = captain;
+            this.v_captain = v_captain;
+            this.batsman = batsman;
+            this.bowler = bowler;
         }
-        var play= new Cricket("MS.DHONI","RAINA","KOHLI","PANDEY")
-        console.log(play)
+        var play = new Cricket("MS.DHONI", "RAINA", "KOHLI", "PANDEY")
+        document.write("<h2>")
+        document.write(play.captain + "<br>")
+        document.write(play.v_captain + "<br>")
+        document.write(play.batsman + "<br>")
+        document.write(play.bowler + "<br>")
     </script>
 </body>
+
 </html>
