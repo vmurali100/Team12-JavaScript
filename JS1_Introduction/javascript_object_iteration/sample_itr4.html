@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var shirt=
+        {
+            brand:"raymond",
+            price:"1500rs",
+
+        }
+        shirt.color='blue',
+        shirt.size="38in",
+        shirt['pattern']='checks',
+        shirt['fit']='slimfit'
+        for(a in shirt)
+        {
+            document.write(shirt[a]+"<br/>");
+        }
+        var shoes = Object({brand:'bata',color:"white and blue"})
+        shoes.gender="men",
+        shoes.size='8in',
+        shoes['type']='waterproof',
+        shoes['condition']='all weather condition'
+        for(b in shoes)
+        {
+            document.write(shoes[b]+"<br/>");
+        }
+        function watch(brand,price)
+        {
+            this.brand=brand;
+            this.price=price;
+        }
+        var watch1 = new watch("sonata","1500")
+        watch1.gender= 'men';
+        watch1.strapcolor='black';
+        watch1['strapmaterial']='biege';
+        watch1['movement']='quartz';
+        for (c in watch1)
+        {
+            document.write(watch1[c]+"<br/>");
+
+        }
+        class motorBike
+        {
+            constructor(brand,price)
+            {
+                this.brand=brand;
+                this.price=price;
+            }
+        }
+        var bike = new motorBike("Royalenfield",'250000rs');
+        bike.milage='34 kmpl';
+        bike.transmission=' 5 speed manual';
+        bike['weight']='194 kg';
+        bike['seat height']="805mm";
+        for (d in bike)
+        {
+            document.write(bike[d]+"<br/>");
+        }
+    </script>
+    
+</body>
+</html>

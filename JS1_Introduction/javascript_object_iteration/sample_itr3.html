@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var airforce=
+        {
+            name:'kingfisher',
+            from:"blr to hyd"
+        }
+        airforce.owner='vijay',
+        airforce.price='2500'
+
+        airforce['company']='united beverages',
+        airforce['capcity']='100'
+        for(a in airforce)
+        {
+            document.write(airforce[a]+"<br/>");
+        }
+         
+        var book = Object({name:'the hills',price:"250rs"})
+        book.author='dvs',
+        book.edition='5'
+        book['language']='englsih',
+        book['pages']='167'
+        for (b in book)
+        {
+            document.write(book[b]+"<br/>");
+        }
+
+        function home(name,area)
+        {
+            this.name=name;
+            this.area=area;
+        }
+        var house = new home("kvs building", "RR nagar")
+        house.floores='5';
+        house.rooms='10';
+        house['owner']='satish';
+        house['village']='banglore';
+        for (c in house)
+        {
+            document.write(house[c]+"<br/>");
+        }
+        class camera
+        {
+            constructor(name,lens)
+            {
+                this.name=name;
+                this.lens=lens;
+            }
+        }
+        var cam = new camera("canon","convex");
+        cam.brand= 'hidden';
+        cam.lensquality='4mp';
+        cam['price']='15000';
+        cam['numbers of camera']='2';
+        for(d in cam)
+        {
+            document.write(cam[d]+"<br/>");
+        }
+    </script>
+    
+</body>
+</html>
