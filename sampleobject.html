@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person={
+            fname:"thanujareddy",
+        }
+        var student=new Object({fname:"thanujareddy"});
+        
+        console.log("buitlt in way object:",student)
+
+        function college(name,year,branch){
+            this.name=name;
+            this.year=year;
+            this.branch=branch;
+        }
+        var college1=new
+        college("vtu","4th","cse")
+        console.log(college1)
+
+        class Student{
+
+            constructor(fname,usn,age){
+                this.fname=fname;
+                this.usn=usn;
+                this.age=age;
+            }
+        }
+        var std1=new Student("thanu","60","20");
+        console.log("class way object:",std1)
+
+
+
+
+    
+
+        
+
+    </script>
+</body>
+</html>
