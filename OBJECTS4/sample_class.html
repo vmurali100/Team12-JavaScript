@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class list{
+            constructor(name,ph){
+                this.name=name;
+                this.ph=ph;
+            }
+        }
+        var doc=new list("mbps.ravi","978767427")
+
+        doc.clinic="general specialist";
+        doc.place="chittoor";
+
+        for(a in doc){
+            document.write(doc[a]+"<br>")
+        }
+    </script>
+</body>
+</html>

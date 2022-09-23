@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class doc{
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+            }
+        }
+        var docu=new doc("varshi",19)
+
+        docu.birthdate=20;
+        docu['month']="march";
+        docu.year=2002;
+
+        for(a in docu){
+            document.write(docu[a]+"<br>")
+        }
+    </script>
+</body>
+</html>
