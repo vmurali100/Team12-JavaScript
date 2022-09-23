@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function CalAFriend(name, contactNo, to, sub) {
+            this.name = name;
+            this.contactNo = contactNo;
+            this.to = to;
+            this.sub = sub;
+        }
+        var call = new CalAFriend("Raj", 8688881677, "bang", "JOBChnaging")
+        for (a in call) {
+            document.write(call[a] + "<br>")
+        }
+
+        document.write("<hr>")
+        
+        function Car(brand, type, model, fual) {
+            this.brand = brand;
+            this.type = type;
+            this.model = model;
+            this.fual = fual;
+        }
+        var purchese = new Car("Mahenra", "SCRPOIO", 2022, "DISEL")
+
+        for (a in purchese) {
+            document.write(purchese[a] + "<br>")
+        }
+        document.write("<hr>")
+
+        function Movie(hero, herione, villain, story) {
+            this.hero = hero;
+            this.herione = herione;
+            this.villain = villain;
+            this.story = story;
+        }
+        var concept = new Movie("YASH", "srinidhi", "SanjayDath", "Action")
+        console.log(concept)
+        for (a in concept) {
+            document.write(concept[a] + "<br>")
+        }
+
+        document.write("<hr>")
+
+        function Email(userName, Passsword, composeMail, Sent) {
+            this.userName = userName;
+            this.Passsword = Passsword;
+            this.composeMail = composeMail;
+            this.Sent = Sent;
+        }
+        var gmail = new Email("VijayEVN", "xxxxxxx", "Regardingjob", "sent")
+        console.log(gmail)
+        for (a in gmail) {
+            document.write(gmail[a] + "<br>")
+        }
+        document.write("<hr>")
+
+        function Cricket(captain, v_captain, batsman, bowler) {
+            this.captain = captain;
+            this.v_captain = v_captain;
+            this.batsman = batsman;
+            this.bowler = bowler;
+        }
+        var play = new Cricket("MS.DHONI", "RAINA", "KOHLI", "PANDEY")
+        for (a in play) {
+            document.write(play[a] + "<br>")
+        }
+    </script>
+</body>
+
+</html>
