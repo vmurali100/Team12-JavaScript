@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function details (name,password){
+            this.name=name;
+            this.password=password;
+        }
+        var student=new details("ram",5233)
+
+        student.lname="charan";
+        student['email']='ram@gmail.com';
+
+        document.write(student.name+"<br>")
+        document.write(student.password+"<br>")
+        document.write(student['lname']+"<br>")
+        document.write(student['email'])
+
+    </script>
+</body>
+
+</html>

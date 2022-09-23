@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function std(name,email){
+            this.name=name;
+            this.email=email;
+        }
+        var std1=new std("keerthi","keerthi@gamil.com")
+
+        std1.fname="venu";
+        std1['lname']="reddy";
+
+        for(a in std1){
+            document.write(std1[a]+"<br>")
+        }
+
+
+    </script>
+</body>
+</html>

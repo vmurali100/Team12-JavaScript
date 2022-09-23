@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        var tree={
+            name:'mango'
+        }
+        console.log("literal way object:----",tree)
+
+
+        
+        var forest = new Object({name:"neam"});
+        console.log("built in way object:----",forest)
+
+        
+
+        function car(color,price){
+            this.color=color;
+            this.price=price;
+        }
+        var car1=new car('black','1L')
+        console.log("constructer wat object:----",car1)
+
+        
+
+        class Car2{
+            constructor(color){
+            this.color=color;    
+            }     
+        }
+        var Car3=new car("mahindra");
+        console.log("class way object:----",Car3)
+
+
+        
+    </script>
+</body>
+</html>

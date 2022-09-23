@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function juice(name, flavour){
+            this.name = name;
+            this.flavour = flavour;
+        }
+        var lq1=new juice("fanta","orange")
+
+        lq1.fname="mazza";
+        lq1['fla1']="mango"
+
+        document.write(lq1.name+"<br>")
+        document.write(lq1.flavour+"<br>")
+        document.write(lq1['fname']+"<br>")
+        document.write(lq1['fla1']+"<br>")
+    </script>
+</body>
+
+</html>
