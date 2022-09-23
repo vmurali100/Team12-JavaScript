@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function novel()
+        {
+            console.log("this is a book")
+        }
+        var book=
+        {
+            name:'the hills',
+            author:'william',
+            price:350,
+            fulldetail: function hi()
+            {
+                console.log(this.name+this.author+this.price)
+            }
+        }
+        document.write(book.name+"<br>");
+        document.write(book.author+"<br>");
+        document.write(book.price+"<br>");
+        book.fulldetail()
+    </script>
+</body>
+</html>

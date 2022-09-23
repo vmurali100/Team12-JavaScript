@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function movie()
+        {
+            console.log("kannada movie")
+        }
+        var kgf=
+        {
+            hero:'yash',
+            language:'kannada',
+            songs:'5',
+            heroine:'reena',
+            full: function kk()
+            {
+                console.log(this.hero+this.language+this.songs+this.heroine)
+            }
+        }
+        document.write(kgf.hero+"<br>");
+        document.write(kgf.language+"<br>");
+        document.write(kgf.songs+"<br>");
+        document.write(kgf.heroine+"<br>");
+        kgf.full()
+    </script>
+    
+</body>
+</html>

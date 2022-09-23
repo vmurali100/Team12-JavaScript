@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sayHello(){
+            console.log("Hello ")
+        }
+
+        var person ={
+            fname:"prashanth",
+            lname:"Kumar",
+            email:"prashanth@gmail.com",
+            getFullName:function sayHi (){
+                console.log(this.fname+this.lname+this.email)
+            }
+        }
+
+        document.write(person.fname+"<br>");
+        document.write(person.lname+"<br>");
+        document.write(person.email)
+        person.getFullName()
+    </script>
+    
+</body>
+</html>
