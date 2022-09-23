@@ -8,8 +8,14 @@
 </head>
 <body>
     <script>
-        constuctor(fname,colour)
-    
+        var wwe =new Object({name:"Randy orton",height:"5.7"});
+        wwe.weight ="87kg";
+        wwe.bips ="56";
+        wwe['special'] ="RKO";
+        wwe['colour'] ="white"
+        for(a in wwe){
+            document.write(wwe[a]+"<br/>")
+        }
     </script>
 </body>
 </html>

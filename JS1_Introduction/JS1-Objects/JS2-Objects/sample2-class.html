@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class school{
+           constructor(name,village){
+            this.name =name;
+            this.village =village;
+           } 
+        }
+        var school1 =new school("high school","nrpet");
+        school1.class ="10";
+        school1['members'] ="530";
+        for(a in school1){
+            document.write(school1[a]+"<br/>")
+        }
+    </script>
+</body>
+</html>

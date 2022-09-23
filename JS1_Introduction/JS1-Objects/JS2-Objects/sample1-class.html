@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class person{
+            constructor(fname,lname){
+                this.fname =fname;
+                this.lname =lname;
+            }
+        }
+        var person1 =new person("radha","jaga",);
+        person1.email ="radha@gmail.com";
+        person1['phone'] =9618918225;
+        for(a in person1){
+            document.write(person1[a]+"<br/>")
+        }
+    </script>
+</body>
+</html>

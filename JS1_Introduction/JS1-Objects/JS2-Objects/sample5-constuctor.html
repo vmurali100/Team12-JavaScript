@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function person(fname,lname,email){
+            this.fname  =fname;
+            this.lname =lname;
+            this.email =email;
+        }
+        var person1 =new person("raja","mallela","raja65@gmail.com");
+        person1.age ="45";
+        person1.lanuguge ="telugu";
+        person1['state'] ="AP";
+        person1['ocupation'] ="farmer";
+
+        for(a in person1){
+            document.write(person1[a]+"<br/>")
+        }
+    </script>
+</body>
+</html>

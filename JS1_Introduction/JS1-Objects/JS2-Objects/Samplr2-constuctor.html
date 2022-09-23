@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function person(name,phone,email){
+            this.name =name;
+            this.phone =phone;
+            this.email =email;
+        }
+        var person1 =new person("ammu","345679","ammu@gmail.com");
+        person1.state ="AP";
+        person1.distict ="chittoor";
+        person1['hobbies'] ="music";
+            for(a in person1){
+                document.write(person1[a]+"<br/>")
+            }
+
+    </script>
+</body>
+</html>c:\Users\malle\AppData\Local\Programs\Microsoft VS Code\resources\app\out\vs\code\electron-sandbox\workbench\workbench.html
