@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example1</title>
+    <style>
+        body{font-family: Arial, Helvetica, sans-serif;}
+    </style>
+</head>
+<body>
+    <h1>Creating Objects Exampls File</h1>
+    <script>
+        var network={
+            network:"JIO",
+            Dish:"JIO-DTH",
+        };
+        network.music="JIO SAVAN";
+        network.Mmovies="JIO MOVIES";
+
+        network["games"]=["JIO STORE"];
+        network["stories"]=["JIO CHAT"] 
+
+        for(a in network){
+            document.write(network[a]+"<br>")
+        }
+        document.write("<hr>")
+/////////////////////////////////////////////////////
+        var Network2={
+            name:"AIRTEL",
+            sim:"Prepaid/POSTPAID",
+        }
+        Network2.broadBand="BLACK BOX _ AIRTEL";
+        Network2.bank="AIRTEL BANKING SERVICES";
+
+        Network2["tv"]=["AIRTELTV services"];
+        Network2["Cemera"]=["X Safe _ Cc Cemara Fecility"]
+
+        for(a in Network2){
+            document.write(Network2[a]+"<br>")
+        }
+
+
+        
+    </script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Example 2 built in Method Creating Objects</title>
+</head>
+<body>
+    <script>
+        var mobile=new Object({brand:"Apple", model:"13" , Storage:"256GB", RAM:"16GB"})
+        mobile.display="RETINA";
+        mobile.os="IOS";
+
+        mobile["color"]=["Black"];  
+        for(a in mobile){
+            document.write(mobile[a]+"<br>")
+        }
+
+        document.write("<hr>");
+
+        var education=new Object({primary:"Till 5th Class",secondary:"7th-10th", Intermedite:"MPC TM",degree:"BSC"})
+        education.SecndDegree="MSC Computers";
+        education.Engeenering="Btech";
+
+        education["iti"]=["ITI MECH"];
+        education["Iti2"]=["ITI Elecric"];
+
+        for(a in education){
+            document.write(education[a]+"<br>")
+        }
+        document.write("<hr>");
+
+        var course=new Object({sub1:"HTML", sub2:"css",sub3:"JavaScript", sub4:"BootStrap"});
+        course.sub5="REACT JS";
+        for(a in course){
+            document.write(course[a]+"<br>")
+        }
+    </script>
+</body>
+</html>
