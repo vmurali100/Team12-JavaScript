@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person = {
+            fname: "Rohit Sharma",
+            lname: "Right Handed Batsmen",
+            ranking: "1"
+        }
+        person.state = "Andhra Pradesh";
+        person["language"] = "telugu";
+        person.T20Iruns="3677";
+        for(a in person) {
+            console.log(a)
+        }
+        document.write(person.fname+"<br/>")
+        document.write(person.lname+"<br/>")
+        document.write(person.ranking+"<br/>")
+        document.write(person.state+"<br/>")
+        document.write(person.language+"<br/>")
+        document.write(person.T20Iruns+"<br/>")
+
+        console.log(person)
+    </script>
+    
+    
+</body>
+</html>

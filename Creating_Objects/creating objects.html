@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var person = {
+            fname: "Divakar Reddy",
+            lname: "Puttur",
+            email: "deenareddy999@gmail.com"
+        }
+        person.state = "Andhra Pradesh";
+        person["language"] = "telugu";
+        for(a in person) {
+            console.log(a)
+        }
+        // document.write(person['email'])
+        document.write(person.fname+"<br/>")
+        document.write(person.lname+"<br/>")
+        document.write(person.email+"<br/>")
+        document.write(person.state+"<br/>")
+        document.write(person.state+"<br/>")
+
+        console.log(person)
+    </script>
+    
+</body>
+</html> 
