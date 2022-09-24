@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function sayMiss(){
+            console.log("Miss from JS File")
+        }
+        var person={
+            name:"ammu",
+            phone:"6592824369",
+langugue:"telugu",
+state:"ap",
+getFullName:function sayMiss(){
+    console.log(this.name+this.phone+this.phone)
+}
+        }
+        document.write(person.name+"<br>");
+        document.write(person.phone+"<br>");
+        document.write(person.langugue+"<br>");
+        document.write(person.state);
+        person.getFullName()
+    </script>
+</body>
+</html>
