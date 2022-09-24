@@ -16,8 +16,79 @@
             fname:"Vijay",
             lname:"EVN",
             email:"Vijay@gmail.com",
+            getDetails:function details(){
+                console.log(this.fname+this.lname+this.email)
+            }
         }
-        document.write(myDetails)
+        document.write(myDetails.fname+"<br>")
+        document.write(myDetails.lname+"<br>")
+        myDetails.getDetails();
+
+
+        document.write("<hr>")
+
+
+        var myCar={
+            brand:"Mahendra",
+            model:"SCRPIO",
+            color:"Black",
+            details:function info(){
+                console.log(this.brand+this.model+this.color)
+            }
+        }
+        document.write(myCar.brand+"<br>")
+        document.write(myCar.model+"<br>")
+        document.write(myCar.color)
+        myCar.details();
+
+        document.write("<hr>")
+
+        var myLap={
+            brand:"APPLE",
+            model:"MacBook Pro",
+            Storage:"216 GB",
+            clearDetails:function infoLap(){
+                console.log(this.brand+this.model+this.Storage)
+            }
+        }
+        document.write(myLap.brand+"<br>")
+        document.write(myLap.model+"<br>")
+        document.write(myLap.Storage)
+        myLap.clearDetails();
+
+        document.write("<hr>")
+
+        var myMobile={
+            company:"IQOO",
+            Storage:"216GB",
+            model:"IQOO 9 PRO",
+            specification:function myCell(){
+                console.log(this.company+this.Storage+this.model)
+            }
+        }
+        document.write(myMobile.company+"<br>")
+        document.write(myMobile.Storage+"<br>")
+        document.write(myMobile.model)
+        myMobile.specification();
+
+        document.write("<hr>")
+
+        var myBike={
+            name:"ROYAL ENFEILD",
+            type:"CLASIC 350",
+            color:"STELTH BLACK",
+            bikeInfo:function bikeDate(){
+                    console.log(this.name+this.type+this.color)
+                }
+            }
+
+        document.write(myBike.name+"<br>")
+        document.write(myBike.type+"<br>")
+        document.write(myBike.color)
+        myBike.bikeInfo();
+
+        document.write("<hr>")
+
     </script>
 </body>
 </html>
