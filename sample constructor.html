@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Hotel(name,address,street){
+            this.name=name;
+            this.address=address;
+            this.street=street;
+        }
+            var dolphin=new Hotel("dolphon","atp","highway");
+            dolphin.pincode="12345";
+            dolphin.special="biryani";
+            dolphin["village"]="kadiri";
+            dolphin["contact"]="9876543210";
+            for(a in dolphin){
+                console.log(a)
+                document.write(dolphin[a]+"<br>")
+            }
+            function Doll(name,cost,color){
+                this.name=name;
+                this.cost=cost;
+                this.color=color;
+            }
+            var teddy=new Doll("bear","5000","red")
+            teddy.cloth="sponge";
+            teddy.size="medium";
+            teddy["brand"]="fairy";
+            teddy["address"]="india";
+            for(a in teddy){
+                console.log(a)
+                document.write(teddy[a]+"<br>")
+            }
+            function Cartoon(name,hero,timing){
+                this.name=name;
+                this.hero=hero;
+                this.timing=timing;
+            }
+            var stuartlittle=new Cartoon("stuart","jin","4")
+            stuartlittle.rating="8";
+            stuartlittle.channel="khushi";
+            stuartlittle["language"]="telugu";
+            stuartlittle["heroine"]="rat";
+            for(a in stuartlittle){
+                console.log(a)
+                document.write(stuartlittle[a]+"<br>")
+            }
+
+        
+
+    </script>
+    
+</body>
+</html>
