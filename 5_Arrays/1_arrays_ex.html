@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array s Example </title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <style>
+        body{font-family: Arial, Helvetica, sans-serif;}
+    </style>
+</head>
+<body>
+    <script>
+        var student=["vijay","ajay","suresh","Raina","Nishanth","Revanth","Jayensh","Jayanth","Vikram"];
+
+        student.push("Yesh") //Add a value end of the Array
+
+        student.push("Zarena")//Add a value end of the Array
+        
+        student.unshift("Aakash")//adding a value of 0th place in array
+
+        student.splice(4,0,"Naveen"); //Adding a value at 4h place , but dont remove the value
+
+        student.splice(5,1,"Fayaz");
+
+        student.pop();//Remove Last Value
+        student.unshift();//Remove 1st Value
+        student.slice(2,1) //Remove Particular value @ 2nd Position
+
+        console.log(student.reverse())
+
+        for(i=0;i<student.length;i++){
+            document.write(student[i]+"<br>")
+        }
+
+        
+
+    </script>
+</body>
+</html>
