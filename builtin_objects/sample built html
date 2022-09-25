@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var school=new Object({name:"crescent",class:"10th",address:"atp"})
+        school.street="ram nagar";
+        school.pincode="12345";
+        school["teacher"]="shylaja";
+        school["principal"]="sameera";
+        for(a in school){
+            document.write(school[a]+"<br>")
+            console.log(a)
+        }
+
+        var healthyfood=new Object({fruit:"apple",vegetable:"carrot",dryfruit:"dates"})
+        healthyfood.leafy="pudhina";
+        healthyfood.juice="badam";
+        healthyfood["sprouts"]="green gram";
+        healthyfood["meat"]="chicken";
+        for(z in healthyfood){
+        console.log(z)
+        document.write(healthyfood[z]+"<br>")
+        }
+
+        var movie=new Object({name:"pokiri",hero:"maheshbabu",heroine:"eliyana"})
+        movie.vilan="prakash raj";
+        movie.comedian="bramhanandam";
+        movie["singer"]="dsp";
+        movie["director"]="puri";
+        for(a in movie){
+            console.log(a)
+            document.write(movie[a]+"<br>")
+        }
+
+    var student=new Object({name:"parveen",class:"10",email:"parveen@gmail.com"})
+    student.usn="221345897";
+    student.rollno="8";
+    student["address"]="maruti nagar";
+    student["street"]="clock tower";
+    for(a in student){
+        console.log(a)
+        document.write(student[a]+"<br>")
+    }
+
+    </script>
+    
+</body>
+</html>
