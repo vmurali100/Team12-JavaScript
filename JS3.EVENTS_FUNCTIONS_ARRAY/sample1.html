@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="addvalstart()">add a value-start</button><br>
+    <button onclick="addvalmiddle()">add a value-middle</button><br>
+    <button onclick="addvalend()">add a value-end</button><br>
+    <button onclick="removenamestart()">remove a value-start</button><br>
+    <button onclick="removenamemiddle()">remove a value-middle</button><br>
+    <button onclick="removenameend()">remove a value-end</button><br>
+    <button onclick="reverseval()">reverse</button><br>
+    <button onclick="sortval()">sort</button><br>
+    <button onclick="find()">finding</button><br>
+
+    <!-- <button onclick="foreach()">foreach</button><br>
+    <button onclick="map()">display-map</button><br>
+    <button>find a single value</button><br>
+    <button>find a multiple value</button><br>
+    <button>check for a single value</button><br>
+    <button>find a multiple value</button><br>
+    <button>find sum of given numbers</button><br> -->
+
+    <script>
+        var persons = ["varshitha", "pujitha", "pushpalatha", "umapathi"]
+        function addvalstart() {
+            persons.unshift("sai");
+            console.log(persons)
+        }
+        function addvalmiddle(){
+            persons.splice(0,0,"lokesh");
+            console.log(persons)
+        }
+        function addvalend(){
+            persons.push("padmaja");
+            console.log(persons)
+        }
+        function removenamestart(){
+            persons.shift();
+            console.log(persons)
+        }
+        function removenamemiddle(){
+            persons.splice(1,1);
+            console.log(persons)
+        }
+        function removenameend(){
+            persons.pop();
+            console.log(persons)
+        }
+        function reverseval(){
+            persons.reverse();
+            console.log(persons)
+        }
+        function sortval(){
+            persons.sort();
+            console.log(persons)
+        }
+        var check=persons.every(function(val){
+            return val.length>=9;    
+        })
+        console.log(check)
+
+      //  persons.foreach(function(abc,i,arr){
+       //     persons.forEach(abc,"-family<br>");
+         //   document.write(abc+" "+i+"<br>")
+     //   });
+        // var persons = ["varshitha", "pujitha", "pushpalatha", "umapathi"]
+        // var check=persons.every (function(val){
+        //     return.val length >=9;
+        //     document.write(persons)
+        // });
+        // persons.forEach(function(a){
+        //     console.log(abc,i,arr);
+        // })
+
+    
+
+    </script>
+</body>
+
+</html>
