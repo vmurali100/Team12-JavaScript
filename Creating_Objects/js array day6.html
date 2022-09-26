@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var TeamIndia=["Rohit", "Rahul" ,"Kohli" ,"SKY","MsD" ,"Pant" ,"DK","Bumrah","Bhuvaneswar" ,"Aswin","Cahal","axar" ] ;
+        // TeamIndia.forEach(function(abc,i,arr){
+        //     console.log(abc,i,arr)
+        // })
+        // TeamIndia.forEach(function(abc,i,arr){
+        //     document.write(i,abc+"-India <br>")
+        //     // document.write(i,abc+ "<br>")
+        // })
+        // var newTeamIndia= TeamIndia.forEach(function(player){
+        //     return player+"-India"
+        // })
+        // var newTeamIndia= TeamIndia.map(function(player){
+        //     return player+"-India"
+        // })
+        // console.log("newTeamIndia-",newTeamIndia)
+        // TeamIndia.map(function(val,i){
+        //     document.write(i,val+"<br>")
+            
+        // })
+        //  var newname = TeamIndia.find(function(val){
+        //     return val.length==2
+        // })
+        // console.log(newname)... will identify only one name
+        // var newname = TeamIndia.filter(function(val){
+        //     return val.length==3
+        // })
+        // console.log(newname)
+        // var check= TeamIndia.some(function(val){
+        //     return val.length==5
+        // })
+        // console.log(check)  it will give true if atleast one value will be true
+        
+        var check= TeamIndia.every(function(val){
+            return val.length>=2
+        })
+        console.log(check) 
+
+    </script>
+</body>
+</html> 
