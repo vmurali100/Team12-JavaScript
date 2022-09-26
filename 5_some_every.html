@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Some () + Every()</title>
+</head>
+<body>
+    
+
+    <script>
+        var guns=["AKM","DP","UMP","UZI","M416","M16A4","AWM","PISTOL","KAR 98","AK"]
+
+        //some() it check any one if its true it wil show true/false
+        var collection=guns.some(function(val){
+            return val.length==5;
+        })
+        console.log(collection)
+
+
+        //every it s check the every value and give the details
+        var collection=guns.every(function(val){
+            return val.length==5;
+        })
+        console.log(collection)
+
+
+        //reduse() it will help to add all values 
+        var dolors=[2,5,8,4,67,24,66,93]
+
+        var calAmt=dolors.reduce(function(a,b){
+            return a+b;
+        })
+        console.log(calAmt)
+    </script>
+</body>
+</html>
