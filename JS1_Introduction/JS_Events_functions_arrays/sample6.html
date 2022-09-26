@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addVnewBike()">Add new bike at front</button> <br>
+    <button onclick="addnewBike2()">Add new bike at end</button> <br>
+    <button onclick="addnewBike3()">Add new bike at Middle</button> <br>
+
+    <button onclick="RemovefirstBike()">Remove a first Bike</button> <br>
+    <button onclick="RemovelastBike()">Remove a last Bike</button> <br>
+    <button onclick="RemovesecondBike()">Remove a second Bike</button> <br>
+
+    <button onclick="Reversebikes()">Reverse  </button> <br>
+    <button onclick="Sortallbikes()">Sort Bikes</button> <br>
+
+    <button onclick="Displaywithfueltype()">Bikes with fueltype </button> <br>
+    <button onclick="displayWithMap()">Display - Map </button> <br>
+
+    <button onclick="checkBikebelowonelakh()">Bike less than one lakh </button> <br>
+    <button onclick="checkBikeaboveonetwolakh()">Bike above 2 lakh </button> <br>
+
+    <button onclick="checkblackcolor()">find a black color Bike </button> <br>
+    <button onclick="checkbluecolor()">find a blue color bikes</button> <br>
+
+
+    <button onclick="totalvalue()">Total value all Bikes in shworoom </button> <br>
+
+    <script>
+  //      var Bikes=["sbc","bfc","kbc"]
+        var Bikes=[{name:"Pulsar",price:100000,color:"black"},{name:"Royal-enfield",price:250000,color:"grey"},
+    {name:"Ktm",price:175000,color:"blue"},{name:"Bmw-R10",price:300000,color:"Blue"},{name:"Victor",price:75000,color:"yellow"}];
+    
+    function addVnewBike()
+    {
+       // Bikes.unshift("kkk")
+        Bikes.unshift({name:"unicorn",price:85000,color:"orange"})
+        console.log(Bikes);
+        // Bikes.forEach(function (abc, i, arr) {
+        //     document.write(abc+" <br>")  
+          
+        // });  
+        
+    }
+    function addnewBike2()
+    {
+        Bikes.push({name:"java",price:95000,color:"violet"})
+        console.log(Bikes)
+    }
+    function addnewBike3()
+    {
+        Bikes.splice(3,0,{name:"Rajddot",price:46000,color:"Red"})
+        console.log(Bikes)
+    }
+    function RemovefirstBike()
+    {
+        Bikes.shift();
+        console.log(Bikes);
+    }
+    function RemovelastBike()
+    {
+        Bikes.pop();
+        console.log(Bikes);
+    }
+    function RemovesecondBike()
+    {
+        Bikes.splice(1,1);
+        console.log(Bikes);
+    }
+    function Reversebikes()
+    {
+        console.log(Bikes.reverse());
+        
+              
+    }
+    function Sortallbikes()
+    {
+        console.log(Bikes.sort());
+    }
+    // function Displaywithfueltype()
+    // {
+        
+    //   Bikes.forEach(function (abc, i, arr) {
+    //       document.write(abc+" -petrol<br>")
+    //       console.log(abc+""+i+"<br>")
+    //     });
+    //     document.write(abc + " "+i+"<br>")
+    // }
+    function checkBikebelowonelakh()
+    {
+        Bike = Bikes.find(function(lakh)
+        {
+            return lakh.price<100000
+        });
+        console.log(Bike);
+    }
+    function checkBikeaboveonetwolakh()
+    {
+        {
+        Bike = Bikes.filter(function(twolakh)
+        {
+            return twolakh.price>=200000
+        });
+        console.log(Bike);
+    }
+    }
+    function checkblackcolor()
+    {
+        Bike = Bikes.some(function(paint)
+        {
+            return paint.color == "black"
+        })
+        console.log(Bike);
+    }
+    function checkbluecolor()
+    {
+        Bike = Bikes.some(function(paint)
+        {
+            return paint.color == "blue"
+        })
+        console.log(Bike);
+
+    }
+        function totalvalue() {
+            var totalprice = Bikes.reduce(function (x, y) {
+                if (x.price) {
+
+                    return x.price + y.price
+                } else {
+                    return x+y.price
+                }
+
+
+            })
+            console.log(totalprice)
+        }
+    
+</script>
+    
+</body>
+</html>

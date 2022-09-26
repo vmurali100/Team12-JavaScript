@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addValStart()">add a Value-Start</button><br>
+    <button onclick="addValEnd()">Remove a Value-End</button><br>
+    <button onclick="addValMiddle()">Remove a Value-Middle</button><br>
+    <button onclick="removeValMiddle()">Remove a Value-Middle</button><br>
+    <button onclick="reverseVal()">Reverse </button><br>
+    <button onclick="sortNames()">sort Names</button><br>
+    <button onclick="displayWithForEach()">Display-ForEach</button><br>
+    <button onclick="removeValEnd()">Remove a Value-End</button><br>
+    <button onclick="findSingle()">Find a Single Value</button><br>
+    <button onclick="displayWithMap()">Display-Map</button><br>
+    <button onclick="findMulitple()">Find a Multiple Values</button><br>
+    <button onclick="checkSingle()">Check for a Single Value -Some</button><br>
+    <button onclick="checkMultiple()">Check for a Multiple Value -every</button><br>
+    <script>
+        var IndiaTeam =["Rohit","Rahul","Kohli","Sky","DK","Bhumra","Bhuvi","Pandya"]
+        function addValStart(){
+            IndiaTeam.unshift("axar patel");
+            console.log(IndiaTeam)
+            document.write(IndiaTeam)
+        }
+        function addValEnd(){
+            IndiaTeam.push("chahal");
+            console.log(IndiaTeam)
+            document.write(IndiaTeam)
+        }
+        function addValMiddle(){
+            IndiaTeam.splice(4,0,"pant");
+            console.log(IndiaTeam)
+        }
+        function removeValMiddle(){
+            IndiaTeam.shift(3,1);
+            console.log(IndiaTeam)
+        }
+        function reverseVal(){
+            IndiaTeam.reverse;
+            console.log(IndiaTeam.reverse() )
+        }
+        function sortNames(){
+            console.log(IndiaTeam.sort())
+        }
+        function removeValEnd(){
+            console.log(IndiaTeam.pop())
+        }
+        function displayWithForEach(){
+            IndiaTeam.ForEach(function(a,i,){
+            console.log(a,i,);
+            });
+            }
+        
+
+        function displayWithMap(){
+            var newTeam =IndiaTeam.Map(function(Cricket){
+                return Cricket+"-player"
+            });
+            console.log("newTeam-".newTeam);
+        
+        }
+        function findSingle(){
+            var newTeam=IndiaTeam.Find(function(val){
+                return val.length==2;
+            });
+            console.log(newTeam)
+            
+        }
+        function findMulitple(){
+            var newTeam=IndiaTeam.filter(function(val){
+                return val.length==3;
+            });
+            console.log(newTeam);
+
+        }
+        function checksingle(){
+            var Check =IndiaTeam.Some(function(val){
+                return val.length ==4;
+            });
+            console.log(Check);
+        }
+        function checkMultiple(){
+            var Check =IndiaTeam.every(function(val){
+                return val.length >=2;
+            });
+            console.log(Check);
+        }
+
+
+        
+    
+        
+
+            
+        
+            
+        
+            
+        
+   </script>     
+</body>
+</html>

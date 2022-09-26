@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="addValStart()">Add a Value - Start</button> <br>
+    <button onclick="addValEnd()">Add a Value - End</button> <br>
+    <button onclick="addValMiddle()">Add a Value - Middle</button> <br>
+
+    <button onclick="RemoveValStart()">Remove a Value - Start</button> <br>
+    <button onclick="RemoveValEnd()">Remove a Value - End</button> <br>
+    <button onclick="RemoveValMiddle()">Remove a Value - Middle</button> <br>
+
+    <button onclick="ReverseVal()">Reverse </button> <br>
+    <button onclick="sortNames()">Sort Names</button> <br>
+
+    <button onclick="displayWithForEach()">Display - ForEach </button> <br>
+    <button onclick="displayWithMap()">Display - Map </button> <br>
+
+    <button onclick="findSingle()">Find a Single Value </button> <br>
+    <button onclick="findMultiple()">Find a Multiple Values </button> <br>
+
+    <button onclick="checkSingle()">Check for a Single Value - Some </button> <br>
+    <button onclick="checkMultiple()">Check for a Multiple Vlaues - Every </button> <br>
+
+
+    <button onclick="findSumOfNumbers()">Find Sum of Given Numbers - Reduce </button> <br>
+
+
+    <script>
+        var employees = ["Sachin", "Kumar", "Ravi", "Adi", "Nagaraj", "Rudresh","kavi"]
+        function addValStart() {
+            employees.unshift("raju", "sukesh");
+            document.write(employees + "<br/>");
+        }
+        function addValEnd() {
+            employees.push("ranga");
+            document.write(employees + "<br/>");
+        }
+        function addValMiddle() {
+            employees.splice(4, 0, "rajini");
+            document.write(employees + "<br/>");
+        }
+        function RemoveValEnd() {
+            employees.pop();
+            document.write(employees + "<br/>");
+        }
+        function RemoveValStart() {
+            employees.shift();
+            document.write(employees + "<br/>");
+        }
+        function RemoveValMiddle() {
+            employees.splice(3, 1);
+            document.write(employees + "<br/>");
+        }
+        function ReverseVal() {
+            document.write(employees.reverse());
+        }
+        function sortNames() {
+            document.write(employees.sort());
+        }
+        function displayWithForEach() {
+            employees.forEach(function (a, i, arr) {
+          console.log(a, i, arr);
+          
+        });
+        document.write(employees)
+                }
+       function displayWithMap()
+       {
+        
+      var newEMP = employees.map(function(work){
+          return work+"- job"
+      })
+
+      console.log("newEMP - ",newEMP)
+      document.write(employees)
+       }
+       function findSingle()
+       {
+        var newemp = employees.find(function(val){
+          return val.length == 3
+      })
+      document.write(newemp)
+
+       }
+       function findMultiple()
+       {
+        
+        var newemp = employees.filter(function (val) {
+          return val.length == 4;
+        });
+
+        console.log(newemp);
+        document.write(newemp)
+       }
+       function checkSingle()
+       {
+        var check = employees.some(function(val){
+          return val.length == 5
+      })
+      document.write(check)
+       }
+       function checkMultiple()
+       {
+        var check = employees.every(function (val) {
+          return val.length >= 3;
+        })
+        document.write(check);
+
+        }
+        var newArray = []
+        for(k=1;k<=109;k++){
+            newArray.push(k)
+        }
+        console.log(newArray)
+       function findSumOfNumbers()
+       {
+          var total = newArray.reduce(function (a, b) {
+        return a + b;
+      });
+        document.write(total)
+      console.log(total);
+       }
+            
+        
+        
+       
+    </script>
+</body>
+
+</html>

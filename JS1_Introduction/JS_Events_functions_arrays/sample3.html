@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addValStart()">Add a Value - Start</button> <br>
+    <button onclick="addValEnd()">Add a Value - End</button> <br>
+    <button onclick="addValMiddle()">Add a Value - Middle</button> <br>
+
+    <button onclick="RemoveValStart()">Remove a Value - Start</button> <br>
+    <button onclick="RemoveValEnd()">Remove a Value - End</button> <br>
+    <button onclick="RemoveValMiddle()">Remove a Value - Middle</button> <br>
+
+    <button onclick="ReverseVal()">Reverse </button> <br>
+    <button onclick="sortNames()">Sort Names</button> <br>
+
+    <button onclick="displayWithForEach()">Display - ForEach </button> <br>
+    <button onclick="displayWithMap()">Display - Map </button> <br>
+
+    <button onclick="findSingle()">Find a Single Value </button> <br>
+    <button onclick="findMultiple()">Find a Multiple Values </button> <br>
+
+    <button onclick="checkSingle()">Check for a Single Value - Some </button> <br>
+    <button onclick="checkMultiple()">Check for a Multiple Vlaues - Every </button> <br>
+
+
+    <button onclick="findSumOfNumbers()">Find Sum of Given Numbers - Reduce </button> <br>
+
+<script>
+    var kannadamovies=["gaja","ranna","pogaru","jaggu","dhool"]
+    function addValStart()
+    {
+          kannadamovies.unshift("robert")
+          document.write(kannadamovies);
+    }
+    function addValMiddle()
+    {
+        kannadamovies.splice(4,0,"vishnu")
+        document.write(kannadamovies);
+    }
+    function addValEnd()
+    {
+        kannadamovies.push("kgf")
+        document.write(kannadamovies);
+    }
+    function RemoveValEnd()
+    {
+        kannadamovies.pop();
+        document.write(kannadamovies);
+    }
+    function RemoveValStart()
+    {
+        kannadamovies.shift();
+        document.write(kannadamovies);
+    }
+    function RemoveValMiddle()
+    {
+        kannadamovies.splice(3,1);
+        document.write(kannadamovies);
+    }
+    function ReverseVal()
+    {
+        kannadamovies.reverse();
+        document.write(kannadamovies);
+    }
+    function sortNames()
+    {
+        kannadamovies.sort();
+        document.write(kannadamovies);
+    }
+    function displayWithForEach()
+    {
+        kannadamovies.forEach(function(a, i ,arr){
+            console.log(kannadamovies);
+        });
+        document.write(kannadamovies);
+    }
+    function displayWithMap()
+    {
+        var newmovie = kannadamovies.map(function(only)
+        {
+            return only+"-kannada"
+        })
+        document.write(newmovie);
+    }
+    function findSingle()
+    {
+        newmovie = kannadamovies.find(function(mymov)
+        {
+            return mymov.length==4
+        });
+        document.write(newmovie);
+    }
+    function findMultiple()
+    {
+        newmovie = kannadamovies.filter(function(kannada){
+            return kannada.length==5;
+        });
+        document.write(newmovie);
+    }
+    function checkSingle()
+    {
+        newmovie = kannadamovies.some(function(film)
+        {
+            return film.length == 4
+        })
+        document.write(newmovie);
+    }
+    function checkMultiple()
+    {
+        newmovie = kannadamovies.every(function(films)
+        {
+            return films.length <=3
+        })
+        document.write(newmovie);
+    }
+     var newArray=[]
+     for(z=4;z<=200;z++)
+     {
+        newArray.push(z)
+     }
+     console.log(newArray)
+     function findSumOfNumbers()
+     {
+        var total = newArray.reduce(function(a,b)
+        {
+            return a + b;
+        });
+        document.write(total);
+     }
+
+</script>    
+</body>
+</html>
