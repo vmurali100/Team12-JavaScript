@@ -15,9 +15,13 @@
     <button onclick="removenametop()">Remove name at top</button><br>
     <button onclick="reversearray()">reverse array</button><br>
     <button onclick="sortarray()">sort array</button><br>
-    <button onclick="arryforeach(abc,i,arr)">forEach array</button><br>
+    <button onclick="arry()">forEach array</button><br>
+    <button onclick="maps()">map array</button><br>
+    <button onclick="len()">length array</button><br>
+    <button onclick="fil()">filter array</button><br>
+    
     <script>
-        var teamates=["chadu","sushma","thanuja","vijay","varshi"]
+        var teamates=["varshi","chandu","MM","sushma","thanuja","vijay","Rk"]
         var num=[1,2,3,4,5]
         function addnamestart(){
             teamates.unshift("jagadheesh");
@@ -51,13 +55,29 @@
             teamates.sort();
             console.log(teamates)
         }
-        function arryforeach(abc,i,arr){
-            teamates.forEach();
-            console.log(abc,i,arr)
-        }
-        
-       
-        
+        function arry(){
+            teamates.forEach(function(abc,i,arr){
+             console.log(abc,i,arr)
+            })
+        };
+        function maps(){
+            teamates.map(function(val,i){
+                console.log(val,i)
+            })
+        };
+        function len(){
+            teamates.find(function(val){
+                return val.length==2;
+                console.log(teamates)
+            })
+            
+        };
+        function fil(){
+            teamates.filter(function(val){
+                return val.length==2
+                console.log(val)
+            })
+        };
     </script>
 </body>
 </html>
