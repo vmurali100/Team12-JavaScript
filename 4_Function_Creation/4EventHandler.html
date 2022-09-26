@@ -17,6 +17,19 @@
     <button onclick="sayHi()" class="btn btn-success" type="button">Say HAI</button>
     <button onclick="sayHello()" class="btn btn-primary" type="button">Say HELLO</button>
     <button onclick="sayBy()" class="btn btn-danger" type="button"> Say BYE</button>
+    <br>
+    <br>
+    <hr>
+    <br>
+
+    <input type="text" name="" id="" placeholder="Type Here..." class="form-control" onkeypress="textValueChanged()"> <br><hr>
+    
+    <select name="" id="" onchange="changingTheValue()" class="form-control col-lg-6">
+        <option value="">Click 1</option>
+        <option value="">Click 2</option>
+        <option value="">Click 3</option>
+        <option value="">Click 4</option>
+    </select>
 
     <script>
         function sayHi(){
@@ -27,6 +40,15 @@
         }
         function sayBy(){
             console.log("Function - BYE")
+        }
+
+
+        function changingTheValue(){
+            console.log("I Am From DropDown Which U Selected")
+        }
+
+        function textValueChanged(){
+            console.log("You Have Chnaged Input Data")
         }
     </script>
 </body>
