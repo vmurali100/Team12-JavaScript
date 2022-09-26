@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
     <button onclick="addnamestart()">Add name at starting</button><br>
     <button onclick="addnamemiddle()">Add name at middle</button><br>
@@ -19,65 +21,87 @@
     <button onclick="maps()">map array</button><br>
     <button onclick="len()">length array</button><br>
     <button onclick="fil()">filter array</button><br>
-    
+    <button onclick="som()">some array</button><br>
+    <button onclick="eve()">every array</button><br>
+    <button onclick="red()">reduce array</button><br>
     <script>
-        var teamates=["varshi","chandu","MM","sushma","thanuja","vijay","Rk"]
-        var num=[1,2,3,4,5]
-        function addnamestart(){
+        var teamates = ["varshi", "chandu", "MM", "sushma", "thanuja", "vijay", "Rk"]
+        var num = [1, 2, 3, 4, 5]
+        function addnamestart() {
             teamates.unshift("jagadheesh");
             console.log(teamates)
         }
-        function addnamemiddle(){
-            teamates.splice(3,0,"harish");
+        function addnamemiddle() {
+            teamates.splice(3, 0, "harish");
             console.log(teamates)
         }
-        function addnameend(){
+        function addnameend() {
             teamates.push("prasanth");
             console.log(teamates)
         }
-        function removenameend(){
+        function removenameend() {
             teamates.pop();
             console.log(teamates)
         }
-        function removenamemiddle(){
-            teamates.splice(3,1);
+        function removenamemiddle() {
+            teamates.splice(3, 1);
             console.log(teamates)
         }
-        function removenametop(){
+        function removenametop() {
             teamates.shift("chadu");
             console.log(teamates)
         }
-        function reversearray(){
+        function reversearray() {
             teamates.reverse();
             console.log(teamates)
         }
-        function sortarray(){
+        function sortarray() {
             teamates.sort();
             console.log(teamates)
         }
-        function arry(){
-            teamates.forEach(function(abc,i,arr){
-             console.log(abc,i,arr)
+        function arry() {
+            teamates.forEach(function (abc, i, arr) {
+                console.log(abc, i, arr)
             })
         };
-        function maps(){
-            teamates.map(function(val,i){
-                console.log(val,i)
+        function maps() {
+            teamates.map(function (val, i) {
+                console.log(val, i)
             })
         };
-        function len(){
-            teamates.find(function(val){
-                return val.length==2;
-                console.log(teamates)
+        function len() {
+            var newteam1 = teamates.find(function (val) {
+                return val.length == 2;
+
             })
-            
+            console.log(newteam1)
         };
-        function fil(){
-            teamates.filter(function(val){
-                return val.length==2
-                console.log(val)
+        function fil() {
+            var newteam = teamates.filter(function (val) {
+                return val.length == 2
+
             })
+            console.log(newteam)
         };
+        function som() {
+            var newteam2 = teamates.some(function (val) {
+                return val.length == 5
+            })
+            console.log(newteam2)
+        }
+        function eve() {
+            var newteam3 = teamates.every(function (val) {
+                return val.length == 5
+            })
+            console.log(newteam3)
+        }
+        function red() {
+            var newteam4 = num.reduce(function (a, b) {
+                return a + b;
+            })
+            console.log(newteam4)
+        }
     </script>
 </body>
+
 </html>
