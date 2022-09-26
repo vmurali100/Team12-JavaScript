@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addnamestart()">Add name at starting</button><br>
+    <button onclick="addnamemiddle()">Add name at middle</button><br>
+    <button onclick="addnameend()">Add name at ending</button><br>
+    <button onclick="removenameend()">Remove name at ending</button><br>
+    <button onclick="removenamemiddle()">Remove name at middle</button><br>
+    <button onclick="removenametop()">Remove name at top</button><br>
+    <button onclick="reversearray()">reverse array</button><br>
+    <button onclick="sortarray()">sort array</button><br>
+    <button onclick="arryforeach(abc,i,arr)">forEach array</button><br>
+    <script>
+        var teamates=["chadu","sushma","thanuja","vijay","varshi"]
+        var num=[1,2,3,4,5]
+        function addnamestart(){
+            teamates.unshift("jagadheesh");
+            console.log(teamates)
+        }
+        function addnamemiddle(){
+            teamates.splice(3,0,"harish");
+            console.log(teamates)
+        }
+        function addnameend(){
+            teamates.push("prasanth");
+            console.log(teamates)
+        }
+        function removenameend(){
+            teamates.pop();
+            console.log(teamates)
+        }
+        function removenamemiddle(){
+            teamates.splice(3,1);
+            console.log(teamates)
+        }
+        function removenametop(){
+            teamates.shift("chadu");
+            console.log(teamates)
+        }
+        function reversearray(){
+            teamates.reverse();
+            console.log(teamates)
+        }
+        function sortarray(){
+            teamates.sort();
+            console.log(teamates)
+        }
+        function arryforeach(abc,i,arr){
+            teamates.forEach();
+            console.log(abc,i,arr)
+        }
+        
+       
+        
+    </script>
+</body>
+</html>
