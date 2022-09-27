@@ -7,14 +7,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
-
+<style>
+    button{
+        color: black;
+        font-family: 'Courier New', Courier, monospace;
+        background-color:beige;
+    }
+</style>
 <body>
-    <button onclick="smart()">get smartphones price above 25k</button>
-    <button onclick="smart1()">get smartphones price below 25k</button>
-    <button onclick="smart2()">get XIOAMI phone price details</button>
-    <button onclick="smart3()">get all phone price details</button>
+    <button onclick="smart()">get smartphones price above 25k</button><br>
+    <button onclick="smart1()">get smartphones price below 25k</button><br>
+    <button onclick="smart2()">get XIOAMI phone price details</button><br>
+    <button onclick="smart3()">get all phone price details</button><br>
+    <button onclick="smart4()">How much money we need to buy All Phones ?</button><br>
+    <button onclick="smart5()">How many Phones are in Black Color?</button><br>
     <script>
-        var smartphones = [{ brand: "XIOAMI", price: 25000 }, { brand: "REDMI", price: 20000 }, { brand: "ONEPLUS", price: 45000 }, { brand: "IQOO", price: 50000 }, { brand: "VIVO", price: 30000 }]
+        var smartphones = [{ brand: "XIOAMI", price: 25000,colour:"black" }, { brand: "REDMI", price: 20000 ,colour:"red"}, { brand: "ONEPLUS", price: 45000 , colour:"blue" }, { brand: "IQOO", price: 50000 ,colour:"black"}, { brand: "VIVO", price: 30000 ,colour:"red"}]
         function smart() {
             var newsmartphone = smartphones.filter(function (val) {
                 return val.price > 25000
@@ -39,6 +47,24 @@
             })
             console.log(newsmartphone3)
         }
+        function smart4() {
+            var newsmartphone4 = smartphones.reduce(function (a,b) {
+                if(a.price){
+                    return a.price+b.price
+                }
+                else{
+                    return a+b.price
+                }
+            })
+            console.log(newsmartphone4)
+        }
+        function smart5() {
+            var newsmartphone5 = smartphones.filter(function (val) {
+                return val.colour=="black"
+            })
+            console.log(newsmartphone5)
+        }
+
     </script>
 </body>
 
