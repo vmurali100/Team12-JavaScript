@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+
+<div class="col-md-6">
+    <br>
+    <button onclick="empInfo()" class="btn btn-info m-3">Click emplyoeeList</button>
+    <button onclick="companyInfo()" class="btn btn-success m-3">EMP_GOOGLE-COMPANY</button>
+    <button onclick="salaryInfo()" class="btn btn-primary m-3">EMP_SALARY</button>
+    <button onclick="stateInfo()" class="btn btn-warning m-3">EMP_STATE-AP </button>
+
+    <button onclick="sortFun()" class="btn btn-info m-3">SORT Array</button>
+    <button onclick="reverseFun()" class="btn btn-secondary m-3">REVERSE</button>
+
+</div>
+<div class="col md-6">
+    <div id=""></div>
+</div>
+    <script>
+        var emplyoeeList = [
+                {
+                    "id": 3541,
+                    "name": "AJAY Sharma",
+                    "username": "Ajay_Sharma",
+                    "email": "Sincere@april.biz",
+                    "car": "YES",
+                    "state": "AP",
+                    "company":"WIPRO",
+                    "salary":30000
+                
+                },
+                {
+                    "id": 76452,
+                    "name": "Hasin",
+                    "username": "Hasin_Roy",
+                    "email": "Shanna@melissa.tv",
+                    "car": "NO",
+                    "state": "TN",
+                    "company": "TCL",
+                    "salary":45000
+                },
+                {
+                    "id": 3564,
+                    "name": "Samantha",
+                    "username": "Samantha_reddy",
+                    "email": "Nathan@yesenia.net",
+                    "car": "NO",
+                    "state": "KA",
+                    "company": "WIPRO",
+                    "salary":78500
+                },
+                {
+                    "id": 4765,
+                    "name": "Ram",
+                    "username": "RamKrishna",
+                    "email": "Julianne.OConner@kory.org",
+                    "car": "YES",
+                    "state": "AP",
+                    "company": "INDIGEN",
+                    "salary":98700
+                },
+                {
+                    "id": 7655,
+                    "name": "Noor Jahan",
+                    "username": "NoorJahan",
+                    "email": "Lucio_Hettinger@annie.ca",
+                    "car": "YES",
+                    "state": "AP",
+                    "company":"GOOGLE",
+                    "salary":115000
+                },
+                {
+                    "id": 98676,
+                    "name": "Pranaw",
+                    "username": "PranawRaj",
+                    "email": "Karley_Dach@jasper.info",
+                    "car": "NO",
+                    "state": "TN",
+                    "company": "CPF",
+                    "salary":76000
+                },
+                {
+                    "id": 7875,
+                    "name": "SRISHTI",
+                    "username": "SRISHTI_Srav",
+                    "email": "Telly.Hoeger@billy.biz",
+                    "car": "YES",
+                    "state": "KA",
+                    "company": "MPHASIS",
+                    "salary":88500
+                },
+                {
+                    "id": 4568,
+                    "name": "Nikal Rao",
+                    "username": "Nikal_Rao",
+                    "email": "Sherwood@rosamond.me",
+                    "car": "NO",
+                    "state": "TN",
+                    "company": "HCL",
+                    "salary":45000
+                },
+                {
+                    "id": 87569,
+                    "name": "Sahaik Basha",
+                    "username": "Shaik_Basha",
+                    "email": "Chaim_McDermott@dana.io",
+                    "car": "YES",
+                    "state": "TN",
+                    "company": "WIPRO",
+                    "salary":35000
+                },
+                {
+                    "id": 86888,
+                    "name": "Vijay Evn",
+                    "username": "Vijay_Evn",
+                    "email": "Rey.Padberg@karina.biz",
+                    "car": "YES",
+                    "state": "AP",
+                    "company": "GOOGLE",
+                    "salary":250000
+                }
+            ]
+
+            function empInfo() {
+            console.log(emplyoeeList);
+             }
+
+        function salaryInfo() {
+            var t_a_f_salary = emplyoeeList.reduce(function (a, b) {
+                if (a.salary) {
+                    return a.salary+b.salary
+                } else {
+                    return a+b.salary
+                }
+            })
+            console.log(t_a_f_salary)
+        }
+
+
+        function companyInfo() {
+            var googleCom = emplyoeeList.filter(function (col) {
+                return col.company =="GOOGLE";
+            })
+            console.log(googleCom)
+        }
+
+        function stateInfo() {
+            var apState = emplyoeeList.filter(function (col) {
+                return col.state =="AP";
+            })
+            console.log(apState)
+        }
+
+        function sortFun(){
+            var sortAnArry=emplyoeeList.sort();
+            console.log(sortAnArry)
+
+        }
+        function reverseFun(){
+            var sortAnArry=emplyoeeList.reverse();
+            console.log(sortAnArry)
+        }
+
+    </script>
+</body>
+
+</html>
