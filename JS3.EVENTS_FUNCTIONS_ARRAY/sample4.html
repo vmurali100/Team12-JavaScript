@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="checkpack()">check pack</button>
+    <button onclick="checkpack1()">check pack1</button>
+    <button onclick="checkpack2()">check pack2</button>
+    <button onclick="checkpacks()">check packs</button>
+    <script>
+        var packs=[
+            {color:"green",noofgerms:18},
+            {color:"red",noofgerms:5},
+            {color:"yellow",noofgerms:9},
+            {color:"pink",noofgerms:12},
+            {color:"blue",noofgerms:8},
+            {color:"purple",noofgerms:7},
+            {color:"orange",noofgerms:15}
+
+        ]
+        function checkpack(){
+            var pack=packs.filter(function(val){
+                // console.log(val);     
+                return val.noofgerms > 3
+            })
+            console.log(pack)
+
+        }
+        function checkpack1(){
+            var pack1=packs.filter(function(color){
+                return color.noofgerms < 10
+            })
+            console.log(pack1)
+        }
+        function checkpacks(){
+            var packss=packs.filter(function(val){
+                return val.color=="purple";
+            })
+            console.log(packss)
+        }
+        var packs1=[18,5,9,12,8,7,15]
+        function checkpack2(){
+            var total=packs1.reduce(function(a,b){
+            return a+b
+            })
+            console.log(total)
+        }
+
+
+    </script>
+</body>
+</html>
