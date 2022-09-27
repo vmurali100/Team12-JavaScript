@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="smart()">get smartphones price above 25k</button>
+    <button onclick="smart1()">get smartphones price below 25k</button>
+    <button onclick="smart2()">get XIOAMI phone price details</button>
+    <button onclick="smart3()">get all phone price details</button>
+    <script>
+        var smartphones = [{ brand: "XIOAMI", price: 25000 }, { brand: "REDMI", price: 20000 }, { brand: "ONEPLUS", price: 45000 }, { brand: "IQOO", price: 50000 }, { brand: "VIVO", price: 30000 }]
+        function smart() {
+            var newsmartphone = smartphones.filter(function (val) {
+                return val.price > 25000
+            })
+            console.log(newsmartphone)
+        }
+        function smart1() {
+            var newsmartphone1 = smartphones.filter(function (val) {
+                return val.price < 25000
+            })
+            console.log(newsmartphone1)
+        }
+        function smart2() {
+            var newsmartphone2 = smartphones.filter(function (val) {
+                return val.price == 25000
+            })
+            console.log(newsmartphone2)
+        }
+        function smart3() {
+            var newsmartphone3 = smartphones.filter(function (val) {
+                return val.price > 0
+            })
+            console.log(newsmartphone3)
+        }
+    </script>
+</body>
+
+</html>
