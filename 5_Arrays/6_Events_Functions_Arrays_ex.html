@@ -10,8 +10,8 @@
 </head>
 
 <body class="col-md-6">
-    <form action="#"  class="form-control">
-    
+    <form action="#" class="form-control">
+
         <button class="btn btn-primary" onclick="addName1st()">Add Value At STARTING of an Array</button> <br>
         <button class="btn btn-success" onclick="midNAME()">Add Value At MIDDLE of an Array</button><br>
         <button class="btn btn-danger" onclick="lastName()">Add Value At END of an Array</button><br>
@@ -26,91 +26,91 @@
         <hr>
         <button class="btn btn-success" onclick="disp_F_e()">DISPLAY-FOR EACH</button><br>
         <button class="btn btn-default" onclick="disp_Map()">DISPLAY-MAP</button><br>
-        
+
         <button class="btn btn-primary" onclick="findSingVal()">FindSingle Value</button><br>
-        
+
         <button class="btn btn-info" onclick="findMultVal()">Find Multi Value</button><br>
 
         <button class="btn btn-secondary" onclick="countDol()">Count Dollors</button><br>
-        
-        
+
+
     </form>
 
-    
+
     <script>
-        var emplyoeeList=["Akash","vikash","Jay","Ajy","Shahan","Naren","Berlin","Denver"]
+        var emplyoeeList = ["Akash", "vikash", "Jay", "Ajy", "Shahan", "Naren", "Berlin", "Denver"]
         console.log(emplyoeeList)
 
-        var dollorsCount=[243,54,76,76,86,98,201]
+        var dollorsCount = [243, 54, 76, 76, 86, 98, 201]
 
-        function addName1st(){
+        function addName1st() {
             emplyoeeList.unshift("VIJAY_EVN");
             console.log(emplyoeeList)
         }
-        function midNAME(){
-            emplyoeeList.splice(2,0,"VISHWAK");
+        function midNAME() {
+            emplyoeeList.splice(2, 0, "VISHWAK");
             console.log(emplyoeeList)
         }
-        function lastName(){
+        function lastName() {
             emplyoeeList.push("NoorJahan");
             console.log(emplyoeeList)
         }
 
-        function Remove1st(){
+        function Remove1st() {
             emplyoeeList.unshift();
             console.log(emplyoeeList)
         }
-        function RemoveMidNAME(){
-            emplyoeeList.splice(3,1);
+        function RemoveMidNAME() {
+            emplyoeeList.splice(3, 1);
             console.log(emplyoeeList)
         }
-        function RemoveLastName(){
+        function RemoveLastName() {
             emplyoeeList.pop();
             console.log(emplyoeeList)
         }
 
-        function reverseAry(){
+        function reverseAry() {
             emplyoeeList.reverse();
             console.log(emplyoeeList)
         }
-        function sortAry(){
+        function sortAry() {
             emplyoeeList.sort();
             console.log(emplyoeeList)
         }
 
         ////////////////////////////////////
-        function disp_F_e(){
-            emplyoeeList.forEach(function(abc){
+        function disp_F_e() {
+            emplyoeeList.forEach(function (abc) {
                 console.log(abc)
             });
-            
+
         }
-        function disp_Map(){
-            emplyoeeList.map(function(val){
-                console.log(val+" RockZ")
+        function disp_Map() {
+            emplyoeeList.map(function (val) {
+                console.log(val + " RockZ")
             });
-            
+
         }
         ////////////////////////////////////
 
 
-        function findSingVal(){
-            var detailsofArray=emplyoeeList.some(function(val){
-            return val.length==5;
-                })
+        function findSingVal() {
+            var detailsofArray = emplyoeeList.some(function (val) {
+                return val.length == 5;
+            })
             console.log(detailsofArray)
         }
 
-        function findMultVal(){
-            var detailsOfEveryArray=emplyoeeList.every(function(val){
-            return val.length==4;
-                })
+        function findMultVal() {
+            var detailsOfEveryArray = emplyoeeList.every(function (val) {
+                return val.length == 4;
+            })
             console.log(detailsOfEveryArray)
         }
-        
-        function countDol(){
-            var calAmt=dollorsCount.reduce(function(a,b){
-                return a+b;
+
+        function countDol() {
+            var calAmt = dollorsCount.reduce(function (a, b) {
+                return a + b;
             })
             console.log(calAmt)
         }
