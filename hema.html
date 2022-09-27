@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    class Employee{
+      constructor(empName,empCode,empMail){
+        this.empName=empName
+        this.empCode = empCode
+        this.empMail = empMail
+      }
+    }
+    let employee1 = new Employee('hemasekar','22','mail@gmil.com')
+    document.write(employee1.empName,'<br>',employee1.empCode,'<br>',employee1.empMail,'<br>')
+    let playersName=['Rohit','Rahul','Kohli','sky','DK','MD']
+    document.write('Actual Array: ',playersName)
+    function push(){// Add the value in the array at end
+    playersName.push('pant')
+    document.write('AfterValuepush',playersName);
+    }
+    function pop(){//Remove the value in the array at end
+    playersName.pop('DK')
+    document.write('AfterValuepop:',playersName)
+    }
+    function shift(){
+    playersName.shift('Rohit') // Remove the value in the array at the 0th position
+    document.write(playersName,'<br>')
+    }
+    function unshift(){
+    playersName.unshift('Rohit')
+    document.write(playersName)
+    }
+    function splice(){
+    playersName.splice(4,0,'pant')
+    document.write(playersName)
+    }
+  //   playersName.forEach(function(abc,i){//with i we can find the index
+  //     document.write('<br>',abc,i)
+  //   })
+
+  //   playersName.map(function(val,i,arr){
+  //     document.write(val+''+i+'<br>')
+  //   })
+
+  //  var newPlayers = playersName.map(function(players){// can add the new value and get the return with new array
+  //     return players+'-IND'
+  //  })
+
+  //  document.write(newPlayers)
+
+    // var newPlyersList = playersName.filter(function(players){
+    //   return players.length ==2
+    // })
+    // document.write(newPlyersList);
+
+      var numbers = [10,20,21,45,98]
+      var total =numbers.reduce((a,b)=>{
+        return a+b
+      })
+      document.write('<br>',total)
+  </script>
+</body>
+</html>
