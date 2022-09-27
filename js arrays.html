@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addvalstart()">add a value at start</button> <br>
+    <button onclick="addvalmiddle()">add a value at middle</button> <br>
+    <button onclick="addvalend()">add a value at end</button> <br>
+
+    <button onclick="removevalstart()">remove a value at start</button> <br>
+    <button onclick="removevalmiddle()">remove a value at middle</button> <br>
+    <button onclick="removevalend()">remove a value at end</button> <br>
+
+    <button onclick="reversearray()">reverse the array </button> <br>
+    <button onclick="sortarray()">sort the array </button> <br>
+
+    <button onclick="displaywithForEach()">display with ForEach </button> <br>
+    <button onclick="displaywithmap()">display with the map </button> <br>
+
+    <button onclick="findsingle()">find a single value </button> <br>
+    <button onclick="fingmultiple()">find a multiple value </button> <br>
+
+    <button onclick="findsumofnumbers()">find sum of given numbers </button> <br>
+
+    <button onclick="filter()">filter array</button> <br>
+    <button onclick="length()">length array</button> <br>
+    <button onclick="some()">some array</button> <br>
+    <button onclick="every()">every array</button> <br>
+    <button onclick="reduce()">reduce array</button> <br>
+
+    
+    <script>
+        var flowers=["tulip","rose","jasmine","lilly","lotus","chrysantimum"]
+        function addvalstart(){
+            flowers.unshift("marigold");
+            console.log(flowers)
+        }
+        function addvalmiddle(){
+            flowers.splice(7,0,"daisy");
+            console.log(flowers)
+        }
+        function addvalend(){
+            flowers.push("hybiscus");
+            console.log("flowers")
+        }
+        function removevalstart(){
+            flowers.shift("tulip")
+            console.log(flowers)
+        }
+        function removevalmiddle(){
+            flowers.splice(3,0,"water lilly");
+            console.log(flowers)
+        }
+        function removevalend(){
+            flowers.pop();
+            console.log(flowers)
+        }
+        function reversearray(){
+            flowers.reverse();
+            console.log(flowers)
+        }
+        function sortarray(){
+            flowers.sort();
+            console.log(flowers)
+        }
+        function displaywithmap(){
+            flowers.map(function(val,i){
+                console.log(val,i)
+            })
+        };
+        function displaywithforeach(){
+            flowers.foreach(function(abc,i){
+                console.log(abc,i)
+            })
+        };
+        function filter(){
+            var newflower = flowers.filter(function (val) { 
+                return val.length == 2
+            })
+                console.log(newflower)
+        };
+        function length(){
+            var newflower1=flowers.find(function (val){
+                return val.length == 2;
+            })
+            console.log(newflower1)
+        };
+        function some(){
+            var newflower3=flowers.some(function(val){
+                return val.length == 4
+            })
+            console.log(newflower3)
+            };
+            function every(){
+                var newflower4=flowers.every(function(val){
+                    return val.length >=2
+                })
+                console.log(newflower4)
+            };
+            function reduce(){
+                var newflower5=flowers.reduce(function(a,b){
+                    return a+b;
+                })
+                console.log(newflower5)
+            };
+
+                
+            
+                
+            
+        
+            
+        
+
+
+
+            
+
+        
+        
+            
+        
+            
+            
+        
+
+    
+            
+        
+        
+        
+        
+        
+        
+        
+    
+        
+
+        
+            
+        
+
+        
+
+            
+        
+            
+        
+        
+    </script>
+    
+</body>
+</html>

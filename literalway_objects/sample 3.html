@@ -16,7 +16,32 @@
     this.pincode=pincode;
     }
     var madhina=new Hotel("madhina1","anantapur","sai nagar",12345)
-    document.write(madhina.pincode)
+    document.write(madhina.pincode+"<br>")
+
+    function School(sname,student,standard,subject){
+        this.sname=sname;
+        this.student=student;
+        this.standard=standard;
+        this.subject=subject;
+    }
+    var crescent=new School("crescent1","asma","8th","hindi")
+    document.write(crescent.subject+"<br>")
+    document.write(crescent.student+"<br>")
+
+    function Train(place,express,passenger,type){
+        this.place=place;
+        this.express=express;
+        this.passenger=passenger;
+        this.type=type;
+    }
+    var atp=new Train("atp1","kachigooda","radha","ac")
+    document.write(atp.passenger+"<br>")
+
+
+
+
+    
+
 
  </script>   
 </body>
