@@ -10,6 +10,7 @@
 
 <body>
     <button onclick="check10plus()">check10plus</button>
+    <button onclick="check10pluss()">check10pluss</button>
     <button onclick="check1()">check1</button>
     <button onclick="check2()">check2</button>
     <script>
@@ -23,11 +24,20 @@
         ]
         function check10plus(){
             var plus=touristplace.filter(function(val){
-                // console.log(val);
-                return val.place > 10
+                console.log(val);
+                
+                
             })
             console.log(plus)
         }  
+        function check10pluss(){
+            var pluss=touristplace.filter(function(val){
+                
+                return val.place > 20
+            })
+            console.log(pluss)
+        }  
+        
         function check1(){
             var plus1=touristplace.find(function(val){
                 return val.place > 100
