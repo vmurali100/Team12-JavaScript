@@ -12,22 +12,85 @@
     <button onclick="addvalstart()">add a value at start</button> <br>
     <button onclick="addvalmiddle()">add a value at middle</button> <br>
     <button onclick="addvalend()">add a value at end</button> <br>
+    <button onclick="flower1()">get flowers cost morethan 100</button> <br>
+    <button onclick="flower2()">get flowers cost lessthan 100</button> <br>
+    <button onclick="calculatecost()">calculate thecost of flowers</button> <br>
+    <button onclick="flower6()">number of flowers in red colour</button> <br>
 
     <script>
         var flowers = [
-            { name: "rose", cost: 20 },
-            { name: "lilly", cost: 30 },
-            { name: "tulip", cost: 100 },
-            { name: "marigold", cost: 50 },
-            { name: "crossandra", cost: 60 },
-            { name: "chrysantimum", cost: 50 },
+            { name: "rose", cost: 20,colour:"red"},
+            { name: "lilly", cost: 30,colour:"white"},
+            { name: "tulip", cost: 200,colour:"pink"},
+            { name: "marigold", cost: 50,colour:"yellow"},
+            { name: "crossandra", cost: 60,colour:"orange" },
+            { name: "chrysantimum", cost: 50,colour:"valendar"},
         ];
         function addvalstart(){
             flowers.unshift("lotus",10)
             console.log(flowers)
         }
+        function addvalmiddle(){
+            flowers.splice(4,0,"daisy",100)
+            console.log(flowers)
+        }
+        function addvalend(){
+            flowers.push("hybiscus",10)
+            console.log(flowers)
+        }
+        function flower1(){
+         var newflower1 =flowers.filter(function(val){
+                return val.cost >100
+            })
+            console.log(newflower1)
+        }
+        function flower2(){
+            var newflower2=flowers.filter(function(val){
+                return val.cost <100
+            })
+            console.log(newflower2)
+            }
+            function flower3(){
+                var newflower3=flowers.filter(function(val){
+                    return val.cost == 100 
+                })
+                console.log(newflower3)
+            }
+            function calculatecost(){
+                var totalcost=flowers.reduce(function(a,b){
+                    if(a.cost){
+                        return a.cost+b.cost
+                    }else{
+                        return a+b.cost
+                    }
+                })
+                console.log(totalcost)
+            }
+            function flower6(){
+                var newflower6=flowers.find(function(val){
+                    return val.colour=="red"
+                })
+                console.log(newflower6)
+            }
+           
+
+                
+            
+        
 
 
+                    
+                    
+                
+                
+            
+
+            
+
+
+        
+        
+        
 
 
 
