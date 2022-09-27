@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="zerowickets()">zerowickets
+    </button>
+    <script>
+         var match2bowling= [
+        { name: " HP", Wickets: 0, ER:10 },
+        { name: "Chahal", Wickets:0, ER:12 },
+        { name: "Bumrah", Wickets:1, ER:11 },
+        { name: "Axar", Wickets:2, ER:6},
+        { name: "HRP", Wickets:0, ER:16 },
+      ];
+      function zerowickets(){
+        var nonewickets=match2bowling.filter(function(val){
+        return val.Wickets==0
+        })
+        console.log(nonewickets)
+      }
+    // function checkER(){
+    //     var er=match2bowling.filter(function(val){
+    //         return val.ER>6
+    //     })
+    //     console.log(er)
+    // }
+
+      
+
+    </script>
+</body>
+</html>                             

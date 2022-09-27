@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="checksr()">checksr
+    </button><br> <br> <hr>
+    <script>
+        var match3= [
+        { name: "Rohit", score: 11,sr:122},
+        { name: "Rahul", score: 55,sr:157 },
+        { name: "Kohli", score: 2,sr:28 },
+        { name: "SKY", score: 46,sr:184 },
+        { name: "HP", score: 71,sr:236},
+        { name: "DK", score: 6, sr:120 },
+      ];
+      match3.forEach(function(abc){
+        // console.log(abc.name,abc.score,abc.sr)
+        document.write(abc.name+"  "+ abc.score+"  "+ abc.sr +"<br>")
+
+      }
+      )
+     document.write("<br> <br> <hr>")
+      var match3bowling= [
+        { name: " HP", Wickets: 0, ER:11 },
+        { name: "Chahal", Wickets:1, ER:12 },
+        { name: "UY", Wickets:2, ER:13 },
+        { name: "Axar", Wickets:3, ER:4},
+        { name: "HRP", Wickets:0, ER:12 },
+        { name: "BK", Wickets:0, ER:13 },
+      ];
+    //   for(i=0;i<match3.length;i++){
+    //         console.log(match3[i])
+    //         document.write(match3[i]+"<br>")
+    //   }
+    //   for(i=0;i<match3bowling.length;i++){
+    //         console.log(match3bowling[i])
+    //         document.write(match3bowling[i]+"<br>")
+    //   }
+    
+     
+    //   function checkzero(){
+    //   var zero=match3bowling.filter(function(val){
+    //     return val.Wickets==0
+    //   } )
+    //   console.log(zero)
+    // } 
+    // function checkscore(){
+    //     var score=match3.filter(function(val){
+    //         return val.score>2
+    //     }) 
+    //     console.log(score)
+    // }
+    // function checkER(){
+    //     var er=match3bowling.filter(function(val){
+    //         return val.ER>6
+    //     })
+    //     console.log(er)
+    // }
+    function checksr(){
+        var sr=match3.filter(function(val){
+            return val.sr>50
+        })
+        console.log(sr)
+    }
+   
+    
+
+    document.write("Result:Australia won the match by 4 wickets")
+    </script>
+</body>
+</html>
