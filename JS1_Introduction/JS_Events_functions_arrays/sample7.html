@@ -19,7 +19,7 @@
     <button onclick="Sortallbikes()">Sort Bikes</button> <br>
 
     <button onclick="Displaywithfueltype()">Bikes with fueltype </button> <br>
-    <button onclick="vahiclestype()">vehiclestype </button> <br>
+    <button onclick="displayWithMap()">Display - Map </button> <br>
 
     <button onclick="checkBikebelowonelakh()">Bike less than one lakh </button> <br>
     <button onclick="checkBikeaboveonetwolakh()">Bike above 2 lakh </button> <br>
@@ -32,90 +32,116 @@
 
     <script>
   //      var Bikes=["sbc","bfc","kbc"]
-        var Bikes=[{name:"Pulsar",price:80000,color:"black"},{name:"Royal-enfield",price:250000,color:"grey"},
+        var Bikes=[{name:"Pulsar",price:100000,color:"black"},{name:"Royal-enfield",price:250000,color:"grey"},
     {name:"Ktm",price:175000,color:"blue"},{name:"Bmw-R10",price:300000,color:"Blue"},{name:"Victor",price:75000,color:"yellow"}];
     
     function addVnewBike()
     {
-       
         Bikes.unshift({name:"unicorn",price:85000,color:"orange"})
+        Bikes.forEach(function(kk)
+        {
+            document.write(kk.name+" "+kk.price+" "+kk.color+"<br>")
+        })
         console.log(Bikes);
-         Bikes.forEach(function (abc) {
-          document.write(abc +" "+"<br>")  
-          
-         });  
         
     }
     function addnewBike2()
     {
         Bikes.push({name:"java",price:95000,color:"violet"})
+        Bikes.forEach(function(kk)
+        {
+            document.write(kk.name+" "+kk.price+" "+kk.color+"<br>")
+        })
         console.log(Bikes)
     }
     function addnewBike3()
     {
         Bikes.splice(3,0,{name:"Rajddot",price:46000,color:"Red"})
+        Bikes.forEach(function(kk)
+        {
+            document.write(kk.name+" "+kk.price+" "+kk.color+"<br>")
+        })
         console.log(Bikes)
     }
     function RemovefirstBike()
     {
         Bikes.shift();
+        Bikes.forEach(function(kk)
+        {
+            document.write(kk.name+" "+kk.price+" "+kk.color+"<br>")
+        })
         console.log(Bikes);
     }
     function RemovelastBike()
     {
         Bikes.pop();
+        Bikes.forEach(function(kk)
+        {
+            document.write(kk.name+" "+kk.price+" "+kk.color+"<br>")
+        })
         console.log(Bikes);
     }
     function RemovesecondBike()
     {
         Bikes.splice(1,1);
+        Bikes.forEach(function(kk)
+        {
+            document.write(kk.name+" "+kk.price+" "+kk.color+"<br>")
+        })
         console.log(Bikes);
     }
     function Reversebikes()
     {
         console.log(Bikes.reverse());
+        Bikes.forEach(function(kk)
+        {
+            document.write(kk.name+" "+kk.price+" "+kk.color+"<br>")
+        })
         
               
     }
     function Sortallbikes()
     {
         console.log(Bikes.sort());
+        Bikes.forEach(function(kk)
+        {
+            document.write(kk.name+" "+kk.price+" "+kk.color+"<br>")
+        })
     }
      function Displaywithfueltype()
     {
-     Bikes.forEach(function petrol(abc){
-        console.log(abc);
+        Bikes.forEach(function(kk)
+        {
+            
+            document.write(kk.name+" -petrol"+"<br>")
         })
-    }
-    function vahiclestype()
-    {
-        var newbike = Bikes.map(function(motor){
-          return motor+"- onroad"
-      })
-
-      console.log("newbike - ",newbike)
-
-      Bikes.map(function(val,i){
-          document.write(val+ " "+i+" <br/>")
-      })
-
     }
 
     function checkBikebelowonelakh()
     {
-        Bike = Bikes.find(function(lakh)
+        Bike = Bikes.filter(function(lakh)
         {
             return lakh.price<100000
+    
         });
+        Bike.forEach(function(ab){
+            document.write(ab.name+" "+ab.price+" ",ab.color+"<br>")
+        }
+        );
         console.log(Bike);
-    }
+        
+    
     function checkBikeaboveonetwolakh()
     {
         {
         Bike = Bikes.filter(function(twolakh)
         {
-            return twolakh.price>=100000
+            return twolakh.price>=200000
         });
+        Bike.forEach(function(kk)
+        {
+            document.write(kk.name+" "+kk.price+" "+kk.color+"<br>")
+        })
         console.log(Bike);
     }
     }
@@ -149,6 +175,7 @@
             })
             console.log(totalprice)
         }
+    }
     
 </script>
     

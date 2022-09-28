@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="insertsometext()">click me</button>
+    <h2>heading 1</h2>
+    <h2>heading 2</h2>
+    <h2>heading 3</h2>
+    <h2>heading 4</h2>
+    <h2>heading 5</h2>
+    <h2>heading 6</h2>
+    <h2>heading 7</h2>
+    <h2>heading 8</h2>
+    <h2>heading 9</h2>
+    <script>
+        function insertsometext()
+        {
+          var elements = document.querySelectorAll("h2");
+          console.log(elements);
+          elements.forEach((element,i)=>{
+            element.innerHTML = "this is changed ok - "+i;
+          })
+        }
+    </script>
+    
+</body>
+</html>

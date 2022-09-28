@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="checkBikebelowonelakh()">Bikes less than one lakh </button> <br>
+    <button onclick="Bikeaboveonelakh()">Bikes above one lakh lakh </button> <br>
+
+    <button onclick="checkredcolor()">find a red color Bike </button> <br>
+    
+    <button onclick="totalvalue()">Total value  of all Bikes in shworoom </button> <br>
+
+
+    <script>
+        var Bikes=[{name:"Pulsar",price:80000,color:"red"},{name:"Royal-enfield",price:250000,color:"grey"},
+    {name:"Ktm",price:175000,color:"red"},{name:"Bmw-R10",price:300000,color:"Blue"},{name:"Victor",price:75000,color:"yellow"}];
+    Bike.forEach(function(ab){
+            document.write(ab.name+" "+ab.price+" ",ab.color+"<br>")
+        }
+        );
+
+
+    function checkBikebelowonelakh()
+    {
+        Bike = Bikes.filter(function(lakh)
+        {
+            return lakh.price<100000
+    
+        });
+        Bike.forEach(function(ab){
+            document.write(ab.name+" "+ab.price+" ",ab.color+"<br>")
+        }
+        );
+        console.log(Bike);
+        
+    }
+    function Bikeaboveonelakh()
+    {
+        {
+        Bike = Bikes.filter(function(abovelakh)
+        {
+            return abovelakh.price>=100000
+        });
+        Bike.forEach(function(ab){
+            document.write(ab.name+" "+ab.price+" ",ab.color+"<br>")
+        }
+        );
+        console.log(Bike);
+    }
+    }
+    function checkredcolor()
+    {
+        
+        Bike = Bikes.filter(function(paint)
+        {
+            return paint.color == "red";
+        });
+        Bike.forEach(function(ab){
+            document.write(ab.name+" "+ab.price+" ",ab.color+"<br>")
+        }
+        );
+        console.log(Bike);
+    }
+
+    
+        function totalvalue() {
+            var totalprice = Bikes.reduce(function (x, y) {
+                if (x.price) {
+
+                    return x.price + y.price
+                } else {
+                    return x+y.price
+                }
+
+
+            })
+            console.log(totalprice)
+        }
+    </script>
+    
+</body>
+</html>
