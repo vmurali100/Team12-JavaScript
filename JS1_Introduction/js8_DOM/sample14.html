@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+    </ul>
+    <script>
+        var Bike = [{ name: "pulsar", price: "50000", color: "red" },
+        { name: "ktm", price: "45000", color: "red" },
+        { name: "Rx100", price: "80000", color: "red" },
+        {name:"R15",price:"550000",color:"red"},
+        {name:"unicorn",price:"590000",color:"red"},
+        {name:"shine",price:"770000",color:"black"},
+        {name:"splendor",price:"50000",color:"black"},
+        {name:"ignitor",price:"50000",color:"black"},
+        {name:"Royalenfiled",price:"50000",color:"black"},
+        {name:"Himalayan",price:"50000",color:"black"}
+    ];
+    Bike.forEach(function(bikes){
+        var newbike= document.createElement("li");
+        if(bikes.color =="black"){
+            newbike.innerHTML=bikes.name+" "+bikes.price+" this is a black color bike"
+        }else{
+            newbike.innerHTML= bikes.name+" "+bikes.price+" this is a red color bike"
+
+        }
+        document.querySelector("ul").appendChild(newbike);
+    })
+
+    </script>
+
+</body>
+
+</html>

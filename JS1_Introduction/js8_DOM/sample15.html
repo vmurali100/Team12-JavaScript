@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+
+    </ul>
+    <script>
+        var cars = [{ name: "ferrari", price: 200000, color: "yellow" },
+        { name: "audi", price: 150000, color: "orange" },
+        { name: "lambhorgini", price: 250000, color: "red" },
+        { name: "innova", price: 100000, color: "black" },
+        { name: "bmw", price: 350000, color: "red" },
+        { name: "fiesta", price: 50000, color: "green" },
+        { name: "verna", price: 550000, color: "white" },
+        { name: "jeep", price: 55000, color: "merune" },
+        { name: "alto", price: 255000, color: "violet" },
+        { name: "creata", price: 20000, color: "blue" },
+
+        ]
+        cars.forEach(function(car){
+        var newcar= document.createElement("li");
+        if(car.price >= 200000){
+            newcar.innerHTML=car.name+" "+car.color+" this car is more than two lakh"
+        }else{
+            newcar.innerHTML=car.name+" "+car.color+" this car is less than two lakh"
+
+        }
+        document.querySelector("ul").appendChild(newcar);
+    })
+    </script>
+
+</body>
+
+</html>
