@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" name="" id="details">
+    <button onclick="addinguser()">Add User</button>
+    <script>
+        var teamates = ["varshi", "chandu", "MM", "sushma", "thanuja", "vijay", "Rk"]
+        function addinguser() {
+            var input = document.getElementById("details").value
+            teamates.splice(3,0,input)
+            addteams()
+        }
+        function addteams() {
+            teamates.forEach(function (User) {
+                console.log(User)
+            })
+        }
+    </script>
+</body>
+
+</html>
