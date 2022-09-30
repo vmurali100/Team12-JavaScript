@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="changeTest()">Change Text</button>
+    <h2 id="We are from java" class="Java" name="some">Hi I am Jagadeesh</h2>
+    <h2 id="We are from java" class="Java" name="some">Hi I am Jagadeesh</h2>
+    <h2 id="We are from java" class="Java" name="some">Hi I am Jagadeesh</h2>
+    <h2 id="We are from java" class="Java" name="some">Hi I am Jagadeesh</h2>
+    <h2 id="We are from java" class="Java" name="some">Hi I am Jagadeesh</h2>
+
+    <script>
+        function changeTest(){
+            document.querySelector("h2").innerHTML ="Hello...I am changing the skill of object"
+            document.getElementById("We are from java").innerHTML ="i have soloution"
+            document.getElementsByTagName("h2")[0].innerHTML ="We are in situation"
+            document.getElementsByClassName("Java")[0].innerHTML ="Are you comfatable"
+            document.getElementsByName("some")[0].innerHTML ="I have problem"
+            var allElements =document.querySelector("changeTest");
+            allElements.foreach((Element,i)=>{
+                console.log(Element)
+                Element.innerHTML ="Hello i am changing -"+i
+
+            })
+
+
+            }
+                
+
+                
+        
+
+        
+        
+    </script>
+</body>
+</html>

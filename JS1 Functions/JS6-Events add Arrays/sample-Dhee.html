@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addname()">addname</button><br>
+    <button onclick="calcuteprizemoney()">calcuteprizemoney</button>
+    <button onclick="reverse()">reverse</button>
+    <button onclick="check3000000plus()">check3000000+</button>
+    <button onclick="Checkseasons()">Checkseasons</button>
+    <button onclick="forEach()">forEach</button>
+    <button onclick="check7000000plus()">check7000000+</button>
+    <button onclick="sortNames()">sortNames</button>
+    <button onclick="removeend()">removeend</button>
+        <button onclick="removeValMiddle()">removeValMiddle</button>
+    <button onclick="Checktopprizemoney()">Checktopprizemoney</button>
+    <button onclick="Checklowprizemoney()">Checklowprizemoney</button>
+    <script>
+    var Dheewinners=[
+    {name:"HarinathReddy",season:1,prizemoney:300000},
+    {name:"Prudhvi",season:2,prizemoney:500000},
+    {name:"Sathya",season:3,prizemoney:1000000},
+    {name:"Bhavya",season:4,prizemoney:1000000},
+    {name:"Prasad&Bhavya",season:5,prizemoney:1500000},
+    {name:"Anshu",season:6,prizemoney:2500000},
+    {name:"Varshini",season:7,prizemoney:3000000},
+    {name:"Sivamani",season:8,prizemoney:4000000},
+    {name:"Sanketh&Priyanka",season:9,prizemoney:5000000},
+    {name:"Raju",season:10,prizemoney:7500000},
+    {name:"Mahesh@Ritu",season:11,prizemoney:7500000},
+    {name:"piyush",season:12,prizemoney:7500000},
+    {name:"Kavyasri",season:13,prizemoney:7500000},
+    ];
+    function forEach(){
+    Dheewinners.forEach(function(abc){
+        console.log(abc)
+    })
+}
+    function addname(){
+    Dheewinners.unshift("Mahalakshmi","season:14");
+    console.log(Dheewinners);    
+    }
+    function calcuteprizemoney(){
+        var totalprizemoney=
+        Dheewinners.reduce(function(a,b){
+            if(a.prizemoney){
+
+            
+            return a.prizemoney+b.prizemoney
+            }else{
+                return a+b.prizemoney
+            }
+        })
+        console.log(totalprizemoney)
+    }
+    function reverse(){
+        Dheewinners.reverse;
+        console.log(Dheewinners.reverse())
+    }
+function check3000000plus(){
+    var threetylakhsplus =Dheewinners.filter(function(val){
+        console.log(val)
+        return val.prizemoney >3000000
+
+    })
+    console.log(threetylakhsplus)
+}
+    function Checkseasons(){
+        var seasons =Dheewinners.filter(function(val){
+            //console.log(val)
+            return val.season <14
+        })
+        console.log(seasons)
+    }
+    function check7000000plus(){
+        var seventylaksplus =Dheewinners.filter(function(val){
+            console.log(val)
+            return val.prizemoney >7000000
+        })
+        console.log(seventylaksplus)
+    }
+    function removeValMiddle(){
+     Dheewinners.shift(4,2);
+     console.log(Dheewinners)   
+    }
+    function sortNames(){
+        Dheewinners.sort;
+        console.log(Dheewinners)
+    }
+    function removeend(){
+        console.log(Dheewinners.pop())
+    }
+    function Checktopprizemoney(){
+        var maxprizemoney =Dheewinners[0]
+        Dheewinners.forEach(function(abc){
+            if(abc.prizemoney >maxprizemoney.prizemoney){
+                maxprizemoney =abc
+            }
+        })
+        console.log(maxprizemoney)
+    }
+    function Checklowprizemoney(){
+        var lowmoney =Dheewinners[0]
+        Dheewinners.forEach(function(abc){
+            if(abc.money >lowmoney.money){
+                lowmoney =abc
+            }
+        })
+        console.log(lowmoney)
+    }
+    
+
+    
+    
+    
+    
+
+    
+        
+    
+
+    
+
+    
+
+    
+</script>
+</body>
+</html>

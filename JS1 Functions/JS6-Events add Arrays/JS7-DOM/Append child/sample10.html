@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <script>
+         var T20Worldcupteam = [
+    { name: "Rohit", score: 17 },
+    { name: "Rahul", score: "DNB" },
+    { name: "Kohli", score: 63 },
+    { name: "SKY", score: 69 },
+    { name: "HP", score: 25 },
+    { name: "DK", score: "DNB"}, ];
+    T20Worldcupteam.forEach(function(user){
+        var myLi =document.createElement("li");
+        if(user.score =="DNB"){
+            myLi.innerHTML =user.name +"Did Not Bat" + user.score ;
+        }else{
+        myLi.innerHTML =user.name +"score" + user.score +"runs"
+        }
+        document.querySelector("ul").appendChild(myLi);
+    })
+
+    </script>
+</body>
+</html>
