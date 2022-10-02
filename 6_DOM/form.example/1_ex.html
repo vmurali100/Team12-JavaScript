@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="col-md-6 p-5">
+       <form class="formcontrol">
+        <label for="" class="">FIRST NAME</label> <input type="text" class="form-control" id="fName" placeholder="Enter First Name"> <br>
+        <label for="">LAST NAME</label><input type="text" class="form-control" id="lName" placeholder="Enter Last Name"><br>
+        <label for="">EMAIL ID</label><input type="email" class="form-control" id="email" placeholder="Enter Email ID"><br>
+        <button class="btn btn-success" onclick="addUserData()" type="button">ADD USER</button>
+       </form>
+       <script>
+
+        function addUserData(){
+            var user={
+                fName:document.getElementById("fName").value,
+                lName:document.getElementById("lName").value,
+                email:document.getElementById("email").value
+            }
+            console.log(user)
+        }
+       </script>
+    </div>
+</body>
+</html>

@@ -1,0 +1,1 @@
+"//how to Create an array in javascript?"
