@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname">NAME :  </label>
+        <input type="text" name="" id="NAME"> <br><br>
+        <label for="lname">email : </label>
+        <input type="text" name="" id="email"> <br><br>
+        <label for="email">password : </label> 
+        <input type="number" name="" id="password"> <br><br>
+        <label for="login">login : </label>
+        <input type="text" name="" id="login"><br><br>
+        <label for="place">place : </label>
+        <input type="text" name="" id="place"><br><br>
+        <button type="button" onclick="add()">Add</button>
+
+    </form>
+    <script>
+        function add(){
+            var user = {
+                NAME : document.getElementById("NAME").value,
+                email : document.getElementById("email").value,
+                password : document.getElementById("password").value,
+                login:document.getElementById("login").value,
+                place:document.getElementById("place").value
+
+            }
+
+            console.log(user)
+        }
+    </script>
+
+</body>
+</html>
