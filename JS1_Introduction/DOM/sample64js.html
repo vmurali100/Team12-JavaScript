@@ -7,23 +7,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .datas{
-        width: 200px;
-        border: 1px solid mediumvioletred;
-        padding: 5px;
-        margin: 2px;
-      }
-      button:hover{
-        color: blue;
-        background-color: chartreuse;
-        font-size: x-large;
-      }
-      div{
-        color: aquamarine;
-        background-color: black;
-        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-        font-size: larger;
-      }
+        .datas {
+            width: 200px;
+            border: 1px solid mediumvioletred;
+            padding: 5px;
+            margin: 2px;
+        }
+
+        button:hover {
+            color: blue;
+            background-color: chartreuse;
+            font-size: x-large;
+        }
+
+        div {
+            color: aquamarine;
+            background-color: black;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            font-size: larger;
+        }
     </style>
 </head>
 
@@ -130,31 +132,31 @@
                 document.body.appendChild(mysave);
 
                 var para1 = document.createElement("p")
-                para1.innerHTML = "fname : "+value.fname;
+                para1.innerHTML = "fname : " + value.fname;
                 mysave.appendChild(para1);
 
                 var para2 = document.createElement("p")
-                para2.innerHTML = "lname : "+value.lname;
+                para2.innerHTML = "lname : " + value.lname;
                 mysave.appendChild(para2);
 
                 var para3 = document.createElement("p")
-                para3.innerHTML = "tel : "+value.tel;
+                para3.innerHTML = "tel : " + value.tel;
                 mysave.appendChild(para3);
 
                 var para4 = document.createElement("p")
-                para4.innerHTML = "address : "+value.address;
+                para4.innerHTML = "address : " + value.address;
                 mysave.appendChild(para4);
 
                 var para5 = document.createElement("p")
-                para5.innerHTML = "City : "+value.city;
+                para5.innerHTML = "City : " + value.city;
                 mysave.appendChild(para5);
 
                 var para6 = document.createElement("p")
-                para6.innerHTML = "state : "+value.state;
+                para6.innerHTML = "state : " + value.state;
                 mysave.appendChild(para6);
 
                 var para7 = document.createElement("p")
-                para7.innerHTML = "Zip : "+value.zip;
+                para7.innerHTML = "Zip : " + value.zip;
                 mysave.appendChild(para7);
             })
         }

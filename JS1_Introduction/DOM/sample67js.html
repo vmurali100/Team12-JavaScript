@@ -1,119 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .data2{
-        width: 200px;
-        border: 1px solid mediumvioletred;
-        padding: 5px;
-        margin: 2px;
-      }
-      button:hover{
-        color: blue;
-        background-color: chartreuse;
-        font-size: x-large;
-      }
-      div{
-        color: black;
-        background-color: yellow;
-        font-family: serif;
-        font-size:large;
-      }
+        .data2 {
+            width: 200px;
+            border: 1px solid mediumvioletred;
+            padding: 5px;
+            margin: 2px;
+        }
+
+        button:hover {
+            color: blue;
+            background-color: chartreuse;
+            font-size: x-large;
+        }
+
+        div {
+            color: black;
+            background-color: yellow;
+            font-family: serif;
+            font-size: large;
+        }
     </style>
 </head>
+
 <body>
     <button onclick="datass()">Clickhere MAMA</button>
     <script>
-        var persondetails=[
-    {
-        "id": 1,
-        "email": "THutchinson@sed.org",
-        "username": "ASpeer",
-        "password": "sluoJ"
-    },
-    {
-        "id": 2,
-        "email": "TPyle@non.io",
-        "username": "MStone",
-        "password": "zDBsK"
-    },
-    {
-        "id": 3,
-        "email": "VFielack@lacus.ly",
-        "username": "NZanatta",
-        "password": "71Gtq"
-    },
-    {
-        "id": 4,
-        "email": "JBuckaloo@sed.io",
-        "username": "GGraham",
-        "password": "GdqzM"
-    },
-    {
-        "id": 5,
-        "email": "DPatino@lacus.net",
-        "username": "GDeitz",
-        "password": "FfZso"
-    },
-    {
-        "id": 6,
-        "email": "GOconnor@pharetra.io",
-        "username": "VRichardson",
-        "password": "cJL1L"
-    },
-    {
-        "id": 7,
-        "email": "ETaylor@lacus.gov",
-        "username": "KThomad",
-        "password": "d2I9a"
-    },
-    {
-        "id": 8,
-        "email": "BVan@sapien.io",
-        "username": "DHodgson",
-        "password": "k2afR"
-    },
-    {
-        "id": 9,
-        "email": "KDavis@aliquam.com",
-        "username": "DReynolds",
-        "password": "9WWsm"
-    },
-    {
-        "id": 10,
-        "email": "PMcwethy@id.gov",
-        "username": "IStephens",
-        "password": "fHgGn"
-    }
-];
+        var persondetails = [
+            {
+                "id": 1,
+                "email": "THutchinson@sed.org",
+                "username": "ASpeer",
+                "password": "sluoJ"
+            },
+            {
+                "id": 2,
+                "email": "TPyle@non.io",
+                "username": "MStone",
+                "password": "zDBsK"
+            },
+            {
+                "id": 3,
+                "email": "VFielack@lacus.ly",
+                "username": "NZanatta",
+                "password": "71Gtq"
+            },
+            {
+                "id": 4,
+                "email": "JBuckaloo@sed.io",
+                "username": "GGraham",
+                "password": "GdqzM"
+            },
+            {
+                "id": 5,
+                "email": "DPatino@lacus.net",
+                "username": "GDeitz",
+                "password": "FfZso"
+            },
+            {
+                "id": 6,
+                "email": "GOconnor@pharetra.io",
+                "username": "VRichardson",
+                "password": "cJL1L"
+            },
+            {
+                "id": 7,
+                "email": "ETaylor@lacus.gov",
+                "username": "KThomad",
+                "password": "d2I9a"
+            },
+            {
+                "id": 8,
+                "email": "BVan@sapien.io",
+                "username": "DHodgson",
+                "password": "k2afR"
+            },
+            {
+                "id": 9,
+                "email": "KDavis@aliquam.com",
+                "username": "DReynolds",
+                "password": "9WWsm"
+            },
+            {
+                "id": 10,
+                "email": "PMcwethy@id.gov",
+                "username": "IStephens",
+                "password": "fHgGn"
+            }
+        ];
 
-function datass(){
-    persondetails.forEach(function(value){
-        var mydata=document.createElement("div")
-        mydata.setAttribute("class","data2")
-        document.body.appendChild(mydata);
+        function datass() {
+            persondetails.forEach(function (value) {
+                var mydata = document.createElement("div")
+                mydata.setAttribute("class", "data2")
+                document.body.appendChild(mydata);
 
-        var para1=document.createElement("p")
-        para1.innerHTML="id : "+value.id
-        mydata.appendChild(para1);
+                var para1 = document.createElement("p")
+                para1.innerHTML = "id : " + value.id
+                mydata.appendChild(para1);
 
-        var para2=document.createElement("p")
-        para2.innerHTML="email : "+value.email
-        mydata.appendChild(para2);
+                var para2 = document.createElement("p")
+                para2.innerHTML = "email : " + value.email
+                mydata.appendChild(para2);
 
-        var para3=document.createElement("p")
-        para3.innerHTML="username"+value.username
-        mydata.appendChild(para3);
+                var para3 = document.createElement("p")
+                para3.innerHTML = "username" + value.username
+                mydata.appendChild(para3);
 
-        var para4=document.createElement("p")
-        para4.innerHTML="password"+value.password
-        mydata.appendChild(para4);
-    })
-}
+                var para4 = document.createElement("p")
+                para4.innerHTML = "password" + value.password
+                mydata.appendChild(para4);
+            })
+        }
     </script>
 </body>
+
 </html>
