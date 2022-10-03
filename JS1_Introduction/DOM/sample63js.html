@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="displaydata()">Clickhere to view data</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Fname</th>
+                <th>Lname</th>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </thead>
+    </table>
+    <script>
+        
+        var data= [
+    {
+        "fname": "Frances",
+        "lname": "Dupuy"
+    },
+    {
+        "fname": "Susana",
+        "lname": "Spencer"
+    },
+    {
+        "fname": "Charlie",
+        "lname": "Carpenter"
+    },
+    {
+        "fname": "Xiumei",
+        "lname": "Shaffer"
+    },
+    {
+        "fname": "Kantanzia",
+        "lname": "Vanatta"
+    },
+    {
+        "fname": "Katherine",
+        "lname": "Heilman"
+    },
+    {
+        "fname": "Gazi",
+        "lname": "Myers"
+    },
+    {
+        "fname": "Terra",
+        "lname": "Sam"
+    },
+    {
+        "fname": "Marie",
+        "lname": "Taylor"
+    },
+    {
+        "fname": "Arvid",
+        "lname": "Hippert"
+    }
+];
+
+function displaydata(){
+    data.forEach(function(value){
+        var data=document.createElement("tr")
+        var mytd1=document.createElement("td")
+        mytd1.innerHTML=value.fname
+        var mytd2=document.createElement("td")
+        mytd2.innerHTML=value.lname
+        data.appendChild(mytd1)
+        data.appendChild(mytd2)
+        document.querySelector("tbody").appendChild(data)
+    })
+}
+
+    </script>
+</body>
+</html>
