@@ -6,6 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+<style>
+    tr{
+        color: blue;
+        background-color: aquamarine;
+    }
+    td{
+        color: brown;
+        background-color: burlywood;
+    }
+    
+</style>
 <body>
     <button onclick="displaylist()">Clickhere</button>
     <table border="1">
@@ -72,7 +83,7 @@ function displaylist(){
         var mytd2=document.createElement("td")
         list.appendChild(mytd2)
         mytd1.innerHTML=value.fname
-        mytd2.innerHTML=value.lnam
+        mytd2.innerHTML=value.lname
         list.appendChild(mytd1)
         list.appendChild(mytd2)
         document.querySelector("tbody").appendChild(list)
