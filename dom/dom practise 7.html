@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul></ul>
+    <script>
+        var flowers = [
+            { fname: "tulip",cost:150 },
+            { fname: "rose",cost:50 },
+            { fname: "lilly",cost:80 },
+            { fname: "marigold",cost:60 },
+            { fname: "hybicsus",cost:10 },
+            { fname: "crossandra",cost:100 },
+    ];
+    flowers.forEach(function (user){
+        var myLi = document.createElement("li");
+        myLi.innerHTML = user.fname + " cost "+user.cost 
+        document.querySelector("ul").appendChild(myLi)
+    })
+    var fruits = [
+        { type: "mango",cost:100 },
+        { type: "guava",cost:80 },
+        { type: "watermelon",cost:200 },
+        { type: "custardapple",cost:100 },
+        { type: "strawberry",cost:250 },
+    ];
+    fruits.forEach(function (user){
+        var myLi = document.createElement("li");
+        myLi.innerHTML = user.type + " cost "+user.cost
+        document.querySelector("ul").appendChild(myLi)
+    })
+    
+
+        
+    </script>
+
+    
+
+    
+</body>
+</html>

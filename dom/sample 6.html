@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <ul>
+        <li>tulip</li>
+        <li>rose</li>
+        <li>lilly</li>
+        <li>daisy</li>
+        <li>lotus</li>
+        <li>jasmine</li>
+    </ul> -->
+    <ul>
+
+    </ul>
+    <script>
+        var flowers = ["tulip","rose","lilly","daisy","lotus","jasmine"];
+        flowers.forEach(function(user){
+            var myLi = document.createElement("li");
+            myLi.innerHTML = user
+            document.querySelector("ul").appendChild(myLi);
+        })
+        
+
+    </script>
+
+    
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <button onclick="displaydata()">Clickhere to view</button>
+    <table border="1">
+        <thread>
+        <tr>
+            <th>id</th>
+            <th>email</th>
+            <th>username</th>
+            <th>password</th>
+        </tr>
+        <tbody>
+
+        </tbody>
+        </thread>
+    </table>
+    <script>
+        var data=[
+    {
+        "id": 1,
+        "email": "THutchinson@sed.org",
+        "username": "ASpeer",
+        "password": "sluoJ"
+    },
+    {
+        "id": 2,
+        "email": "TPyle@non.io",
+        "username": "MStone",
+        "password": "zDBsK"
+    },
+    {
+        "id": 3,
+        "email": "VFielack@lacus.ly",
+        "username": "NZanatta",
+        "password": "71Gtq"
+    },
+    {
+        "id": 4,
+        "email": "JBuckaloo@sed.io",
+        "username": "GGraham",
+        "password": "GdqzM"
+    },
+    {
+        "id": 5,
+        "email": "DPatino@lacus.net",
+        "username": "GDeitz",
+        "password": "FfZso"
+    },
+    {
+        "id": 6,
+        "email": "GOconnor@pharetra.io",
+        "username": "VRichardson",
+        "password": "cJL1L"
+    },
+    {
+        "id": 7,
+        "email": "ETaylor@lacus.gov",
+        "username": "KThomad",
+        "password": "d2I9a"
+    },
+    {
+        "id": 8,
+        "email": "BVan@sapien.io",
+        "username": "DHodgson",
+        "password": "k2afR"
+    },
+    {
+        "id": 9,
+        "email": "KDavis@aliquam.com",
+        "username": "DReynolds",
+        "password": "9WWsm"
+    },
+    {
+        "id": 10,
+        "email": "PMcwethy@id.gov",
+        "username": "IStephens",
+        "password": "fHgGn"
+    }
+];
+function displaydata(){
+    data.forEach(function(value){
+        var data=document.createElement("tr")
+        var mytd1=document.createElement("td")
+        mytd1.innerHTML=value.id
+        var mytd2=document.createElement("td")
+        mytd2.innerHTML=value.username
+        var mytd3=document.createElement("td")
+        mytd3.innerHTML=value.email
+        var mytd4=document.createElement("td")
+        mytd4.innerHTML=value.password
+        data.appendChild(mytd1)
+        data.appendChild(mytd2)
+        data.appendChild(mytd3)
+        data.appendChild(mytd4)
+        document.querySelector("tbody").appendChild(data)
+
+    })
+}
+
+        
+    </script>
+    
+</body>
+</html>

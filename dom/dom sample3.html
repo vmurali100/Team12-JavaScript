@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="fname"> name : </label>
+        <input type="text" name="" id="name"> <br>
+        <label for="class">class : </label>
+        <input type="text" class="" id="class"> <br>
+        <label for="subject">subject : </label>
+        <input type="text" subject="" id="subject"> <br>
+
+        <button type="button" onclick="addUser()"> add User</button>
+
+        </form>
+        <script>
+            function addUser(){
+                var user ={
+                    fname : document.getElementById("name").value,
+                    class : document.getElementById("class").value,
+                    subject : document.getElementById("subject").value,
+
+
+                }
+                console.log(user)
+            }
+        </script>
+        
+            
+
+    
+    
+</body>
+</html>
