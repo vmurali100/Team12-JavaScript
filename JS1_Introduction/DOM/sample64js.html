@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .datas{
+        width: 200px;
+        border: 1px solid mediumvioletred;
+        padding: 5px;
+        margin: 2px;
+      }
+      button:hover{
+        color: blue;
+        background-color: chartreuse;
+        font-size: x-large;
+      }
+      div{
+        color: aquamarine;
+        background-color: black;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: larger;
+      }
+    </style>
+</head>
+
+<body>
+    <button onclick="datas()">Clickhere Mama</button>
+    <script>
+        var persondetails = [
+            {
+                "fname": "Alvin",
+                "lname": "Hampton",
+                "tel": "(334)201-8097",
+                "address": "7008 Curabitur Ave",
+                "city": "Sandwich",
+                "state": "SD",
+                "zip": 34859
+            },
+            {
+                "fname": "Milada",
+                "lname": "Sessa",
+                "tel": "(583)320-9743",
+                "address": "6368 Etiam St",
+                "city": "Big Bear",
+                "state": "NY",
+                "zip": 21160
+            },
+            {
+                "fname": "Herbert",
+                "lname": "Sessa",
+                "tel": "(174)689-2856",
+                "address": "3156 Magna St",
+                "city": "Palm Beach Gardens",
+                "state": "AK",
+                "zip": 18264
+            },
+            {
+                "fname": "Jeannine",
+                "lname": "Hunt",
+                "tel": "(363)370-3190",
+                "address": "225 Risus Ave",
+                "city": "Winter Park",
+                "state": "GA",
+                "zip": 34968
+            },
+            {
+                "fname": "Sandra",
+                "lname": "Crantek",
+                "tel": "(302)225-2320",
+                "address": "4091 Risus Ln",
+                "city": "Higginsville",
+                "state": "IA",
+                "zip": 69248
+            },
+            {
+                "fname": "Ning",
+                "lname": "Green",
+                "tel": "(982)201-1901",
+                "address": "2067 Sit Ln",
+                "city": "Lake City",
+                "state": "HI",
+                "zip": 49269
+            },
+            {
+                "fname": "Elmer",
+                "lname": "Krout",
+                "tel": "(419)935-5663",
+                "address": "7096 Aliquam Ave",
+                "city": "Winston Salem",
+                "state": "MS",
+                "zip": 65991
+            },
+            {
+                "fname": "Camelyn",
+                "lname": "Googleanalytics",
+                "tel": "(414)557-0475",
+                "address": "349 Pulvinar St",
+                "city": "Evergreen",
+                "state": "WY",
+                "zip": 13890
+            },
+            {
+                "fname": "Oren",
+                "lname": "Noriega",
+                "tel": "(997)292-0300",
+                "address": "1624 Sollicitudin Ln",
+                "city": "Spencer",
+                "state": "MN",
+                "zip": 58520
+            },
+            {
+                "fname": "Kurtis",
+                "lname": "Neville",
+                "tel": "(914)609-0638",
+                "address": "8668 Lacus Dr",
+                "city": "Nashville",
+                "state": "DE",
+                "zip": 86601
+            }
+        ];
+
+        function datas() {
+            persondetails.forEach(function (value) {
+                var mysave = document.createElement("div");
+                mysave.setAttribute("class", "datas")
+                document.body.appendChild(mysave);
+
+                var para1 = document.createElement("p")
+                para1.innerHTML = "fname : "+value.fname;
+                mysave.appendChild(para1);
+
+                var para2 = document.createElement("p")
+                para2.innerHTML = "lname : "+value.lname;
+                mysave.appendChild(para2);
+
+                var para3 = document.createElement("p")
+                para3.innerHTML = "tel : "+value.tel;
+                mysave.appendChild(para3);
+
+                var para4 = document.createElement("p")
+                para4.innerHTML = "address : "+value.address;
+                mysave.appendChild(para4);
+
+                var para5 = document.createElement("p")
+                para5.innerHTML = "City : "+value.city;
+                mysave.appendChild(para5);
+
+                var para6 = document.createElement("p")
+                para6.innerHTML = "state : "+value.state;
+                mysave.appendChild(para6);
+
+                var para7 = document.createElement("p")
+                para7.innerHTML = "Zip : "+value.zip;
+                mysave.appendChild(para7);
+            })
+        }
+    </script>
+</body>
+
+</html>
