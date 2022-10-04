@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+    <style>
+        img{
+            width: 400px;
+            height: 200px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="col-md-6 m-auto">
+        <button onclick="ShowData()" class="btn btn-success m-5">DISPLY CARS</button>
+        <table class="table table-bordered table-hover text-center" id="myTable">
+            <thead>
+                <tr>
+                    <th>BRAND</th>
+                    <th>MODEL</th>
+                    <th>COLOR</th>
+                    <th>PRICE</th>
+                    <th>PHOTO</th>
+                </tr>
+                <tbody>
+                    
+                </tbody>
+            </thead>
+
+        </table>
+    </div>
+    
+    <script>
+        
+        var favCars=[
+            {brand:"Mahendra",model:"SCRPIO", color:"BLACK",Price:"23,50,000",carPic:"https://prog-ace-cdn.azureedge.net/-/media/project/mahindra/dotcom/mahindra/dark-theme-mahindra-images/gallery/w153/photos/popup-images/w153_6.png?rev=982989ee45d9458d9ec733a6d3a9d328&extension=webp"},
+            {brand:"Mahendra",model:"THAR", color:"BLACK",Price:"18,00,000",carPic:"https://www.indiacarnews.com/wp-content/uploads/2021/01/New-Mahindra-Thar-Waiting-Period_1_1.jpg"},
+            {brand:"TOYATO",model:"FORTUNER", color:"",Price:"43,00,000",carPic:"https://imgd-ct.aeplcdn.com/664x415/n/cw/ec/44709/fortuner-exterior-left-front-three-quarter.jpeg?q=75"},
+            {brand:"TOYATO INOVO",model:"CRIST", color:"BLACK",Price:"29,00,000",carPic:"https://stimg.cardekho.com/images/carexteriorimages/630x420/Toyota/Innova-Crysta/8105/1606215226663/front-left-side-47.jpg"},
+            {brand:"ROLLS ROYCE",model:"ROLLS ROYCE", color:"black",Price:"8 Cr INR",carPic:"https://mediapool.bmwgroup.com/cache/P9/202110/P90442352/P90442352-rolls-royce-announces-black-badge-ghost-the-purest-black-badge-yet-2249px.jpg"},
+            {brand:"Ferrari",model:"Ferrari", color:"RED",Price:"4CR",carPic:"https://imageio.forbes.com/specials-images/imageserve/601ac7c68da630cc248e151f/The-Ferrari-SF90-Stradale---/960x0.jpg?format=jpg&width=960"}
+    ]
+
+    function ShowData(){
+        favCars.forEach(function(cars){
+            var myTr=document.createElement("tr")
+
+            var mytd1=document.createElement("td")
+                mytd1.innerHTML=cars.brand;
+
+            var mytd2=document.createElement("td")
+                mytd2.innerHTML=cars.model;
+
+            var mytd3=document.createElement("td")
+                mytd3.innerHTML=cars.color;
+
+            var mytd4=document.createElement("td")
+                mytd4.innerHTML=cars.Price;
+
+            var mytd5=document.createElement("td")
+                var createImg=document.createElement("img")
+                createImg.setAttribute("src",cars.carPic)
+                mytd5.appendChild(createImg)
+
+            myTr.appendChild(mytd1)
+            myTr.appendChild(mytd2)
+            myTr.appendChild(mytd3)
+            myTr.appendChild(mytd4)
+            myTr.appendChild(mytd5)
+
+            document.querySelector("tbody").appendChild(myTr)
+        })
+    }
+    </script>
+</body>
+</html>

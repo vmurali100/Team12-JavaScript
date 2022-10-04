@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <div class="col-md-9 m-auto m-5 text-center">
+        <button onclick="clickToShow()" class="btn btn-info mt-3">DISPLY</button>
+        <table class="table table-bordered table-hover m-5 d-none">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>EMAIL</th>
+                    <th>USER NAME</th>
+                    <th>PASSWORD</th>
+                </tr>
+            </thead>
+            <tbody>
+
+            </tbody>
+        </table>
+    </div>
+    <script>
+        var userDetails = [
+            {
+                "id": 1,
+                "email": "THutchinson@sed.org",
+                "username": "ASpeer",
+                "password": "sluoJ"
+            },
+            {
+                "id": 2,
+                "email": "TPyle@non.io",
+                "username": "MStone",
+                "password": "zDBsK"
+            },
+            {
+                "id": 3,
+                "email": "VFielack@lacus.ly",
+                "username": "NZanatta",
+                "password": "71Gtq"
+            },
+            {
+                "id": 4,
+                "email": "JBuckaloo@sed.io",
+                "username": "GGraham",
+                "password": "GdqzM"
+            },
+            {
+                "id": 5,
+                "email": "DPatino@lacus.net",
+                "username": "GDeitz",
+                "password": "FfZso"
+            },
+            {
+                "id": 6,
+                "email": "GOconnor@pharetra.io",
+                "username": "VRichardson",
+                "password": "cJL1L"
+            },
+            {
+                "id": 7,
+                "email": "ETaylor@lacus.gov",
+                "username": "KThomad",
+                "password": "d2I9a"
+            },
+            {
+                "id": 8,
+                "email": "BVan@sapien.io",
+                "username": "DHodgson",
+                "password": "k2afR"
+            },
+            {
+                "id": 9,
+                "email": "KDavis@aliquam.com",
+                "username": "DReynolds",
+                "password": "9WWsm"
+            },
+            {
+                "id": 10,
+                "email": "PMcwethy@id.gov",
+                "username": "IStephens",
+                "password": "fHgGn"
+            }
+        ]
+
+        function clickToShow(){
+            userDetails.forEach(function(details){
+                var myTrow=document.createElement("tr")
+
+                var mytd1=document.createElement("td")
+                    myTrow.appendChild(mytd1)
+                    mytd1.innerHTML=details.id
+                var mytd2=document.createElement("td")
+                    myTrow.appendChild(mytd2)
+                    mytd2.innerHTML=details.email
+                var mytd3=document.createElement("td")
+                    myTrow.appendChild(mytd3)
+                    mytd3.innerHTML=details.username
+                var mytd4=document.createElement("td")
+                    myTrow.appendChild(mytd4)
+                    mytd4.innerHTML=details.password
+                document.querySelector("tbody").appendChild(myTrow);
+                
+                var myTable=document.querySelector("table")
+                myTable.setAttribute("class","table table-bordered table-hover m-5 d-block")
+            })
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD_JavaScript</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+</head>
+
+<body  class="text-center mt-5">
+<div class="col-md-6 m-auto">
+
+    <button onclick="myEmpData()" class="btn btn-info">EMPLYOEE LIST</button>
+    <ul id="muUnOrderList"></ul>
+
+    <table class="table table-bordered table-hover table-success">
+        <thead>
+            <tr>
+                <th>EMP FIRST NAME</th>
+                <th>EMP LAST NAME</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+</div>
+    <script>
+        var empDetails = [
+            {
+                "fname": "Frances",
+                "lname": "Dupuy"
+            },
+            {
+                "fname": "Susana",
+                "lname": "Spencer"
+            },
+            {
+                "fname": "Charlie",
+                "lname": "Carpenter"
+            },
+            {
+                "fname": "Xiumei",
+                "lname": "Shaffer"
+            },
+            {
+                "fname": "Kantanzia",
+                "lname": "Vanatta"
+            },
+            {
+                "fname": "Katherine",
+                "lname": "Heilman"
+            },
+            {
+                "fname": "Gazi",
+                "lname": "Myers"
+            },
+            {
+                "fname": "Terra",
+                "lname": "Sam"
+            },
+            {
+                "fname": "Marie",
+                "lname": "Taylor"
+            },
+            {
+                "fname": "Arvid",
+                "lname": "Hippert"
+            }
+        ]
+
+        //console.log(empDetails)
+        //document.write(empDetails)
+        function myEmpData(){
+            empDetails.forEach(function(emp){
+                var myTr=document.createElement("tr")
+                    mytd1=document.createElement("td")
+                        mytd1.innerHTML=emp.fname;
+                    mytd2=document.createElement("td")
+                    mytd2.innerHTML=emp.lname;
+                myTr.appendChild(mytd1)
+                myTr.appendChild(mytd2)
+                
+                document.querySelector("tbody").appendChild(myTr)
+            })
+        }
+    </script>
+</body>
+
+</html>
