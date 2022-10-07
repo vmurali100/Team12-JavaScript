@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function employee(fname,lname){
+            this.fname=fname;
+            this.lname=lname
+        }
+        var person=new employee("raghu","dixith");
+        person.phone=9988776655;
+        person['email']="raghu@gmail.com";
+        document.write(person.fname+"<br>");
+        document.write(person.lname+"<br>");
+        document.write(person.phone+"<br>");
+        document.write(person.email+"<br>");
+    </script>
+    
+</body>
+</html>

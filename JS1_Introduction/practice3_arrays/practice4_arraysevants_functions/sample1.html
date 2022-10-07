@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="addvalstart()">click to add value</button><br>
+    <button onclick="addvalend()">click to add value at end</button><br>
+    <button onclick="addvalmiddle()">click to add value at middle</button><br>
+    <button onclick="Rmvalstart()">click to remove val at start</button><br>
+    <button onclick="Rmvalend()">click to remove val at end</button><br>
+    <button onclick="Rmvalmid()">click to remove val at middle</button><br>
+    <button onclick="Reverseval()">click to Reverse</button><br>
+    <button onclick="sortval()">click to sort</button><br>
+    <button onclick="findsome()">click to find</button><br>
+    <button onclick="filterval()">click to filter</button><br>
+    <button onclick="valsome()">click to check values</button><br>
+    <button onclick="valevery()">click to check all values</button><br>
+    <script>
+        var movies=["kgf","bahubali","rrr","kurukshetra","ranna"];
+        function addvalstart(){
+            movies.unshift("dhool")
+            document.write(movies);
+        }
+        
+        function addvalend(){
+            movies.push("dhool");
+            document.write(movies);
+        }
+        function addvalmiddle(){
+            movies.splice(3,0,"dhool");
+            document.write(movies);
+        }
+        function Rmvalstart(){
+            movies.shift()
+            document.write(movies)
+        }
+        function Rmvalend(){
+            movies.pop()
+            document.write(movies)
+        }
+        function Rmvalmid(){
+            movies.splice(3,1)
+            document.write(movies);
+        }
+        function Reverseval(){
+            document.write(movies.reverse())
+        }
+        function sortval(){
+            document.write(movies.sort()+"<br>")
+        }
+
+        
+    </script>
+
+    
+</body>
+</html>

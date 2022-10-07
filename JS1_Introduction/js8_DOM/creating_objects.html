@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+
+    </ul>
+    <script>
+        var mobiles=[{name:"samsung galaxy",price:15000,networktype:"5G"},
+        {name:"Honor",price:10000,networktype:"4G"},
+        {name:"samsung-m12",price:22000,networktype:"5G"},
+        {name:"karbonn",price:35000,networktype:"4G"},
+        {name:"nokia",price:46000,networktype:"5G"},
+        {name:"Redme",price:18000,networktype:"4G"},
+        {name:"moto",price:11000,networktype:"5G"},
+        {name:"Realme",price:12000,networktype:"4G"},
+    ]
+    mobiles.forEach(function(abc)
+    {
+        var mob = document.createElement("li");
+            mob.innerHTML=abc.name+" "+abc.networktype+" this mobile price is "+abc.price;
+            document.querySelector("ul").appendChild(mob);
+    })
+    </script>
+    
+</body>
+</html>

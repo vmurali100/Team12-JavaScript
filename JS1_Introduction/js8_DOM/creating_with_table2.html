@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="fulldetails()">click to show</button>
+    <table border="1" >
+    <thead>
+        <tr>
+            <th>first name</th>
+            <th> last name</th>
+            <th>telephone number</th>
+            <th>address</th>
+            <th>city</th>
+            <th>state</th>
+            <th>pin code</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+    </table>
+</body>
+<script>
+    var details = [
+        {
+            "fname": "Alvin",
+            "lname": "Hampton",
+            "tel": "(334)201-8097",
+            "address": "7008 Curabitur Ave",
+            "city": "Sandwich",
+            "state": "SD",
+            "zip": 34859
+        },
+        {
+            "fname": "Milada",
+            "lname": "Sessa",
+            "tel": "(583)320-9743",
+            "address": "6368 Etiam St",
+            "city": "Big Bear",
+            "state": "NY",
+            "zip": 21160
+        },
+        {
+            "fname": "Herbert",
+            "lname": "Sessa",
+            "tel": "(174)689-2856",
+            "address": "3156 Magna St",
+            "city": "Palm Beach Gardens",
+            "state": "AK",
+            "zip": 18264
+        },
+        {
+            "fname": "Jeannine",
+            "lname": "Hunt",
+            "tel": "(363)370-3190",
+            "address": "225 Risus Ave",
+            "city": "Winter Park",
+            "state": "GA",
+            "zip": 34968
+        },
+        {
+            "fname": "Sandra",
+            "lname": "Crantek",
+            "tel": "(302)225-2320",
+            "address": "4091 Risus Ln",
+            "city": "Higginsville",
+            "state": "IA",
+            "zip": 69248
+        },
+        {
+            "fname": "Ning",
+            "lname": "Green",
+            "tel": "(982)201-1901",
+            "address": "2067 Sit Ln",
+            "city": "Lake City",
+            "state": "HI",
+            "zip": 49269
+        },
+        {
+            "fname": "Elmer",
+            "lname": "Krout",
+            "tel": "(419)935-5663",
+            "address": "7096 Aliquam Ave",
+            "city": "Winston Salem",
+            "state": "MS",
+            "zip": 65991
+        },
+        {
+            "fname": "Camelyn",
+            "lname": "Googleanalytics",
+            "tel": "(414)557-0475",
+            "address": "349 Pulvinar St",
+            "city": "Evergreen",
+            "state": "WY",
+            "zip": 13890
+        },
+        {
+            "fname": "Oren",
+            "lname": "Noriega",
+            "tel": "(997)292-0300",
+            "address": "1624 Sollicitudin Ln",
+            "city": "Spencer",
+            "state": "MN",
+            "zip": 58520
+        },
+        {
+            "fname": "Kurtis",
+            "lname": "Neville",
+            "tel": "(914)609-0638",
+            "address": "8668 Lacus Dr",
+            "city": "Nashville",
+            "state": "DE",
+            "zip": 86601
+        }
+    ];
+    function fulldetails() {
+        details.forEach(function (user) {
+            var mytr = document.createElement("tr");
+            var mytd1 = document.createElement("td")
+            mytd1.innerHTML = user.fname;
+            mytr.appendChild(mytd1);
+            var mytd2 = document.createElement("td");
+            mytd2.innerHTML = user.lname
+            mytr.appendChild(mytd2);
+            var mytd3 = document.createElement("td");
+            mytd3.innerHTML = user.tel
+            mytr.appendChild(mytd3);
+            var mytd4 = document.createElement("td");
+            mytd4.innerHTML = user.address
+            mytr.appendChild(mytd4);
+            var mytd5 = document.createElement("td");
+            mytd5.innerHTML = user.city
+            mytr.appendChild(mytd5);
+            var mytd6 = document.createElement("td");
+            mytd6.innerHTML = user.state
+            mytr.appendChild(mytd6);
+            var mytd7 = document.createElement("td");
+            mytd7.innerHTML = user.zip
+            mytr.appendChild(mytd7);
+            document.querySelector("tbody").appendChild(mytr)
+        })
+
+    }
+</script>
+
+</html>

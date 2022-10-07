@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class employ{
+            constructor(fname,lname,company){
+                this.fname=fname;
+                this.lname=lname;
+                this.company=company
+            }
+        }
+        var employee = new employ("satish","kugar","toyota");
+        employee.phone=8877665544;
+        employee['email']="satish@gmail.com"
+        for(c in employee){
+            document.write(employee[c]+"<br>");
+        }
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    function employee(fname,lname,company){
+        this.fname=fname;
+        this.lname=lname;
+        this.company=company
+    }
+    var employee1 =new employee("satish","kugar","toyota");
+    employee1.phone=9988776655;
+    employee1['email']='satish@gmail.com'
+    for(b in employee1){
+        document.write(employee1[b]+"<br/>")
+    }
+
+    </script>
+    
+</body>
+</html>
