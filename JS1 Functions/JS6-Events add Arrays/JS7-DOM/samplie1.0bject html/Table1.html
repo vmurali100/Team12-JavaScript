@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button onclick="displaypersonsintable()">Show persons</button>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>fname</th>
+                <th>lname</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+        </tbody>
+
+       
+    </table>
+</body>
+<script>
+   var persons = [
+    {
+        "fname": "Frances",
+        "lname": "Dupuy"
+    },
+    {
+        "fname": "Susana",
+        "lname": "Spencer"
+    },
+    {
+        "fname": "Charlie",
+        "lname": "Carpenter"
+    },
+    {
+        "fname": "Xiumei",
+        "lname": "Shaffer"
+    },
+    {
+        "fname": "Kantanzia",
+        "lname": "Vanatta"
+    },
+    {
+        "fname": "Katherine",
+        "lname": "Heilman"
+    },
+    {
+        "fname": "Gazi",
+        "lname": "Myers"
+    },
+    {
+        "fname": "Terra",
+        "lname": "Sam"
+    },
+    {
+        "fname": "Marie",
+        "lname": "Taylor"
+    },
+    {
+        "fname": "Arvid",
+        "lname": "Hippert"
+    }
+];
+function displaypersonsintable(){
+    persons.forEach(function(person){
+        var myTr =document.createElement("tr");
+        var myTd1 =document.createElement("td");
+        myTd1.innerHTML =person.fname
+        var myTd2 =document.createElement("td");
+        myTd2.innerHTML =person.lname
+
+       
+        myTr.appendChild(myTd1)
+        myTr.appendChild(myTd2)
+        document.querySelector("tbody").appendChild(myTr)
+    
+    })
+}
+</script>
+</html>

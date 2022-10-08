@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="displayDheewinners()">show Winners</button>
+    
+    <table border="1">
+      <thead>
+        <tr>
+            <th>season</th>
+            <th>name</th>
+            <th>prizemoney</th>
+            
+        </tr>
+      </thead> 
+      <tbody>
+
+      </tbody>
+
+
+    </table>
+    <script>
+    var Dheewinners=[
+    {name:"HarinathReddy",season:1,prizemoney:300000},
+    {name:"Prudhvi",season:2,prizemoney:500000},
+    {name:"Sathya",season:3,prizemoney:1000000},
+    {name:"Bhavya",season:4,prizemoney:1000000},
+    {name:"Prasad&Bhavya",season:5,prizemoney:1500000},
+    {name:"Anshu",season:6,prizemoney:2500000},
+    {name:"Varshini",season:7,prizemoney:3000000},
+    {name:"Sivamani",season:8,prizemoney:4000000},
+    {name:"Sanketh&Priyanka",season:9,prizemoney:5000000},
+    {name:"Raju",season:10,prizemoney:7500000},
+    {name:"Mahesh@Ritu",season:11,prizemoney:7500000},
+    {name:"piyush",season:12,prizemoney:7500000},
+    {name:"Kavyasri",season:13,prizemoney:7500000},
+    ];
+    function displayDheewinners(){
+        Dheewinners.forEach(function(Dheewinners){
+            var myTr =document.createElement("tr");
+            var myTd1 =document.createElement("td");
+            myTd1.innerHTML =Dheewinners.season
+            var myTd2 =document.createElement("td");
+            myTd2.innerHTML =Dheewinners.name
+            var myTd3 =document.createElement("td");
+            myTd3.innerHTML =Dheewinners.prizemoney
+
+
+
+            myTr.appendChild(myTd1)
+            myTr.appendChild(myTd2)
+            myTr.appendChild(myTd3)
+            document.querySelector("tbody").appendChild(myTr)
+            
+
+
+        })
+    }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .worker{
+            width: 200px;
+            height: 150px;
+            padding: 4px;
+            border: 1px solid;
+            display: inline-block ;
+        }
+        .p{
+            text-align: center;
+        }
+        button {
+    border: 1px solid;
+    color: aqua;
+}
+    </style>
+</head>
+<body>
+    <button onclick="displayworkerslist()">Show Workers</button>
+    <hr>
+   <script>
+   var companyworkers = [
+    {
+        "id": 1,
+        "email": "THutchinson@sed.org",
+        "username": "ASpeer",
+        "password": "sluoJ"
+    },
+    {
+        "id": 2,
+        "email": "TPyle@non.io",
+        "username": "MStone",
+        "password": "zDBsK"
+    },
+    {
+        "id": 3,
+        "email": "VFielack@lacus.ly",
+        "username": "NZanatta",
+        "password": "71Gtq"
+    },
+    {
+        "id": 4,
+        "email": "JBuckaloo@sed.io",
+        "username": "GGraham",
+        "password": "GdqzM"
+    },
+    {
+        "id": 5,
+        "email": "DPatino@lacus.net",
+        "username": "GDeitz",
+        "password": "FfZso"
+    },
+    {
+        "id": 6,
+        "email": "GOconnor@pharetra.io",
+        "username": "VRichardson",
+        "password": "cJL1L"
+    },
+    {
+        "id": 7,
+        "email": "ETaylor@lacus.gov",
+        "username": "KThomad",
+        "password": "d2I9a"
+    },
+    {
+        "id": 8,
+        "email": "BVan@sapien.io",
+        "username": "DHodgson",
+        "password": "k2afR"
+    },
+    {
+        "id": 9,
+        "email": "KDavis@aliquam.com",
+        "username": "DReynolds",
+        "password": "9WWsm"
+    },
+    {
+        "id": 10,
+        "email": "PMcwethy@id.gov",
+        "username": "IStephens",
+        "password": "fHgGn"
+    },
+];
+function displayworkerslist(){
+    companyworkers.forEach(function(worker){
+        var myDiv=document.createElement("div")
+        myDiv.setAttribute("class","worker")
+        document.body.appendChild(myDiv)
+        var myPara1=document.createElement("p")
+        myPara1.innerHTML ="ID:"+worker.id
+        myDiv.appendChild(myPara1)
+        var myPara2=document.createElement("p")
+        myPara2.innerHTML ="Email:"+worker.email
+        myDiv.appendChild(myPara2)
+        var myPara3=document.createElement("p")
+        myPara3.innerHTML ="UserName:"+worker.username
+        myDiv.appendChild(myPara3)
+        var myPara4=document.createElement("p")
+       myPara4.setAttribute("password",worker.password)
+        myDiv.appendChild(myPara4)
+    })
+}
+   </script> 
+</body>
+</html>

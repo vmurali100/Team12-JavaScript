@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+    color: red;
+}
+
+table {
+    color: blue;
+}
+
+
+    </style>
+</head>
+<body>
+    <button onclick="displaycustomerdetailes()">Show customerdetailes </button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>email</th>
+                <th>username</th>
+                <th>password</th>
+            </tr>
+        </thead>
+
+        <tbody>
+
+        </tbody>
+
+    </table>
+
+
+
+
+    <script>
+    var customerdetailes =[
+    {
+        "id": 1,
+        "email": "THutchinson@sed.org",
+        "username": "ASpeer",
+        "password": "sluoJ"
+    },
+    {
+        "id": 2,
+        "email": "TPyle@non.io",
+        "username": "MStone",
+        "password": "zDBsK"
+    },
+    {
+        "id": 3,
+        "email": "VFielack@lacus.ly",
+        "username": "NZanatta",
+        "password": "71Gtq"
+    },
+    {
+        "id": 4,
+        "email": "JBuckaloo@sed.io",
+        "username": "GGraham",
+        "password": "GdqzM"
+    },
+    {
+        "id": 5,
+        "email": "DPatino@lacus.net",
+        "username": "GDeitz",
+        "password": "FfZso"
+    },
+    {
+        "id": 6,
+        "email": "GOconnor@pharetra.io",
+        "username": "VRichardson",
+        "password": "cJL1L"
+    },
+    {
+        "id": 7,
+        "email": "ETaylor@lacus.gov",
+        "username": "KThomad",
+        "password": "d2I9a"
+    },
+    {
+        "id": 8,
+        "email": "BVan@sapien.io",
+        "username": "DHodgson",
+        "password": "k2afR"
+    },
+    {
+        "id": 9,
+        "email": "KDavis@aliquam.com",
+        "username": "DReynolds",
+        "password": "9WWsm"
+    },
+    {
+        "id": 10,
+        "email": "PMcwethy@id.gov",
+        "username": "IStephens",
+        "password": "fHgGn"
+    },
+];    
+
+function displaycustomerdetailes(){
+    customerdetailes.forEach(function(customers){
+        var myTr =document.createElement("tr")
+        var myTd1 =document.createElement("td")
+        myTd1.innerHTML =customers.id
+        var myTd2 =document.createElement("td")
+        myTd2.innerHTML=customers.password
+        var myTd3 =document.createElement("td")
+        myTd3.innerHTML =customers.username
+        var myTd4 =document.createElement("td")
+        myTd4.innerHTML =customers.password
+
+
+       
+        myTr.appendChild(myTd1)
+        myTr.appendChild(myTd2)
+        myTr.appendChild(myTd3)
+        myTr.appendChild(myTd4)
+        document.querySelector("tbody").appendChild(myTr)
+    })
+
+}
+
+
+
+
+         
+     
+     
+
+    
+     
+
+
+    </script>
+    </body>
+</html>
