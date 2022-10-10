@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 100px;
+            border: 1px solid grey;
+            height: 200px;
+            padding: 10px;
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var Nos=prompt("Enter Any Number")
+        console.log(Nos) 
+
+        for ( i=1;i<=Nos;i++){
+        var myDiv=document.createElement("div")
+        var results=""
+        for(j=1;j<=10;j++){
+            results=results+i+"X"+j+"="+i*j+"<br>"
+        }
+        myDiv.innerHTML=results
+        document.body.appendChild(myDiv) 
+        }
+    </script>
+</body>
+</html>

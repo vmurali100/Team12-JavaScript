@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul></ul>
+    <script>
+      var match2bowling = [
+        { name: " Hardik Pandya", Wickets: 0, ER: 10 },
+        { name: "Chahal", Wickets: 0, ER: 12 },
+        { name: "Axar Patel", Wickets: 2, ER: 6.5 },
+        { name: "Harshal Patel", Wickets: 0, ER: 16 },
+        { name: "Bumrah", Wickets: 1, ER: 13 },
+      ];
+      match2bowling.forEach(function (user) {
+        var myli = document.createElement("li");
+        myli.innerHTML =
+          user.name + "  " + "Wickets:" + user.Wickets + "  " + "ER:" + user.ER;
+        document.querySelector("ul").appendChild(myli);
+      });
+      document.write("Result: India Won by 6 Wickets");
+    </script>
+  </body>
+</html>

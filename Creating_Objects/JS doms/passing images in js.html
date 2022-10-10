@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .player{
+        width: 150px;
+        border: 1px solid red;
+        padding: 10px;
+        height: 200px;
+        float: left;
+      }
+      img {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="displayPlayers()">showplayers</button>
+    <hr>
+   
+    <script>
+      var teamIndia = [
+        {
+          Name: "Rohit",
+          score: 43,
+          pic: "https://cdn-wp.thesportsrush.com/2022/07/304e3344-josh-inglis-87.jpg",
+        },
+        {
+          Name: "Rahul",
+          score: 57,
+          pic: "https://images.thequint.com/thequint%2F2022-08%2F85c3c840-bd5c-467f-a3b9-ed008f3428e4%2F1639c980d02056b9503a923a1a063af1__1_.jpg?auto=format%2Ccompress&fmt=webp&width=720",
+        },
+        {
+          Name: "Kohli",
+          score: 49,
+          pic: "https://images.hindustantimes.com/img/2022/09/08/1600x900/APTOPIX-Emirates-Asia-Cup-Cricket-1_1662663150665_1662663150665_1662663167743_1662663167743.jpg",
+        },
+        {
+          Name: "SKY",
+          score: 61,
+          pic: "https://www.timesofsports.com/wp-content/uploads/2021/10/Suryakumar-Yadav.png",
+        },
+        {
+          Name: "DK",
+          score: 17,
+          pic: "https://feeds.abplive.com/onecms/images/uploaded-images/2022/09/12/8e85b9a34f296cef164bbbda8c65f85b166299125527724_original.jpg",
+        },
+        {
+          Name: "Pant",
+          score: "DNB",
+          pic: "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/323000/323036.png",
+        },
+      ];
+      function displayPlayers() {
+        teamIndia.forEach(function (player) {
+          var myDiv = document.createElement("div");
+          myDiv.setAttribute("class","player");
+          document.body.appendChild(myDiv);
+
+          var myImg=document.createElement("img");
+          myImg.setAttribute("src",player.pic)
+          myDiv.appendChild(myImg)
+
+          var myPara1=document.createElement("p")
+          myPara1.innerHTML="Player Name:"+ player.Name
+          myDiv.appendChild(myPara1)
+
+          var myPara2=document.createElement("p")
+          myPara2.innerHTML="Score"+player.score
+          myDiv.appendChild(myPara2)
+        });
+      }
+    </script>
+  </body>
+</html>

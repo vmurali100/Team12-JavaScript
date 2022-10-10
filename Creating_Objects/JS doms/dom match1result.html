@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul></ul>
+    <script>
+      var match1 = [
+        { name: "Rohit", score: 0 },
+        { name: "Rahul", score: 51 },
+        { name: "Kohli", score: 3 },
+        { name: "SKY", score: 50 },
+        { name: "Pant", score: "DNB" },
+        { name: "DK", score: "DNB" },
+      ];
+      match1.forEach(function (user) {
+        var myli = document.createElement("li");
+        if (user.score == "DNB") {
+          myli.innerHTML = user.name + "  " + "Did Not Bat";
+        } else {
+          myli.innerHTML = user.name + "  " + "scored" + user.score + "Runs";
+        }
+        document.querySelector("ul").appendChild(myli);
+      });
+      var match1bowling = [
+        { name: " Deepak Chahar", Wickets: 2, ER: 6 },
+        { name: "Arshadeep Singh", Wickets: 3, ER: 8 },
+        { name: "Ashwin", Wickets: 0, ER: 2 },
+        { name: "Axar", Wickets: 1, ER: 4 },
+        { name: "Harshal Patel", Wickets: 2, ER: 6 },
+      ];
+      match1bowling.forEach(function (user) {
+        var myli = document.createElement("li");
+        myli.innerHTML =
+          user.name + "  " + "Wickets:" + user.Wickets + "  " + "ER:" + user.ER;
+        document.querySelector("ul").appendChild(myli);
+      });
+      document.write("Result:India Won By 8 Wickets");
+    </script>
+  </body>
+</html>

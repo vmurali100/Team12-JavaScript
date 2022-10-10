@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick= "displayPlayersInTable">Show Players</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>score</th>
+                <th>pic</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var teamIndia = [
+        {
+          Name: "Rohit",
+          score: 43,
+          pic: "https://cdn-wp.thesportsrush.com/2022/07/304e3344-josh-inglis-87.jpg",
+        },
+        {
+          Name: "Rahul",
+          score: 57,
+          pic: "https://images.thequint.com/thequint%2F2022-08%2F85c3c840-bd5c-467f-a3b9-ed008f3428e4%2F1639c980d02056b9503a923a1a063af1__1_.jpg?auto=format%2Ccompress&fmt=webp&width=720",
+        },
+        {
+          Name: "Kohli",
+          score: 49,
+          pic: "https://images.hindustantimes.com/img/2022/09/08/1600x900/APTOPIX-Emirates-Asia-Cup-Cricket-1_1662663150665_1662663150665_1662663167743_1662663167743.jpg",
+        },
+        {
+          Name: "SKY",
+          score: 61,
+          pic: "https://www.timesofsports.com/wp-content/uploads/2021/10/Suryakumar-Yadav.png",
+        },
+        {
+          Name: "DK",
+          score: 17,
+          pic: "https://feeds.abplive.com/onecms/images/uploaded-images/2022/09/12/8e85b9a34f296cef164bbbda8c65f85b166299125527724_original.jpg",
+        },
+        {
+          Name: "Pant",
+          score: "DNB",
+          pic: "https://img1.hscicdn.com/image/upload/f_auto,t_ds_square_w_320,q_50/lsci/db/PICTURES/CMS/323000/323036.png",
+        },
+    ];
+    function displayPlayersInTable(){
+        teamIndia.forEach(function(player){
+            var myTr= document.createElement("tr");
+            var myTd1=document.createElement("td")
+            myTd1.innerHTML=player.Name
+            var myTd1=document.createElement("td")
+            myTd2.innerHTML=player.score
+            var myTd1=document.createElement("td")
+            var myImage=document.createElement("img")
+            myImage.setAttribute("src",player.pic)
+            myTd3.appendchild(myImage)
+            myTr.appendChild(myTd1)
+            myTr.appendChild(myTd2)
+            myTr.appendChild(myTd3)
+            document.querySelector("tbody").appendchild(myTr)
+        })
+
+    }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="inserttext()">insertsometext</button>
+    <h2 id="practise" class="dom"></h2>
+    <h2 id="practise" class="dom"></h2>
+    <h2 id="practise" class="dom"></h2>
+    <h2 id="practise" class="dom"></h2>
+    <h2 id="practise" class="dom"></h2>
+    <h2 id="practise" class="dom"></h2>
+    <script>
+        function inserttext(){
+            // document.querySelector("h2").innerHTML="Hello... Iam practicing Dom"
+            // document.getElementById("practise").innerHTML="Hello... Iam practicing Dom"
+            // document.getElementsByClassName("dom")[0].innerHTML="Hello... Iam practicing Dom"
+            var allelements=document.querySelectorAll("h2");
+            allelements.forEach((ele,i)=>{
+              console.log(ele)
+              ele.innerHTML="Hello... Iam practicing Dom-"+i
+            })
+        }
+    </script>
+</body>
+</html>

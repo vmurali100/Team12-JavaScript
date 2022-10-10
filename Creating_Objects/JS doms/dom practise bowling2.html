@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul></ul>
+    <script>
+      var match1bowling = [
+        { name: " Hardik Pandya", Wickets: 0, ER: 11 },
+        { name: "Chahal", Wickets: 1, ER: 12 },
+        { name: "Umesh Yadav", Wickets: 2, ER: 13 },
+        { name: "Axar Patel", Wickets: 3, ER: 4 },
+        { name: "Harshal Patel", Wickets: 0, ER: 12 },
+        { name: "Bhuvneshwar Kumar", Wickets: 0, ER: 13 },
+      ];
+      match1bowling.forEach(function (user) {
+        var myli = document.createElement("li");
+        myli.innerHTML =
+          user.name + "  " + "Wickets:" + user.Wickets + "  " + "ER:" + user.ER;
+        document.querySelector("ul").appendChild(myli);
+      });
+      document.write("Result: Australia Won by 4 Wickets");
+    </script>
+  </body>
+</html>

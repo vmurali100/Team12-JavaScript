@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="changetext()">changetext</button>
+    <h1 id="identity" class="life" name="divakar">Hello my life</h1>
+    <script>
+        function changetext(){
+            // document.querySelector("h1").innerHTML="Iam not changing"
+            // document.getElementById("identity").innerHTML="Iam not changing" 
+            // FIRST TWO METHODS GIVE SINGLE ELEMENTS
+
+            // REMAINING GIVE MULTIPLE ELEMENTS
+            // document.getElementsByTagName("h1")[0].innerHTML="Iam not changing"
+            // document.getElementsByClassName("life")[0].innerHTML="iam not changing"
+            // document.getElementsByName("divakar")[0].innerHTML="iam not changing"
+            // document.querySelectorAll("#identity")[0].innerHTML="iam not changing"
+        }
+    </script>
+</body>
+</html>
