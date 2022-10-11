@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #updateBtn {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <form>
+        <label for="username">User Name</label>
+        <input type="text" name="" id="username"><br>
+        <label for="email">Email</label>
+        <input type="text" name="" id="email"><br>
+        <label for="password">Password</label>
+        <input type="text" name="" id="password"><br>
+        <label for="confirmpassword">Confirm Password</label>
+        <input type="text" name="" id="cpassword"><br>
+        <label for="displayname">Display Name</label>
+        <input type="text" name="" id="dname"><br>
+        <label for="fname">First Name : </label>
+        <input type="text" name="" id="fname">
+        <label for="lname">Last Name : </label>
+        <input type="text" name="" id="lname"> <br>
+        <label for="nickname">Nickname</label>
+        <input type="text" name="" id="nname"><br>
+        <label for="website">Website</label>
+        <input type="text" name="" id="website"><br>
+        <label for="bio">Bio</label>
+        <input type="text" name="" id="bio"><br>
+        <button onclick="updateUser()" type="button" id="updateBtn">Update User</button>
+        <button onclick="createuser()" type="button" id="createBtn">Create User</button>
+    </form>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Confirm Password</th>
+                <th>Display Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Nick Name</th>
+                <th>Website </th>
+                <th>Bio</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        // 1. Create a User 
+        // 2. Read User 
+        // 3. Update a User 
+        // 4. Delete a User 
+
+        // CRUD Application 
+        var allUsers = [
+        { username: "kushi", email: "kushi@gmail.com", password: 223344, cpassword: 223344, dname: "kushi PC", fname: "kushi", lname: "PC", nname: "kush", website: "kushi.com", bio: "abbgdsjshdhdhd" },
+        { username: "rama", email: "rama33@gmail.com", password: 289344, cpassword: 289344, dname: "raghu rama", fname: "raghu", lname: "Police", nname: "ranga", website: "rama.com", bio: "abbgdsjshdhdhhfhfd" },
+        ]
+        var gindex = null
+        function createuser() {
+            var user = {
+                username:document.getElementById("username").value,
+                email:document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                cpassword: document.getElementById("cpassword").value,
+                dname: document.getElementById("dname").value,
+                fname:document.getElementById("fname").value,
+                lname:document.getElementById("lname").value,
+                nname: document.getElementById("nname").value,
+                website:document.getElementById("website").value,
+                bio: document.getElementById("bio").value
+            }
+            console.log("user", user);
+            clearform()
+            allUsers.push(user)
+            displayUsers(allUsers)
+        }
+
+        function clearform() {
+            document.getElementById("username").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("cpassword").value = "";
+            document.getElementById("dname").value = "";
+            document.getElementById("fname").value = "";
+            document.getElementById("lname").value = "";
+            document.getElementById("nname").value = "";
+            document.getElementById("website").value = "";
+            document.getElementById("bio").value = "";
+        }
+
+        function displayUsers(users) {
+            document.querySelector("tbody").innerHTML = ""
+            users.forEach((user, i) => {
+                var myTr = document.createElement("tr");
+                var utd = document.createElement("td");
+                utd.innerHTML = user.username;
+                myTr.appendChild(utd);
+                var etd = document.createElement("td");
+                etd.innerHTML = user.email;
+                myTr.appendChild(etd);
+                var ptd = document.createElement("td");
+                ptd.innerHTML = user.password;
+                myTr.appendChild(ptd);
+                var cptd = document.createElement("td");
+                cptd.innerHTML = user.cpassword;
+                myTr.appendChild(cptd);
+                var dtd = document.createElement("td");
+                dtd.innerHTML = user.dname;
+                myTr.appendChild(dtd);
+                var ftd = document.createElement("td");
+                ftd.innerHTML = user.fname;
+                myTr.appendChild(ftd);
+                var ltd = document.createElement("td");
+                ltd.innerHTML = user.lname;
+                myTr.appendChild(ltd);
+                var ntd = document.createElement("td");
+                ntd.innerHTML = user.nname;
+                myTr.appendChild(ntd);
+                var wtd = document.createElement("td");
+                wtd.innerHTML = user.website;
+                myTr.appendChild(wtd);
+                var btd = document.createElement("td");
+                btd.innerHTML = user.bio;
+                myTr.appendChild(btd);
+
+                var editTd = document.createElement("td");
+                var editBtn = document.createElement("button");
+                editBtn.innerHTML = "Edit";
+                editBtn.setAttribute("onclick", "editUser(" + i + ")");
+
+                editTd.appendChild(editBtn)
+                var deleteTd = document.createElement("td");
+                var deleteBtn = document.createElement("button");
+                deleteBtn.innerHTML = "Delete";
+                deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+                deleteTd.appendChild(deleteBtn);
+                myTr.appendChild(editTd);
+                myTr.appendChild(deleteTd);
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+
+        function deleteUser(i) {
+            var latestUsers = allUsers.filter(function (user, index) {
+                return i !== index
+            })
+            console.log(latestUsers);
+            displayUsers(latestUsers)
+        }
+
+        function editUser(i) {
+            console.log(i)
+            gindex = i;
+            document.getElementById("username").value = allUsers[i].username
+            document.getElementById("email").value = allUsers[i].email
+            document.getElementById("password").value = allUsers[i].password
+            document.getElementById("cpassword").value = allUsers[i].cpassword
+            document.getElementById("dname").value = allUsers[i].dname
+            document.getElementById("fname").value = allUsers[i].fname
+            document.getElementById("lname").value = allUsers[i].lname
+            document.getElementById("nname").value = allUsers[i].nname
+            document.getElementById("website").value = allUsers[i].website
+            document.getElementById("bio").value = allUsers[i].bio
+            document.getElementById("updateBtn").style.display = "block"
+            document.getElementById("createBtn").style.display = "none"
+        }
+
+        function updateUser() {
+            var user = {
+                username: document.getElementById("username").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                cpassword: document.getElementById("cpassword").value,
+                dname: document.getElementById("dname").value,
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                nname: document.getElementById("nname").value,
+                website: document.getElementById("website").value,
+                bio: document.getElementById("bio").value,
+            }
+            allUsers[gindex] = user
+
+            displayUsers(allUsers);
+            clearform()
+            document.getElementById("updateBtn").style.display = "none"
+            document.getElementById("createBtn").style.display = "block"
+        }
+
+        displayUsers(allUsers)
+    </script>
+</body>
+
+</html>

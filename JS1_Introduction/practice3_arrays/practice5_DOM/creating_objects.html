@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+
+    </ul>
+    <script>
+        var vehicle=[{name:"audi",price:9000000,color:"yellow"},
+        {name:"bmw",price:800000,color:"green"},
+        {name:"benz",price:8500000,color:"black"},
+        {name:"innova",price:780000,color:"red"},
+        {name:"fortuner",price:678000,color:"blue"}]
+        vehicle.forEach(function(ab){
+            var cars=document.createElement("li");
+            cars.innerHTML=ab.name+" "+ab.price+" color of the car is"+ab.color;
+            document.querySelector("ul").appendChild(cars);
+        })
+    </script>
+    
+</body>
+</html>

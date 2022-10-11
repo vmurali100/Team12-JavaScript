@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="userid">User Id</label>
+        <input type="text" name="" id="user" ><br>
+        <label for="password">password</label><br>
+        <input type="text" name="" id="password" >
+        <label for="Email">Email</label><br>
+        <input type="text" name="" id="email">
+        <label for="phone">contact number</label><br>
+        <input type="text" name="" id="phone" >
+        <label for="state">state</label><br>
+        <input type="text"  name="" id="state" >
+        <label for="langauge">langauge</label><br>
+        <input type="text" name="" id="langauge">
+        <button type="button" onclick="add()">enter</button>
+    </form>
+    <script>
+        function add(){
+             var me={
+                userID:document.getElementById("user").value,
+                password:document.getElementById("password").value,
+                Email:document.getElementById("email").value,
+                number:document.getElementById("phone").value,
+                state:document.getElementById("state").value,
+                language:document.getElementById("language").value 
+             }
+             console.log(me)
+        }
+    </script>
+    
+</body>
+
+</html>
