@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #createBtn{
+            display:none;
+        }
+        </style>
+        </head>
+        <body>
+            <form>
+                <label for="fname">First Name:</label>
+                <input type="text"name=""id="fname"><br>
+                <label for="lname">Last Name:</label>
+                <input type="text"name=""id="lname"><br>
+                <label for="patronymic">Patronymic:</label>
+                <input type="text"name=""id="patronymic"><br>
+                <label for="emali">Email:</label>
+                <input type="text"name=""id="email"><br>
+                <label for="password">Password:</label>
+                <input type="text"name=""id="password"><br>
+                <label for="age">Age:</label>
+                <input type="text"name=""id="age"><br>
+                <button onclick="updateUser()"type="button"id="updateBtn">UpdateUser</button>
+                <button onclick="createUser()"type="button"id="createBtn">CreateUser</button>
+                </form>
+                <hr>
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Patronymic</th>
+                            <th>Email</th>
+                            <th>Password</th>
+                            <th>Age</th>
+                            <th>delete</th>
+                            <th>edit</th>
+                        
+    
+                            
+                        
+                        </tr>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+                <script>
+                    var allUsers=[
+                        {fname:"chinta"},
+                        {lname:"susmitha"},
+                        {patronymic:"gangalagunta"},
+                        {email:"susmitha@gmail.com"},
+                        {password:"12345"},
+                        {age:"20"},
+                ]
+                var gindex=null 
+                function createuser(){
+                    var user={
+                        fname:document.getElementByid("fname").value,
+                        lname:document.getElementByid("lname").value,
+                        patronymic:document.getElementByid("patronymic").value,
+                        email:document.getElementByid("email").value,
+                        password:document.getElementByid("password").value,
+                        age:document.getElementByid("age").value,
+                    }
+                    console.log("user",user);
+                    clearform()
+                    allUsers.push(user)
+                    displayUsers(allUsers)
+                }
+                function clearform(){
+                    document.getElementByid("fname").value="";
+                    document.getElementByid("lname").value="";
+                    document.getElementByid("patronymic").value="";
+                    document.getElementByid("email").value="";
+                    document.getElementByid("password").value="";
+                    document.getElementByid("age").value=""
+                }
+                function displayUsers(users){
+                    document.querySelector("tbody").innerHTML=""
+                    users.forEach((user,i)=>{
+                        var myTr=document.createElement("tr");
+                        var ftd=document.createElement("td");
+                        ftd.innerHTML=user.fname;
+                        var ltd=document.createElement("td");
+                        ltd.innerHTML=user.lname;
+                        var ptd=document.createElement("td");
+                        ptd.innerHTML=user.patronymic;
+                        var etd=document.createElement("td");
+                        etd.innerHTML=user.email;
+                        var ptd=document.createElement("td");
+                        ptd.innerHTML=user.password;
+                        var atd=document.createElement("td");
+                        atd.innerHTML=user.age;
+                        myTr.appendChild(ftd);
+                        myTr.appendChild(ltd);
+                        myTr.appendChild(ptd);
+                        myTr.appendChild(etd);
+                        myTr.appendChild(ptd);
+                        myTr.appendChild(atd);
+                        var editTd=document.createElement("td");
+                        var editBtn=document.createElement("button");
+                        editBtn.innerHTML="Edit";
+                        editBtn.setAttribute("onclick","editUser("+ i +")");
+                        editTd.appendChild(editBtn)
+                        var deleteTd=document.createElement("td");
+                        var deleteBtn=document.createElement("button");
+                        deleteBtn.innerHTML="Delete";
+                        deleteBtn.setAttribute("onclick","deleteUser("+ i +")");
+                        deleteTd.appendChild(deleteBtn);
+                        myTr.appendChild(editTd);
+                        myTr.appendChild(deleteTd);
+                        document.querySelector("tbody").appendChild(myTr)
+                    });
+                }
+                function deleteUser(i){
+                    var latestUsers=allUsers.filter(function(user,index){
+                        return i !== index
+                    })
+                    console.log(latestUsers);
+                    displayUsers(latestUsers)
+                }
+                function editUser(i){
+                    console.log(i)
+                    gindex=i;
+                    document.getElementByid("fname").value=allUsers[i].fname
+                    document.getElementByid("lname").value=allUsers[i].lname
+                    document.getElementByid("patronymic").value=allUsers[i].patronymic
+                    document.getElementByid("email").value=allUsers[i].email
+                    document.getElementByid("password").value=allUsers[i].password
+                    document.getElemmentByid("age").value=allUsers[i].age
+                    document.getElementByid("updateBtn").style.display="block"
+                    document.createElementByid("createBtn").style.display="none"
+                }
+                function updateUser(){
+                    var users={
+                        fname:document.getElementByid("fname").value,
+                        lname:document.getElementByid("lname").value,
+                        patronymic:document.getElementByid("patronymic").value,
+                        email:document.getElementByid("email").value,
+                        password:document.getElementByid("password").value,
+                        age:document.getElementByid("age").value
+                    }
+                    allUsers[gindex]=user
+                    displayUsers(allUsers);
+                    clearform()
+                    document.getElementByid("updateBtn").style.display="none"
+                    document.getElementByid("createBtn").style.dispaly="block"
+                }
+                displayUsers(allUsers)
+                </script>
+                </body>
+                </html>

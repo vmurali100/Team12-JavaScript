@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .form {
+            position: relative;
+            left: 50%;
+        }
+
+        input[type="text"] {
+            margin: 1%;
+            background-color: floralwhite;
+            font-size: x-large;
+        }
+
+        #update {
+            display: none;
+        }
+        textarea{
+            background-color: floralwhite;
+            font-size: x-large;
+        }
+        button#create {
+    font-family: cursive;
+    background-color: deepskyblue;
+    color: cornsilk;
+    font-size: x-large;
+}
+button#update {
+    font-family: fantasy;
+    background-color: yellowgreen;
+    color: black;
+    font-size: x-large;
+}
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <h1>Register</h1>
+        <form action="">
+            <input type="text" placeholder="First Name" id="fname"><br>
+            <input type="text" placeholder="Last Name" id="lname"><br>
+            <input type="text" placeholder="Email" id="email"><br>
+            <input type="text" placeholder="Password" id="password"><br>
+            <input type="text" placeholder="age" id="age"><br>
+            <textarea name="" id="about" cols="30" rows="10" placeholder="A few words about you"></textarea>
+
+        </form>
+        <button onclick="updateperson()" id="update" type="button">Update</button>
+        <button onclick="createuser()" id="create" type="button">Register</button>
+    </div>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Nmae</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>age</th>
+                <th>About you</th>
+                <th>edit</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var allpersons = [
+            { fname: "Revanth", lname: "Reddy", email: "revanthreddy@gmail.com", password: "hello", age: "22", about: "hi" }
+        ]
+        var gindex = null
+        function createuser() {
+            var person = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                age: document.getElementById("age").value,
+                about: document.getElementById("about").value,
+
+            }
+            //console.log(person)
+            clearperson()
+            allpersons.push(person)
+            displayperson(allpersons)
+        }
+        function clearperson() {
+            document.getElementById("fname").value = "";
+            document.getElementById("lname").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("about").value = "";
+        }
+        function displayperson(person) {
+            document.querySelector("tbody").innerHTML = ""
+            person.forEach((value, i) => {
+                var mytr = document.createElement("tr");
+                var ftd = document.createElement("td");
+                ftd.innerHTML = value.fname;
+                var ltd = document.createElement("td");
+                ltd.innerHTML = value.lname;
+                mytr.appendChild(ftd);
+                mytr.appendChild(ltd);
+                var etd = document.createElement("td");
+                etd.innerHTML = value.email;
+                mytr.appendChild(etd);
+                var ptd = document.createElement("td");
+                ptd.innerHTML = value.password;
+                mytr.appendChild(ptd);
+                var atd = document.createElement("td");
+                atd.innerHTML = value.email;
+                mytr.appendChild(atd);
+                var abtd = document.createElement("td");
+                abtd.innerHTML = value.about;
+                mytr.appendChild(abtd);
+                document.querySelector("tbody").appendChild(mytr);
+
+
+                var edittd = document.createElement("td");
+                var editbuttontd = document.createElement("button");
+                editbuttontd.innerHTML = "Edit";
+                edittd.appendChild(editbuttontd);
+                mytr.appendChild(edittd);
+                editbuttontd.setAttribute("onclick", "editperson(" + i + ")")
+
+                var deletetd = document.createElement("td");
+                var deletebuttontd = document.createElement("button");
+                deletebuttontd.innerHTML = "delete";
+                deletetd.appendChild(deletebuttontd);
+                mytr.appendChild(deletetd);
+                deletebuttontd.setAttribute("onclick", "deleteperson(" + i + ")");
+            });
+        }
+
+        function deleteperson(i) {
+            var latestperson = allpersons.filter(function (value, index) {
+                return i !== index
+            })
+            console.log(latestperson)
+            displayperson(latestperson)
+        }
+        function editperson(i) {
+            console.log(i)
+            document.getElementById("fname").value = allpersons[i].fname;
+            document.getElementById("lname").value = allpersons[i].lname;
+            document.getElementById("email").value = allpersons[i].email;
+            document.getElementById("password").value = allpersons[i].password;
+            document.getElementById("age").value = allpersons[i].age;
+            document.getElementById("about").value = allpersons[i].about;
+            document.getElementById("update").style.display = "block";
+            document.getElementById("create").style.display = "none";
+            gindex = i;
+        }
+
+        function updateperson() {
+            var person = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                age: document.getElementById("age").value,
+                about: document.getElementById("about").value,
+
+            }
+            allpersons[gindex] = person
+
+            displayperson(allpersons);
+            clearperson()
+            document.getElementById("update").style.display = "none";
+            document.getElementById("create").style.display = "block";
+        }
+        displayperson(allpersons)
+
+    </script>
+</body>
+
+</html>
