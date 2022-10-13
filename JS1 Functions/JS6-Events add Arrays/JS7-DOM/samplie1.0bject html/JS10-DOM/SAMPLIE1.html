@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button#updateBtn {
+    display: none;
+}
+
+
+        form {
+    text-align: center;
+    padding: 2px;
+    color: red;
+    font-size: 20px;
+    border: 1px solid;
+}
+
+
+h1 {
+    font-size: 50px;
+    text-align: center;
+    color: blue;
+    border: 1px solid;
+}
+h2 {
+    text-align: center;
+    color: green;
+    font-size: 30px;
+    border: 1px solid;
+}
+
+
+
+
+
+    </style>
+</head>
+
+<body>
+    <h1>Register</h1>
+    <form>
+        <label for="firstname">First name:</label>
+        <input type="text" name="" id="fname"><br /><br>
+        <label for="lastname">Last name:</label>
+        <input type="text" name="" id="lname"><br /><br>
+        <label for="patronymic">Patronymic:</label>
+        <input type="text" id="patronymic"><br /><br>
+        <label for="email">Email:</label>
+        <input type="text" id="email"><br /><br>
+        <label for="password">Password:</label>
+        <input type="text" id="password"><br /><br>
+        <label for="age">Age:</label>
+        <input type="text" id="age"><br /><br>
+        <label for="author">Author:</label>
+        <input type="text" id="author"><br /><br>
+
+
+        <button onclick="updateuser()" type="button" id="updateBtn">Update  User</button>
+
+
+        <button onclick="createuser()" type="button" id="createBtn">Create User</button>
+
+    </form>
+    <h2>Register</h2>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First name</th>
+                <th>Last name</th>
+                <th>Patronymic</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Age</th>
+                <th>Author</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+
+    </table>
+
+    <script>
+        var allUsers = [
+            { fname: "M", lname: "Jagadeesh", patronymic: "Muragesh", email: "mallelajagadeesh7524@gmail.com", password: 1789, age: 23, author: "Cricket" },
+            { fname: "K", lname: "Radha", patronymic: "anji", email: "radha96@gmail.com", password: 9618, age:41, author: "Dancing" } 
+         ]
+        var gindex=null
+        function createuser() {
+            document.querySelector("tbody").innerHTML = ""
+            var User = { 
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                patronymic: document.getElementById("patronymic").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                age: document.getElementById("age").value,
+                author: document.getElementById("author").value,
+            }
+            console.log("User", User);
+            clearform()
+            allUsers.push(User)
+            displayUsers(allUsers)
+        }
+        function clearform() {
+            document.getElementById("fname").value = "";
+            document.getElementById("lname").value = "";
+            document.getElementById("patronymic").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("author").value = ""
+
+        }
+
+        function displayUsers(Users) {
+            Users.forEach((User, i) => {
+                var myTr = document.createElement("tr");
+                var ftd = document.createElement("td");
+                ftd.innerHTML = User.fname
+                var ltd = document.createElement("td");
+                ltd.innerHTML = User.lname
+                var patronymictd = document.createElement("td");
+                patronymictd.innerHTML = User.patronymic
+                var emailtd = document.createElement("td");
+                emailtd.innerHTML = User.email
+                var passwordtd = document.createElement("td");
+                passwordtd.innerHTML = User.password
+                var agetd = document.createElement("td");
+                agetd.innerHTML = User.age
+                var authortd = document.createElement("td");
+                authortd.innerHTML = User.author
+
+
+                myTr.appendChild(ftd);
+                myTr.appendChild(ltd);
+                myTr.appendChild(patronymictd);
+                myTr.appendChild(emailtd);
+                myTr.appendChild(passwordtd);
+                myTr.appendChild(agetd);
+                myTr.appendChild(authortd);
+
+                var editTd = document.createElement("td");
+                var editBtn = document.createElement("button")
+                editBtn.innerHTML = "Edit"
+                editBtn.setAttribute("onclick", "editUser(" + i + ")");
+                editTd.appendChild(editBtn)
+                var deleteTd = document.createElement("td");
+                var deleteBtn = document.createElement("button");
+                deleteBtn.innerHTML = "Delete"
+                deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+                deleteTd.appendChild(deleteBtn)
+                myTr.appendChild(editTd);
+                myTr.appendChild(deleteTd);
+                document.querySelector("tbody").appendChild(myTr)
+
+            });
+        }
+        function deleteUser(i) {
+            var latestUsers = allUsers.filter(function (User, index) {
+                return i !== index
+            })
+            console.log(latestUsers);
+            displayUsers(latestUsers)
+        }
+        function editUser(i) {
+            console.log(i)
+            gindex=i;
+            document.getElementById("fname").value = allUsers[i].fname
+            document.getElementById("lname").value = allUsers[i].lname
+            document.getElementById("patronymic").value = allUsers[i].patronymic
+            document.getElementById("email").value = allUsers[i].email
+            document.getElementById("password").value = allUsers[i].password
+            document.getElementById("age").value = allUsers[i].age
+            document.getElementById("author").value = allUsers[i].author
+            document.getElementById("updateBtn").style.display = "Block"
+            document.getElementById("createBtn").style.display = "none"
+        }
+        function updateuser(){
+            var User = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                patronymic: document.getElementById("patronymic").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                age: document.getElementById("age").value,
+                author: document.getElementById("author").value,
+            }
+            allUsers[gindex]=User
+
+            displayUsers(allUsers)
+            clearform()
+            document.getElementById("updateBtn").style.display = "none"
+            document.getElementById("createBtn").style.display = "Block"
+        }
+        displayUsers(allUsers)
+
+    </script>
+    
+</body>
+
+</html>

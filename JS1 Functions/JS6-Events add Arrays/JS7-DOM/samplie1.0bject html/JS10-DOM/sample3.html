@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button#updateBtn {
+    display: none;
+}
+h2 {
+    border: 1px solid;
+    color: maroon;
+    font-size: 30px;
+    text-align: center;
+}
+form {
+    border: 1px solid;
+    color: aqua;
+    font-size: 20px;
+}
+    </style>
+</head>
+<body>
+    <h2>Customer Details:</h2>
+    
+    <form>
+        <label for="fullname">Full Name*</label><br/><br>
+        <label for="fname">FirstName</label>
+        <input type="text" name="" id="fname">
+        <label for="lname">LastName</label>
+        <input type="text" name="" id="lname"><br/><br>
+        <label for="address">Address*</label>
+        <br/><br>
+        <label for="streetaddress">Streetaddress</label>
+            
+        <input type="text" id="streetaddress"><br/><br>
+        <label for="streetaddressline2">Streetaddressline2</label>
+        <input type="text" id="streetaddressline2"><br/><br>
+        <label for="city">City</label>
+        <input type="text" id="city">
+        <label for="state">State</label>
+        <input type="text" id="state"><br/><br>
+        <label for="zipcode">Zipcode</label>
+        <input type="text" name="" id="zipcode"><br/><br>
+        <label for="phonenumber">PhoneNumber*</label><br>
+        <input type="text" name="" id="phonenumber"><br/><br>
+
+        
+        <button onclick="updateuser()" type="button" id="updateBtn">Update User</button>
+
+        <button onclick="createuser()" type="button" id="createBtn">Create User</button>
+
+
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Streetaddress</th>
+                <th>Streetaddressline2</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zipcode</th>
+                <th>PhoneNumber</th>
+                <th>Edit</th>
+                <th>Delete</th>
+                
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        var allusers=[
+            {fname:"M",lname:"jagadeesh",streetaddress:"janapastreet",streetaddressline2:"bnrpeta",city:"chittoor",state:"AP",zipcode:517419,phonenumber:7995321587},
+                   {fname:"K",lname:"Radha",streetaddress:"janapastreet",streetaddressline2:"bnrpeta",city:"chittoor",state:"AP",zipcode:517419,phonenumber:9618918225},
+        ]
+        var gindex=null
+function createuser(){
+    var user={
+        fname:document.getElementById("fname").value,
+        lname:document.getElementById("lname").value,
+        streetaddress:document.getElementById("streetaddress").value,
+        streetaddressline2:document.getElementById("streetaddressline2").value,
+        city:document.getElementById("city").value,
+        state:document.getElementById("state").value,
+        zipcode:document.getElementById("zipcode").value,
+        phonenumber:document.getElementById("phonenumber").value,
+    }
+     console.log("user",user);
+     clearform()
+      allusers.push(user)
+      displayusers(allusers)
+}
+function clearform(){
+    document.getElementById("fname").value="";
+        document.getElementById("lname").value="";
+        document.getElementById("streetaddress").value="";
+        document.getElementById("streetaddressline2").value="";
+        document.getElementById("city").value="";
+
+        document.getElementById("state").value="";
+        document.getElementById("zipcode").value="";
+        document.getElementById("phonenumber").value="";
+
+}
+function displayusers(users){
+    document.querySelector("tbody").innerHTML=""
+    users.forEach((user,i) => {
+        var myTr=document.createElement("tr");
+        
+        var fnametd=document.createElement("td");
+        fnametd.innerHTML=user.fname;
+        var lnametd=document.createElement("td");
+        lnametd.innerHTML=user.lname;
+        var streetaddresstd=document.createElement("td");
+        streetaddresstd.innerHTML=user.streetaddress;
+        var streetaddressline2td=document.createElement("td");
+        streetaddressline2td.innerHTML=user.streetaddressline2;
+        var citytd=document.createElement("td");
+        citytd.innerHTML=user.city;
+        var statetd=document.createElement("td");
+        statetd.innerHTML=user.state;
+        var zipcodetd=document.createElement("td");
+        zipcodetd.innerHTML=user.zipcode;
+        var phonenumbertd=document.createElement("td");
+        phonenumbertd.innerHTML=user.phonenumber;
+
+        myTr.appendChild(fnametd);
+        myTr.appendChild(lnametd);
+        myTr.appendChild(streetaddresstd);
+        myTr.appendChild(streetaddressline2td);
+        
+        myTr.appendChild(citytd);
+        myTr.appendChild(statetd);
+        myTr.appendChild(zipcodetd);
+        myTr.appendChild(phonenumbertd);
+
+        var editTd=document.createElement("td");
+    var editBtn=document.createElement("button");
+    editBtn.innerHTML="Edit"
+    editBtn.setAttribute("onclick","edituser("+i+")")
+    editTd.appendChild(editBtn);
+    var deleteTd=document.createElement("td");
+    var deleteBtn=document.createElement("button");
+    deleteBtn.innerHTML="Delete"
+    deleteBtn.setAttribute("onclick","deleteuser("+i+")")
+    deleteTd.appendChild(deleteBtn);
+
+     myTr.appendChild(editTd);
+     myTr.appendChild(deleteTd);
+
+
+        
+
+     
+       document.querySelector("tbody").appendChild(myTr)
+        
+    });
+}
+function deleteuser(i){
+var latestusers=allusers.filter (function (user,index){
+    return i !==index
+})
+console.log(latestusers);
+displayusers(latestusers)
+}
+function edituser(i){
+    console.log(i)
+    gindex=i;
+        document.getElementById("fname").value=allusers[i].fname
+        document.getElementById("lname").value=allusers[i].lname
+        document.getElementById("streetaddress").value=allusers[i].streetaddress
+        document.getElementById("streetaddressline2").value=allusers[i].streetaddressline2
+        document.getElementById("city").value=allusers[i].city
+
+        document.getElementById("state").value=allusers[i].state
+        document.getElementById("zipcode").value=allusers[i].zipcode
+        document.getElementById("phonenumber").value=allusers[i].phonenumber
+        document.getElementById("updateBtn").style.display="Block"
+        document.getElementById("createBtn").style.display="none"
+    
+
+}
+
+function updateuser(){
+    var user={
+        fname:document.getElementById("fname").value,
+        lname:document.getElementById("lname").value,
+        streetaddress:document.getElementById("streetaddress").value,
+        streetaddressline2:document.getElementById("streetaddressline2").value,
+        city:document.getElementById("city").value,
+        state:document.getElementById("state").value,
+        zipcode:document.getElementById("zipcode").value,
+        phonenumber:document.getElementById("phonenumber").value
+
+    }
+
+
+allusers[gindex]=user
+
+            displayusers(allusers)
+            clearform()
+            document.getElementById("updateBtn").style.display = "none"
+            document.getElementById("createBtn").style.display = "Block"
+}
+
+displayusers(allusers)
+
+
+
+    </script>
+</body>
+
+</html>
