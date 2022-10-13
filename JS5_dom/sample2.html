@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    tbody{
+        background-color: aquamarine;
+        color: blueviolet;
+    }
+    button{
+        background-color: blueviolet;
+    }
+    th{
+        background-color: chartreuse;
+    }
+    input{
+        background-color: cadetblue;
+    }
+</style>
+
+<body>
+    <form>
+        <label for="fname">fname</label>
+        <input type="text" id="fname" placeholder="fname"><br>
+        <label for="lname">lname</label>
+        <input type="text" name="" id="lname" placeholder="lname"><br>
+        <label for="patronymic">patronymic</label>
+        <input type="text" name="" id="patronymic" placeholder="patronymic"><br>
+        <label for="email">email</label>
+        <input type="text" name="" id="email" placeholder="email"><br>
+        <label for="age">age</label>
+        <input type="number" name="" id="age" placeholder="age"><br>
+    </form>
+    <button onclick="create()" type="button" id="createBtn">create</button>
+    <button onclick="update()" type="button" id="updateBtn">update</button>
+    <!-- <button style="background-color: green;">Register</button> -->
+    <hr>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>fame</th>
+                <th>lname</th>
+                <th>patronymic</th>
+                <th>email</th>
+                <th>age</th>
+                <th>edit</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var allforms = [
+            {fname:"varshi",lname:"reddy", email:"varshi@gmail.com",patronymic:"ainari",age:20},
+            {fname:"puji",lname:"reddy",email:"puji@gmail.com",patronymic:"ainari",age:18},
+            {fname:"pushpa",lname:"reddy" , email:"pushpa@gmail.com",patronymic:"ainari",age:38},
+            {fname:"uma",lname:"reddy" ,  email:"uma@gmail.com",patronymic:"ainari",age:42}
+        ]
+        var gindex = null
+        function create() {
+            var form = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                patronymic: document.getElementById("patronymic").value,
+                email: document.getElementById("email").value,
+                age: document.getElementById("age").value
+            }
+            console.log("form", form)
+            clearform()
+            allforms.push(form)
+            displayforms(allforms)
+        }
+
+        function clearform() {
+            document.getElementById("fname").value = "",
+                document.getElementById("lname").value = "",
+                document.getElementById("patronymic").value = "",
+                document.getElementById("email").value = "",
+                document.getElementById("age").value = ""
+        }
+
+        function displayforms(forms) {
+            document.querySelector("tbody").innerHTML = ""
+            forms.forEach((form, i) => {
+                var myTr = document.createElement("tr");
+                var ftd = document.createElement("td");
+                ftd.innerHTML = form.fname;
+                var ltd = document.createElement("td");
+                ltd.innerHTML = form.lname;
+                var ptd = document.createElement("td");
+                ptd.innerHTML = form.patronymic;
+                var etd = document.createElement("td");
+                etd.innerHTML = form.email;
+                var atd = document.createElement("td");
+                atd.innerHTML = form.age;
+                myTr.appendChild(ftd);
+                myTr.appendChild(ltd);
+                myTr.appendChild(ptd);
+                myTr.appendChild(etd);
+                myTr.appendChild(atd);
+                var editTd = document.createElement("td");
+                var editBtn = document.createElement("button");
+                editBtn.innerHTML = "edit";
+                editBtn.setAttribute("onclick", "editform(" + i + ")")
+                editTd.appendChild(editBtn);
+                var dltTd = document.createElement("td");
+                var dltBtn = document.createElement("button");
+                dltBtn.innerHTML = "dlt";
+                dltBtn.setAttribute("onclick", "dltform( " + i + ")")
+                dltTd.appendChild(dltBtn);
+
+                myTr.appendChild(editTd);
+                myTr.appendChild(dltTd);
+
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+        function dltform(i) {
+            var latestforms = allforms.filter(function (form, index) {
+                return i !== index
+            })
+            console.log(latestforms)
+            displayforms(latestforms)
+        }
+
+        function editform(i) {
+            console.log(i)
+            gindex = i;
+            document.getElementById("fname").value = allforms[i].fname
+            document.getElementById("lname").value = allforms[i].lname
+            document.getElementById("patronymic").value = allforms[i].patronymic
+            document.getElementById("email").value = allforms[i].email
+            document.getElementById("age").value = allforms[i].age
+            document.getElementById("updateBtn").style.display = "block"
+            document.getElementById("createBtn").style.display = "none"
+        }
+        function update() {
+            var form = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                patronymic: document.getElementById("patronymic").value,
+                email: document.getElementById("email").value,
+                age: document.getElementById("age").value
+            }
+            allforms[gindex] = form
+
+            displayforms(allforms);
+            clearform()
+            document.getElementById("updateBtn").style.display = "none"
+            document.getElementById("createBtn").style.display = "block"
+        }
+
+        displayforms(allforms)
+    </Script>
+    <br>
+    <br>
+    <button style="background-color:green; margin-left:350px;">Register</button>
+</body>
+
+</html>
