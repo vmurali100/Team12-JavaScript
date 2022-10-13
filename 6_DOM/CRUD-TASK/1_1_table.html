@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CREATE USE - CRUD -IN JS</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css">
+</head>
+<style>
+    #fName,
+    #lName {
+        width: 50% !important;
+        float: left;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div class="row text-center">
+            <h1 class="text-center">CREATE USER - CRUD -IN JS</h1>
+            <hr>
+            <div class="m-auto">
+                <form>
+                    <table>
+                        <tr>
+                            <td><label for="usrName">USER NAME</label></td>
+                            <td><input type="text" id="UserName" name="" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="email">EMAIL</label></td>
+                            <td><input type="email" id="email" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="password">PASSWORD</label></td>
+                            <td><input type="password" name="password" id="password" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="Cnf_password">CONFIRM PASSWORD</label></td>
+                            <td><input type="password" name="con_password" id="con_password" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="dName">DISPLAY NAME</label></td>
+                            <td><input type="text" name="dName" id="dName" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="name" id="name">NAME</label></td>
+                            <td>
+                                <input type="text" id="fName" class="form-control">
+                                <input type="text" id="lName" class="form-control">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><label for="nickName">NICK NAME</label></td>
+                            <td><input type="text" name="nickName" id="nickName" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="webSite">WEBSITE</label></td>
+                            <td><input type="url" name="webSite" id="webSite" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="bio">BIO</label></td>
+                            <td><textarea name="bio" id="bio" cols="10" rows="5" class="form-control"></textarea></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">FACEBOOK ID</label></td>
+                            <td><input type="text" name="" id="fbId" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">INSTGRAM ID</label></td>
+                            <td><input type="text" name="" id="igID" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td><label for="">TWITTER ID</label></td>
+                            <td><input type="text" name="" id="trID" class="form-control"></td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button type="button" onclick="createDetails()" class="btn btn-info text-white ml-5" id="createBtn">CREATE AND ACCESS</button>
+                                <br>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <button onclick="updateUser()" type="button" id="updateBtn" class="btn btn-outline-info d-none">UPDATE USER</button>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+            <hr><br>
+        </div>
+        <div class="row">
+            <table class="table table-bordered" id="myUserTable">
+                <thead>
+                    <tr>
+                        <th>USER NAME</th>
+                        <th>EMAIL</th>
+                        <th>PASSWERD</th>
+                        <th>CONFORM PASSWORD</th>
+                        <th>DISPLAY NAME</th>
+                        <th>FIRST Name</th>
+                        <th>LAST NAME</th>
+                        <th>NICK NAME</th>
+                        <th>WEB SITE</th>
+                        <th>BIO</th>
+                        <th>FACEBOOK ID</th>
+                        <th>INSTAGRAM ID</th>
+                        <th>TWITTER ID</th>
+                        <th>UPDATE</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody id="myTbody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        var createUserDetils = []
+        var gindex=null
+        function createDetails() {
+            var user = {
+                UserName: document.getElementById("UserName").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                con_password: document.getElementById("con_password").value,
+                dName: document.getElementById("dName").value,
+                fName: document.getElementById("fName").value,
+                lName: document.getElementById("lName").value,
+                nickName: document.getElementById("nickName").value,
+                webSite: document.getElementById("webSite").value,
+                bio: document.getElementById("bio").value,
+                fbId: document.getElementById("fbId").value,
+                igID: document.getElementById("igID").value,
+                trID: document.getElementById("trID").value
+            }
+            createUserDetils.push(user)
+            displayUserInTable(createUserDetils)
+            clearData()
+        }
+        function clearData() {
+            document.getElementById("UserName").value = "",
+                document.getElementById("email").value = "",
+                document.getElementById("password").value = "",
+                document.getElementById("con_password").value = "",
+                document.getElementById("dName").value = "",
+                document.getElementById("fName").value = "",
+                document.getElementById("lName").value = "",
+                document.getElementById("nickName").value = "",
+                document.getElementById("webSite").value = "",
+                document.getElementById("bio").value = "",
+                document.getElementById("fbId").value = "",
+                document.getElementById("igID").value = "",
+                document.getElementById("trID").value = ""
+        }
+        function displayUserInTable(users) {
+            document.getElementById("myTbody").innerHTML = "";
+            users.forEach((user, i) => {
+                var myTr = document.createElement("tr");
+                var myTd1 = document.createElement("td");
+                    myTd1.innerHTML = user.UserName
+                        myTr.appendChild(myTd1)
+                var myTd2 = document.createElement("td");
+                    myTd2.innerHTML = user.email
+                        myTr.appendChild(myTd2)
+                var myTd3 = document.createElement("td");
+                    myTd3.innerHTML = user.password
+                        myTr.appendChild(myTd3)
+                var myTd4 = document.createElement("td");
+                    myTd4.innerHTML = user.con_password
+                        myTr.appendChild(myTd4)
+                var myTd5 = document.createElement("td");
+                    myTd5.innerHTML = user.dName
+                        myTr.appendChild(myTd5)
+                var myTd6 = document.createElement("td");
+                    myTd6.innerHTML = user.fName
+                        myTr.appendChild(myTd6)
+                var myTd7 = document.createElement("td");
+                    myTd7.innerHTML = user.lName
+                        myTr.appendChild(myTd7)
+                var myTd8 = document.createElement("td");
+                    myTd8.innerHTML = user.nickName
+                        myTr.appendChild(myTd8)
+                var myTd9 = document.createElement("td");
+                    myTd9.innerHTML = user.webSite
+                        myTr.appendChild(myTd9)
+                var myTd10 = document.createElement("td");
+                    myTd10.innerHTML = user.bio
+                        myTr.appendChild(myTd10)
+                var myTd11 = document.createElement("td");
+                    myTd11.innerHTML = user.fbId
+                        myTr.appendChild(myTd11)
+                var myTd12 = document.createElement("td");
+                    myTd12.innerHTML = user.igID
+                        myTr.appendChild(myTd12)
+                var myTd13 = document.createElement("td");
+                    myTd13.innerHTML = user.trID
+                        myTr.appendChild(myTd13)
+
+                var editTd = document.createElement("td")
+                var editButton = document.createElement("button")
+                editButton.innerHTML = "EDIT"
+                editButton.setAttribute("class", "btn btn-success")
+                editButton.setAttribute("onclick", "editUser()")
+                editTd.appendChild(editButton)
+                myTr.appendChild(editTd)
+
+                var delTd = document.createElement("td")
+                var delButton = document.createElement("button")
+                delButton.innerHTML = "DELETE"
+                delButton.setAttribute("onclick", "deleteUser(" + i + ")")
+                delButton.setAttribute("class", "btn btn-danger")
+                delTd.appendChild(delButton)
+                myTr.appendChild(delTd)
+                document.getElementById("myTbody").appendChild(myTr);
+            });
+        }
+        function deleteUser(i) {
+            var latestUsers = createUserDetils.filter(function (user, index) {
+                return i !== index
+            })
+            displayUserInTable(latestUsers)
+        }
+        function editUser(i) {
+            console.log(i)
+            gindex = i;
+                document.getElementById("UserName").value =createUserDetils[i].UserName,
+                document.getElementById("email").value =createUserDetils[i].email,
+                document.getElementById("password").value =createUserDetils[i].password,
+                document.getElementById("con_password").value =createUserDetils[i].con_password,
+                document.getElementById("dName").value =createUserDetils[i].dName,
+                document.getElementById("fName").value =createUserDetils[i].fName,
+                document.getElementById("lName").value =createUserDetils[i].lName,
+                document.getElementById("nickName").value =createUserDetils[i].nickName,
+                document.getElementById("webSite").value =createUserDetils[i].webSite,
+                document.getElementById("bio").value =createUserDetils[i].bio,
+                document.getElementById("fbId").value =createUserDetils[i].fbId,
+                document.getElementById("igID").value =createUserDetils[i].igID,
+                document.getElementById("trID").value =createUserDetils[i].trID
+
+            document.getElementById("updateBtn").style.display = "block"
+            document.getElementById("createBtn").style.display = "none"
+        }
+        function updateUser(){
+            var user = {
+                UserName: document.getElementById("UserName").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                con_password: document.getElementById("con_password").value,
+                dName: document.getElementById("dName").value,
+                fName: document.getElementById("fName").value,
+                lName: document.getElementById("lName").value,
+                nickName: document.getElementById("nickName").value,
+                webSite: document.getElementById("webSite").value,
+                bio: document.getElementById("bio").value,
+                fbId: document.getElementById("fbId").value,
+                igID: document.getElementById("igID").value,
+                trID: document.getElementById("trID").value
+            }
+            allUsers[gindex] = user
+
+            displayUsers(allUsers);
+            clearform()
+            document.getElementById("updateBtn").style.display = "none"
+            document.getElementById("createBtn").style.display = "block"
+        }
+        displayUserInTable(createUserDetils)
+    </script>
+</body>
+
+</html>
