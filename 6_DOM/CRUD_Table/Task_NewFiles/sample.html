@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        #updateBtn{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" placeholder="Enter User Name" id="name"><br>
+        <input type="email" placeholder="user@email.com" id="email"><br>
+        <button type="button" id="createBTN" onclick="displayData()">CREATE USER</button>
+        <button type="button" id="updateBtn" onclick="updateUser()">UPDATE USER</button>
+    </form>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>USER NAME</th>
+                <th>EMAIL ID</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+
+        var UserDetails=[
+            {name:"Vijay",email:"vijay@gmail.com"},
+            {name:"revanth",email:"revanth@gmail.com"},
+            {name:"thanuja",email:"thanuja@gmail.com"},
+        ];
+
+        var gindex=null
+        function displayData(){
+            var user={
+                name:document.getElementById("name").value,
+                email:document.getElementById("email").value
+            }
+            console.log(user)
+            //console.log(clearForm())
+            clearForm()
+            UserDetails.push(user)
+            displyDataInTable(UserDetails)
+        }
+        function clearForm(){
+            document.getElementById("name").value="";
+            document.getElementById("email").value="";
+        }
+        function displyDataInTable(users){
+            document.querySelector("tbody").innerHTML="";
+            users.forEach((user,i) => {
+                var myTr=document.createElement("tr")
+                    var myTd=document.createElement("td")
+                        myTd.innerHTML=user.name
+                    myTr.appendChild(myTd)
+                var emailTd=document.createElement("td")
+                    emailTd.innerHTML=user.email
+                    myTr.appendChild(emailTd)
+
+                var editTd=document.createElement("td")
+                    var edtBtn=document.createElement("button")
+                        edtBtn.innerHTML="EDIT"
+                        edtBtn.setAttribute("onclick","editUser("+i+")")    
+                    editTd.appendChild(edtBtn)
+                myTr.appendChild(editTd)
+
+                var delTd=document.createElement("td")
+                    var delBtn=document.createElement("button")
+                        delBtn.innerHTML="DELETE"
+                        delBtn.setAttribute("onclick","delUser("+i+")")    
+                    delTd.appendChild(delBtn)
+                myTr.appendChild(delTd)
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+
+        function delUser(i){
+            var newUsers=UserDetails.filter(function(user,index){
+                return i !==index
+            })
+            console.log(newUsers)
+            displyDataInTable(newUsers)
+        }
+
+        function editUser(i){
+            console.log(i)
+            gindex=i
+            document.getElementById("name").value=UserDetails[i].name
+            document.getElementById("email").value=UserDetails[i].email
+            document.getElementById("updateBtn").style.display="block"
+            document.getElementById("createBTN").style.display="none"
+        }
+        function updateUser(){
+            var user={
+                name:document.getElementById("name").value,
+                email:document.getElementById("email").value
+            }
+            UserDetails[gindex]=user
+            displyDataInTable(UserDetails)
+            clearForm()
+            document.getElementById("createBTN").style.display="block"
+            document.getElementById("updateBtn").style.display="none"
+        }
+        displyDataInTable(UserDetails)
+    </script>
+</body>
+</html>

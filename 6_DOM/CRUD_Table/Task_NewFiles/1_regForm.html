@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .container{
+            width: 100%;
+            border: 1px solid;
+            text-align: center;
+        }
+        .row1{
+            width: 40%;
+            margin: 0 auto;
+        }
+        input,textarea,select,option{
+            margin: 1%;
+            padding: 1%;
+            width: 100%;
+        }
+        button{
+            width: 100%;
+            padding: 1%;
+            margin: 1%;
+        }
+        #updateBtn{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row1">
+                <h1 class="text-center">REGISTER</h1>
+                <form>
+                    <input type="text" id="fName"  placeholder="First Name*">
+                    <input type="text" id="lName"  placeholder="Last Name*">
+                    <input type="text" id="partonymic"  placeholder="Partonymic*">
+                    <input type="email" id="email"  placeholder="Email*">
+                    <input type="password" id="password"  placeholder="Password*">
+                    <input type="number" id="age"  placeholder="Age*">
+                    <select name="" id="selAuthor" value="AUTHOR" >
+                        <option value="">SELECT AUTHOR</option>
+                        <option value="">Select Option-1</option>
+                        <option value="">Select Option-2</option>
+                        <option value="">Select Option-3</option>
+                        <option value="">Select Option-4</option>
+                        <option value="">Select Option-5</option>
+                    </select>
+                    <textarea name="" id="abtYou" cols="10" rows="5"  placeholder="Few About You..."></textarea>
+                    <button type="button" id="RegButton" onclick="formReg()">REGISTER</button>
+                    <button type="button" id="updateBtn" onclick="updateUser()">UPDATE THE USER</button>
+                </form><br>
+            </div> <!---forms ends here-->
+            <hr><br>
+        </div><!--Row Ends Here-->
+        <div class="row2">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>FIRST NAME</th>
+                            <th>LAST NAME</th>
+                            <th>PARTONYMIC</th>
+                            <th>EMAIL</th>
+                            <th>PASSWORD</th>
+                            <th>AGE</th>
+                            <th>AUTHOR</th>
+                            <th>ABOUT YOU</th>
+                            <th>EDIT</th>
+                            <th>DELETE</th>
+                        </tr>
+                        <tbody id="myTbody">
+
+                        </tbody>
+                    </thead>
+                </table>
+        </div><!--Table Row Ends Here-->
+    </div>   
+    
+    <script>
+
+        var allRegUsers=[
+            {fName:"Vijay",lName:"evn",partonymic:"Father",email:"vijay@gmail.com",password:"p@sword125",age:25,selAuthor:"Author",abtYou:"SeeThe Discription"},
+            {fName:"revanth",lName:"evn",partonymic:"Father",email:"revanth@gmail.com",password:"p@sword125",age:25,selAuthor:"Author",abtYou:"SeeThe Discription"},
+            {fName:"thanuja",lName:"evn",partonymic:"Father",email:"thanuja@gmail.com",password:"p@sword125",age:25,selAuthor:"Author",abtYou:"SeeThe Discription"},
+        ];
+        var gindex=null
+
+        function formReg(){
+            var user={
+                fName:document.getElementById("fName").value,
+                lName:document.getElementById("lName").value,
+                partonymic:document.getElementById("partonymic").value,
+                email:document.getElementById("email").value,
+                password:document.getElementById("password").value,
+                age:document.getElementById("age").value,
+                selAuthor:document.getElementById("selAuthor").value,
+                abtYou:document.getElementById("abtYou").value,
+
+            }
+            //console.log(user)
+            clearForm()
+            allRegUsers.push(user)
+            displayRegUsers(allRegUsers)
+        }
+        function clearForm(){
+                document.getElementById("fName").value="";
+                document.getElementById("lName").value="";
+                document.getElementById("partonymic").value="";
+                document.getElementById("email").value="";
+                document.getElementById("password").value="";
+                document.getElementById("age").value="";
+                document.getElementById("selAuthor").value="";
+                document.getElementById("abtYou").value="";
+        }
+        function displayRegUsers(users){
+            document.getElementById("myTbody").innerHTML="";
+            users.forEach((user,i) => {
+                var myTr=document.createElement("tr")
+                    var mytd1=document.createElement("td")
+                        mytd1.innerHTML=user.fName;
+                        myTr.appendChild(mytd1)
+                    var mytd2=document.createElement("td")
+                        mytd2.innerHTML=user.lName;
+                        myTr.appendChild(mytd2)
+                    var mytd3=document.createElement("td")
+                        mytd3.innerHTML=user.partonymic;
+                        myTr.appendChild(mytd3)
+                    var mytd4=document.createElement("td")
+                        mytd4.innerHTML=user.email;
+                        myTr.appendChild(mytd4)
+                    var mytd5=document.createElement("td")
+                        mytd5.innerHTML=user.password;
+                        myTr.appendChild(mytd5)
+                    var mytd6=document.createElement("td")
+                        mytd6.innerHTML=user.age;
+                        myTr.appendChild(mytd6)
+                    var mytd7=document.createElement("td")
+                        mytd7.innerHTML=user.selAuthor;
+                        myTr.appendChild(mytd7)
+                    var mytd8=document.createElement("td")
+                        mytd8.innerHTML=user.abtYou;
+                        myTr.appendChild(mytd8)
+                        var editTd=document.createElement("td")
+                            var editButn=document.createElement("button")
+                                editButn.innerHTML="EDIT"
+                                editButn.setAttribute("onclick","editUserList("+i+")")
+                            editTd.appendChild(editButn)
+                            myTr.appendChild(editTd)
+                        var delTd=document.createElement("td")
+                            var delButn=document.createElement("button")
+                                delButn.innerHTML="DELETE"
+                                delButn.setAttribute("onclick","delUserList("+i+")")
+                            delTd.appendChild(delButn)
+                            myTr.appendChild(delTd)
+                document.getElementById("myTbody").appendChild(myTr)
+            });
+        }
+        function delUserList(i){
+            var latestUser=allRegUsers.filter(function(user,index){
+                return i !==index
+            })
+            console.log(latestUser)
+            displayRegUsers(latestUser)
+        }
+        function editUserList(i){
+            console.log(i)
+            gindex = i
+            document.getElementById("fName").value=allRegUsers[i].fName
+            document.getElementById("lName").value=allRegUsers[i].lName
+            document.getElementById("partonymic").value=allRegUsers[i].partonymic
+            document.getElementById("email").value=allRegUsers[i].email
+            document.getElementById("password").value=allRegUsers[i].password
+            document.getElementById("age").value=allRegUsers[i].age
+            document.getElementById("selAuthor").value=allRegUsers[i].selAuthor
+            document.getElementById("abtYou").value=allRegUsers[i].abtYou
+            
+            document.getElementById("updateBtn").style.display="block";
+            document.getElementById("RegButton").style.display="none";
+            
+        }
+        function updateUser(){
+            var user={
+                fName:document.getElementById("fName").value,
+                lName:document.getElementById("lName").value,
+                partonymic:document.getElementById("partonymic").value,
+                email:document.getElementById("email").value,
+                age:document.getElementById("age").value,
+                selAuthor:document.getElementById("selAuthor").value,
+                abtYou:document.getElementById("abtYou").value
+            }
+            allRegUsers[gindex]=user
+            displayRegUsers(allRegUsers)
+            clearForm()
+            document.getElementById("RegButton").style.display="block"
+            document.getElementById("updateBtn").style.display="none"
+        }
+        displayRegUsers(allRegUsers)
+    </script>
+</body>
+</html>

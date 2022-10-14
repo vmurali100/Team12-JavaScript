@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif
+        }
+        input{
+            width: 100%;
+            padding: 2%;
+            margin-right: 0.5%;
+        }
+        #chekBox{
+            width: 5% !important;
+            height: 30px;
+        }
+        #myTable1{
+            width: 100%;
+        }
+        #myTable1 td{
+            padding: 2%;
+        }
+        .row1{
+            width: 60%;
+            margin: 0 auto;
+            text-align: justify;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <div class="row1">
+            <form>
+                <table id="myTable1">
+                    <tr>
+                        <td> <label for="">Action_Name</label> 
+                            <input type="text" placeholder="Register User" id="regUsr">
+                        </td>
+                        <td> <label for="">Trigger_this_action_when</label> 
+                            <input type="text" id="entry" placeholder="Entry is Created, Entry Is Updated">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="">User_Mail</label> <input type="email" id="email" placeholder="Email "></td>
+                        <td><label for="">Username</label> <input type="text" id="userName" placeholder="User Name "></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Password</label> <input type="password" id="password" placeholder="Password"></td>
+                        <td></td>
+                    </tr>
+                    <tr>
+                        <td><input type="text" id="fName" placeholder="First Name"></td>
+                        <td><input type="text" id="lName" placeholder="Last Name"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">Display_Name</label> <input type="text" id="displayName" placeholder="Same As User Name"></td>
+                        <td><label for="">Web_Site</label> <input type="url" id="webSite" placeholder="http://WebSiteUrl.com"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="">User_Role</label><input type="text" id="subcriber" placeholder="Subcriber"></td>
+                        <td><label for="">Avatar</label><input type="file" id="FileUpload" placeholder="File Upload"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            
+                            <input type="checkbox" id="chekBox" onclick="creatrRegester()">
+                            <label for="">Automatically Log in Users Who Submited This Form</label>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+            <hr><br>
+            <table id="myTable2" border="2">
+                <thead>
+                    <tr>
+                        <th>Action Name</th>
+                        <th>Enter Created</th>
+                        <th>Email</th>
+                        <th>User Name</th>
+                        <th>Password</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Disply Name</th>
+                        <th>Web Site</th>
+                        <th>Role</th>
+                        <th>Avathar</th>
+                        <th>EDIT</th>
+                        <th>DELETE</th>
+                    </tr>
+                </thead>
+                <tbody id="my2TableBody">
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <script>
+        var allRegUsers=[];
+            function creatrRegester(){
+                var register={
+                    regUsr:document.getElementById("regUsr").value,
+                    entry:document.getElementById("entry").value,
+                    email:document.getElementById("email").value,
+                    userName:document.getElementById("userName").value,
+                    password:document.getElementById("password").value,
+                    fName:document.getElementById("fName").value,
+                    lName:document.getElementById("lName").value,
+                    displayName:document.getElementById("displayName").value,
+                    webSite:document.getElementById("webSite").value,
+                    subcriber:document.getElementById("subcriber").value,
+                    FileUpload:document.getElementById("FileUpload").src,
+                }
+                console.log(register)
+                clearForm()
+                allRegUsers.push(register)
+                displayRegFormInTable(allRegUsers)
+            }
+            function clearForm(){
+                    document.getElementById("regUsr").value="";
+                    document.getElementById("entry").value="";
+                    document.getElementById("email").value="";
+                    document.getElementById("userName").value="";
+                    document.getElementById("password").value="";
+                    document.getElementById("fName").value="";
+                    document.getElementById("lName").value="";
+                    document.getElementById("displayName").value="";
+                    document.getElementById("webSite").value="";
+                    document.getElementById("subcriber").value="";
+                    document.getElementById("FileUpload").src="";
+            }
+            function displayRegFormInTable(regUsers){
+                document.getElementById("my2TableBody").innerHTML="";
+                regUsers.forEach(user => {
+                    var myTr=document.createElement("tr")
+                        var myTd1=document.createElement("td")
+                                myTd1.innerHTML=user.regUsr
+                            myTr.appendChild(myTd1)
+                        var myTd2=document.createElement("td")
+                                myTd2.innerHTML=user.entry
+                            myTr.appendChild(myTd2)
+                        var myTd3=document.createElement("td")
+                                myTd3.innerHTML=user.email
+                            myTr.appendChild(myTd3)
+                        var myTd4=document.createElement("td")
+                                myTd4.innerHTML=user.userName
+                            myTr.appendChild(myTd4)
+                        var myTd5=document.createElement("td")
+                                myTd5.innerHTML=user.password
+                            myTr.appendChild(myTd5)
+                        var myTd6=document.createElement("td")
+                                myTd6.innerHTML=user.fName
+                            myTr.appendChild(myTd6)
+                        var myTd7=document.createElement("td")
+                                myTd7.innerHTML=user.lName
+                            myTr.appendChild(myTd7)
+                        var myTd8=document.createElement("td")
+                                myTd8.innerHTML=user.displayName
+                            myTr.appendChild(myTd8)
+                        var myTd9=document.createElement("td")
+                                myTd9.innerHTML=user.webSite
+                            myTr.appendChild(myTd9)
+                        var myTd10=document.createElement("td")
+                                myTd10.innerHTML=user.subcriber
+                            myTr.appendChild(myTd10)
+                        var myTd11=document.createElement("td")
+                                myTd11.innerHTML=user.FileUpload
+                        myTr.appendChild(myTd11)
+                        
+
+                        var editTd=document.createElement("td")
+                            editButton=document.createElement("button")
+                                editButton.innerHTML="EDIT"
+                                editButton.setAttribute("onclick","editRegUser()")
+                            editTd.appendChild(editButton)
+                        myTr.appendChild(editTd)
+
+                        var delTd=document.createElement("td")
+                            delButton=document.createElement("button")
+                                delButton.innerHTML="DELETE"
+                                delButton.setAttribute("onclick","editRegUser()")
+                                delTd.appendChild(delButton)
+                        myTr.appendChild(delTd)
+
+
+                    document.getElementById("my2TableBody").appendChild(myTr)
+                });
+            }
+    </script>
+</body>
+</html>

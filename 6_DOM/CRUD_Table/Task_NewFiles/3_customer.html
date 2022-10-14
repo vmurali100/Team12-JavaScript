@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        .container{
+            width: 60%;
+            margin: 0 auto !important;
+        }
+        h1{    text-align: center;
+        }
+        input{
+            padding: 0.5%;
+            margin-bottom: 1%;
+            width: 40%;
+        }
+        #createButton{
+            text-align: center;
+            padding: 0.5%;
+            margin-left: 37%;
+        }
+        table{
+            width: 100%;
+            margin: 0 auto;
+        }
+        #updateButton{
+            display: none;
+            text-align: center;
+            padding: 0.5%;
+            margin-left: 37%;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>CUSTOMER DETAILS</h1>
+        <hr><br>
+        <form>
+            <label for="">Full Name*</label><br>
+            <input type="text" id="fName" placeholder="First Name">
+            <input type="text" id="lName" placeholder="Last Name"><br>
+            <label for="">Address</label><br>
+            <input type="text" id="address1" placeholder="Streen Line Address"><br>
+            <input type="text" id="address2" placeholder="Streen Line Address 2"><br>
+            <input type="text" id="city" placeholder="City">
+            <input type="text" id="state" placeholder="Satate"><br>
+            <input type="text" name="" id="postal" placeholder="Postal / ZIP Code"><br>
+            <label for="">Phone Number*</label><br>
+            <input type="number" placeholder="+91 8688881677" id="mobNo"><br>
+            <button type="button" id="createButton" onclick="createCustFun()">CREATE CUSTOMER</button>
+            <button type="button" id="updateButton" onclick="updateCustFun()">UPDATE CUSTOMER</button>
+        </form>
+        <br><hr>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Address 1</th>
+                    <th>Address 2</th>
+                    <th>City</th>
+                    <th>State</th>
+                    <th>Postal</th>
+                    <th>Mobile Number</th>
+                    <th>EDIT</th>
+                    <th>DELETE</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+    <script>
+
+        var createAllCustAry=[
+            {fName:"Durga",lName:"Yuva",address1:"kammapalli",address2:"yadamari",city:"CTR",state:"AP",postal:"KammaPalli",mobNo:928292889}
+        ];
+        var gindex=null
+        function createCustFun(){
+            var create={
+                fName:document.getElementById("fName").value,
+                lName:document.getElementById("lName").value,
+                address1:document.getElementById("address1").value,
+                address2:document.getElementById("address2").value,
+                city:document.getElementById("city").value,
+                state:document.getElementById("state").value,
+                postal:document.getElementById("postal").value,
+                mobNo:document.getElementById("mobNo").value
+            }
+            console.log(create)
+            crearForm()
+            createAllCustAry.push(create)
+            displayCustomres(createAllCustAry)
+        }
+        function crearForm(){
+            document.getElementById("fName").value="";
+            document.getElementById("lName").value="";
+            document.getElementById("address1").value="";
+            document.getElementById("address2").value="";
+            document.getElementById("city").value="";
+            document.getElementById("state").value="";
+            document.getElementById("postal").value="";
+            document.getElementById("mobNo").value=""
+        }
+        function displayCustomres(customers){
+            document.querySelector("tbody").innerHTML="";
+            customers.forEach((customer,i) => {
+                var myTr=document.createElement("tr")
+                    var mynamTd=document.createElement("td")
+                        mynamTd.innerHTML=customer.fName
+                    myTr.appendChild(mynamTd)
+                    var myLnamTd=document.createElement("td")
+                        myLnamTd.innerHTML=customer.lName
+                    myTr.appendChild(myLnamTd)
+                    var address1Td=document.createElement("td")
+                        address1Td.innerHTML=customer.address1
+                    myTr.appendChild(address1Td)
+                    var address2Td=document.createElement("td")
+                        address2Td.innerHTML=customer.address2
+                    myTr.appendChild(address2Td)
+                    var cityTd=document.createElement("td")
+                        cityTd.innerHTML=customer.city
+                    myTr.appendChild(cityTd)
+                    var statTd=document.createElement("td")
+                        statTd.innerHTML=customer.state
+                    myTr.appendChild(statTd)
+                    var postTd=document.createElement("td")
+                        postTd.innerHTML=customer.postal
+                    myTr.appendChild(postTd)
+                    var mobTd=document.createElement("td")
+                        mobTd.innerHTML=customer.mobNo
+                    myTr.appendChild(mobTd)
+
+                    var editTd=document.createElement("td")
+                        var editButton=document.createElement("button")
+                            editButton.innerHTML="EDIT"
+                                    editButton.setAttribute("onclick","editReg("+i+")")
+                                editTd.appendChild(editButton)
+                        myTr.appendChild(editTd)
+
+                        var delTd=document.createElement("td")
+                        var delButton=document.createElement("button")
+                            delButton.innerHTML="DELETE"
+                                delButton.setAttribute("onclick","deleteReg("+i+")")
+                                delTd.appendChild(delButton)
+                        myTr.appendChild(delTd)
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+        function deleteReg(i){
+            var latestDetails=createAllCustAry.filter(function(user,index){
+                return i !==index
+            })
+            console.log(latestDetails)
+            displayCustomres(latestDetails)
+        }
+        function editReg(i){
+            console.log(i);
+            gindex=i;
+            document.getElementById("fName").value=createAllCustAry[i].fName
+            document.getElementById("lName").value=createAllCustAry[i].lName
+            document.getElementById("address1").value=createAllCustAry[i].address1
+            document.getElementById("address2").value=createAllCustAry[i].address2
+            document.getElementById("city").value=createAllCustAry[i].city
+            document.getElementById("state").value=createAllCustAry[i].state
+            document.getElementById("postal").value=createAllCustAry[i].postal
+            document.getElementById("mobNo").value=createAllCustAry[i].mobNo
+
+            document.getElementById("updateButton").style.display="block";
+            document.getElementById("createButton").style.display="none";
+        }
+        function updateCustFun(){
+            var create={
+                fName:document.getElementById("fName").value,
+                lName:document.getElementById("lName").value,
+                address1:document.getElementById("address1").value,
+                address2:document.getElementById("address2").value,
+                city:document.getElementById("city").value,
+                state:document.getElementById("state").value,
+                postal:document.getElementById("postal").value,
+                mobNo:document.getElementById("mobNo").value
+            }     
+            createAllCustAry[gindex]=create
+            displayCustomres(createAllCustAry)
+            crearForm()
+            document.getElementById("updateButton").style.display="none";
+            document.getElementById("createButton").style.display="block";
+        }
+        displayCustomres(createAllCustAry)
+    </script>
+</body>
+</html>
