@@ -6,9 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        #createBtn{
-            display:none;
-        }
+        
         </style>
         </head>
         <body>
@@ -18,16 +16,16 @@
                 <label for="lname">Last Name:</label>
                 <input type="text"name=""id="lname"><br>
                 <label for="patronymic">Patronymic:</label>
-                <input type="text"name=""id="patronymic"><br>
+                <input type="text"name=""id="patronymic1"><br>
                 <label for="emali">Email:</label>
                 <input type="text"name=""id="email"><br>
                 <label for="password">Password:</label>
                 <input type="text"name=""id="password"><br>
                 <label for="age">Age:</label>
                 <input type="text"name=""id="age"><br>
+                </form>
                 <button onclick="updateUser()"type="button"id="updateBtn">UpdateUser</button>
                 <button onclick="createUser()"type="button"id="createBtn">CreateUser</button>
-                </form>
                 <hr>
                 <table border="1">
                     <thead>
@@ -38,10 +36,10 @@
                             <th>Email</th>
                             <th>Password</th>
                             <th>Age</th>
-                            <th>delete</th>
                             <th>edit</th>
+                            <th>delete</th>
                         
-    
+
                             
                         
                         </tr>
@@ -50,19 +48,20 @@
                 </table>
                 <script>
                     var allUsers=[
-                        {fname:"chinta"},
-                        {lname:"susmitha"},
-                        {patronymic:"gangalagunta"},
-                        {email:"susmitha@gmail.com"},
-                        {password:"12345"},
-                        {age:"20"},
+                        {fname:"chinta",
+                        lname:"susmitha",
+                        Patronymic:"gangalagunta",
+                        email:"susmitha@gmail.com",
+                        password:"12345",
+                        age:"20",
+                }
                 ]
                 var gindex=null 
                 function createuser(){
                     var user={
                         fname:document.getElementByid("fname").value,
                         lname:document.getElementByid("lname").value,
-                        patronymic:document.getElementByid("patronymic").value,
+                        patronymic:document.getElementByid("patronymic1").value,
                         email:document.getElementByid("email").value,
                         password:document.getElementByid("password").value,
                         age:document.getElementByid("age").value,
@@ -75,7 +74,7 @@
                 function clearform(){
                     document.getElementByid("fname").value="";
                     document.getElementByid("lname").value="";
-                    document.getElementByid("patronymic").value="";
+                    document.getElementByid("patronymic1").value="";
                     document.getElementByid("email").value="";
                     document.getElementByid("password").value="";
                     document.getElementByid("age").value=""
@@ -129,7 +128,7 @@
                     gindex=i;
                     document.getElementByid("fname").value=allUsers[i].fname
                     document.getElementByid("lname").value=allUsers[i].lname
-                    document.getElementByid("patronymic").value=allUsers[i].patronymic
+                    document.getElementByid("patronymic1").value=allUsers[i].patronymic
                     document.getElementByid("email").value=allUsers[i].email
                     document.getElementByid("password").value=allUsers[i].password
                     document.getElemmentByid("age").value=allUsers[i].age
@@ -140,7 +139,7 @@
                     var users={
                         fname:document.getElementByid("fname").value,
                         lname:document.getElementByid("lname").value,
-                        patronymic:document.getElementByid("patronymic").value,
+                        patronymic:document.getElementByid("patronymic1").value,
                         email:document.getElementByid("email").value,
                         password:document.getElementByid("password").value,
                         age:document.getElementByid("age").value
