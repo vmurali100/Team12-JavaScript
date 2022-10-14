@@ -38,10 +38,6 @@
                             <th>Age</th>
                             <th>edit</th>
                             <th>delete</th>
-                        
-
-                            
-                        
                         </tr>
                     </thead>
                     <tbody></tbody>
@@ -101,11 +97,13 @@
                         myTr.appendChild(etd);
                         myTr.appendChild(ptd);
                         myTr.appendChild(atd);
+                        
                         var editTd=document.createElement("td");
                         var editBtn=document.createElement("button");
                         editBtn.innerHTML="Edit";
                         editBtn.setAttribute("onclick","editUser("+ i +")");
-                        editTd.appendChild(editBtn)
+                        editTd.appendChild(editBtn);
+
                         var deleteTd=document.createElement("td");
                         var deleteBtn=document.createElement("button");
                         deleteBtn.innerHTML="Delete";

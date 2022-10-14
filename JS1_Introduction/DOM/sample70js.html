@@ -36,9 +36,10 @@
             position: relative;
             left: 40%;
         }
+
         button#update {
-    display: none;
-}
+            display: none;
+        }
     </style>
 </head>
 
@@ -88,17 +89,17 @@
     <script>
         var allcustomer = [
             {
-                fname:"Revanth",
-                lname:"Reddy",
-                address1:"vepanapalli",
-                address2:"kasirala",
-                address3:"yadamari",
-                address4:"chittoor",
-                pincode:517422,
-                phonenumber:9353610141,
+                fname: "Revanth",
+                lname: "Reddy",
+                address1: "vepanapalli",
+                address2: "kasirala",
+                address3: "yadamari",
+                address4: "chittoor",
+                pincode: 517422,
+                phonenumber: 9353610141,
             }
-        ]   
-        var gindex=null     
+        ]
+        var gindex = null
         function createcustomer() {
             var customer = {
                 fname: document.getElementById("fname").value,
@@ -127,7 +128,7 @@
         }
         function displaycustomer(customer) {
             document.querySelector("tbody").innerHTML = "";
-            customer.forEach((value ,i) => {
+            customer.forEach((value, i) => {
                 var mytr = document.createElement("tr");
                 var ftd = document.createElement("td");
                 ftd.innerHTML = value.fname;
@@ -156,45 +157,45 @@
                 document.querySelector("tbody").appendChild(mytr);
 
 
-                var edittd=document.createElement("td");
-                var editbuttontd=document.createElement("button");
-                editbuttontd.innerHTML="edit";
+                var edittd = document.createElement("td");
+                var editbuttontd = document.createElement("button");
+                editbuttontd.innerHTML = "edit";
                 edittd.appendChild(editbuttontd);
                 mytr.appendChild(edittd);
-                editbuttontd.setAttribute("onclick","editcustomer("+i+")");
+                editbuttontd.setAttribute("onclick", "editcustomer(" + i + ")");
 
-                var deletetd=document.createElement("td");
-                var deletebuttontd=document.createElement("button");
-                deletebuttontd.innerHTML="delete";
+                var deletetd = document.createElement("td");
+                var deletebuttontd = document.createElement("button");
+                deletebuttontd.innerHTML = "delete";
                 deletetd.appendChild(deletebuttontd);
                 mytr.appendChild(deletetd);
-                deletebuttontd.setAttribute("onclick","deletecustomer("+i+")");
+                deletebuttontd.setAttribute("onclick", "deletecustomer(" + i + ")");
             });
         }
-        function deletecustomer(i){
-            var latestcustomer=allcustomer.filter(function(value,index){
-                return i !==index;
+        function deletecustomer(i) {
+            var latestcustomer = allcustomer.filter(function (value, index) {
+                return i !== index;
             });
             console.log(latestcustomer);
             displaycustomer(latestcustomer);
         }
-        function editcustomer(i){
+        function editcustomer(i) {
             console.log(i)
             document.getElementById("fname").value = allcustomer[i].fname;
             document.getElementById("lname").value = allcustomer[i].lname;
-            document.getElementById("Ad1").value =allcustomer[i].address1;
-            document.getElementById("Ad2").value =allcustomer[i].address2;
-            document.getElementById("Ad3").value =allcustomer[i].address3;
-            document.getElementById("Ad4").value =allcustomer[i].address4; 
+            document.getElementById("Ad1").value = allcustomer[i].address1;
+            document.getElementById("Ad2").value = allcustomer[i].address2;
+            document.getElementById("Ad3").value = allcustomer[i].address3;
+            document.getElementById("Ad4").value = allcustomer[i].address4;
             document.getElementById("pincode").value = allcustomer[i].pincode;
             document.getElementById("number").value = allcustomer[i].phonenumber;
-            document.getElementById("create").style.display="none";
-            document.getElementById("update").style.display="block";
-            gindex=i;
+            document.getElementById("create").style.display = "none";
+            document.getElementById("update").style.display = "block";
+            gindex = i;
         }
 
-        function updatecustomer(){
-            var customer={
+        function updatecustomer() {
+            var customer = {
                 fname: document.getElementById("fname").value,
                 lname: document.getElementById("lname").value,
                 address1: document.getElementById("Ad1").value,
@@ -204,11 +205,11 @@
                 pincode: document.getElementById("pincode").value,
                 phonenumber: document.getElementById("number").value,
             }
-            allcustomer[gindex]=customer
+            allcustomer[gindex] = customer
             displaycustomer(allcustomer)
             clearcustomer()
-            document.getElementById("create").style.display="block";
-            document.getElementById("update").style.display="none";
+            document.getElementById("create").style.display = "block";
+            document.getElementById("update").style.display = "none";
         }
         displaycustomer(allcustomer)
     </script>
