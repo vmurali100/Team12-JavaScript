@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <ul>
+
+    </ul>
+    <script>
+        var playersList = [{ playerName: 'Rohit',score:0 }, 
+        { playerName: 'Rahul',score:51 }, 
+        { playerName: 'Kohli',score:3 }, 
+        { playerName: 'SKY',score:50 }, 
+        { playerName: 'DK',score:'DNB' }
+    ]
+        playersList.forEach(function(players){
+            var myLi=document.createElement('li');  
+            if(players.score=='DNB'){
+            myLi.innerHTML=players.playerName +'-Not Played' 
+            }else{
+                myLi.innerHTML=players.playerName +':'+players.score +'-Runs Scored' 
+            }
+            document.querySelector('ul').appendChild(myLi)
+        })
+
+    </script>
+</body>
+
+</html>

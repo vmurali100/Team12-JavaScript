@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="totalRuns()">TotalScore</button>
+    <script>
+        var palyersAndRuns=[
+            {name:'Rohit',score:17},
+            {name:'Rahul',score:2},
+            {name:'Kohli',score:63},
+            {name:'SKY',score:68},
+            {name:'Hardik',score:25},
+            {name:'DK',score:1}
+        ]
+
+        function totalRuns(){
+            var totalruns = palyersAndRuns.reduce((a,b)=>{
+                if(a.score){
+                return a.score+b.score
+                }else{
+                    return a+b.score
+                }
+                            })
+                            console.log(totalruns);
+        }
+        
+        
+        
+    </script>
+</body>
+</html>

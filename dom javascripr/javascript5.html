@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         div{
+            margin-top: 5px;
+        }
+        .players{
+            width: 500px;
+            border:1px solid red;
+            height:30px;
+        }
+        p{
+            display: table-cell;
+            padding-left:10px;
+            height: 30px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value='displayPlayerDetails' onclick='displayPlayers()'>
+    <script> 
+    playersName=[
+    {
+        "id": 1,
+        "email": "THutchinson@sed.org",
+        "username": "ASpeer",
+        "password": "sluoJ"
+    },
+    {
+        "id": 2,
+        "email": "TPyle@non.io",
+        "username": "MStone",
+        "password": "zDBsK"
+    },
+    {
+        "id": 3,
+        "email": "VFielack@lacus.ly",
+        "username": "NZanatta",
+        "password": "71Gtq"
+    },
+    {
+        "id": 4,
+        "email": "JBuckaloo@sed.io",
+        "username": "GGraham",
+        "password": "GdqzM"
+    },
+    {
+        "id": 5,
+        "email": "DPatino@lacus.net",
+        "username": "GDeitz",
+        "password": "FfZso"
+    },
+    {
+        "id": 6,
+        "email": "GOconnor@pharetra.io",
+        "username": "VRichardson",
+        "password": "cJL1L"
+    },
+    {
+        "id": 7,
+        "email": "ETaylor@lacus.gov",
+        "username": "KThomad",
+        "password": "d2I9a"
+    },
+    {
+        "id": 8,
+        "email": "BVan@sapien.io",
+        "username": "DHodgson",
+        "password": "k2afR"
+    },
+    {
+        "id": 9,
+        "email": "KDavis@aliquam.com",
+        "username": "DReynolds",
+        "password": "9WWsm"
+    },
+    {
+        "id": 10,
+        "email": "PMcwethy@id.gov",
+        "username": "IStephens",
+        "password": "fHgGn"
+    }
+]
+function displayPlayers(){
+    playersName.forEach((players)=>{
+        var myDiv = document.createElement('div')
+        myDiv.setAttribute('class','players')
+        document.body.appendChild(myDiv)
+
+        var myPara1 = document.createElement('p')
+        myPara1.innerHTML = 'Player Id:'+ players.id 
+        myDiv.appendChild(myPara1)
+
+        var myPara2 =document.createElement('p')
+        myPara2.innerHTML= 'Player Name:' + players.username
+        myDiv.appendChild(myPara2)
+
+        var myPara3 = document.createElement('p')
+        myPara3.innerHTML = 'Password:' + players.password
+        myDiv.appendChild(myPara3)
+    })
+}
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .multiply{
+            border:1px solid red;
+            height: auto;
+            width: auto;
+            float: left;
+            margin-left:5px;
+            margin-bottom:5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <input type="button" value="DisplayTable" onclick='displayTable()'><br><br>
+    <script>
+      var promptBox = prompt('Enter No:')
+
+      function displayTable(){
+        for(i=1;i<=promptBox;i++){
+            var myDiv = document.createElement('div')
+            myDiv.setAttribute('class','multiply')
+            document.body.appendChild(myDiv);
+            multiple='';
+            for(j=1;j<=10;j++){
+                multiple = multiple+j + ' x '+ i + ' = '+ i*j +'<br>'
+            }
+            myDiv.innerHTML = multiple
+        }
+      }
+      
+      
+    </script>
+    
+</body>
+</html>
