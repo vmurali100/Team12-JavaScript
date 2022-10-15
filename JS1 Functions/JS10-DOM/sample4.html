@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #updateBtn{
+            display: none;
+        }
+        h1{
+            border: 1px solid;
+            color: blue;
+            font-size: 30px;
+            text-align: center;
+        }
+        form {
+            border: 1px solid;
+            font-size: 20px;
+            color: chartreuse;
+        }
+        
+    
+    </style>
+</head>
+<body>
+    <h1>Register</h1>
+    <form >
+        <label for="firstname">First Name</label>
+        <input type="text" name="" id="fname" ><br><br>
+        <label for="lastname">Last Name</label>
+        <input type="text" name="" id="lname" ><br><br>
+        <label for="email">Email</label>
+        <input type="text" name="" id="email" ><br><br>
+        <label for="password">Password</label>
+        <input type="text" name="" id="password" ><br><br>
+        <label for="age">Age</label>
+        <input type="text" name="" id="age" ><br><br>
+        <button onclick="updateuser()" type="button" id="updateBtn">Update User</button>
+        <button onclick="createuser()" type="button" id="createBtn">Create User</button>
+
+    </form>
+    
+    <table border="1">
+    <thead>
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Age</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+    </table>
+    <script>
+        var allUsers=[{fname:"geetha",lname:"raja",email:"geetha88@gmail.com",password:7746,age:36},
+        {fname:"muraga",lname:"radha",email:"radha@gmail.com",password:7676,age:41}]
+        var gindex=null
+        function createuser(){
+            var user={
+                fname:document.getElementById("fname").value,
+                lname:document.getElementById("lname").value,
+                email:document.getElementById("email").value,
+                password:document.getElementById("password").value,
+                age:document.getElementById("age").value
+
+            }
+            console.log("user", user);
+            clearform()
+            allUsers.push(user)
+            displayUsers(allUsers)
+        }
+        function clearform(){
+            document.getElementById("fname").value="";
+            document.getElementById("lname").value="";
+            document.getElementById("email").value="";
+            document.getElementById("password").value="";
+            document.getElementById("age").value="";
+        }
+        function displayUsers(users) {
+            document.querySelector("tbody").innerHTML = ""
+            users.forEach((user, i) => {
+                var myTr = document.createElement("tr");
+                var ftd = document.createElement("td");
+                ftd.innerHTML = user.fname;
+                myTr.appendChild(ftd);
+                var ltd = document.createElement("td");
+                ltd.innerHTML = user.lname;                
+                myTr.appendChild(ltd);
+                var etd=document.createElement("td");
+                etd.innerHTML=user.email;
+                myTr.appendChild(etd);
+                var ptd=document.createElement("td");
+                ptd.innerHTML=user.password;
+                myTr.appendChild(ptd);
+                var atd=document.createElement("td");
+                atd.innerHTML=user.age;
+                myTr.appendChild(atd);
+
+                var editTd = document.createElement("td");
+                var editBtn = document.createElement("button");
+                editBtn.innerHTML = "Edit";
+                editBtn.setAttribute("onclick", "editUser(" + i + ")");
+
+    editTd.appendChild(editBtn)
+                var deleteTd = document.createElement("td");
+                var deleteBtn = document.createElement("button");
+                deleteBtn.innerHTML = "Delete";
+                deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+                deleteTd.appendChild(deleteBtn);
+                myTr.appendChild(editTd);
+                myTr.appendChild(deleteTd);
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+        function deleteUser(i) {
+            var latestUsers = allUsers.filter(function (user, index) {
+                return i !== index
+            })
+            console.log(latestUsers);
+            displayUsers(latestUsers)
+        }
+        function editUser(i) {
+            console.log(i)
+            gindex = i;
+            document.getElementById("fname").value = allUsers[i].fname
+            document.getElementById("lname").value = allUsers[i].lname
+            document.getElementById("email").value = allUsers[i].email
+            document.getElementById("password").value = allUsers[i].password
+            document.getElementById("age").value = allUsers[i].age
+            document.getElementById("updateBtn").style.display = "block"
+            document.getElementById("createBtn").style.display = "none"
+        }
+
+        function updateUser(){
+            var user = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                age: document.getElementById("age").age
+            }
+            allUsers[gindex] = user
+
+            displayUsers(allUsers);
+            clearform()
+            document.getElementById("updateBtn").style.display = "none"
+            document.getElementById("createBtn").style.display = "block"
+        }
+
+        displayUsers(allUsers)
+    </script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button#updateBtn {
+    display: none;
+}
+h3 {
+    color: aqua;
+    text-align: center;
+    border: 1px solid;
+    font-size: 20px;
+}
+form {
+    border: 1px solid;
+    font-size: 20px;
+    color: blue;
+}
+h2 {
+    border: 1px solid;
+    text-align: center;
+    font-size: 30px;
+    color: red;
+}
+
+
+    </style>
+</head>
+<body>
+<h2>Register User</h2>
+    <form >
+        <label for="actionname">Action Name</label><br><br>
+        <label for="ruser">Register User</label>
+        <input type="text" name="" id="ruser"><br><br>
+        <label for="uemail">User Email</label>
+        <input type="text" name="" id="uemail"><br><br>
+        <label for="uname">User Name</label>
+        <input type="text" name="" id="uname"><br><br>
+        <label for="password">Password</label>
+        <input type="text" name="" id="password"><br><br>
+        <label for="fname">First Name</label>
+        <input type="text" name="" id="fname">
+        <label for="lname">Last Name</label>
+        <input type="text" name="" id="lname"><br><br>
+        <label for="dname">Display Name</label>
+        <input type="text" name="" id="dname"><br><br>
+        <label for="website">Website</label>
+        <input type="text" name="" id="website"><br><br>
+        <label for="urole">user Role</label>
+        <input type="text" name="" id="urole"><br><br>
+        <label for="avatar">Avatar</label>
+        <input type="text" name="" id="avatar"><br><br>
+        <button onclick="updateuser()" type="button" id="updateBtn">Update User</button>
+        <button onclick="createuser()" type="button" id="createBtn">Create  User</button>
+        
+
+    </form>
+    <h3>Automatically log in users who submit this form</h3>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Register User</th>
+                <th>User Email</th>
+                <th>User Name</th>
+                <th>Password</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Display Name</th>
+                <th>Website</th>
+                <th>User Role</th>
+                <th>Avatar</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        var allusers=[
+            
+        {ruser:"jaga",uemail:"jaga2145",uname:"mallela",password:1789,fname:"jaga",lname:"M",dname:"kutti",website:"hostar",urole:"it",avatar:"crime" },
+            
+        ]
+        var gindex=null
+        function createuser(){
+            var user ={
+                
+                ruser :document.getElementById("ruser").value,
+                uemail:document.getElementById("uemail").value,
+                uname:document.getElementById("uname").value,
+               password :document.getElementById("password").value,
+                fname:document.getElementById("fname").value,
+                lname:document.getElementById("lname").value,
+                dname:document.getElementById("dname").value,
+               website :document.getElementById("website").value,
+               urole :document.getElementById("urole").value,
+               avatar :document.getElementById("avatar").value,
+            }
+            console.log("user",user);
+            clearform()
+            allusers.push(user)
+            displayusers(allusers)
+        }
+        function clearform(){
+            
+                document.getElementById("ruser").value="";
+                document.getElementById("uemail").value="";
+                document.getElementById("uname").value="";
+               document.getElementById("password").value="";
+                document.getElementById("fname").value="";
+                document.getElementById("lname").value="";
+                document.getElementById("dname").value="";
+               document.getElementById("website").value="";
+               document.getElementById("urole").value="";
+               document.getElementById("avatar").value="";
+            }
+            function displayusers(users){
+                document.querySelector("tbody").innerHTML=""
+                users.forEach((user,i) => {
+                    var myTr=document.createElement("tr");
+                    var rusertd=document.createElement("td");
+                    rusertd.innerHTML=user.ruser
+                    var uemailtd=document.createElement("td");
+                    uemailtd.innerHTML=user.uemail
+                   var unametd =document.createElement("td");
+                   unametd.innerHTML=user.uname
+                    var passwordtd=document.createElement("td");
+                    passwordtd.innerHTML=user.password
+                   var fnametd =document.createElement("td");
+                   fnametd.innerHTML=user.fname
+                    var lnametd=document.createElement("td");
+                    lnametd.innerHTML=user.lname
+                   var dnametd =document.createElement("td");
+                   dnametd.innerHTML=user.dname
+                   var websitetd =document.createElement("td");
+                   websitetd.innerHTML=user.website
+                    var uroletd=document.createElement("td");
+                    uroletd.innerHTML=user.urole
+                    var avatartd=document.createElement("td");
+                    avatartd.innerHTML=user.avatar
+
+                    myTr.appendChild(rusertd);
+                    myTr.appendChild(uemailtd);
+                    myTr.appendChild(unametd);
+                    myTr.appendChild(passwordtd);
+                    myTr.appendChild(fnametd);
+                    myTr.appendChild(lnametd);
+                    myTr.appendChild(dnametd);
+                    myTr.appendChild(websitetd);
+                    myTr.appendChild(uroletd);
+                    myTr.appendChild(avatartd);
+
+                    
+
+                    var editTd=document.createElement("td");
+    var editBtn=document.createElement("button");
+    editBtn.innerHTML="Edit"
+    editBtn.setAttribute("onclick","edituser("+i+")")
+    editTd.appendChild(editBtn);
+    var deleteTd=document.createElement("td");
+    var deleteBtn=document.createElement("button");
+    deleteBtn.innerHTML="Delete"
+    deleteBtn.setAttribute("onclick","deleteuser("+i+")")
+    deleteTd.appendChild(deleteBtn);
+
+     myTr.appendChild(editTd);
+     myTr.appendChild(deleteTd);
+     document.querySelector("tbody").appendChild(myTr)
+                });
+            }
+            function deleteuser(i){
+var latestusers=allusers.filter (function (user,index){
+    return i !==index
+})
+console.log(latestusers);
+displayusers(latestusers)
+            }
+            function edituser(i){
+                console.log(i)
+                gindex=i;
+                document.getElementById("ruser").value=allusers[i].ruser
+                document.getElementById("uemail").value=allusers[i].uemail
+                document.getElementById("uname").value=allusers[i].uname
+               document.getElementById("password").value=allusers[i].password
+                document.getElementById("fname").value=allusers[i].fname
+                document.getElementById("lname").value=allusers[i].lname
+                document.getElementById("dname").value=allusers[i].dname
+               document.getElementById("website").value=allusers[i].website
+               document.getElementById("urole").value=allusers[i].urole
+               document.getElementById("avatar").value=allusers[i].avatar
+               document.getElementById("updateBtn").style.display="Block"
+    document.getElementById("createBtn").style.display="none"
+
+
+            }
+            function updateuser(){
+                var user ={
+                
+                ruser :document.getElementById("ruser").value,
+                uemail:document.getElementById("uemail").value,
+                uname:document.getElementById("uname").value,
+               password :document.getElementById("password").value,
+                fname:document.getElementById("fname").value,
+                lname:document.getElementById("lname").value,
+                dname:document.getElementById("dname").value,
+               website :document.getElementById("website").value,
+               urole :document.getElementById("urole").value,
+               avatar :document.getElementById("avatar").value,
+            }
+            
+            allusers[gindex]=user
+
+displayusers(allusers);
+clearform()
+document.getElementById("updateBtn").style.display = "none"
+document.getElementById("createBtn").style.display = "Block"
+}
+displayusers(allusers)
+
+    </script>
+</body>
+</html>
