@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form{
+        position: relative;
+        left: 230px;
+        
+    }
+</style>
+
+<body>
+
+    <form>
+        <h1>customerdetails</h1>
+        <h3>Fullname</h3>
+        <label for="firstname"></label>
+        <input type="text" name="" id="firstname" placeholder="firstname">
+        <label for="lastname"></label>
+        <input type="text" name="" id="lastname" placeholder="lastname"><br>
+        <h3>Address</h3>
+        <label for="streetaddress"></label>
+        <input type="text" name="" id="streetaddress" placeholder="streetaddress"><br><br>
+        <h3>streetaddress2</h3>
+        <label for="city"></label>
+        <input type="text" name="" id="city" placeholder="city">
+        <label for="state"></label>
+        <input type="text" name="" id="state" placeholder="state"><br><br>
+        <label for="postal"></label>
+        <input type="text" name="" id="postal" placeholder="postal"><br>
+        <h3>phonenumber</h3>
+        <label for="phno"></label>
+        <input type="number" name="" id="phno" placeholder="phno"><br>
+
+        <label for="oocupation">occupation</label><br>
+        <input type="radio" name="occupation" value="student">student
+        <input type="radio" name="occupation" value="employee">employee <br>
+
+        <label for="check">salery</label>
+        <input type="checkbox" name="salery" value="1.3k">1.3k
+        <input type="checkbox" name="salery" value="4.5k">4.5k
+        <input type="checkbox" name="salery" value="11.2k">11.2k
+
+
+    </form>
+    <button onclick="create()" type="button" id="createBtn">create</button>
+    <button onclick="update()" type="button" id="updateBtn">update</button>
+    <hr>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>firstname</th>
+                <th>lastname</th>
+                <th>streetaddress</th>
+                <th>city</th>
+                <th>state</th>
+                <th>postal</th>
+                <th>phno</th>
+                <th>edit</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var alllist = [
+
+        ]
+        var gindex = null
+        function create(){
+            var list = {
+                firstname: document.getElementById("firstname").value,
+                lastname: document.getElementById("lastname").value,
+                streetaddress: document.getElementById("streetaddress").value,
+                city: document.getElementById("city").value,
+                state: document.getElementById("state").value,
+                postal: document.getElementById("postal").value,
+                phno: document.getElementById("phno"). value
+
+            }
+            var allradioBtns = document.getElementsByName("occupation");
+
+            allradioBtns.forEach((item) => {
+                if (item.checked) {
+                    list.occupation = item.value
+                }
+        })
+
+        console.log(list)
+            console.log("list", list)
+            clearlist()
+            alllist.push(list)
+            displaylist(alllist)
+        }
+
+        function clearlist() {
+            document.getElementById("firstname").value = "",
+                document.getElementById("lastname").value = "",
+                document.getElementById("streetaddress").value = "",
+                document.getElementById("city").value = "",
+                document.getElementById("state").value = "",
+                document.getElementById("postal").value = "",
+                document.getElementById("phno").value = ""
+            }
+
+        function displaylist(lists) {
+            document.querySelector("tbody").innerHTML = ""
+            lists.forEach((list, i) => {
+                var myTr = document.createElement("tr");
+                var ftd = document.createElement("td");
+                ftd.innerHTML = list.firstname;
+                var ltd = document.createElement("td");
+                ltd.innerHTML = list.lastname;
+                var std = document.createElement("td");
+                std.innerHTML = list.streetaddress;
+                var ctd = document.createElement("td");
+                ctd.innerHTML = list.city;
+                var sttd = document.createElement("td");
+                sttd.innerHTML = list.state;
+                var ptd = document.createElement("td");
+                ptd.innerHTML = list.postal;
+                var phtd = document.createElement("td");
+                phtd.innerHTML = list.phno;
+                myTr.appendChild(ftd);
+                myTr.appendChild(ltd);
+                myTr.appendChild(std);
+                myTr.appendChild(ctd);
+                myTr.appendChild(sttd);
+                myTr.appendChild(ptd);
+                myTr.appendChild(phtd);
+                var editTd = document.createElement("td");
+                var editBtn = document.createElement("button");
+                editBtn.innerHTML = "edit";
+                editBtn.setAttribute("onclick", "editlist(" + i + ")")
+                editTd.appendChild(editBtn);
+                var dltTd = document.createElement("td");
+                var dltBtn = document.createElement("button");
+                dltBtn.innerHTML = "dlt";
+                dltBtn.setAttribute("onclick", "dltlist( " + i + ")")
+                dltTd.appendChild(dltBtn);
+
+                myTr.appendChild(editTd);
+                myTr.appendChild(dltTd);
+
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+        function dltlist(i) {
+            var latestlist = alllist.filter(function (list, index) {
+                return i !== index
+            })
+            console.log(latestlist)
+            displaylist(latestlist)
+        }
+
+        function editlist(i) {
+            console.log(i)
+            gindex = i;
+            document.getElementById("firstname").value = alllist[i].firstname
+            document.getElementById("lastname").value = alllist[i].lastname
+            document.getElementById("streetaddress").value = alllist[i].streetaddress
+            document.getElementById("city").value = alllist[i].city
+            document.getElementById("state").value = alllist[i].state
+            document.getElementById("postal").value = alllist[i].postal
+            document.getElementById("phno").value = alllist[i].phno
+            document.getElementById("updateBtn").style.display = "block"
+            document.getElementById("createBtn").style.display = "none"
+        }
+        function update() {
+            var list = {
+                firstname: document.getElementById("firstname").value,
+                lastname: document.getElementById("lastname").value,
+                streetaddress: document.getElementById("streetaddress").value,
+                city: document.getElementById("city").value,
+                state: document.getElementById("state").value,
+                postal: document.getElementById("postal").value,
+                phno: document.getElementById("phno"), value
+            }
+            alllist[gindex] = list
+
+            displaylist(alllist);
+            clearlist()
+            document.getElementById("updateBtn").style.display = "none"
+            document.getElementById("createBtn").style.display = "block"
+        }
+
+        displaylist(alllist)
+    </Script>
+
+
+
+</body>
+
+</html>

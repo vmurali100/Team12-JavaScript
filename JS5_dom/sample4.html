@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    form {
+        position: relative;
+        left: 330px;
+    }
+
+    th {
+        background-color: brown;
+    }
+
+    label {
+        background-color: aqua;
+    }
+
+    input {
+        background-color: blueviolet;
+    }
+</style>
+
+<body>
+    <form>
+        <h1>Rgisteruser</h1>
+        <!-- <h3>actionname</h3> -->
+        <label for="registeruser">actionname</label><br>
+        <input type="text" name="" id="registeruser" placeholder="registeruser">
+        <!-- <h3>Triggerthis action when</h3> -->
+        <label for="entry is created,entry is updated">Triggerthis action when</label>
+        <input type="text" name="" id="entry" placeholder="entry is created,entry is updated"><br><br>
+        <!-- <h3>useremail</h3> -->
+        <label for="emailaddress">useremail</label><br>
+        <input type="text" name="" id="emailaddress" placeholder="emailaddress">
+        <label for="login">username</label>
+        <input type="text" name="" id="login" placeholder="login"><br><br>
+        <label for="password">password</label><br>
+        <input type="text" name="" id="password" placeholder="password"><br><br>
+        <label for="fname">firstname</label><br>
+        <input type="text" name="" id="fname" placeholder="-none-">
+        <label for="fname">lastname</label>
+        <input type="text" name="" id="lname" placeholder="-none-"><br><br>
+        <label for="sameasusername">Displayname</label><br>
+        <input type="text" name="" id="sameasusername" placeholder="sameasusername">
+        <label for="website">website</label>
+        <input type="text" name="" id="website" placeholder="website"><br><br>
+        <label for="subscriber">userrole</label><br>
+        <input type="text" name="" id="subscriber" placeholder="subscriber"><br><br>
+        <label for="gender">gender</label>
+        <input type="radio" name="gender" value="m">male
+        <input type="radio" name="gender" value="f">female
+
+        <label for=""></label><br>
+        <input type="checkbox" />Automatically log in users who submit this form <br>
+        <label for="check">place</label>
+        <input type="checkbox" name="place" value="chittoor">chittoor
+        <input type="checkbox" name="place" value="tirupathi">tirupathi
+        <input type="checkbox" name="place" value="chennai">chennai
+    </form>
+    <button onclick="create()" type="button" id="createBtn">create</button>
+    <button onclick="update()" type="button" id="updateBtn">update</button>
+    <hr>
+    <table border="1px">
+        <thead>
+            <tr>
+                <th>registeruser</th>
+                <th>entry</th>
+                <th>emailaddress</th>
+                <th>login</th>
+                <th>password</th>
+                <th>fname</th>
+                <th>lname</th>
+                <th>sameasusername</th>
+                <th>website</th>
+                <th>subscriber</th>
+                <th>edit</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var alllist = [
+
+        ]
+        var gindex = null
+        function create() {
+            var list = {
+                registeruser: document.getElementById("registeruser").value,
+                entry: document.getElementById("entry").value,
+                emailaddress: document.getElementById("emailaddress").value,
+                login: document.getElementById("login").value,
+                password: document.getElementById("password").value,
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                sameasusername: document.getElementById("sameasusername").value,
+                website: document.getElementById("website").value,
+                subscriber: document.getElementById("subscriber").value,
+            }
+            var allradioBtns = document.getElementsByName("gender");
+
+            allradioBtns.forEach((item) => {
+                if (item.checked) {
+                    list.gender = item.value
+                }
+        })
+
+        console.log(list)
+        console.log("list", list)
+        clearlist()
+        alllist.push(list)
+        displaylist(alllist)
+        }
+
+
+        function clearlist() {
+            document.getElementById("registeruser").value = "",
+                document.getElementById("entry").value = "",
+                document.getElementById("emailaddress").value = "",
+                document.getElementById("login").value = "",
+                document.getElementById("password").value = "",
+                document.getElementById("fname").value = "",
+                document.getElementById("lname").value = "",
+                document.getElementById("sameasusername").value = "",
+                document.getElementById("website").value = "",
+                document.getElementById("subscriber").value = ""
+        }
+
+        function displaylist(lists) {
+            document.querySelector("tbody").innerHTML = ""
+            lists.forEach((list, i) => {
+                var myTr = document.createElement("tr");
+                var rtd = document.createElement("td");
+                rtd.innerHTML = list.registeruser;
+                var entd = document.createElement("td");
+                entd.innerHTML = list.entry;
+                var etd = document.createElement("td");
+                etd.innerHTML = list.emailddress;
+                var ltd = document.createElement("td");
+                ltd.innerHTML = list.login;
+                var ptd = document.createElement("td");
+                ptd.innerHTML = list.password;
+                var ftd = document.createElement("td");
+                ftd.innerHTML = list.firstname;
+                var lntd = document.createElement("td");
+                lntd.innerHTML = list.lastname;
+                var std = document.createElement("td");
+                std.innerHTML = list.sameasusername;
+                var wtd = document.createElement("td");
+                wtd.innerHTML = list.website;
+                var sutd = document.createElement("td");
+                sutd.innerHTML = list.subscriber;
+                myTr.appendChild(rtd);
+                myTr.appendChild(entd);
+                myTr.appendChild(etd);
+                myTr.appendChild(ltd);
+                myTr.appendChild(ptd);
+                myTr.appendChild(ftd);
+                myTr.appendChild(lntd);
+                myTr.appendChild(std);
+                myTr.appendChild(wtd);
+                myTr.appendChild(sutd);
+                var editTd = document.createElement("td");
+                var editBtn = document.createElement("button");
+                editBtn.innerHTML = "edit";
+                editBtn.setAttribute("onclick", "editlist(" + i + ")")
+                editTd.appendChild(editBtn);
+                var dltTd = document.createElement("td");
+                var dltBtn = document.createElement("button");
+                dltBtn.innerHTML = "dlt";
+                dltBtn.setAttribute("onclick", "dltlist( " + i + ")")
+                dltTd.appendChild(dltBtn);
+
+                myTr.appendChild(editTd);
+                myTr.appendChild(dltTd);
+
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+        function dltlist(i) {
+            var latestlist = alllist.filter(function (list, index) {
+                return i !== index
+            })
+            console.log(latestlist)
+            displaylist(latestlist)
+        }
+
+        function editlist(i) {
+            console.log(i)
+            gindex = i;
+            document.getElementById("registeruser").value = alllist[i].registeruser
+            document.getElementById("entry").value = alllist[i].entry
+            document.getElementById("emailaddress").value = alllist[i].emailaddress
+            document.getElementById("login").value = alllist[i].login
+            document.getElementById("password").value = alllist[i].password
+            document.getElementById("fname").value = alllist[i].fname
+            document.getElementById("lname").value = alllist[i].lname
+            document.getElementById("sameasusername").value = alllist[i].sameasusername
+            document.getElementById("website").value = alllist[i].website
+            document.getElementById("subscriber").value = alllist[i].subscriber
+            document.getElementById("updateBtn").style.display = "block"
+            document.getElementById("createBtn").style.display = "none"
+        }
+        function update() {
+            var list = {
+                registeruser: document.getElementById("registeruser").value,
+                entry: document.getElementById("entry").value,
+                emailaddress: document.getElementById("emailaddress").value,
+                login: document.getElementById("login").value,
+                password: document.getElementById("password").value,
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                sameasusername: document.getElementById("sameasusername").value,
+                website: document.getElementById("website").value,
+                subscriber: document.getElementById("subscriber").value,
+            }
+            alllist[gindex] = list
+
+            displaylist(alllist);
+            clearlist()
+            document.getElementById("updateBtn").style.display = "none"
+            document.getElementById("createBtn").style.display = "block"
+        }
+
+        displaylist(alllist)
+    </Script>
+</body>
+
+</html>
