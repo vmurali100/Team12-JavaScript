@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        button:hover{
+            color: chartreuse;
+            background-color: darkslategrey;
+        }
+    </style>
+<body>
+    <button onclick="changeText()" id="but">change text</button>
+    <h2 id="jav">hello HTML</h2>
+    <script>
+        function changeText() {
+            document.getElementById("but").innerHTML="Text changed"
+            document.getElementById("jav").innerHTML="Hello mama................"
+            document.querySelector("h2").style.backgroundColor="chartreuse"
+            document.querySelector("button").style.backgroundColor="chartreuse"
+
+        }
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div#register {
+            position: relative;
+            left: 40%;
+        }
+
+        label#name {
+            position: relative;
+            left: 98px;
+        }
+
+        label#lname1 {
+            position: relative;
+            left: 99px;
+        }
+
+        label#website1 {
+            position: relative;
+            left: 79px;
+        }
+
+        button#update {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="register">
+        <h1>Register User</h1>
+        <form action="">
+            <label for="register">Action Name</label>
+            <select name="option" id="register">
+                <option value="Register">Register</option>
+                <option value="Login">Login</option><br>
+            </select><br>
+            <label for="useremail">User Email</label>
+            <label for="username" id="name">User Name</label><br>
+            <input type="email" id="useremail" placeholder="Email Address">
+            <input type="text" id="username" placeholder="Login"><br>
+            <label for="password">Password</label><br>
+            <input type="text" id="password"><br>
+            <label for="fname">First Name</label>
+            <label for="lname" id="lname1">Last Name</label><br>
+            <input type="text" id="fname" placeholder="-None-">
+            <input type="text" id="lname" placeholder="-None-"><br>
+            <label for="displayname">Display Name</label>
+            <label for="website" id="website1">Website</label><br>
+            <input type="text" id="displayname" , placeholder="Same as username">
+            <input type="text" id="website" , placeholder="website/URL">
+        </form>
+        <button id="create" onclick="createuser()">Create User</button>
+        <button id="update" onclick="updateuser()">Update User</button>
+    </div>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User Email</th>
+                <th>User Name</th>
+                <th>Password</th>
+                <th>fname</th>
+                <th>lname</th>
+                <th>Display Name</th>
+                <th>Website</th>
+                <th>edit</th>
+                <th>delete</th>
+            </tr>
+        <tbody></tbody>
+        </thead>
+    </table>
+    <script>
+        var gindex = null
+        var alluser = [
+            {
+                useremail: "revanthreddy.mukundha@gmail.com",
+                username: "Revanthmukundha",
+                password: "Reddyrough",
+                fname: "Revanth",
+                lname: "Reddy",
+                displayname: "Reddyrough",
+                website: "www.sunlineitsolutions.com"
+            }
+        ]
+        function createuser() {
+            var user = {
+                useremail: document.getElementById("useremail").value,
+                username: document.getElementById("username").value,
+                password: document.getElementById("password").value,
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                displayname: document.getElementById("displayname").value,
+                website: document.getElementById("website").value,
+            }
+            console.log(user)
+            alluser.push(user)
+            clearuser()
+            displayuser(alluser)
+
+        }
+        function clearuser() {
+            document.getElementById("useremail").value = "";
+            document.getElementById("username").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("fname").value = "";
+            document.getElementById("lname").value = "";
+            document.getElementById("displayname").value = "";
+            document.getElementById("website").value = "";
+        }
+        function displayuser(user) {
+            document.querySelector("tbody").innerHTML = "";
+            user.forEach((value, i) => {
+                var mytr = document.createElement("tr");
+                var useremailtd = document.createElement("td");
+                useremailtd.innerHTML = value.useremail;
+                mytr.appendChild(useremailtd);
+                var usernametd = document.createElement("td");
+                usernametd.innerHTML = value.username;
+                mytr.appendChild(usernametd);
+                var passwordtd = document.createElement("td");
+                passwordtd.innerHTML = value.password;
+                mytr.appendChild(passwordtd);
+                var fnametdtd = document.createElement("td");
+                fnametdtd.innerHTML = value.fname;
+                mytr.appendChild(fnametdtd);
+                var lnametd = document.createElement("td");
+                lnametd.innerHTML = value.lname;
+                mytr.appendChild(lnametd);
+                var displaynametd = document.createElement("td");
+                displaynametd.innerHTML = value.displayname;
+                mytr.appendChild(displaynametd);
+                var websitetd = document.createElement("td");
+                websitetd.innerHTML = value.website;
+                mytr.appendChild(websitetd);
+                document.querySelector("tbody").appendChild(mytr);
+
+
+                var edittd = document.createElement("td");
+                var editbuttontd = document.createElement("button");
+                editbuttontd.innerHTML = "edit";
+                edittd.appendChild(editbuttontd);
+                mytr.appendChild(edittd);
+                editbuttontd.setAttribute("onclick", "edituser(" + i + ")");
+
+                var deletetd = document.createElement("td");
+                var deletebuttontd = document.createElement("button");
+                deletebuttontd.innerHTML = "delete";
+                deletetd.appendChild(deletebuttontd);
+                mytr.appendChild(deletetd);
+                deletebuttontd.setAttribute("onclick", "deleteuser(" + i + ")");
+
+            });
+        }
+        function deleteuser(i) {
+            var latestuser = alluser.filter(function (value, index) {
+                return i !== index;
+            })
+            console.log(latestuser)
+            displayuser(latestuser)
+        }
+        function edituser(i) {
+            console.log(i)
+            document.getElementById("useremail").value = alluser[i].useremail;
+            document.getElementById("username").value = alluser[i].username;
+            document.getElementById("password").value = alluser[i].password;
+            document.getElementById("fname").value = alluser[i].fname;
+            document.getElementById("lname").value = alluser[i].lname;
+            document.getElementById("displayname").value = alluser[i].displayname;
+            document.getElementById("website").value = alluser[i].website;
+            document.getElementById("create").style.display = "none";
+            document.getElementById("update").style.display = "block";
+            gindex = i;
+        }
+        function updateuser() {
+            var user = {
+                useremail: document.getElementById("useremail").value,
+                username: document.getElementById("username").value,
+                password: document.getElementById("password").value,
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                displayname: document.getElementById("displayname").value,
+                website: document.getElementById("website").value,
+            }
+            alluser[gindex] = user;
+            displayuser(alluser)
+            clearuser()
+            document.getElementById("create").style.display = "block";
+            document.getElementById("update").style.display = "none";
+        }
+        displayuser(alluser)
+    </script>
+</body>
+
+</html>

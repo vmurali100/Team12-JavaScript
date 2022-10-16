@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    div#userid {
+      position: relative;
+      left: 50%;
+    }
+
+    label {
+      margin: 1%;
+    }
+
+    input {
+      margin: 1%;
+      position: relative;
+      left: 5%;
+    }
+
+    input#username {
+      position: relative;
+      left: 47px;
+    }
+
+    input#password {
+      position: relative;
+      left: 49px;
+    }
+
+    input#confirmpassword {
+      position: relative;
+      left: -5px;
+    }
+
+    input#displayname {
+      position: relative;
+      left: 24px;
+    }
+
+    input#nickname {
+      position: relative;
+      left: 45px;
+    }
+
+    input#website {
+      position: relative;
+      left: 59px;
+    }
+
+    textarea#bio {
+      position: relative;
+      left: 95px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="userid">
+    <h1>Create User</h1>
+    <form action="">
+      <label for="username">username</label>
+      <input type="text" id="username" /><br />
+      <label for="email">email</label>
+      <input type="text" id="email" /><br />
+      <label for="password">password</label>
+      <input type="text" id="password" /><br />
+      <label for="confirm password">confirm password</label>
+      <input type="text" id="confirmpassword" /><br />
+      <label for="display name">display name</label>
+      <input type="text" id="displayname" /><br />
+      <label for="name">name</label>
+      <input type="text" id="first" />
+      <input type="text" id="last" /><br />
+      <label for="nickname">nickname</label>
+      <input type="text" id="nickname" /><br />
+      <label for="website">website</label>
+      <input type="text" id="website" /><br />
+      <label for="bio">bio</label>
+      <textarea name="bio" id="bio" cols="30" rows="10">bio</textarea><br />
+      <button type="button" onclick="createstudent()" id="create">Creat and Access</button>
+      <button type="button" id="update" onclick="updatestudent()">Update</button>
+    </form>
+  </div>
+  <hr />
+  <table border="1">
+    <thead>
+      <tr>
+        <th>username</th>
+        <th>email</th>
+        <th>password</th>
+        <th>confirm password</th>
+        <th>display name</th>
+        <th>fname</th>
+        <th>lname</th>
+        <th>nickname</th>
+        <th>website</th>
+        <th>bio</th>
+        <th>edit</th>
+        <th>delete</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script>
+    var allstudents = [
+      {
+        username: "revanthmukundha",
+        email: "revanthreddy.mukundha@gamil.com",
+        password: "hello",
+        confirmpassword: "hello",
+        displayname: "revanth",
+        fname: "Revanth",
+        lname: "Reddy",
+        nickname: "Reddy Rough",
+        website: "www.sunlineitsolutions.com",
+        bio: "director",
+      },
+    ];
+    var gindex = null;
+    function createstudent() {
+      var student = {
+        username: document.getElementById("username").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value,
+        confirmpassword: document.getElementById("confirmpassword").value,
+        displayname: document.getElementById("displayname").value,
+        fname: document.getElementById("first").value,
+        lname: document.getElementById("last").value,
+        nickname: document.getElementById("nickname").value,
+        website: document.getElementById("website").value,
+        bio: document.getElementById("bio").value,
+      };
+      console.log(student);
+      allstudents.push(student);
+      clearstudent();
+      displaystudent(allstudents);
+    }
+    function clearstudent() {
+      document.getElementById("username").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("password").value = "";
+      document.getElementById("confirmpassword").value = "";
+      document.getElementById("displayname").value = "";
+      document.getElementById("first").value = "";
+      document.getElementById("last").value = "";
+      document.getElementById("nickname").value = "";
+      document.getElementById("website").value = "";
+      document.getElementById("bio").value = "";
+    }
+    function displaystudent(student) {
+      document.querySelector("tbody").innerHTML = "";
+      student.forEach((value, i) => {
+        var mytr = document.createElement("tr");
+        var utd = document.createElement("td");
+        utd.innerHTML = value.username;
+        mytr.appendChild(utd);
+        var etd = document.createElement("td");
+        etd.innerHTML = value.email;
+        mytr.appendChild(etd);
+        var ptd = document.createElement("td");
+        ptd.innerHTML = value.password;
+        mytr.appendChild(ptd);
+        var conptd = document.createElement("td");
+        conptd.innerHTML = value.confirmpassword;
+        mytr.appendChild(conptd);
+        var dtd = document.createElement("td");
+        dtd.innerHTML = value.displayname;
+        mytr.appendChild(dtd);
+        var ftd = document.createElement("td");
+        ftd.innerHTML = value.fname;
+        mytr.appendChild(ftd);
+        var ltd = document.createElement("td");
+        ltd.innerHTML = value.lname;
+        mytr.appendChild(ltd);
+        var ntd = document.createElement("td");
+        ntd.innerHTML = value.nickname;
+        mytr.appendChild(ntd);
+        var wtd = document.createElement("td");
+        wtd.innerHTML = value.website;
+        mytr.appendChild(wtd);
+        var btd = document.createElement("td");
+        btd.innerHTML = value.bio;
+        mytr.appendChild(btd);
+        document.querySelector("tbody").appendChild(mytr);
+
+        var edittd = document.createElement("td");
+        var editbuttontd = document.createElement("button");
+        editbuttontd.innerHTML = "edit";
+        edittd.appendChild(editbuttontd);
+        mytr.appendChild(edittd);
+        editbuttontd.setAttribute("onclick", "editstudent(" + i + ")");
+
+        var deletetd = document.createElement("td");
+        var deletebuttontd = document.createElement("button");
+        deletebuttontd.innerHTML = "delete";
+        deletetd.appendChild(deletebuttontd);
+        mytr.appendChild(deletetd);
+        deletebuttontd.setAttribute("onclick", "deletestudent(" + i + ")");
+      });
+    }
+    function deletestudent(i) {
+      var lateststudent = allstudents.filter(function (value, index) {
+        return i !== index;
+      });
+      console.log(lateststudent);
+      displaystudent(lateststudent);
+    }
+    function editstudent(i) {
+      console.log(i)
+      document.getElementById("username").value = allstudents[i].username;
+      document.getElementById("email").value = allstudents[i].email;
+      document.getElementById("password").value = allstudents[i].password;
+      document.getElementById("confirmpassword").value = allstudents[i].confirmpassword;
+      document.getElementById("displayname").value = allstudents[i].displayname;
+      document.getElementById("first").value = allstudents[i].fname;
+      document.getElementById("last").value = allstudents[i].lname;
+      document.getElementById("nickname").value = allstudents[i].nickname;
+      document.getElementById("website").value = allstudents[i].website;
+      document.getElementById("bio").value = allstudents[i].bio;
+      document.getElementById("create").style.display = "none";
+      document.getElementById("update").style.display = "block";
+      gindex = i;
+    }
+    function updatestudent() {
+      var student = {
+        username: document.getElementById("username").value,
+        email: document.getElementById("email").value,
+        password: document.getElementById("password").value,
+        confirmpassword: document.getElementById("confirmpassword").value,
+        displayname: document.getElementById("displayname").value,
+        fname: document.getElementById("first").value,
+        lname: document.getElementById("last").value,
+        nickname: document.getElementById("nickname").value,
+        website: document.getElementById("website").value,
+        bio: document.getElementById("bio").value,
+      }
+      allstudents[gindex] = student
+      displaystudent(allstudents)
+      clearstudent()
+      document.getElementById("create").style.display = "block";
+      document.getElementById("update").style.display = "none";
+    }
+    displaystudent(allstudents)
+  </script>
+</body>
+
+</html>

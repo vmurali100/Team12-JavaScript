@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button#upadateBtn {
+    display: none;
+}
+h3 {
+    
+    text-align: center;
+}
+
+
+
+    </style>
+</head>
+<body>
+    <h2>Create User</h2>
+    
+    <form>
+        <label for="username">Username</label>
+        <input type="text" name="" id="username"><br/><br>
+        <label for="email">Email</label>
+        <input type="text" id="email"><br/><br>
+        <label for="password">Password</label>
+        <input type="text" id="password"><br/><br>
+        <label for="confirmpassword">Confirm password</label>
+        <input type="text" id="confirmpassword"><br/><br>
+        <label for="displayname">Display Name</label>
+        <input type="text" name="" id="displayname"><br/><br>
+        <label for="fname">First Name</label>
+        <input type="text" name="" id="fname">
+        <label for="lname">Last Name</label>
+        <input type="text" name="" id="lname"><br/><br>
+        <label for="nickname">Nickname</label>
+        <input type="text" name="" id="nickname" ><br/><br>
+        <label for="website">Website</label>
+        <input type="text" id="website"><br/><br>
+        <label for="bio">Bio</label>
+        <input type="text" id="bio"><br/><br>
+        <label for="jabber">Jabber</label>
+        <input type="text" id="jabber"><br/><br>
+        <label for="aolim">ALO IM</label>
+        <input type="text" id="aloim"><br/><br>
+        <label for="yahooim">YAHOO IM</label>
+        <input type="text" id="yahooim"><br/><br>
+
+        <h3>CREATE AND ACCESS</h3>
+        <button onclick="upadateuser()" type="button" id="upadateBtn">Upadate User</button>
+        <button onclick="createuser()" type="button" id="createBtn">Create  User</button>
+        
+            </form>  
+            <hr>      
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Username</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Confirm password</th>
+                <th>Display Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Nickname</th>
+                <th>Website</th>
+                <th>Bio</th>
+                <th>jabber</th>
+                <th>ALO IM</th>
+                <th>YAHOO IM</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+
+    </table>
+
+    <script>
+        var allusers =[
+            {usernamename:"mallelajagadeesh",email:"mallelajagadeesh7524@gmail.com",password:1789,confirmpassword:1789,displayname:"Jagadeesh",fname:"M",lname:"jagadeesh",nickname:"jaga",website:"Hostar",bio:"crickter",jabber:"IT",aloim:"Benguluru",yahooim:"chittoor"},
+            {usernamename:"mallelaradha",email:"mallelaradha7524@gmail.com",password:1779,confirmpassword:1779,displayname:"Radha",fname:"M",lname:"radha",nickname:"kutti",website:"Hostar",bio:"dancing",jabber:"former",aloim:"chittoor",yahooim:"chittoor"},
+        ]
+        var gindex=null
+function createuser(){
+    var user={
+        username:document.getElementById("username").value,
+        email:document.getElementById("email").value,
+        password:document.getElementById("password").value,
+        confirmpassword:document.getElementById("confirmpassword").value,
+        displayname:document.getElementById("displayname").value,
+        fname:document.getElementById("fname").value,
+        lname:document.getElementById("lname").value,
+        nickname:document.getElementById("nickname").value,
+        website:document.getElementById("website").value,
+        bio:document.getElementById("bio").value,
+        jabber:document.getElementById("jabber").value,
+        aloim:document.getElementById("aloim").value,
+        yahooim:document.getElementById("yahooim").value,
+    
+    }
+    console.log("user",user);
+    clearform()
+    allusers.push(user)
+    displayusers(allusers)
+}
+function clearform(){
+    document.getElementById("username").value="";
+    
+    document.getElementById("email").value="";
+    document.getElementById("password").value="";
+    document.getElementById("confirmpassword").value="";
+    document.getElementById("displayname").value="";
+    document.getElementById("fname").value="";
+    document.getElementById("lname").value="";
+    document.getElementById("nickname").value="";
+    document.getElementById("website").value="";
+    document.getElementById("bio").value="";
+    document.getElementById("jabber").value="";
+    document.getElementById("aloim").value="";
+    document.getElementById("yahooim").value="";
+    
+
+
+}
+function displayusers(users){
+    document.querySelector("tbody").innerHTML=""
+users.forEach((user,i) => {
+    var myTr=document.createElement("tr");
+    
+    var usernametd=document.createElement("td");
+usernametd.innerHTML=user.username;
+    var emailtd=document.createElement("td");
+    emailtd.innerHTML=user.email;
+    var passwordtd=document.createElement("td");
+    passwordtd.innerHTML=user.password;
+    var confirmpasswordtd=document.createElement("td");
+    confirmpasswordtd.innerHTML=user.confirmpassword;
+    var displaynametd=document.createElement("td");
+    displaynametd.innerHTML=user.displayname;
+    var fnametd=document.createElement("td");
+    fnametd.innerHTML=user.fname;
+    var lnametd=document.createElement("td");
+    lnametd.innerHTML=user.lname;
+    var nicknametd=document.createElement("td");
+    nicknametd.innerHTML=user.nickname;
+    var websitetd=document.createElement("td");
+    websitetd.innerHTML=user.website;
+    var biotd=document.createElement("td");
+    biotd.innerHTML=user.bio;
+    var jabbertd=document.createElement("td");
+    jabbertd.innerHTML=user.jabber;
+    var aloimtd=document.createElement("td");
+    aloimtd.innerHTML=user.aloim;
+    var yahooimtd=document.createElement("td");
+    yahooimtd.innerHTML=user.yahooim;
+
+    myTr.appendChild(usernametd);
+    myTr.appendChild(emailtd);
+    myTr.appendChild(passwordtd);
+    myTr.appendChild(confirmpasswordtd);
+    myTr.appendChild(displaynametd);
+    myTr.appendChild(fnametd);
+    myTr.appendChild(lnametd);
+    myTr.appendChild(nicknametd);
+    myTr.appendChild(websitetd);
+    myTr.appendChild(biotd);
+    myTr.appendChild(jabbertd);
+    myTr.appendChild(aloimtd);
+    myTr.appendChild(yahooimtd);
+    
+    var editTd=document.createElement("td");
+    var editBtn=document.createElement("button");
+    editBtn.innerHTML="Edit"
+    editBtn.setAttribute("onclick","edituser("+i+")")
+    editTd.appendChild(editBtn);
+    var deleteTd=document.createElement("td");
+    var deleteBtn=document.createElement("button");
+    deleteBtn.innerHTML="Delete"
+    deleteBtn.setAttribute("onclick","deleteuser("+i+")")
+    deleteTd.appendChild(deleteBtn);
+
+     myTr.appendChild(editTd);
+     myTr.appendChild(deleteTd);
+    
+     document.querySelector("tbody").appendChild(myTr)
+});
+
+
+}
+function deleteuser(i){
+var latestusers=allusers.filter (function (user,index){
+    return i !==index
+})
+console.log(latestusers);
+displayusers(latestusers)
+}
+function edituser(i){
+    console.log(i)
+    gindex=i;
+    document.getElementById("username").value=allusers[i].username
+    
+    document.getElementById("email").value=allusers[i].email
+    document.getElementById("password").value=allusers[i].password
+    document.getElementById("confirmpassword").value=allusers[i].confirmpassword
+    document.getElementById("displayname").value=allusers[i].displayname
+    document.getElementById("fname").value=allusers[i].fname
+    document.getElementById("lname").value=allusers[i].lname
+    document.getElementById("nickname").value=allusers[i].nickname
+    document.getElementById("website").value=allusers[i].website
+    document.getElementById("bio").value=allusers[i].bio
+
+    document.getElementById("jabber").value=allusers[i].jabber
+    document.getElementById("aloim").value=allusers[i].aloim
+    document.getElementById("yahooim").value=allusers[i].yahooim
+    document.getElementById("upadateBtn").style.display="Block"
+    document.getElementById("createBtn").style.display="none"
+    
+
+    
+
+}
+function upadateuser(){
+    var user ={  
+        username:document.getElementById("username").value,
+        email:document.getElementById("email").value,
+        password:document.getElementById("password").value,
+        confirmpassword:document.getElementById("confirmpassword").value,
+        displayname:document.getElementById("displayname").value,
+        fname:document.getElementById("fname").value,
+        lname:document.getElementById("lname").value,
+        nickname:document.getElementById("nickname").value,
+        website:document.getElementById("website").value,
+        bio:document.getElementById("bio").value,
+        jabber:document.getElementById("jabber").value,
+        aloim:document.getElementById("aloim").value,
+        yahooim:document.getElementById("yahooim").value,
+
+    
+}
+allusers[gindex]=user
+
+            displayusers(allusers);
+            clearform()
+            document.getElementById("upadateBtn").style.display = "none"
+            document.getElementById("createBtn").style.display = "Block"
+}
+displayusers(allusers)
+
+    </script>
+</body>
+</html>

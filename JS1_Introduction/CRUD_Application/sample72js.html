@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <label for="name">name</label>
+        <input type="text" id="name1">
+    </form>
+    <button type="button", onclick="createname()">Create Name</button>
+    <hr>
+    <table border="1">
+         <thead>
+            <tr>
+                <th>Name</th>
+                <th>edit</th>
+                <th>delete</th>
+            </tr>
+         </thead>
+         <tbody></tbody>
+    </table>
+    <script>
+        var allname=[]
+        var gindex=null
+        function createname(){
+           var names={
+             name:document.getElementById("name1").value,
+           }
+           console.log(names)
+           clearname()
+           allname.push(names)
+           displayname(allname)
+        }
+        function clearname(){
+            document.getElementById("name1").value="";
+        }
+        function displayname(names){
+         document.querySelector("tbody").innerHTML="";
+         names.forEach((value,i) => {
+            var mytr=document.createElement("tr");
+            document.querySelector("tbody").appendChild(mytr);
+            var ntd=document.createElement("td");
+            ntd.innerHTML=value.name
+            mytr.appendChild(ntd)
+
+            var edittd=document.createElement("td");
+            var editbuttontd=document.createElement("button");
+            editbuttontd.innerHTML="edit";
+            edittd.appendChild(editbuttontd);
+            mytr.appendChild(edittd);
+            editbuttontd.setAttribute("onclick","editname("+i+")")
+
+            var deletetd=document.createElement("td");
+            var deletebuttontd=document.createElement("button");
+            deletebuttontd.innerHTML="Delete";
+            deletetd.appendChild(deletebuttontd);
+            mytr.appendChild(deletetd);
+            deletebuttontd.setAttribute("onclick","deletename("+i+")")
+         });
+            
+        }
+        function editname(i){
+                document.getElementById("name1").value=allname[i].name;
+                gindex=i;
+            }
+            function deletename(i){
+                var latestname=allname.filter(function(value, index){
+                    return i !==index;
+                })
+                displayname(latestname)
+            }
+    </script>
+</body>
+</html>
