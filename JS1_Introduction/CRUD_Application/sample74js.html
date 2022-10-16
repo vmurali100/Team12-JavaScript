@@ -14,6 +14,11 @@
 
     
     <link rel="stylesheet" href="./main.css">
+    <style>
+        button#update {
+    display: none;
+}
+    </style>
 </head>
 
 <body>
@@ -80,7 +85,8 @@
                         
                         </div>
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="button" onclick="registeruser()">Submit</button>
+                            <button class="btn btn--radius-2 btn--blue" type="button" onclick="registeruser()" id="submit">Submit</button>
+                            <button type="button" class="btn btn--radius-2 btn--blue" onclick="updateuser()" id="update">Update</button>
                         </div>
                     </form>
                 </div>
@@ -88,7 +94,7 @@
         </div>
     </div>
     <div class="page-wrapper bg-gra-02 p-t-130 p-b-100 font-poppins">
-        <div class="wrapper wrapper--w680">
+        <div class="">
             <div class="card card-4">
                 <div class="card-body">
     <table border="1">
@@ -97,9 +103,11 @@
                 <th>First Name</th>
                 <th>Last Name</th>
                 <th>Birthday</th>
-                <th>Gender</th>
                 <th>Email</th>
                 <th>Phone Number</th>
+                <th>Gender</th>
+                <th>edit</th>
+                <th>delete</th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -108,8 +116,12 @@
 </div>
 </div>
 </div>
+<script src="./sample74jsdisplayuserjs.js"></script>
 <script src="./sample74jscreatjs.js"></script>
 <script src="./sample74jsclearjs.js"></script>
+<script src="./sample74deleteuserjs.js"></script>
+<script src="./sample74edituserjs.js"></script>
+<script src="./sample74updatejs.js"></script>
 </body>
 
 </html>
