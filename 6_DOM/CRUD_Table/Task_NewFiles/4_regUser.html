@@ -63,7 +63,7 @@
                     </tr>
                     <tr>
                         <td><label for="">User_Role</label><input type="text" id="subcriber" placeholder="Subcriber"></td>
-                        <td><label for="">Avatar</label><input type="file" id="FileUpload" placeholder="File Upload"></td>
+                        <td><label for="">Avatar</label><input type="file" id="FileUpload" placeholder="File Upload" style="border: 1px solid rgb(136, 135, 135); border-radius: 3px;"></td>
                     </tr>
                     <tr>
                         <td colspan="2">
@@ -175,20 +175,27 @@
                         var editTd=document.createElement("td")
                             editButton=document.createElement("button")
                                 editButton.innerHTML="EDIT"
-                                editButton.setAttribute("onclick","editRegUser()")
+                                editButton.setAttribute("onclick","editRegUser("+i+")")
                             editTd.appendChild(editButton)
                         myTr.appendChild(editTd)
 
                         var delTd=document.createElement("td")
                             delButton=document.createElement("button")
                                 delButton.innerHTML="DELETE"
-                                delButton.setAttribute("onclick","editRegUser()")
+                                delButton.setAttribute("onclick","delRegUser("+i+")")
                                 delTd.appendChild(delButton)
                         myTr.appendChild(delTd)
 
 
                     document.getElementById("my2TableBody").appendChild(myTr)
                 });
+            }
+
+            function delRegUser(i){
+                console.log(delRegUser)
+            }
+            function editRegUser(){
+                console.log(editRegUser)
             }
     </script>
 </body>

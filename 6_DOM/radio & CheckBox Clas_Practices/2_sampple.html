@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 5%;
+        }
+        input:radio{
+            margin-right: 1%;
+        }
+        #js, #njs,#bts,#rJs{
+            margin-right: 2%;
+        }
+        input#Male, #FeMale {
+            margin-right: 2%;
+        }
+        form{
+            width: 50%;
+            margin: auto;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <label for="">FIRST NAME : </label><input type="text" id="fName" placeholder="First Name">
+        <br><br>
+        <label for="">LAST NAME : </label><input type="text" id="lName" placeholder="Last Name">
+        <br><br><br>
+
+        <label for="">GENDER : </label><br><br>
+        <label for="Male">MALE</label> 
+            <input type="radio" name="gender" id="Male" value="Male">
+        <label for="FeMale">FEMALE</label> 
+            <input type="radio" name="gender" id="FeMale" value="FeMale">
+        <label for="Other">Others</label> 
+            <input type="radio" name="gender" id="Other" value="Other">
+        <br><br><br>
+        <br>
+        <label for="">SELECT SUBJECT</label><br><br>
+        <label for="js">JAVA_SCRIPT</label>
+        <input type="checkbox" name="subject" id="js" value="JavaScript">
+        <label for="njs">NODE JS</label>
+        <input type="checkbox" name="subject" id="njs" value="NodeJs">
+        <label for="bts">BOOTSTRAP</label>
+        <input type="checkbox" name="subject" id="bts" value="Bootstrap">
+        <label for="rJs">REACT JS</label>
+        <input type="checkbox" name="subject" id="rJs" value="ReactJs">
+        <br><br>
+        <input type="button" value="CREATE USER" id="cretBtn" onclick="createUser()">
+    </form>
+
+    <script src="./create.js"></script>
+    <script src="./clearForm.js"></script>
+    <script src="./read.js"></script>
+    <script src="./update.js"></script>
+    <script src="./delete.js"></script>
+
+</body>
+</html>

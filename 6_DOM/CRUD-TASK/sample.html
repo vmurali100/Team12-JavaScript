@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{font-family: Arial, Helvetica, sans-serif;}
+        input{
+            margin: 1%;
+            padding: 1.5%;
+            width: 50%;
+            border-radius: 5px;
+        }
+        button{
+            padding: 1%;
+            margin-left: 18%;
+            margin-right: 5%;
+        }
+        form, table{
+            width: 50%;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <input type="text" id="fName" placeholder="First Nam"><br>
+        <input type="text" id="lName" placeholder="Last Name"><br>
+        <input type="email" id="email" placeholder="sample@email.com"><br>
+        <input type="password" id="pwd" placeholder="password"><br>
+        <br>
+        <button type="button" value="CREATE USER" id="myBtn" onclick="displyUser()">CREATE USER</button>
+    </form>
+    <br><hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody id="myTbody"></tbody>
+    </table>
+
+    <script>
+        function displyUser(){
+            var userInfo={
+                fName:document.getElementById("fName").value,
+                lName:document.getElementById("lName").value,
+                email:document.getElementById("email").value,
+                pwd:document.getElementById("pwd").value
+                
+            }
+            console.log(userInfo)
+            clearForm()
+            displyDataInTable()
+        }
+        function clearForm(){
+            document.getElementById("fName").value="";
+            document.getElementById("lName").value="";
+            document.getElementById("email").value="";
+            document.getElementById("pwd").value=""; 
+        }
+        function displyDataInTable(){
+            var myTr=document.createElement("tr")
+
+            document.getElementById("myTbody").appendChild(myTr)
+        }
+    </script>
+</body>
+</html>

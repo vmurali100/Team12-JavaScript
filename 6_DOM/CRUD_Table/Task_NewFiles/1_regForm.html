@@ -9,7 +9,6 @@
     <style>
         .container{
             width: 100%;
-            border: 1px solid;
             text-align: center;
         }
         .row1{
@@ -29,6 +28,12 @@
         #updateBtn{
             display: none;
         }
+        #redioM,#redioF{
+            width: 5% !important;
+        }
+        #gendLab{
+            margin-right: 3%;
+        }
     </style>
 </head>
 <body>
@@ -38,6 +43,13 @@
                 <form>
                     <input type="text" id="fName"  placeholder="First Name*">
                     <input type="text" id="lName"  placeholder="Last Name*">
+
+                    <label id="gendLab">GENDER : </label>
+                    <label for="redioM">MALE</label>
+                    <input type="radio" name="gender" id="redioM" value="Male">
+                    <label for="redioF">FEMALE</label>
+                    <input type="radio" name="gender" id="redioF" value="FeMale">
+                    
                     <input type="text" id="partonymic"  placeholder="Partonymic*">
                     <input type="email" id="email"  placeholder="Email*">
                     <input type="password" id="password"  placeholder="Password*">
@@ -63,6 +75,7 @@
                         <tr>
                             <th>FIRST NAME</th>
                             <th>LAST NAME</th>
+                            <th>GENDER</th>
                             <th>PARTONYMIC</th>
                             <th>EMAIL</th>
                             <th>PASSWORD</th>
@@ -83,9 +96,9 @@
     <script>
 
         var allRegUsers=[
-            {fName:"Vijay",lName:"evn",partonymic:"Father",email:"vijay@gmail.com",password:"p@sword125",age:25,selAuthor:"Author",abtYou:"SeeThe Discription"},
-            {fName:"revanth",lName:"evn",partonymic:"Father",email:"revanth@gmail.com",password:"p@sword125",age:25,selAuthor:"Author",abtYou:"SeeThe Discription"},
-            {fName:"thanuja",lName:"evn",partonymic:"Father",email:"thanuja@gmail.com",password:"p@sword125",age:25,selAuthor:"Author",abtYou:"SeeThe Discription"},
+           //{fName:"Vijay",lName:"evn",partonymic:"Father",gender:"Male",email:"vijay@gmail.com",password:"p@sword125",age:25,selAuthor:"Author",abtYou:"SeeThe Discription"},
+            //{fName:"revanth",lName:"evn",partonymic:"Father",gender:"Male",email:"revanth@gmail.com",password:"p@sword125",age:25,selAuthor:"Author",abtYou:"SeeThe Discription"},
+            //{fName:"thanuja",lName:"evn",partonymic:"Father",gender:"FeMale",email:"thanuja@gmail.com",password:"p@sword125",age:25,selAuthor:"Author",abtYou:"SeeThe Discription"},
         ];
         var gindex=null
 
@@ -100,7 +113,18 @@
                 selAuthor:document.getElementById("selAuthor").value,
                 abtYou:document.getElementById("abtYou").value,
 
+                
             }
+            var radioUserDetails=document.getElementsByName("gender")
+            
+            radioUserDetails.forEach((item) => {
+                if(item.checked){
+                    console.log(item.value)
+                    user.gender=item.value
+                }
+                console.log(radioUserDetails)
+                
+            });
             //console.log(user)
             clearForm()
             allRegUsers.push(user)
@@ -109,6 +133,7 @@
         function clearForm(){
                 document.getElementById("fName").value="";
                 document.getElementById("lName").value="";
+                document.getElementsByName("gender").value="";
                 document.getElementById("partonymic").value="";
                 document.getElementById("email").value="";
                 document.getElementById("password").value="";
@@ -126,6 +151,11 @@
                     var mytd2=document.createElement("td")
                         mytd2.innerHTML=user.lName;
                         myTr.appendChild(mytd2)
+                    
+                        var genTd=document.createElement("td")
+                        genTd.innerHTML=user.gender;
+                        myTr.appendChild(genTd)
+                    
                     var mytd3=document.createElement("td")
                         mytd3.innerHTML=user.partonymic;
                         myTr.appendChild(mytd3)
@@ -158,6 +188,7 @@
                             myTr.appendChild(delTd)
                 document.getElementById("myTbody").appendChild(myTr)
             });
+            
         }
         function delUserList(i){
             var latestUser=allRegUsers.filter(function(user,index){
@@ -171,7 +202,8 @@
             gindex = i
             document.getElementById("fName").value=allRegUsers[i].fName
             document.getElementById("lName").value=allRegUsers[i].lName
-            document.getElementById("partonymic").value=allRegUsers[i].partonymic
+            document.getElementsByName("gender").value=allRegUsers[i].gender
+            document.getElementById("partonymic").value=allRegUsers[i].partonymic   
             document.getElementById("email").value=allRegUsers[i].email
             document.getElementById("password").value=allRegUsers[i].password
             document.getElementById("age").value=allRegUsers[i].age
@@ -186,6 +218,7 @@
             var user={
                 fName:document.getElementById("fName").value,
                 lName:document.getElementById("lName").value,
+                gender:document.getElementsByName("gender").value=allRegUsers[i].gender,
                 partonymic:document.getElementById("partonymic").value,
                 email:document.getElementById("email").value,
                 age:document.getElementById("age").value,
