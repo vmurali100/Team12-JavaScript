@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+
         #updateBtn {
             display: none;
         }
@@ -14,22 +15,24 @@
 </head>
 
 <body>
+    <div id="cust">
+    <h2>Customer Details :</h2>
     <form>
-        <label for="fname">First Name : </label>
-        <input type="text" name="" id="fname"> <br>
-        <label for="lname">Last Name : </label>
-        <input type="text" name="" id="lname"> <br>
+        <label for="fname">Full Name : </label><br>
+        <input type="text" name="" id="fname" placeholder="First Name">
+        <input type="text" name="" id="lname" placeholder="Last Name"> <br>
         <label for="adress">Adress : </label>
         <input type="text" name="" id="adress"><br>
         <label for="city">City : </label>
-        <input type="text" name="" id="city"><br>
-        <label for="pincode">Pincode</label>
+        <input type="text" name="" id="city">
+        <label for="pincode">Pincode : </label>
         <input type="text" name="" id="pincode"><br>
-        <label for="phonenumber">Phone Number</label>
-        <input type="text" name="" id="phonenumber"><br>
+        <label for="phonenumber">Phone Number : </label>
+        <input type="text" name="" id="phonenumber" placeholder="0000 0000 00"><br>
         <button onclick="updateUser()" type="button" id="updateBtn">Update User</button>
         <button onclick="createuser()" type="button" id="createBtn">Create User</button>
     </form>
+    </div>
     <hr>
     <table border="1">
         <thead>
@@ -48,13 +51,7 @@
     </table>
 
     <script>
-        // 1. Create a User 
-        // 2. Read User 
-        // 3. Update a User 
-        // 4. Delete a User 
-
-        // CRUD Application 
-        var allUsers = [
+    var allUsers = [
             { fname: "raja", lname: "shekar",adress:"#10",city:"banglore",pincode:576655,phonenumber:9988777665},
             { fname: "nataraj", lname: "pujar",adress:"#25",city:"chitradurga",pincode:577518,phonenumber:7766554443},
             { fname: "rudresh", lname: "basavaraj",adress:"#45",city:"davangere",pincode:665544,phonenumber:7259694151},
@@ -80,7 +77,7 @@
             document.getElementById("fname").value = "";
             document.getElementById("lname").value = ""
             document.getElementById("adress").value = "";
-            document.getElementById("city").value = ""
+            document.getElementById("city").value = "";
             document.getElementById("pincode").value = "";
             document.getElementById("phonenumber").value = ""
         }
@@ -112,7 +109,6 @@
                 var editBtn = document.createElement("button");
                 editBtn.innerHTML = "Edit";
                 editBtn.setAttribute("onclick", "editUser(" + i + ")");
-
                 editTd.appendChild(editBtn)
                 var deleteTd = document.createElement("td");
                 var deleteBtn = document.createElement("button");

@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    <h2>User-Registration</h2>
     <form>
         <label for="ruraltitle">Rural Title : </label>
         <input type="text" name="" id="rtitle"> <br>
@@ -33,9 +34,11 @@
         <input type="text" name="" id="nname">
         <label for="displayname">display Name</label>
         <input type="text" name="" id="dname"><br>
+        
 
         <button onclick="updateUser()" type="button" id="updateBtn">Update User</button>
         <button onclick="createuser()" type="button" id="createBtn">Create User</button>
+        <h2>Create and Access</h2>
     </form>
     <hr>
     <table border="1">
@@ -57,30 +60,24 @@
         <tbody></tbody>
     </table>
 
-    <script>
-        // 1. Create a User 
-        // 2. Read User 
-        // 3. Update a User 
-        // 4. Delete a User 
-
-        // CRUD Application 
+    <script> 
         var allUsers = [
-            { rtitle:"abcefgh",email:"abc@gmail.com",password:7788,rpassword:7788,uname:"parsad",fname: "raj", lname: "sunder",nname:"vishnu",dname:"vishnuprasad"},
-            { rtitle:"ajdudhdh",email:"artgy67@gmail.com",password:4455,rpassword:4455,uname:"arjun",fname: "Murthy", lname: "kanchan",nname:"raj",dname:"suubuprasad"}
-            
+            { rtitle: "abcefgh", email: "abc@gmail.com", password: 7788, rpassword: 7788, uname: "parsad", fname: "raj", lname: "sunder", nname: "vishnu", dname: "vishnuprasad" },
+            { rtitle: "ajdudhdh", email: "artgy67@gmail.com", password: 4455, rpassword: 4455, uname: "arjun", fname: "Murthy", lname: "kanchan", nname: "raj", dname: "suubuprasad" }
+
         ]
         var gindex = null
         function createuser() {
             var user = {
                 rtitle: document.getElementById("rtitle").value,
                 email: document.getElementById("email").value,
-                password:document.getElementById("password").value,
-                rpassword:document.getElementById("rpassword").value,
-                uname:document.getElementById("uname").value,
-                fname:document.getElementById("fname").value,
-                lname:document.getElementById("lname").value,
-                dname:document.getElementById("dname").value,
-                nname:document.getElementById("nname").value
+                password: document.getElementById("password").value,
+                rpassword: document.getElementById("rpassword").value,
+                uname: document.getElementById("uname").value,
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                dname: document.getElementById("dname").value,
+                nname: document.getElementById("nname").value
 
             }
             console.log("user", user);
@@ -174,7 +171,7 @@
             document.getElementById("createBtn").style.display = "none"
         }
 
-        function updateUser(){
+        function updateUser() {
             var user = {
                 rtitle: document.getElementById("rtitle").value,
                 email: document.getElementById("email").value,

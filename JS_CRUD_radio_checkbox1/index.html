@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Create User</h2>
+    <hr>
+    <form>
+        <label for="username">User Name</label><br>
+        <input type="text" name="" id="username"><br>
+        <label for="email">Email</label><br>
+        <input type="text" name="" id="email"><br>
+        <label for="password">Password</label><br>
+        <input type="text" name="" id="password"><br>
+        <label for="confirmpassword">Confirm Password</label><br>
+        <input type="text" name="" id="cpassword"><br>
+        <label for="fname">Name : </label><br>
+        <input type="text" name="" id="fname" placeholder="First Name"><br>
+        <input type="text" name="" id="lname" placeholder="Last Name"> <br>
+        <input type="text" name="" id="nname" placeholder="Nick Name"><br>
+        <input type="text" name="" id="dname" placeholder="Display Name"><br>
+        <label for="website">Website</label><br>
+        <input type="text" name="" id="website"><br>
+        <label for="bio">Bio</label><br>
+        <input type="text" name="" id="bio"><br>
+        <label for="bio">Jabber</label><br>
+        <input type="text" name="" id="jabber"><br>
+        <label for="bio">AOL IM</label><br>
+        <input type="text" name="" id="aol"><br>
+        <label for="bio">Yahoo</label><br>
+        <input type="text" name="" id="yahoo"><br>
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender" value="Male">Male
+        <input type="radio" name="gender" value="Female">Female  <br>
+        <label for="subjects">Subjects</label>
+        <input type="checkbox" name="subjects" value="HTML 5">HTML
+        <input type="checkbox" name="subjects" value="CSS">CSS
+        <input type="checkbox" name="subjects" value="Javascript">Javascript
+        <input type="checkbox" name="subjects" value="angular">Angular
+
+    </form>
+        <button onclick="updateUser()" type="button" id="updateBtn" style="display: none;">Update User</button>
+        <button onclick="createUser()" type="button" id="createBtn">Create User</button>
+    
+        
+    </div>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Confirm Password</th>
+                <th>Display Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Nick Name</th>
+                <th>Website </th>
+                <th>Bio</th>
+                <th>Jabber</th>
+                <th>AOL IM</th>
+                <th>Yahoo IM</th>
+                <th>Gender</th>
+                <th>Subjecst</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="./displayuser.js"></script>
+    <script src="./createuser.js"></script>
+    <script src="./clearform.js"></script>
+    <script src="./deleteuser.js"></script>
+    <script src="./edituser.js"></script>
+
+</body>
+</html>

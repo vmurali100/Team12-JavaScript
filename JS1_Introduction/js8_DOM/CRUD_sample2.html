@@ -10,34 +10,48 @@
         #updateBtn {
             display: none;
         }
+        div#details {
+            position: relative;
+            left: 20%;
+            background-size: auto;
+        }
     </style>
 </head>
 
 <body>
+    <div id="details">
+    <h2>Create User</h2>
+    <hr>
     <form>
-        <label for="username">User Name</label>
+        <label for="username">User Name</label><br>
         <input type="text" name="" id="username"><br>
-        <label for="email">Email</label>
+        <label for="email">Email</label><br>
         <input type="text" name="" id="email"><br>
-        <label for="password">Password</label>
+        <label for="password">Password</label><br>
         <input type="text" name="" id="password"><br>
-        <label for="confirmpassword">Confirm Password</label>
+        <label for="confirmpassword">Confirm Password</label><br>
         <input type="text" name="" id="cpassword"><br>
-        <label for="displayname">Display Name</label>
-        <input type="text" name="" id="dname"><br>
-        <label for="fname">First Name : </label>
-        <input type="text" name="" id="fname">
-        <label for="lname">Last Name : </label>
-        <input type="text" name="" id="lname"> <br>
-        <label for="nickname">Nickname</label>
-        <input type="text" name="" id="nname"><br>
-        <label for="website">Website</label>
+        <label for="fname">Name : </label><br>
+        <input type="text" name="" id="fname" placeholder="First Name"><br>
+        <input type="text" name="" id="lname" placeholder="Last Name"> <br>
+        <input type="text" name="" id="nname" placeholder="Nick Name"><br>
+        <input type="text" name="" id="dname" placeholder="Display Name"><br>
+        <label for="website">Website</label><br>
         <input type="text" name="" id="website"><br>
-        <label for="bio">Bio</label>
+        <label for="bio">Bio</label><br>
         <input type="text" name="" id="bio"><br>
+        <label for="bio">Jabber</label><br>
+        <input type="text" name="" id="jabber"><br>
+        <label for="bio">AOL IM</label><br>
+        <input type="text" name="" id="aol"><br>
+        <label for="bio">Yahoo</label><br>
+        <input type="text" name="" id="yahoo"><br>
+    </form>
         <button onclick="updateUser()" type="button" id="updateBtn">Update User</button>
         <button onclick="createuser()" type="button" id="createBtn">Create User</button>
-    </form>
+    
+        
+    </div>
     <hr>
     <table border="1">
         <thead>
@@ -52,6 +66,9 @@
                 <th>Nick Name</th>
                 <th>Website </th>
                 <th>Bio</th>
+                <th>Jabber</th>
+                <th>AOL IM</th>
+                <th>Yahoo IM</th>
                 <th>Edit</th>
                 <th>Delete</th>
             </tr>
@@ -60,15 +77,10 @@
     </table>
 
     <script>
-        // 1. Create a User 
-        // 2. Read User 
-        // 3. Update a User 
-        // 4. Delete a User 
-
-        // CRUD Application 
+ 
         var allUsers = [
-        { username: "kushi", email: "kushi@gmail.com", password: 223344, cpassword: 223344, dname: "kushi PC", fname: "kushi", lname: "PC", nname: "kush", website: "kushi.com", bio: "abbgdsjshdhdhd" },
-        { username: "rama", email: "rama33@gmail.com", password: 289344, cpassword: 289344, dname: "raghu rama", fname: "raghu", lname: "Police", nname: "ranga", website: "rama.com", bio: "abbgdsjshdhdhhfhfd" },
+        { username: "kushi", email: "kushi@gmail.com", password: 223344, cpassword: 223344, dname: "kushi PC", fname: "kushi", lname: "PC", nname: "kush", website: "kushi.com", bio: "abbgdsjshdhdhd",jabber:"abcd",aol:"gghh",yahoo:"prashanth@yahoo.com"},
+        { username: "rama", email: "rama33@gmail.com", password: 289344, cpassword: 289344, dname: "raghu rama", fname: "raghu", lname: "Police", nname: "ranga", website: "rama.com", bio: "abbgdsjshdhdhhfhfd",jabber:"efgh",aol:"uuii",yahoo:"laliger@yahoo.com"},
         ]
         var gindex = null
         function createuser() {
@@ -82,7 +94,10 @@
                 lname:document.getElementById("lname").value,
                 nname: document.getElementById("nname").value,
                 website:document.getElementById("website").value,
-                bio: document.getElementById("bio").value
+                bio: document.getElementById("bio").value,
+                jabber:document.getElementById("jabber").value,
+                aol:document.getElementById("aol").value,
+                yahoo:document.getElementById("yahoo").value
             }
             console.log("user", user);
             clearform()
@@ -101,6 +116,9 @@
             document.getElementById("nname").value = "";
             document.getElementById("website").value = "";
             document.getElementById("bio").value = "";
+            document.getElementById("jabber").value = "";
+            document.getElementById("aol").value = "";
+            document.getElementById("yahoo").value = "";
         }
 
         function displayUsers(users) {
@@ -137,6 +155,18 @@
                 var btd = document.createElement("td");
                 btd.innerHTML = user.bio;
                 myTr.appendChild(btd);
+                var jtd = document.createElement("td");
+                jtd.innerHTML = user.jabber;
+                myTr.appendChild(jtd);
+                var atd = document.createElement("td");
+                atd.innerHTML = user.aol;
+                myTr.appendChild(atd);
+                var ytd = document.createElement("td");
+                ytd.innerHTML = user.yahoo;
+                myTr.appendChild(ytd);
+
+
+
 
                 var editTd = document.createElement("td");
                 var editBtn = document.createElement("button");
@@ -176,6 +206,9 @@
             document.getElementById("nname").value = allUsers[i].nname
             document.getElementById("website").value = allUsers[i].website
             document.getElementById("bio").value = allUsers[i].bio
+            document.getElementById("jabber").value = allUsers[i].jabber
+            document.getElementById("aol").value = allUsers[i].aol
+            document.getElementById("yahoo").value = allUsers[i].yahoo
             document.getElementById("updateBtn").style.display = "block"
             document.getElementById("createBtn").style.display = "none"
         }
@@ -192,6 +225,9 @@
                 nname: document.getElementById("nname").value,
                 website: document.getElementById("website").value,
                 bio: document.getElementById("bio").value,
+                jabber: document.getElementById("jabber").value,
+                aol: document.getElementById("aol").value,
+                yahoo: document.getElementById("yahoo").value
             }
             allUsers[gindex] = user
 

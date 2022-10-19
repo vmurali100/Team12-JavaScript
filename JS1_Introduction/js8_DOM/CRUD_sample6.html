@@ -14,23 +14,27 @@
     </style>
 </head>
 <body>
+    <h1>Register</h1>
     <form >
-        <label for="firstname">First Name:</label>
-        <input type="text" name="" id="fname"><br>
-        <label for="lastname">Last Name:</label>
-        <input type="text" name="" id="lname"><br>
-        <label for="email">Email:</label>
-        <input type="text" name="" id="email"><br>
-        <label for="password">Password:</label>
-        <input type="text" name="" id="password"><br>
-        <label for="age">Age:</label>
-        <input type="text" name="" id="age"><br>
+        <label for="firstname"></label>
+        <input type="text" name="" id="fname" placeholder="First Name"><br>
+        <label for="lastname"></label>
+        <input type="text" name="" id="lname" placeholder="Last Name"><br>
+        <label for="email"></label>
+        <input type="text" name="" id="email" placeholder="Email"><br>
+        <label for="password"></label>
+        <input type="text" name="" id="password" placeholder="Password"><br>
+        <label for="age"></label>
+        <input type="text" name="" id="age" placeholder="Age"><br>
+        <label for="gender">Gender</label>
+        <input type="radio" name="gender" value="Male">
+        <input type="radio" name="gender" value="Female"><br>
         <button onclick="updateuser()" type="button" id="updateBtn">Update User</button>
         <button onclick="createuser()" type="button" id="createBtn">Create User</button>
 
     </form>
     <hr>
-    <table border="2">
+    <table border="3">
     <thead>
         <tr>
             <th>First Name</th>
@@ -38,6 +42,7 @@
             <th>Email</th>
             <th>Password</th>
             <th>Age</th>
+            <th>Gender</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
@@ -56,7 +61,13 @@
                 lname:document.getElementById("lname").value,
                 email:document.getElementById("email").value,
                 password:document.getElementById("password").value,
-                age:document.getElementById("age").value
+                age:document.getElementById("age").value,
+                allRadioBtns:document.getElementsByName("gender")
+            allRadioBtns.forEach((item)=>{
+                if(item.checked){
+                    user.gender=item.value
+                }
+            })
 
             }
             console.log("user", user);
@@ -70,6 +81,7 @@
             document.getElementById("email").value="";
             document.getElementById("password").value="";
             document.getElementById("age").value="";
+            document.getElementsByName("gender"),value="";
         }
         function displayUsers(users) {
             document.querySelector("tbody").innerHTML = ""
@@ -90,13 +102,16 @@
                 var atd=document.createElement("td");
                 atd.innerHTML=user.age;
                 myTr.appendChild(atd);
+                var gtd=document.createElement("td");
+                gtd.innerHTML=user.gender;
+                gtd.appendChild(gtd);
 
                 var editTd = document.createElement("td");
                 var editBtn = document.createElement("button");
                 editBtn.innerHTML = "Edit";
                 editBtn.setAttribute("onclick", "editUser(" + i + ")");
 
-                editTd.appendChild(editBtn)
+    editTd.appendChild(editBtn)
                 var deleteTd = document.createElement("td");
                 var deleteBtn = document.createElement("button");
                 deleteBtn.innerHTML = "Delete";
@@ -132,7 +147,7 @@
                 lname: document.getElementById("lname").value,
                 email: document.getElementById("email").value,
                 password: document.getElementById("password").value,
-                age: document.getElementById("age").age
+                age: document.getElementById("age").value
             }
             allUsers[gindex] = user
 

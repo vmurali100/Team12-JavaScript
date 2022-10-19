@@ -1,0 +1,152 @@
+!<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        input#Ad1 {
+            position: absolute;
+            width: 337px;
+        }
+
+        input#Ad2 {
+            position: absolute;
+            width: 337px;
+        }
+
+        label#state {
+            position: relative;
+            left: 146px;
+        }
+
+        input#pincode {
+            position: absolute;
+            width: 337px;
+        }
+
+        input#number {
+            position: relative;
+            width: 337px;
+        }
+
+        div#customer {
+            position: relative;
+            left: 40%;
+        
+        }
+    </style>
+</head>
+
+<body>
+    <div id="customer">
+        <h1>Customer Details:</h1>
+        <form action="">
+            <label for="Full Name">Full Name</label><br>
+            <input type="text" id="fname" placeholder="First name">br
+            <input type="text" id="lname" placeholder="Last name"><br>
+            <label for="address">Address</label><br>
+            <input type="text" id="Ad1"><br>
+            <label for="streetadress">street address</label><br>
+            <input type="text" id="Ad2"><br>
+            <label for="streetadreesline2">streetadreesline2</label><br>
+            <input type="text" id="Ad3">
+            <input type="text" id="Ad4"><br>
+            <label for="city">city</label>
+            <label for="state" id="state">state</label><br>
+            <input type="number" name="" id="pincode"><br>
+            <label for="pincode">pincode</label>
+            
+            <p>phone number</p>
+            <input type="number" , id="number" placeholder="00000000000">
+        </form>
+        <button type="button" , onclick="createcustomer()">Create User</button>
+    </div>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>fname</th>
+                <th>lname</th>
+                <th>address1</th>
+                <th>address2</th>
+                <th>address3</th>
+                <th>address4</th>
+                <th>pincode</th>
+                <th>phone number</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+
+    <script>
+        var allcustomer = [
+            {
+                fname:"Revanth",
+                lname:"lname",
+                address1:""
+            }
+        ];
+        function createcustomer() {
+            var customer = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                address1: document.getElementById("Ad1").value,
+                address2: document.getElementById("Ad2").value,
+                address3: document.getElementById("Ad3").value,
+                address4: document.getElementById("Ad4").value,
+                pincode: document.getElementById("pincode").value,
+                phonenumber: document.getElementById("number").value,
+            };
+            console.log(customer);
+            allcustomer.push(customer);
+            clearcustomer();
+            displaycustomer(allcustomer)
+        }
+        function clearcustomer() {
+            document.getElementById("fname").value = "";
+            document.getElementById("lname").value = "";
+            document.getElementById("Ad1").value = "";
+            document.getElementById("Ad2").value = "";
+            document.getElementById("Ad3").value = "";
+            document.getElementById("Ad4").value = "";
+            document.getElementById("pincode").value = "";
+            document.getElementById("number").value = "";
+        }
+        function displaycustomer(customer) {
+            document.querySelector("tbody").innerHTML = "";
+            customer.forEach((value) => {
+                var mytr = document.createElement("tr");
+                var ftd = document.createElement("td");
+                ftd.innerHTML = value.fname;
+                mytr.appendChild(ftd);
+                var ltd = document.createElement("td");
+                ltd.innerHTML = value.lname;
+                mytr.appendChild(ltd);
+                var ad1td = document.createElement("td");
+                ad1td.innerHTML = value.Ad1;
+                mytr.appendChild(ad1td);
+                var ad2td = document.createElement("td");
+                ad2td.innerHTML = value.Ad2;
+                mytr.appendChild(ad2td);
+                var ad3td = document.createElement("td");
+                ad3td.innerHTML = value.Ad3;
+                mytr.appendChild(ad3td);
+                var ad4td = document.createElement("td");
+                ad4td.innerHTML = value.Ad4;
+                mytr.appendChild(ad4td);
+                var pintd = document.createElement("td");
+                pintd.innerHTML = value.pincode;
+                mytr.appendChild(pintd);
+                var numtd = document.createElement("td");
+                numtd.innerHTML = value.number;
+                mytr.appendChild(numtd);
+                document.querySelector("tbody").appendChild(mytr);
+            });
+        }
+    </script>
+</body>
+
+</html>

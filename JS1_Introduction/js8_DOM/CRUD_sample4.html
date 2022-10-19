@@ -10,25 +10,33 @@
         #updateBtn {
             display: none;
         }
+        div#register {
+            position: relative;
+            left: 5%;
+            
+        }
     </style>
 </head>
 
 <body>
+    <div id="register">
+    <h2>Register User</h2>
     <form>
-        <label for="email">Email</label>
+        <label for="email">Email</label><br>
         <input type="text" name="" id="email"><br>
-        <label for="password">Password</label>
+        <label for="password">Password </label><br>
         <input type="text" name="" id="password"><br>
-        <label for="fname">First Name : </label>
+        <label for="fname">First Name</label><br>
         <input type="text" name="" id="fname"> <br>
-        <label for="lname">Last Name : </label>
+        <label for="lname">Last Name  </label><br>
         <input type="text" name="" id="lname"> <br>
-        <label for="displayname">Display Name</label>
+        <label for="displayname">Display Name  </label><br>
         <input type="text" name="" id="displayname"><br>
-        <label for="website">Website</label>
+        <label for="website">Website </label><br>
         <input type="text" name="" id="website"><br>
         <button onclick="updateUser()" type="button" id="updateBtn">Update User</button>
         <button onclick="createuser()" type="button" id="createBtn">Create User</button>
+    </div>
     </form>
     <hr>
     <table border="1">
@@ -47,13 +55,7 @@
         <tbody></tbody>
     </table>
 
-    <script>
-        // 1. Create a User 
-        // 2. Read User 
-        // 3. Update a User 
-        // 4. Delete a User 
-
-        // CRUD Application 
+    <script> 
         var allUsers = [
             {email:"kumar@gmail.com",password:9988, fname: "Muruga", lname: "palani",displayname:"palanimuruga",website:"muruga.com" },
             {email:"kumargowda@gmail.com",password:9758, fname: "kumar", lname: "gowda",displayname:"kumara",website:"kumar.com" },
