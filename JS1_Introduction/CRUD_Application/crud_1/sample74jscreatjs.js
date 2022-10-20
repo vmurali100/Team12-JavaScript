@@ -33,6 +33,7 @@ function registeruser() {
     birthday: document.getElementById("birthday").value,
     Email: document.getElementById("email").value,
     phone: document.getElementById("phone").value,
+    gender:"",
   };
   console.log(user);
 

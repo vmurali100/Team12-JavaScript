@@ -8,4 +8,10 @@ function edituser(i){
     document.getElementById("submit").style.display = "none";
     document.getElementById("update").style.display = "block";
     gindex = i;
+
+    allradios.forEach((element)=>{
+     if(element.value==alluser[i].gender){
+        element.checked=true
+     }
+    })
 }

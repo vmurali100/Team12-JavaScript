@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./sample75jscss.css">
+    <style>
+        table{
+            background-color: antiquewhite;
+        }
+        button#update {
+    display: none;
+}
+    </style>
+</head>
+<body>
+    <div class="form-body">
+        <div class="row">
+            <div >
+                <div class="form-content">
+                    <div class="form-items">
+                        <h3>Register Today</h3>
+                        <p>Fill in the data below.</p>
+                        <form >
+
+                            <div class="col-md-12">
+                               <input class="form-control" type="text" name="name" placeholder="Full Name" required id="fullname">
+                               
+                            </div>
+
+                            <div class="col-md-12">
+                                <input class="form-control" type="email" name="email" placeholder="E-mail Address" required id="email">
+                                
+                            </div>
+
+                           <div class="col-md-12">
+                               <input type="text" name="password" placeholder="Password" id="password">
+                           </div>
+
+
+                           <div class="col-md-12">
+                              <input class="form-control" type="password" name="password" placeholder="Confirm Password" id="cpass" required>
+                               
+                           </div>
+
+
+                           <div >
+                            <label class="mb-3 mr-1" for="gender">Gender: </label>
+
+                            <input type="radio"  name="gender" id="male" value="male">
+                            <label class="btn btn-sm btn-outline-secondary" for="male">Male</label>
+
+                            <input type="radio"  name="gender" id="female" value="female">
+                            <label class="btn btn-sm btn-outline-secondary" for="female">Female</label>
+
+                            <input type="radio"  name="gender" id="secret" value="secret">
+                            <label class="btn btn-sm btn-outline-secondary" for="secret">Secret</label>
+                               
+                            </div>
+                            <div >
+                                <button  type="button"  onclick="createuser()" id="create">Register</button>
+                                <button  type="button"  onclick="updateuser()" id="update">Update</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Full Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>Confirm Password</th>
+                    <th>gender</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    
+
+ <script src="./sample75displyjs.js"></script>                     
+ <script src="./sample75createjs.js"></script>
+ <script src="./sample75clearjs.js"></script>
+ <script src="./sample75editjs.js"></script>
+</body>
+</html>
