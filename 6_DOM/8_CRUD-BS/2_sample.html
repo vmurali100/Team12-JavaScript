@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <form class="my-4">
+                    <input type="text" class="form-control" placeholder="First Name" id="fName" ><br>
+                    <input type="text" class="form-control" placeholder="Last Name" id="lName" ><br>
+                    <input type="email" class="form-control" placeholder="sample@email.com" id="email" ><br>
+                    <input type="password" class="form-control" placeholder="password" id="pwd"><br>
+
+                    <label for="genM">Male</label>
+                    <input type="radio" name="gender" id="genM" value="MALE" class="mx-2">
+
+                    <label for="genF">Fe Male</label>
+                    <input type="radio" name="gender" id="genF" value="FEMALE" class="mx-2">
+
+                    <label for="NA">Prefer Not To Say</label>
+                    <input type="radio" name="gender" id="NA" value="NA" class="my-4 mx-2">
+
+                    <br>
+                    <label for="jS">JavaScript</label>
+                    <input type="checkbox" name="subjects" id="jS" value="JavaScript" class="mx-2">
+
+                    <label for="rJs">React JS</label>
+                    <input type="checkbox" name="subjects" id="rJs" value="React JS" class="mx-2">
+
+                    <label for="ang">ANGULAR</label>
+                    <input type="checkbox" name="subjects" id="ang" value="ANGULAR" class="mx-2">
+
+                    <label for="nDj">NodeJs</label>
+                    <input type="checkbox" name="subjects" id="nDj" value="NodeJs" class="mx-2">
+
+                    <br>
+                    <br>
+                    <input type="button" value="SUBMIT" onclick="submitForm()" id="subButton" class="btn btn-outline-success mx-5 px-5">
+                    <input type="button" value="UPDATE" onclick="updateForm()" id="updateButton" class="btn btn-outline-info mx-5 px-5" style="display: none;">
+                </form>
+            </div>
+            <div class="col-md-8">
+                <table class="table table-bordered my-4">
+                    <thead>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Password</th>
+                        <th>Gender</th>
+                        <th>Course</th>
+                        <th>EDIT</th>
+                        <th>DELETE</th>
+                    </thead>
+                    <tbody></tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="./2_sample.js"></script>
+</body>
+</html>
