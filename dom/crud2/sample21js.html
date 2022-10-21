@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+         button#update{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        
+        <form>
+            
+            <label for="name">serial</label>
+            <input type="text"id="name"placeholder="your-name"><br>
+            <label for=" class"> class</label>
+            <input type="text"id=" class"placeholder="your-name"><br>
+            <label for=" subject"> subject</label>
+            <input type="text"id=" subject"placeholder="select"><br> 
+            <label for=" course"> course</label>    
+            <input type="text"id=" course"placeholder="select"><br>
+            <label for=" address"> address</label> 
+            <input type="text"id=" address"placeholder=" address"><br>
+            <label for="gender">gender</label><br>
+
+            <label for="radio container">male</label>
+            <input type="radio"name="gender"value="male">
+            <span for="checkmark"></span>
+            <label for="radio container">female</label>
+            <input type="radio"name="gender"value="female">
+            <span for ="checkmark"></span>
+            </form>
+
+            <button onclick="updateuser()"type="button"id="update">update user</button>
+            <button onclick="createuser()"type="button"id="create">create user</button>
+
+            
+        
+        <hr>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th> name</th>
+                    <th> class</th>
+                    <th> subject</th>
+                    <th> course</th>
+                    <th> address</th>
+                    <th>gender</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+    
+                </tr>
+                <tbody></tbody>
+            </thead>
+        </table>
+        <script src="./sampledisplayjs.js"></script>
+            <script src="./sample19 createjs.js"></script>
+            <script src="./sampleclear.js"></script>
+            <script src="./sampledeletejs.js"></script>
+            <script src="./sampleeditjs.js"></script>
+            <script src="./sampleupdatejs.js"></script>
+
+            </body>
+            </html>
+
+        
+                    

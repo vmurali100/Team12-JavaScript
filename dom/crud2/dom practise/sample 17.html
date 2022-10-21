@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+     button#update{
+            display:none;
+        }
+    </style>
+</head>
+<body>
+    <h1>Customer details</h1>
+    <form>
+        <label for="Full Name">Full Name:</label><br>
+        <input type="text"id="fname"placeholder="First Name"><br>
+        <input type="text"id="lname"placeholder="Last Name"><br>
+        <label for="Address">Address:</label><br>
+        <input type="text"id="streetaddress"placeholder="Streetaddress"><br>
+        <input type="text"id="streetaddress1"placeholder="streetaddress1"><br>
+        <input type="text"id="city"placeholder="city"><br>
+        <input type="text"id="pincode"placeholder="pincode"><br>
+        <label for="Phone Number">PhoneNumber:</label><br>
+        <input type="text"name=""id="phonenumber"><br>
+        </form>
+    
+        <button type="button" onclick="createcustomer()" id="create">Create customer</button>
+        <button type="button" onclick="updatecustomer()" id="update">Update Customer</button>
+        
+    
+        
+
+    
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First name</th>
+                <th>Last Name</th>
+                <th>streetaddress</th>
+                <th>streetaddress1</th>
+                <th>city</th>
+                <th>pincode</th>
+                <th>phonenumber</th>
+                <th>edit</th>
+                <th>delete</th>
+
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var allcustomer=[
+            { fname:"radha",
+            lname:"krishna",
+            streetaddress:"kannali",
+            streetaddress1:"gt homes",
+            city:"bangalore",
+            pincode:560013,
+            phonenumber:7259684385,
+    }
+]
+var gindex=null
+function createcustomer(){
+    var customer={
+        fname:document.getElementById("fname").value,
+        lname:document.getElementById("lname").value,
+        streetaddress:document.getElementById("streetaddress").value,
+        streetaddress1:document.getElementById("streetaddress1").value,
+        city:document.getElementById("city").value,
+        pincode:document.getElementById("pincode").value,
+        phonenumber:document.getElementById("phonenumber").value,
+    };
+        
+
+
+    
+    console.log(customer);
+    clearcustomer();
+    allcustomer.push(customer);
+    displaycustomer(allcustomer)
+
+
+}
+function clearcustomer(){
+    document.getElementById("fname").value="";
+    document.getElementById("lname").value="";
+    document.getElementById("streetaddress").value="";
+    document.getElementById("streetaddress1").value="";
+    document.getElementById("city").value="";
+    document.getElementById("pincode").value="";
+    document.getElementById("phonenumber").value="";
+}
+function displaycustomer(customer){
+    document.querySelector("tbody").innerHTML="";
+    customer.forEach((value,i)=> {
+        var mytr=document.createElement("tr");
+        var ftd=document.createElement("td");
+        ftd.innerHTML=value.fname;
+        mytr.appendChild(ftd);
+        var ltd=document.createElement("td");
+        ltd.innerHTML=value.lname;
+        mytr.appendChild(ltd);
+        var std=document.createElement("td");
+        std.innerHTML=value.streetaddress;
+        mytr.appendChild(std);
+        var satd=document.createElement("td");
+        satd.innerHTML=value.streetaddress1;
+        mytr.appendChild(satd);
+        var ctd=document.createElement("td");
+        ctd.innerHTML=value.city;
+        mytr.appendChild(ctd);
+        var ptd=document.createElement("td");
+        ptd.innerHTML=value.pincode;
+        mytr.appendChild(ptd);
+        var pntd=document.createElement("td");
+        pntd.innerHTML=value.phonenumber;
+        mytr.appendChild(pntd);
+        document.querySelector("tbody").appendChild(mytr);
+
+        var edittd=document.createElement("td");
+        var editbuttontd=document.createElement("button");
+        editbuttontd.innerHTML="edit";
+        edittd.appendChild(editbuttontd);
+        mytr.appendChild(edittd);
+        editbuttontd.setAttribute("onclick","editcustomer("+i+")")
+
+        var deletetd=document.createElement("td");
+        var deletebuttontd=document.createElement("button");
+        deletebuttontd.innerHTML="delete";
+        deletetd.appendChild(deletebuttontd);
+        mytr.appendChild(deletetd);
+        deletebuttontd.setAttribute("onclick","deletecustomer("+i+")");
+
+
+
+
+    });
+}
+    function deletecustomer(i){
+        var latestcustomer=allcustomer.filter(function(value,index) {
+            return i !==index;
+        });
+        console.log(latestcustomer);
+        displaycustomer(latestcustomer);
+    }
+    function editcustomer(i){
+        console.log(i)
+        gindex = i;
+        document.getElementById("fname").value=allcustomer[i].fname;
+        document.getElementById("lname").value=allcustomer[i].lname;
+        document.getElementById("streetaddress").value=allcustomer[i].streetaddress;
+        document.getElementById("streetaddress1").value=allcustomer[i].streetaddress1;
+        document.getElementById("city").value=allcustomer[i].city;
+        document.getElementById("pincode").value=allcustomer[i].pincode;
+        document.getElementById("phonenumber").value=allcustomer[i].phonenumber;
+        document.getElementById("update").style.display="block"
+        document.getElementById("create").style.display="none"
+    }
+    function updatecustomer() {
+        var customer={
+            fname:document.getElementById("fname").value,
+            lname:document.getElementById("lname").value,
+            streetaddress:getElementById("streetaddress").value,
+            streetaddress1:getElemntById("streetaddress1").value,
+            city:getElementById("city").value,
+            pincode:getElementById("pincode").value,
+            phonenumber:getElementById("phonenumber").value,
+        }
+        allcustomer[gindex]=customer
+        displaycustomer(allcustomer);
+        clearcustomer()
+        document.getElementById("update").style.display="none"
+        document.getElementById("create").style.display="block"
+    }
+    displaycustomer(allcustomer)
+      </script>
+    
+</body>
+</html>

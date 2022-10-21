@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <style>
+         button#update{
+                display:none;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>User Registration</h1>
+        <form>
+            <label for="rule title">rule title</label>
+            <input type="text"id="rule title"placeholder="user registration"><br>
+            <label for="username">username</label>
+            <input type="text"id="useremail field"placeholder="your-name"><br>
+            <label for="user password">user password</label>
+            <input type="text"id="user password"placeholder="your-name"><br>
+            <label for="repeat password">repeat password(optional)</label>
+            <input type="text"id="repeat password"placeholder="select"><br>
+            <label for="username field">username field(optional)</label>
+            <input type="text"id="username field"placeholder="select"><br>
+            <label for="user firstname">user firstname</label>
+            <input type="text"id="user firstname"placeholder="select"><br> 
+            <label for="user lastname">user lastname</label>    
+            <input type="text"id="user lastname"placeholder="select"><br>
+            <label for="user urlfield">user urlfeild</label>    
+            <input type="text"id="user urlfield"placeholder="select"><br>
+            <label for="user description">user description</label>
+            <input type="text"id="user description"placeholder="user description"><br>
+            <label for="user nickname">user nickname</label> 
+            <input type="text"id="user nickname"placeholder="user nickname field"><br>
+            <label for="user displayname">user displayname field</label>
+            <input type="user displayname"placeholder="user displayname feild"><br> 
+            </form>
+
+        
+            <button type="button" id="create" onclick="createuser()">Create User</button>
+            <button type="button" id="update" onclick="updateuser()">Update User</button>
+            
+        
+        <hr>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Rule title</th>
+                    <th>User name</th>
+                    <th>User password</th>
+                    <th>Repeat password</th>
+                    <th>Username feild</th>
+                    <th>User firstname</th>
+                    <th>User lastname</th>
+                    <th>User urlfelid</th>
+                    <th>User description</th>
+                    <th>User nickname</th>
+                    <th>User displayname</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+    
+                </tr>
+                <tbody></tbody>
+            </thead>
+            <tbody></tbody>
+        </table>
+        <script>
+            var alluser=[
+                { ruletitle:"javascript",
+                username:"tina",
+                userpassword:"lucky",
+                repeatpassword:"lucky",
+                usernamefeild:"good morning",
+                userfirstname:"bani",
+                userlastname:"veer",
+                userurlfeild:"had coffee",
+                userdescription:"its time to study",
+                usernickname:"chinni",
+                userdisplayname:"tina",
+        }
+    ]
+    var gindex=null
+    function createuser(){
+        var user={
+            ruletitle:document.getElementById("ruletitle").value,
+            username:document.getElementById("username").value,
+            userpassword:document.getElementById("userpassword").value,
+            repeatpassword:document.getElementById("repeatpassword").value,
+            usernamefeild:document.getElementById("username feild").value,
+            userfirstname:document.getElementById("userfirstname").value,
+            userlastname:document.getElementById("userlastname").value,
+            userurlfeild:document.getElementById("userurlfeild").value,
+            userdescription:document.getElementById("userdescription").value,
+            usernickname:document.getElementById("usernickname").value,
+            userdisplayname:document.getElementById("userdisplayname").value,
+
+
+        };
+         console.log(user);
+        clearuser();
+        alluser.push(user);
+        displayuser(alluser)
+    
+    
+    }
+    function clearuser(){
+        document.getElementById("ruletitle").value="";
+        document.getElementById("username").value="";
+        document.getElementById("userpassword").value="";
+        document.getElementById("repeatpassword").value="";
+        document.getElementById("usernamefeild").value="";
+        document.getElementById("userfirstname").value="";
+        document.getElementById("userlastname").value="";
+        document.getElementById("userurlfeild").value="";
+        document.getElementById("userdescription").value="";
+        document.getElementById("usernickname").value="";
+        document.getElementById("userdisplayname").value="";
+
+    }
+    function displayuser(user){
+        document.querySelector("tbody").innerHTML="";
+        user.forEach((value,i)=> {
+            var mytr=document.createElement("tr");
+            var rtd=document.createElement("td");
+            rtd.innerHTML=value.ruletitle;
+            mytr.appendChild(rtd);
+            var untd=document.createElement("td");
+            untd.innerHTML=value.username;
+            mytr.appendChild(untd);
+            var uptd=document.createElement("td");
+            uptd.innerHTML=value.userpassword;
+            mytr.appendChild(uptd);
+            var rptd=document.createElement("td");
+            rptd.innerHTML=value.repeatpassword;
+            mytr.appendChild(rptd);
+            var unftd=document.createElement("td");
+            unftd.innerHTML=value.usernamefeild;
+            mytr.appendChild(unftd);
+            var uftd=document.createElement("td");
+            uftd.innerHTML=value.userfirstname;
+            mytr.appendChild(uftd);
+            var ultd=document.createElement("td");
+            ultd.innerHTML=value.userlastname;
+            mytr.appendChild(ultd);
+            var uuftd=document.createElement("td");
+            uuftd.innerHTML=value.userurlfeild;
+            mytr.appendChild(uuftd);
+            var udtd=document.createElement("td");
+            udtd.innerHTML=value.userdescription;
+            mytr.appendChild(udtd);
+            var unntd=document.createElement("td");
+            unntd.innerHTML=value.usernickname;
+            mytr.appendChild(unntd);
+            var udntd=document.createElement("td");
+            udntd.innerHTML=value.userdisplayname;
+            mytr.appendChild(udntd);
+            document.querySelector("tbody").appendChild(mytr);
+    
+            var edittd=document.createElement("td");
+            var editbuttontd=document.createElement("button");
+            editbuttontd.innerHTML="edit";
+            edittd.appendChild(editbuttontd);
+            mytr.appendChild(edittd);
+            editbuttontd.setAttribute("onclick","edituser("+i+")")
+    
+            var deletetd=document.createElement("td");
+            var deletebuttontd=document.createElement("button");
+            deletebuttontd.innerHTML="delete";
+            deletetd.appendChild(deletebuttontd);
+            mytr.appendChild(deletetd);
+            deletebuttontd.setAttribute("onclick","deleteuser("+i+")");
+    
+    
+    
+    
+        });
+    }
+        function deleteuser(i){
+            var latestuser=alluser.filter(function(value,index) {
+                return i !==index;
+            });
+            console.log(latestuser);
+            displayuser(latestuser);
+        }
+        function edituser(i){
+            console.log(i)
+            gindex = i;
+            document.getElementById("ruletitle").value=alluser[i].ruletitle;
+            document.getElementById("username").value=alluser[i].username;
+            document.getElementById("password").value=alluser[i].password;
+            document.getElementById("repeatpassword").value=alluser[i].repeatpassword;
+            document.getElementById("usernamefeild").value=alluser[i].usernamefeild;
+            document.getElementById("userfirstname").value=alluser[i].userfirstname;
+            document.getElementById("userlastname").value=alluser[i].userlastname;
+            document.getElementById("userurlfeild").value=alluser[i].userurlfeild;
+            document.getElementById("description").value=alluser[i].userdescription;
+            document.getElementById("usernickname").value=alluser[i].usernickname;
+            document,getElementById("userdisplayname").value=alluser[i].userdisplayname;
+            document.getElementById("update").style.display="block"
+            document.getElementById("create").style.display="none"
+        }
+        function updateuser() {
+            var user={
+                ruletitle:document.getElementById("ruletitle").value,
+                username:document.getElementById("username").value,
+                userpassword:getElementById("userpassword").value,
+                repeatpassword:getElemntById("repeatusername").value,
+                usernamefeild:getElementById("usernamefeild").value,
+                userfirstname:getElementById("userfirstname").value,
+                userlastname:getElementById("userlastname").value,
+                userurlfeild:getElementById("userurlfeild").value,
+                userdescription:getElementById("userdescription").value,
+                usernickname:getElementById("usernickname").value,
+                userdisplayname:getElementById("userdisplayname").value,
+
+            }
+            alluser[gindex]=user
+            displayuser(alluser);
+            clearuser()
+            document.getElementById("update").style.display="none"
+            document.getElementById("create").style.display="block"
+        }
+        displayuser(alluser)
+          </script>
+        
+    </body>
+    </html>
+
+</head>
+<body>
+    
+</body>
+</html>

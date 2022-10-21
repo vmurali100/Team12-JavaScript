@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+button#update {
+            display: none;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div class="form">
+        <h1>Create user</h1>
+        <form action="">
+            <label for="uname">User Name:</label>
+            <input type="text" name="" id="uname"><br>
+            <label for="email">Email:</label>
+            <input type="text" name="" id="email"><br>
+            <label for="password">Password:</label>
+            <input type="text" name="" id="password"><br>
+            <label for="confirmpassword">Confirmpassword</label>
+            <input type="text" name="" id="confirmpassword"><br>
+            <label for="displayname">Displayname:</label>
+            <input type="text" name="" id="displayname"><br>
+            <label for="name">Name:</label>
+            <input type="text" name="" id="name"><br>
+            <label for="nickname">Nickname:</label>
+            <input type="text" name="" id="nickname"><br>
+            <label for="website">Website:</label>
+            <input type="text" name="" id="website"><br>
+            <textarea name="" id="Bio" cols="30" rows="10" placeholder="Bio about you"></textarea>
+            <label for="jabber">Jabber:</label>
+            <input type="text" name="" id="jabber"><br>
+        </form>
+        <button onclick="updateperson()" id="update" type="button">Update</button>
+        <button onclick="createuser()" id="create" type="button">Create user</button>
+    </div>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Confirmpassword</th>
+                <th>Diplayname</th>
+                <th>Name</th>
+                <th>Nickname</th>
+                <th>Website</th>
+                <th>Bio</th>
+                <th>Jabber</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var allpersons = [
+            {
+                uname: "bani",
+                email: "bani@gmail.com",
+                password: "12345",
+                confirmpassword: "12345",
+                displayname: "bani",
+                name: "radha",
+                nickname: "bujji",
+                website: "http//somesite.com",
+                Bio: "hi hello",
+                jabber: "talktive",
+            }
+        ]
+        var gindex = null
+        function createuser() {
+            var person = {
+                uname: document.getElementById("uname").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                confirmpassword: document.getElementById("confirmpassword").value,
+                displayname: document.getElementById("displayname").value,
+                name: document.getElementById("name").value,
+                nickname: document.getElementById("nickname").value,
+                website: document.getElementById("website").value,
+                Bio: document.getElementById("Bio").value,
+                jabber: document.getElementById("jabber").value
+            }
+            console.log(person)
+            clearperson()
+            allpersons.push(person)
+            displayperson(allpersons)
+        }
+        function clearperson() {
+            document.getElementById("uname").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("confirmpassword").value = "";
+            document.getElementById("displayname").value = "";
+            document.getElementById("name").value = "";
+            document.getElementById("nickname").value = "";
+            document.getElementById("website").value = "";
+            document.getElementById("Bio").value = "";
+            document.getElementById("jabber").value = "";
+        }
+        function displayperson(person) {
+            document.querySelector("tbody").innerHtml = "";
+            person.forEach((value, i) => {
+                var mytr = document.createElement("tr");
+                var utd = document.createElement("td");
+                utd.innerHTML = value.uname;
+                var etd = document.createElement("td");
+                etd.innerHTML = value.email;
+                var ptd = document.createElement("td");
+                ptd.innerHTML = value.password;
+                var ctd = document.createElement("td");
+                ctd.innerHTML = value.confirmpassword;
+                var dtd = document.createElement("td");
+                dtd.innerHTML = value.displayname;
+                var ntd = document.createElement("td");
+                ntd.innerHTML = value.name;
+                var nntd = document.createElement("td");
+                nntd.innerHTML = value.nickname;
+                var wtd = document.createElement("td");
+                wtd.innerHTML = value.website;
+                var btd = document.createElement("td");
+                btd.innerHTML = value.Bio;
+                var jtd = document.createElement("td");
+                jtd.innerHTML = value.jabber;
+                mytr.appendChild(utd);
+                mytr.appendChild(etd);
+                mytr.appendChild(ptd);
+                mytr.appendChild(ctd);
+                mytr.appendChild(dtd);
+                mytr.appendChild(ntd);
+                mytr.appendChild(nntd);
+                mytr.appendChild(wtd);
+                mytr.appendChild(btd);
+                mytr.appendChild(jtd);
+                document.querySelector("tbody").appendChild(mytr);
+                var edittd = document.createElement("td");
+                var editbuttontd = document.createElement("button");
+                editbuttontd.innerHTML = "Edit";
+                edittd.appendChild(editbuttontd);
+                mytr.appendChild(edittd);
+                editbuttontd.setAttribute("onclick", "editperson(" + i + ")");
+
+                var deletetd = document.createElement("td");
+                var deletebuttontd = document.createElement("button");
+                deletebuttontd.innerHTML = "Delete";
+                deletetd.appendChild(deletebuttontd);
+                mytr.appendChild(deletetd);
+                deletebuttontd.setAttribute("onclick", "deleteperson(" + i + ")");
+            });
+        }
+        function deleteperson(i) {
+            var latestperson = allpersons.filter(function (value, index) {
+                return i !== index
+            })
+            console.log(latestperson)
+            displayperson(latestperson)
+        }
+        function editperson(i) {
+            console.log(i)
+            document.getElementById("uname").value = allpersons[i].uname;
+            document.getElementById("email").value = allpersons[i].email;
+            document.getElementById("password").value = allpersons[i].password;
+            document.getElementById("confirmpassword").value = allpersons[i].confirmpassword;
+            document.getElementById("displayname").value = allpersons[i].displayname;
+            document.getElementById("name").value = allpersons[i].name;
+            document.getElementById("nickname").value = allpersons[i].nickname;
+            document.getElementById("website").value = allpersons[i].website;
+            document.getElementById("Bio").value = allpersons[i].Bio;
+            document.getElementById("jabber").value = allpersons[i].jabber;
+            document.getElementById("update").style.display = "block";
+            document.getElementById("create").style.display = "none";
+            gindex = i;
+        }
+        function updateperson() {
+            var person = {
+                uname: document.getElementById("uname").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+                confirmname: document.getElementById("confirmpassword").value,
+                displayname: document.getElementById("displayname").value,
+                name: document.getElementById("name").value,
+                nickname: documnet.getElementById("nickname").value,
+                website: document.getElementById("website").value,
+                Bio: document.getElementById("Bio").value,
+                jabber: document.getElementById("jabber").value,
+            }
+            allpersons[gindex] = person
+            displayperson(allpersons);
+            clearperson()
+            document.getElementById("update").style.display = "none";
+            docuement.getElementById("create").style.display = "block";
+        }
+        displayperson(allpersons)
+    </script>
+</body>
+
+</html>
