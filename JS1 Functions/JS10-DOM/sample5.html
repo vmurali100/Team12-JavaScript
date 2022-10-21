@@ -173,13 +173,13 @@ h2 {
      document.querySelector("tbody").appendChild(myTr)
                 });
             }
-            function deleteuser(i){
-var latestusers=allusers.filter (function (user,index){
-    return i !==index
-})
-console.log(latestusers);
-displayusers(latestusers)
-            }
+            function deleteuser(i) {
+            var allusers = allusers.filter( (user, index)=>{
+                return i !== index
+            })
+            console.log(allusers);
+displayusers(allusers)
+        }
             function edituser(i){
                 console.log(i)
                 gindex=i;

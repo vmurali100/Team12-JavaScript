@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Age</th>
+                <th>Gender</th>
+                <th>Subjects</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+    
+        </tbody>
+        </table>
+    <form >
+        <label for="firstname">First Name</label>
+        <input type="text" name="" id="fname" ><br><br>
+        <label for="lastname">Last Name</label>
+        <input type="text" name="" id="lname" ><br><br>
+        <label for="email">Email</label>
+        <input type="text" name="" id="email" ><br><br>
+        <label for="password">Password</label>
+        <input type="text" name="" id="password" ><br><br>
+        <label for="age">Age</label>
+        <input type="text" name="" id="age" ><br><br>
+     <label for="gender">Gender</label>
+     <input type="radio" name="gender" value="male">male
+     <input type="radio" name="gender" value="female">female<br><br>
+     <label for="subject">Subject</label>
+     <input type="checkbox" name="subject" value="html">html
+     <input type="checkbox" name="subject" value="css">css
+     <input type="checkbox" name="subject" value="java">java
+     <input type="checkbox" name="subject" value="react">react<br><br>
+     <button onclick="adduser()" type="button"  id="adduserBtn" >Add User</button>
+     <button onclick="updateuser()" type="button" id="updateuserBtn" style="display:none ;">Update User</button>
+    </form>
+
+        <script src="./displayusers.js"></script>
+        
+        
+    <script src="./adduser.js"></script>
+    <script src="./clearform.js"></script>
+    <script src="./deleteuser.js"></script>
+    <script src="./edituser.js"></script>
+    <script src="./updateuser.js"></script>
+   
+
+   
+</body>
+</html>

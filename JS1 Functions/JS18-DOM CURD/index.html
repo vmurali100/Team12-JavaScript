@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <label for="ruraltitle">Rural Title : </label>
+        <input type="text" name="" id="rtitle"> <br><br>
+        <label for="email">Email : </label>
+        <input type="text" name="" id="email"><br><br>
+        <label for="password">Password</label>
+        <input type="text" name="" id="password"><br><br>
+        <label for="repeatpasword">Repeat Password</label>
+        <input type="text" name="" id="rpassword"><br><br>
+        <label for="username">User Name</label>
+        <input type="text" name="" id="uname"><br><br>
+        <label for="fname">First name</label>
+        <input type="text" name="" id="fname"><br><br>
+        <label for="lname">Last Name</label>
+        <input type="text" name="" id="lname"><br><br>
+        <label for="nickname">Nick Name</label>
+        <input type="text" name="" id="nname"><br><br>
+        <label for="displayname">display Name</label>
+        <input type="text" name="" id="dname"><br><br>
+        <input type="radio" name="gender" value="male">male
+        <input type="radio" name="gender" value="female">female<br><br>
+        <label for="subject">Subject</label>
+        <input type="checkbox" name="subject" value="it">it
+        <input type="checkbox" name="subject" value="bpo">bpo
+        <input type="checkbox" name="subject" value="engineer">engineer
+        <input type="checkbox" name="subject" value="former">former<br><br>
+        <button onclick="adduser()" type="button" id="adduserBtn">Add User</button>
+     <button onclick="updateuser()" type="button" id="updateuserBtn" style="display:none ;">Update  User</button>
+
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Rural Title</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Repeat Password</th>
+                <th>User Name</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Nick Name</th>
+                <th>Display Name</th>
+                <th>Gender</th>
+                <th>Subjects</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script src="./displayusers.js"></script>
+    <script src="./adduser.js"></script>
+    <script src="./clearform.js"></script>
+    <script src="./deleteuser.js"></script>
+    <script src="./edituser.js"></script>
+    <script src="./updateuser.js"></script>
+
+</body>
+</html>

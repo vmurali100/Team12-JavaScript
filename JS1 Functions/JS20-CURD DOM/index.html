@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <form >
+    <label for="fname">Full Name  </label><br>
+        <label for="fname">First Name</label>
+        <input type="text" name="" id="fname" >
+        <label for="lastname">Lat Name</label>
+        <input type="text" name="" id="lname" > <br><br>
+        <label for="adress">Adress : </label>
+        <input type="text" name="" id="adress"><br><br>
+        <label for="city">City : </label>
+        <input type="text" name="" id="city"><br><br>
+        <label for="pincode">Pincode : </label>
+        <input type="text" name="" id="pincode"><br><br>
+        <label for="phonenumber">Phone Number : </label>
+        <input type="text" name="" id="phonenumber" ><br>
+        <input type="radio" name="gender" value="male">male
+        <input type="radio" name="gender" value="female">female<br><br>
+        <label for="subject">Subject</label>
+        <input type="checkbox" name="subject" value="10th">10th
+        <input type="checkbox" name="subject" value="inter">inter
+        <input type="checkbox" name="subject" value="degree">degree
+        <input type="checkbox" name="subject" value="mba">mba<br><br>
+        <button onclick="adduser()" type="button" id="adduserBtn">Add User</button>
+     <button onclick="updateuser()" type="button" id="updateuserBtn" style="display:none ;">Update  User</button>
+
+   </form>
+   <table border="1">
+    <thead>
+        <tr>
+            <th>First Name </th>
+            <th>Last Name</th>
+            <th>Address</th>
+            <th>city</th>
+            <th>Pincode</th>
+            <th>Phone Number</th>
+            <th>Gender</th>
+            <th>Subjects</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody></tbody>
+</table>
+<script src="./displayusers.js"></script>
+<script src="./adduser.js"></script>
+<script src="./clearform.js"></script>
+<script src="./deleteuser.js"></script>
+<script src="./edituser.js"></script>
+<script src="./updateuser.js"></script>
+
+</body>
+</html>

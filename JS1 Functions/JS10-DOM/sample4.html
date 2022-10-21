@@ -37,6 +37,9 @@
         <input type="text" name="" id="password" ><br><br>
         <label for="age">Age</label>
         <input type="text" name="" id="age" ><br><br>
+     <label for="gender">Gender</label>
+     <input type="radio" name="gender" value="male">male
+     <input type="radio" name="gender" value="female">female<br><br>
         <button onclick="updateuser()" type="button" id="updateBtn">Update User</button>
         <button onclick="createuser()" type="button" id="createBtn">Create User</button>
 
@@ -50,6 +53,7 @@
             <th>Email</th>
             <th>Password</th>
             <th>Age</th>
+            <th>Gender</th>
             <th>Edit</th>
             <th>Delete</th>
         </tr>
@@ -59,8 +63,9 @@
     </tbody>
     </table>
     <script>
-        var allUsers=[{fname:"geetha",lname:"raja",email:"geetha88@gmail.com",password:7746,age:36},
-        {fname:"muraga",lname:"radha",email:"radha@gmail.com",password:7676,age:41}]
+        var allRadios=document.getElementsByName("gender")
+        var allUsers=[{fname:"geetha",lname:"raja",email:"geetha88@gmail.com",password:7746,age:36,gender:"female"},
+        {fname:"muraga",lname:"radha",email:"radha@gmail.com",password:7676,age:41,gender:"male"}]
         var gindex=null
         function createuser(){
             var user={
@@ -68,9 +73,16 @@
                 lname:document.getElementById("lname").value,
                 email:document.getElementById("email").value,
                 password:document.getElementById("password").value,
-                age:document.getElementById("age").value
+                age:document.getElementById("age").value,
+                gender:""
 
+               
             }
+            allRadios.forEach((element)=>{
+        if(element.checked){
+            user.gender=element.value
+        }
+    })
             console.log("user", user);
             clearform()
             allUsers.push(user)
@@ -82,6 +94,9 @@
             document.getElementById("email").value="";
             document.getElementById("password").value="";
             document.getElementById("age").value="";
+            allRadios.forEach((element)=>{
+element.checked =false
+})
         }
         function displayUsers(users) {
             document.querySelector("tbody").innerHTML = ""
@@ -120,11 +135,11 @@
             });
         }
         function deleteUser(i) {
-            var latestUsers = allUsers.filter(function (user, index) {
+            var allUsers = allUsers.filter( (user, index)=>{
                 return i !== index
             })
-            console.log(latestUsers);
-            displayUsers(latestUsers)
+            console.log(allUsers);
+displayusers(allUsers)
         }
         function editUser(i) {
             console.log(i)
@@ -134,27 +149,43 @@
             document.getElementById("email").value = allUsers[i].email
             document.getElementById("password").value = allUsers[i].password
             document.getElementById("age").value = allUsers[i].age
+
             document.getElementById("updateBtn").style.display = "block"
             document.getElementById("createBtn").style.display = "none"
+            allRadios.forEach((element)=>{
+                if(element.value=allUsers[i].gender){
+                    element.checked=true
+
+                }
+            })
         }
 
-        function updateUser(){
+        function updateuser(){
             var user = {
                 fname: document.getElementById("fname").value,
                 lname: document.getElementById("lname").value,
                 email: document.getElementById("email").value,
                 password: document.getElementById("password").value,
-                age: document.getElementById("age").age
+                age: document.getElementById("age").age,
+                gender:""
+               
+
+
             }
-            allUsers[gindex] = user
+            allRadios.forEach((element)=>{
+                if(element.checked){
+                    user.gender=element.value
+                }
+            })
+            allUsers[gindex] = user;
 
             displayUsers(allUsers);
-            clearform()
-            document.getElementById("updateBtn").style.display = "none"
-            document.getElementById("createBtn").style.display = "block"
+            clearform();
+            document.getElementById("updateBtn").style.display = "none";
+            document.getElementById("createBtn").style.display = "block";
         }
-
         displayUsers(allUsers)
+       
     </script>
 </body>
 </html>

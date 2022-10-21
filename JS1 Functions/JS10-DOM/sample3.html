@@ -134,11 +134,11 @@
         }
 
         function deleteUser(i) {
-            var latestUsers = allUsers.filter(function (user, index) {
+            var allUsers = allUsers.filter(function (user, index) {
                 return i !== index
             })
-            console.log(latestUsers);
-            displayUsers(latestUsers)
+            console.log(allUsers);
+            displayUsers(allUsers)
         }
 
         function editUser(i) {
