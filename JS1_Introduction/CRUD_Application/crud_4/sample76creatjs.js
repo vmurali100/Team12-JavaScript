@@ -7,7 +7,7 @@ var alluser=[{
     fname:"Revanth",
     lname:"Reddy",
     gender:"Male",
-    subject:"2nd Year"
+    subject:["1st Year"]
 },
 {
     username:"Thanuja_mukundha",
@@ -18,7 +18,7 @@ var alluser=[{
     fname:"Thanuja",
     lname:"Reddy",
     gender:"FeMale",
-    subject:"3rd Year"
+    subject:["2nd Year"]
 },
 {
     username:"mukundha",
@@ -29,7 +29,7 @@ var alluser=[{
     fname:"mukundha",
     lname:"Reddy",
     gender:"Male",
-    subject:"4th Year"
+    subject:["3rd Year"]
 }]
 var allradio=document.getElementsByName("gender");
 var allsubjects=document.getElementsByName("subject");

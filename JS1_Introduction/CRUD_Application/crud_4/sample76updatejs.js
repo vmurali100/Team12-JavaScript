@@ -1,6 +1,4 @@
-var index=0
-function edituser(i){
-    index=i
+function updateuser(){
     var selectuser=alluser[i]
     document.getElementById("username").value=selectuser.username,
     document.getElementById("email").value=selectuser.email,
@@ -9,8 +7,8 @@ function edituser(i){
     document.getElementById("dname").value=selectuser.dname,
     document.getElementById("fname").value=selectuser.fname,
     document.getElementById("lname").value=selectuser.lname,
-    document.getElementById("create").style.display="none",
-    document.getElementById("update").style.display="block",
+    document.getElementById("create").style.display="block",
+    document.getElementById("update").style.display="none",
     
     allradio.forEach((usr)=>{
          if(usr.value==selectuser.gender){
@@ -25,4 +23,7 @@ function edituser(i){
             }
         })
     })
+    alluser[index]=user
+    clearuser()
+    displayuser(alluser)
 }
