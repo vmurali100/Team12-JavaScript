@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="getdata()">click here to get data</button>
+    <table border="1">
+        <thead>
+             <th>id</th>
+             <th>name</th>
+             <th>username</th>
+             <th>email</th>
+             <th>address</th>
+             <th>street</th>
+             <th>suit</th>
+             <th>city</th>
+             <th>zipcode</th>
+             <th>geo</th>
+             <th>lat</th>
+             <th>lng</th>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        function getdata(){
+            var info=new XMLHttpRequest()
+
+            info.onreadystatechange=function(){
+                if(info.readyState==4 && info.status==200){
+                    console.log(info.response)
+                    var users=JSON.parse(info.response)
+                    displayuser(users)
+                }
+            }
+
+            var url="https://jsonplaceholder.typicode.com/users"
+            info.open("GET",url );
+            info.send()
+        }
+
+        function displayuser(users){
+            console.log(users)
+            document.querySelector("tbody").innerHTML="";
+            users.forEach((element) => {
+                var mytr=document.createElement("tr");
+                for(a in users){
+                    var mytd=document.createElement("td")
+                    mytd.innerHTML=users[a]
+                    mytr.appendChild(mytd)
+                }
+                document.querySelector("tbody").appendChild(mytr)
+            });
+        }
+    </script>
+</body>
+</html>
