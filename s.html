@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+<div id="myDiv"></div>
+  <script>
+    //print outputin destopobject inside if object?
+    var obj = {
+      prop1: 'prop1Value',
+      prop2: 'prop2Value',
+      child: {
+        childProp1: 'childProp1Value',
+      },
+    }
+    //console.log(obj)
+    //console.log('My object : ' + obj)
+    //console.log('My object: ', obj);
+    
+    for(a in obj){
+    document.write(obj[a]+"<br>")
+    }
+
+  </script>
+</body>
+
+</html>

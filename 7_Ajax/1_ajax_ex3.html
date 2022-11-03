@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <button type="button" class="btn btn-info my-3" onclick="getDatFromServer()">Get Data from Server </button>
+        
+        <table class="table bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>EMAIL</th>
+                    <th>USER NAME</th>
+                    <th>PASSWORD</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+    <script>
+        function getDatFromServer(){
+        var getInfo=new XMLHttpRequest()
+        getInfo.onreadystatechange=function(){
+            if(getInfo.readyState==4 & getInfo.status==200){
+                console.log(getInfo.response.length)
+                var users=JSON.parse(getInfo.response)
+                displayDataInTable(users)
+            }
+        }
+        var filText_Url="https://filltext.com/?rows=10&id={index}&email={email}&username={username}&password={randomString|5}&pretty=true"
+        getInfo.open("GET",filText_Url)
+        getInfo.send()
+    }
+    function displayDataInTable(users){
+        document.querySelector("tbody").innerHTML="";
+        console.log(users.length)
+        users.forEach((user) => {
+            var myTr=document.createElement("tr")
+                for(a in user){
+                    var myTd=document.createElement("td")
+                        myTd.innerHTML=user[a]
+                    myTr.appendChild(myTd)
+                }
+            document.querySelector("tbody").appendChild(myTr)
+        });
+    }
+    </script>
+</body>
+</html>
