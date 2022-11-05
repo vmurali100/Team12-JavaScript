@@ -5,8 +5,92 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CRUD - With Server</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 <body>
-    
+<div class="container">
+    <div class="col-md-4 m-auto">
+        <table class="">
+            <thead>
+                <h3 class="text-center">Reservation Form</h3><hr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                        <label for="name">Name*</label>
+                    </td>
+                    <td><input type="text" id="name" placeholder="Name" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="email">Eamil*</label>                        
+                    </td>
+                    <td>
+                        <input type="email" name="email" id="email" placeholder="Eamil" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="arrivalDate">Arrival Date</label>
+                    </td>  
+                    <td>
+                        <input type="date" name="arrivalDate" id="arrivalDate" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="departureDate">Departure Date</label>
+                    </td>  
+                    <td>
+                        <input type="date" name="departureDate" id="departureDate" class="form-control">
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="flightNo">Flight Number</label></td>
+                    <td><input type="text" name="" id="flightNo" placeholder="Flight Number" class="form-control"></td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="splReq">Special Request</label>
+                    </td>
+                    <td>
+                        <textarea name="splReq" id="splReq" cols="30" rows="3" class="form-control" placeholder="Type Here..."></textarea>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="button" value="SUBMIT" id="submitBtn" class="btn btn-primary mx-5" onclick="addUser()">
+                        <input type="button" value="UPDATE" id="updateBtn" class="btn btn-info d-none mx-5" onclick="updateUser()">
+                    </td>
+                </tr>
+            </tbody>
+        </table>  
+    </div> <!--col-md-6 ends here-->
+</div> 
+<div class="container">
+     <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Eamil</th>
+                <th>Arrival Date</th>
+                <th>Departure Date</th>
+                <th>Flight No</th>
+                <th>Special Request</th>
+                <th>ID</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+            </tr>
+        </thead>
+        <tbody id="myTBody">
+
+        </tbody>
+     </table>   
+</div>
+<script src="./addUser.js"></script> 
+<script src="./read.js"></script>
+<script src="./delUser.js"></script>
+<script src="./editUser.js"></script>
 </body>
 </html>
