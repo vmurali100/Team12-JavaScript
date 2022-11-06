@@ -1,13 +1,34 @@
 {
   "users": [
     {
-      "name": "Vijay EVN",
-      "email": "vijay@gmail.com",
-      "arrivalDate": "2022-11-04",
-      "departureDate": "2022-11-05",
-      "flightNo": "asassd51551",
-      "splReq": "safszv",
+      "fname": "Vijay",
+      "lname": "EVN",
+      "id": 1
+    },
+    {
+      "fname": "varshi",
+      "lname": "U",
       "id": 2
+    },
+    {
+      "fname": "Revanth",
+      "lname": "Mukunda",
+      "id": 3
+    },
+    {
+      "fname": "thanuja",
+      "lname": "M",
+      "id": 4
+    },
+    {
+      "fname": "Durga Prasad",
+      "lname": "EVN",
+      "id": 5
+    },
+    {
+      "fname": "Vijay",
+      "lname": "EVN",
+      "id": 6
     }
   ]
 }
