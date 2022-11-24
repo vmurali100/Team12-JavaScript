@@ -5,7 +5,8 @@ function readuser(){
     if(getuser.readyState==4 && getuser.status==200){
         users=JSON.parse(getuser.response)
             console.log(reddy)
-            displayuser(reddy)
+            displayuser(reddy 
+                                                                                                                    )
         }
    }
     getuser.open("GET","http://localhost:3000/users");

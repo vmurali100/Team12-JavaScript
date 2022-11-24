@@ -1,3 +1,76 @@
 {
-  "users": []
+  "users": [
+    {
+      "username": "revanth",
+      "fname": "MUKUNDALA",
+      "lname": "REVANTH KUMAR",
+      "email": "revanthreddy.mukundha@gmail.com",
+      "password": "fjmhjh",
+      "id": 1
+    },
+    {
+      "username": "revanth",
+      "fname": "MUKUNDALA",
+      "lname": "REVANTH KUMAR",
+      "email": "revanthreddy.mukundha@gmail.com",
+      "password": ",nj,dns",
+      "id": 2
+    },
+    {
+      "username": "revanth",
+      "fname": "MUKUNDALA",
+      "lname": "REVANTH KUMAR",
+      "email": "revanthreddy.mukundha@gmail.com",
+      "password": ",nj,dns",
+      "id": 3
+    },
+    {
+      "username": "revanth",
+      "fname": "MUKUNDALA",
+      "lname": "REVANTH KUMAR",
+      "email": "revanthreddy.mukundha@gmail.com",
+      "password": ",nj,dns",
+      "id": 4
+    },
+    {
+      "username": "revanth",
+      "fname": "MUKUNDALA",
+      "lname": "REVANTH KUMAR",
+      "email": "revanthreddy.mukundha@gmail.com",
+      "password": ",nj,dns",
+      "id": 5
+    },
+    {
+      "username": "revanth",
+      "fname": "MUKUNDALA",
+      "lname": "REVANTH KUMAR",
+      "email": "revanthreddy.mukundha@gmail.com",
+      "password": ",nj,dns",
+      "id": 6
+    },
+    {
+      "username": "revanth",
+      "fname": "MUKUNDALA",
+      "lname": "REVANTH KUMAR",
+      "email": "revanthreddy.mukundha@gmail.com",
+      "password": ",nj,dns",
+      "id": 7
+    },
+    {
+      "username": "revanth",
+      "fname": "MUKUNDALA",
+      "lname": "REVANTH KUMAR",
+      "email": "revanthreddy.mukundha@gmail.com",
+      "password": ",nj,dns",
+      "id": 8
+    },
+    {
+      "username": "revanth",
+      "fname": "MUKUNDALA",
+      "lname": "REVANTH KUMAR",
+      "email": "revanthreddy.mukundha@gmail.com",
+      "password": ",nj,dns",
+      "id": 9
+    }
+  ]
 }
