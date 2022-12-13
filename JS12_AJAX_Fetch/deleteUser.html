@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Welcome to Delete User</h2>
+    <h2 id="fname">
+
+    </h2>
+    <h2 id="lname">
+
+    </h2>
+    <button onclick="delteteUser()">Confirm Delete</button>
+    <script>
+        var url = window.location.href;
+        var id =url.substring(url.lastIndexOf("?")+1);
+        function getSingleUser(){
+            var getData = new XMLHttpRequest();
+            getData.onreadystatechange = function (){
+                if(getData.readyState == 4 && getData.status == 200){
+                    console.log(JSON.parse(getData.response))
+                    var user = JSON.parse(getData.response)
+                    document.getElementById("fname").innerHTML ="First Name : "+user.fname
+                    document.getElementById("lname").innerHTML ="Last Name : "+user.lname
+                }
+            }
+            getData.open("GET","http://localhost:3000/users/"+id);
+            getData.send()
+        }
+
+        function delteteUser(){
+            var getData = new XMLHttpRequest();
+            getData.onreadystatechange = function (){
+                if(getData.readyState == 4 && getData.status == 200){
+                    window.location.href = "sample2_ajax.html"
+                }
+            }
+            getData.open("DELETE","http://localhost:3000/users/"+id);
+            getData.send()
+        }
+        getSingleUser()
+    </script>
+</body>
+</html>

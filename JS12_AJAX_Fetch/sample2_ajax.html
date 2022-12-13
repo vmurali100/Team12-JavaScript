@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname">First Name : </label>
+        <input type="text" name="" id="fname"> <br>
+        <label for="lname">Last Name : </label>
+        <input type="text" name="" id="lname"> <br>
+        <button type="button" onclick="addUser()">Add User</button>
+    </form>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Id</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        var api_url = "http://localhost:3000/users";
+        var users = []
+        function addUser(){
+            var user = {
+                fname:document.getElementById("fname").value,
+                lname:document.getElementById("lname").value
+            }
+            var postUser = new XMLHttpRequest();
+            postUser.onreadystatechange= function(){
+                if(postUser.readyState == 4 && postUser.status == 201){
+                    console.log("User Added Successfully")
+                }
+            }
+            postUser.open("POST",api_url);
+            postUser.setRequestHeader("Content-Type","application/json");
+            postUser.send(JSON.stringify(user))
+        }
+
+        function getDataFromAPI(){
+            var getData = new XMLHttpRequest();
+            getData.onreadystatechange = function (){
+                if(getData.readyState == 4 && getData.status == 200){
+                    console.log(JSON.parse(getData.response))
+                    users=JSON.parse(getData.response)
+                    displayUsers(JSON.parse(getData.response))
+                }
+            }
+            getData.open("GET","http://localhost:3000/users");
+            getData.send()
+        }
+        getDataFromAPI()
+        // How to Create a user 
+
+
+        function displayUsers(users){
+            users.forEach((usr,i)=>{
+                var myTr = document.createElement("tr");
+                for(a in usr){
+                    var myTd = document.createElement("td");
+                    myTd.innerHTML =usr[a]
+                    myTr.appendChild(myTd)
+                }
+
+                var editTd = document.createElement("td");
+                var deleteTd = document.createElement("td");
+
+                var editbtn = document.createElement("button");
+                editbtn.setAttribute("onclick","editUser("+i+")")
+                editbtn.innerHTML = "Edit User";
+                editTd.appendChild(editbtn)
+
+                var deletebtn = document.createElement("button");
+                deletebtn.setAttribute("onclick","deleteUSer("+i+")")
+                deletebtn.innerHTML = "Delete User";
+                deleteTd.appendChild(deletebtn)
+
+                myTr.appendChild(editTd)
+                myTr.appendChild(deleteTd)
+                document.querySelector("tbody").appendChild(myTr)
+            })
+        }
+
+        function editUser(){
+            console.log("editUser called")
+        }
+
+        function deleteUSer (i){
+            console.log("delete User Called!!")
+            window.location.href = "deleteUser.html?"+users[i].id
+        }
+        // How to Delete a User 
+        // How to Update a User 
+    </script>
+</body>
+</html>
