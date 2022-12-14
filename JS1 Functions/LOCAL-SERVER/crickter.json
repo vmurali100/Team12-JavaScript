@@ -1,0 +1,94 @@
+{
+    "players":[
+        {
+            "fname": "Sanjeev",
+            "lname": "Apotheloz",
+            "tel": "(447)906-0823",
+            "address": "7803 Donec Ct",
+            "city": "Armada",
+            "state": "MS",
+            "zip": 13257
+        },
+        {
+            "fname": "Irene",
+            "lname": "Cicero",
+            "tel": "(897)064-2927",
+            "address": "796 In Dr",
+            "city": "Arvada",
+            "state": "CO",
+            "zip": 90603
+        },
+        {
+            "fname": "Bilal",
+            "lname": "Speck",
+            "tel": "(271)323-8413",
+            "address": "6262 Etiam St",
+            "city": "Nashville",
+            "state": "NC",
+            "zip": 29065
+        },
+        {
+            "fname": "LaRoyce",
+            "lname": "Anderson",
+            "tel": "(152)236-0754",
+            "address": "329 Tincidunt Ave",
+            "city": "Clayton",
+            "state": "AZ",
+            "zip": 41212
+        },
+        {
+            "fname": "Sidney",
+            "lname": "Tan",
+            "tel": "(825)764-0191",
+            "address": "3583 Tellus Ct",
+            "city": "Orange",
+            "state": "SD",
+            "zip": 14216
+        },
+        {
+            "fname": "Giuseppe",
+            "lname": "Gilberto",
+            "tel": "(719)571-7964",
+            "address": "4 Libero Ct",
+            "city": "Wrentham",
+            "state": "AL",
+            "zip": 21059
+        },
+        {
+            "fname": "Shanita",
+            "lname": "Panovich",
+            "tel": "(637)196-4675",
+            "address": "1227 Orci Ct",
+            "city": "Tobyhanna",
+            "state": "NV",
+            "zip": 43551
+        },
+        {
+            "fname": "Valeria",
+            "lname": "Heath",
+            "tel": "(667)321-1311",
+            "address": "4840 Sollicitudin Ct",
+            "city": "North Kingstown",
+            "state": "GA",
+            "zip": 59644
+        },
+        {
+            "fname": "Marzee",
+            "lname": "Hull",
+            "tel": "(233)910-0180",
+            "address": "2775 Nec St",
+            "city": "Pittsburgh",
+            "state": "GA",
+            "zip": 46348
+        },
+        {
+            "fname": "Emir",
+            "lname": "Manning",
+            "tel": "(316)667-0102",
+            "address": "9210 Placerat St",
+            "city": "Birmingham",
+            "state": "ID",
+            "zip": 45311
+        }
+    ]
+}

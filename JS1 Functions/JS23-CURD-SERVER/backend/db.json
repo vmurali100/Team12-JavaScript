@@ -1,0 +1,130 @@
+{
+  "users": [
+    {
+      "fname": "Mj",
+      "lname": "jagadeesh",
+      "adress": "chittoor",
+      "city": "chittoor",
+      "pincode": "517419",
+      "phonenumber": "7995321587",
+      "id": 1
+    },
+    {
+      "fname": "seetha",
+      "lname": "m",
+      "adress": "tirupathi",
+      "city": "tiru",
+      "pincode": "778494",
+      "phonenumber": "8399377848",
+      "id": 11
+    },
+    {
+      "fname": "seetha",
+      "lname": "m",
+      "adress": "tirupathi",
+      "city": "tiru",
+      "pincode": "778494",
+      "phonenumber": "8399377848",
+      "id": 12
+    },
+    {
+      "fname": "seetha",
+      "lname": "m",
+      "adress": "tirupathi",
+      "city": "tiru",
+      "pincode": "778494",
+      "phonenumber": "8399377848",
+      "id": 15
+    },
+    {
+      "fname": "seetha",
+      "lname": "m",
+      "adress": "tirupathi",
+      "city": "tiru",
+      "pincode": "778494",
+      "phonenumber": "8399377848",
+      "id": 17
+    },
+    {
+      "fname": "seetha",
+      "lname": "m",
+      "adress": "tirupathi",
+      "city": "tiru",
+      "pincode": "778494",
+      "phonenumber": "8399377848",
+      "id": 18
+    },
+    {
+      "fname": "seetha",
+      "lname": "m",
+      "adress": "tirupathi",
+      "city": "tiru",
+      "pincode": "778494",
+      "phonenumber": "8399377848",
+      "id": 20
+    },
+    {
+      "fname": "seetha",
+      "lname": "m",
+      "adress": "tirupathi",
+      "city": "tiru",
+      "pincode": "778494",
+      "phonenumber": "8399377848",
+      "id": 21
+    },
+    {
+      "fname": "seetha",
+      "lname": "m",
+      "adress": "tirupathi",
+      "city": "tiru",
+      "pincode": "778494",
+      "phonenumber": "8399377848",
+      "id": 22
+    },
+    {
+      "fname": "seetha",
+      "lname": "m",
+      "adress": "tirupathi",
+      "city": "tiru",
+      "pincode": "778494",
+      "phonenumber": "8399377848",
+      "id": 23
+    },
+    {
+      "fname": "seetha",
+      "lname": "m",
+      "adress": "tirupathi",
+      "city": "tiru",
+      "pincode": "778494",
+      "phonenumber": "8399377848",
+      "id": 24
+    },
+    {
+      "fname": "seetha",
+      "lname": "m",
+      "adress": "tirupathi",
+      "city": "tiru",
+      "pincode": "778494",
+      "phonenumber": "8399377848",
+      "id": 25
+    },
+    {
+      "fname": "seetha",
+      "lname": "m",
+      "adress": "tirupathi",
+      "city": "tiru",
+      "pincode": "778494",
+      "phonenumber": "8399377848",
+      "id": 26
+    },
+    {
+      "fname": "seetha",
+      "lname": "m",
+      "adress": "tirupathi",
+      "city": "tiru",
+      "pincode": "778494",
+      "phonenumber": "8399377848",
+      "id": 27
+    }
+  ]
+}

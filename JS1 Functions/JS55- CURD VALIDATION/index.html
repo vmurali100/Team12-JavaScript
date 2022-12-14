@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="name"> Name:</label>
+        <input type="text" name="" id="name" onkeyup="validate()" /><br><br>
+        <p style="color:red  ; display: none;" id="nameError">
+            please enter minimum 5 characters
+
+        </p>
+        <label for="rollno">RollNo:</label>
+        <input type="text" name="" id="rollno" onkeyup="validate()" /><br><br>
+
+        <p style="color: red; display: none;" id="rollnoError">
+            please enter minimum 1 characters
+
+        </p>
+        <label for="class">Class:</label>
+        <input type="text" name="" id="class" onkeyup="validate()" /><br><br>
+
+        <p style="color: red; display: none;" id="classError">
+            please enter minimum 1 characters
+
+        </p>
+        <label for="school">School:</label>
+        <input type="text" name="" id="school" onkeyup="validate()" /><br><br>
+
+        <p style="color: red; display: none;" id="schoolError">
+            please enter minimum 4 characters
+
+        </p>
+
+        <button onclick="adduser()" type="button" id="addBtn" disabled="true">Add user</button>
+        <button onclick="updateuser()" type="button" id="updateBtn">UpdateUser</button>
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th> Name</th>
+                <th>Roll No</th>
+                <th>Class</th>
+                <th>School</th>
+                <th>Id</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        function validate() {
+            var userInput = {
+                name: document.getElementById("name").value,
+                rollno: document.getElementById("rollno").value,
+                class: document.getElementById("class").value,
+              school: document.getElementById("school").value,
+
+            };
+            if (userInput.name.length >= 5) {
+                document.getElementById("nameError").style.display = "none";
+
+            } else {
+                document.getElementById("nameError").style.display = "block";
+            }
+
+            if (userInput.rollno.length >= 1) {
+                document.getElementById("rollnoError").style.display = "none";
+
+            } else {
+                document.getElementById("rollnoError").style.display = "block"
+            }
+            if (userInput.class.length >= 1) {
+                document.getElementById("classError").style.display = "none";
+
+            } else {
+                document.getElementById("classError").style.display = "block"
+            }
+            if (userInput.school.length >= 4) {
+                document.getElementById("schoolError").style.display = "none";
+
+            } else {
+                document.getElementById("schoolError").style.display = "block"
+            }
+
+
+
+            if (userInput.name.length >= 5 && userInput.rollno.length >= 1 && userInput.class.length >=1 && userInput.school.length >= 4) {
+                document.querySelector("button").removeAttribute("disabled");
+            } else {
+                document.querySelector("button").setAttribute("disabled", true);
+            }
+        }
+    </script>
+    <script src="./create.js"></script>
+    <script src="./read.js"></script>
+    <script src="./delete.js"></script>
+    <script src="./edit.js"></script>
+    
+</body>
+
+</html>

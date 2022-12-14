@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="fname">First Name :</label>
+        <input type="text" name="" id="fname" onkeyup="validate()"><br><br>
+        <p style="color:red  ;display: none;">
+            Enter minimum 6 characters
+
+        </p>
+        <button disabled="true">Add user</button>
+    </form>
+    <script>
+        function validate() {
+            var userinput = document.getElementById("fname").value
+            console.log(userinput)
+            if (userinput.length >= 6) {
+                document.querySelector("button").removeAttribute("disabled");
+                document.querySelector("p").style.display ="none"
+
+            }else{
+                document.querySelector("button").setAttribute("disabled",true)
+                document.querySelector("p").style.display ="block"
+            }
+
+        }
+    </script>
+</body>
+
+</html>

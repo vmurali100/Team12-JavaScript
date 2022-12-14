@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname">First Name:</label>
+        <input type="text" name="" id="fname"><br><br>
+        <label for="lname">Last Name:</label>
+        <input type="text" name="" id="lname"><br><br>
+        <label for="email">Email:</label>
+        <input type="text" name="email" id="email"><br><br>
+        
+        <button type="button" onclick="adduser()" id="addBtn">Add User</button>
+        <button type="button" onclick="updateuser()" id="updateBtn">Update User</button>
+    </form>
+    <br><hr>
+    <table border="1">
+        <thead>
+            <tr>
+                
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>ID</th>
+                <th>EDIT</th>
+                <th>DELETE</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+
+
+        </tbody>
+
+    </table>
+    <script src="./create.js"></script>
+    <script src="./read.js"></script>
+    <script src="./delete.js"></script>
+    <script src="./edit.js"></script>
+</body>
+</html>

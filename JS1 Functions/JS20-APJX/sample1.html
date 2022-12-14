@@ -13,40 +13,60 @@
             <tr>
                 <th>Fname</th>
                 <th>Lname</th>
+                <th>Delete</th>
             </tr>
         </thead>
         <tbody></tbody>
 
     </table>
     <script>
+         var users=[]
         function getDataFromServer(){
             var getInfo=new XMLHttpRequest()
             getInfo.onreadystatechange=function(){
                 if(getInfo.readyState ==4 && getInfo.status ==200){
                     console.log(getInfo.response)
-                    var users=JSON.parse(getInfo.response)
+                    users=JSON.parse(getInfo.response)
                     displayUsers(users)
 
                 }
             }
             var api_url ="https://filltext.com/?rows=10&fname=%7BfirstName%7D&lname=%7BlastName%7D&pretty=true"
-            getInfo.open("GET",api_url);
+            getInfo.open("GET",api_url)
             getInfo.send()
 
         }
+       
         function displayUsers(users){
             document.querySelector("tbody").innerHTML=""
             console.log(users.length)
-            users.forEach((user)=>{
+            users.forEach((user,i)=>{
                 var myTr=document.createElement("tr");
                 for(a in user){
                     var myTd=document.createElement("td")
                     myTd.innerHTML=user[a]
                     myTr.appendChild(myTd)
                 }
+                var deleteTd=document.createElement("td")
+        var deleteButton=document.createElement("button")
+        deleteButton.setAttribute("onclick","deleteUser("+i+")")
+        deleteButton.innerHTML="Delete"
+        deleteTd.appendChild(deleteButton)
+        myTr.appendChild(deleteTd)
+
                 document.querySelector("tbody").appendChild(myTr)
             })
         }
+        function deleteUser(i){
+    var deleteInfo = new XMLHttpRequest();
+    deleteInfo.onreadystatechange = function (){
+        if(deleteInfo.readyState == 4 && deleteInfo.status == 200){
+            getDataFromServer()
+        }
+    }
+    deleteInfo.open("DELETE","https://filltext.com/?rows=10&fname=%7BfirstName%7D&lname=%7BlastName%7D&pretty=true/"+users[i].id);
+    deleteInfo.send()
+}
     </script>
 </body>
 </html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="fname">First Name:</label>
+        <input type="text" name="" id="fname" onkeyup="validate()"/><br><br>
+        <p style="color:red  ; display: none;" id="fnameError">
+            please enter minimum 5 characters
+
+        </p>
+        <label for="lname">Last Name:</label>
+        <input type="text" name="" id="lname" onkeyup="validate()"/><br><br>
+
+        <p style="color: red; display: none;" id="lnameError">
+            please enter minimum 4 characters
+
+        </p>
+        <button disabled="true">Add user</button>
+    </form>
+    <script>
+        function validate() {
+            var userInput = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+
+            };
+            if (userInput.fname.length >= 5) {
+                document.getElementById("fnameError").style.display = "none";
+
+            } else {
+                document.getElementById("fnameError").style.display = "block";
+            }
+
+            if (userInput.lname.length >= 4) {
+                document.getElementById("lnameError").style.display = "none";
+
+            } else {
+                document.getElementById("lnameError").style.display = "block"
+            }
+
+            if (userInput.fname.length >= 5 && userInput.lname.length >= 4) {
+                document.querySelector("button").removeAttribute("disabled");
+            } else {
+                document.querySelector("button").setAttribute("disabled", true);
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="fname">First Name:</label>
+        <input type="text" name="" id="fname" onkeyup="validate()" /><br><br>
+        <p style="color:red  ; display: none;" id="fnameError">
+            please enter minimum 5 characters
+
+        </p>
+        <label for="lname">Last Name:</label>
+        <input type="text" name="" id="lname" onkeyup="validate()" /><br><br>
+
+        <p style="color: red; display: none;" id="lnameError">
+            please enter minimum 4 characters
+
+        </p>
+        <label for="email">Email:</label>
+        <input type="text" name="" id="email" onkeyup="validate()" /><br><br>
+        <p style="color: red; display: none;" id="emailError">
+            please enter minimum 10 characters
+
+        </p>
+        <label for="password">Password:</label>
+        <input type="text" name="" id="password" onkeyup="validate()" /><br><br>
+
+        <p style="color: red; display: none;" id="passwordError">
+            please enter minimum 6 characters
+
+        </p>
+
+        <button onclick="adduser()" type="button" id="addBtn" disabled="true">Add user</button>
+        <button onclick="updateuser()" type="button" id="updateBtn">UpdateUser</button>
+    </form>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Id</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    
+    <script>
+        function validate() {
+            var userInput = {
+                fname: document.getElementById("fname").value,
+                lname: document.getElementById("lname").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value,
+
+            };
+            if (userInput.fname.length >= 5) {
+                document.getElementById("fnameError").style.display = "none";
+
+            } else {
+                document.getElementById("fnameError").style.display = "block";
+            }
+
+            if (userInput.lname.length >= 4) {
+                document.getElementById("lnameError").style.display = "none";
+
+            } else {
+                document.getElementById("lnameError").style.display = "block"
+            }
+            if (userInput.email.length >= 10) {
+                document.getElementById("emailError").style.display = "none";
+
+            } else {
+                document.getElementById("emailError").style.display = "block"
+            }
+            if (userInput.password.length >= 6) {
+                document.getElementById("passwordError").style.display = "none";
+
+            } else {
+                document.getElementById("passwordError").style.display = "block"
+            }
+
+
+
+            if (userInput.fname.length >= 5 && userInput.lname.length >= 4 && userInput.email.length >= 10 && userInput.password.length >= 6) {
+                document.querySelector("button").removeAttribute("disabled");
+            } else {
+                document.querySelector("button").setAttribute("disabled", true);
+            }
+        }
+    </script>
+    <script src="./create.js"></script>
+    <script src="./read.js"></script>
+    <script src="./delete.js"></script>
+    <script src="./edit.js"></script>
+</body>
+
+</html>
