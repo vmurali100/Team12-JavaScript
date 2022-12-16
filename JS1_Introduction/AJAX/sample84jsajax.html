@@ -10,22 +10,18 @@
     <button type="button" onclick="getdata()">click here to get data</button>
     <table border="1">
         <thead>
-             <th>id</th>
-             <th>name</th>
-             <th>username</th>
-             <th>email</th>
+             <th>fname</th>
+             <th>lname</th>
+             <th>tel</th>
              <th>address</th>
-             <th>street</th>
-             <th>suit</th>
              <th>city</th>
+             <th>state</th>
              <th>zipcode</th>
-             <th>geo</th>
-             <th>lat</th>
-             <th>lng</th>
         </thead>
         <tbody></tbody>
     </table>
     <script>
+        var users=[]
         function getdata(){
             var info=new XMLHttpRequest()
 
@@ -37,7 +33,7 @@
                 }
             }
 
-            var url="https://jsonplaceholder.typicode.com/users"
+            var url="http://filltext.com/?rows=10&fname={firstName}&lname={lastName}&tel={phone|format}&address={streetAddress}&city={city}&state={usState|abbr}&zip={zip}&pretty=true"
             info.open("GET",url );
             info.send()
         }
