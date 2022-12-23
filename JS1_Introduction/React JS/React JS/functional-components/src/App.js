@@ -1,10 +1,10 @@
+import Student from "./components/Student";
 
-import Police from './components/Police';
 
 function App() {
   return (
     <div className="App">
-    <Police/>
+     <Student/>
     </div>
   );
 }

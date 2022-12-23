@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>welcome to delete user</h2>
+    <h2 id="Name">
+
+    </h2>
+    <h2 id="username">
+
+    </h2>
+    <h2 id="email">
+
+    </h2>
+    <h2 id="password">
+
+    </h2>
+    <button onclick="delteuser()">confirm delete</button>
+    <script>
+        var url = window.location.href;
+        var id = url.substring(url.lastIndexOf("?") + 1);
+        function getsingleuser(){
+            var getdata = new XMLHttpRequest();
+            getdata.onreadystatechange= function(){
+                if (getdata.readyState == 4 && getdata.status == 200){
+                    console.log(JSON.parse(getdata.response))
+                    var user = JSON.parse(getdata.response)
+                    document.getElementById("Name").innerHTML = "Name :" + user.Name
+                    document.getElementById("username").innerHTML = "username :" + user.username
+                    document.getElementById("email").innerHTML = "email :" + user.email
+                    document.getElementById("password").innerHTML = "password :" + user.password
+                }
+            }
+            getdata.open("GET","http://localhost:3000/kohli/" +id);
+            getdata.send()
+        }
+        function delteuser(){
+            var getdata = new XMLHttpRequest();
+            getdata.onreadystatechange = function(){
+                if (getdata.readyState == 4 && getdata.status == 200){
+                    window.location.href = "index.html"
+                }
+            }
+            getdata.open("DELETE","http://localhost:3000/kohli/" + id)
+            getdata.send()
+        }
+        getsingleuser()
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,18 @@
+{
+  "people": [
+    {
+      "Name": "kk",
+      "username": "jj",
+      "email": "mall",
+      "password": "jhyu",
+      "id": 1
+    },
+    {
+      "Name": "yu",
+      "username": "njh",
+      "email": "hg",
+      "password": "jh",
+      "id": 3
+    }
+  ]
+}

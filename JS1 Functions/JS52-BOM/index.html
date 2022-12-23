@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form>
+        <label for="Name">Name</label>
+        <input type="text" name="" id="Name" placeholder="Name"><br>
+        <label for="username">username</label>
+        <input type="text" name="" id="username" placeholder="username"><br>
+        <label for="email">email</label>
+        <input type="text" name="" id="email" placeholder="email"><br>
+        <label for="password">password</label>
+        <input type="text" name="" id="password" placeholder="password"><br>
+        <button type="button" onclick="adduser()">adduser</button>
+    </form>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>username</th>
+                <th>email</th>
+                <th>password</th>
+                <th>id</th>
+                <th>delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+
+        var api_url = "http://localhost:3000/people"
+        var details = []
+        function adduser() {
+            var user = {
+                Name: document.getElementById("Name").value,
+                username: document.getElementById("username").value,
+                email: document.getElementById("email").value,
+                password: document.getElementById("password").value
+            }
+            var postuser = new XMLHttpRequest();
+            postuser.onreadystatechange = function () {
+                if (postuser.readyState == 4 && postuser.status == 201) {
+                    console.log("user added successfully")
+                }
+            }
+            postuser.open("POST", api_url)
+            postuser.setRequestHeader("Content-Type", "application/json");
+            postuser.send(JSON.stringify(user))
+
+        }
+        function getdatafromapi() {
+            var getdata = new XMLHttpRequest();
+            getdata.onreadystatechange = function () {
+                if (getdata.readyState == 4 && getdata.status == 200) {
+                    console.log(JSON.parse(getdata.response))
+                    users = JSON.parse(getdata.response)
+                    displayusers(JSON.parse(getdata.response))
+                }
+            }
+            getdata.open("GET", "http://localhost:3000/people")
+            getdata.send()
+
+        }
+        getdatafromapi()
+        function displayusers(users) {
+            users.forEach((data, i) => {
+                var myTr = document.createElement("tr")
+                for (a in data) {
+                    var myTd = document.createElement("td")
+                    myTd.innerHTML = data[a]
+                    myTr.appendChild(myTd)
+
+                }
+
+                var deletetd = document.createElement("td")
+                var deletebtn = document.createElement("button");
+                deletebtn.setAttribute("onclick", "deleteuser(" + i + ")")
+                deletebtn.innerHTML = "deleteuser";
+                deletetd.appendChild(deletebtn)
+
+                // myTr.appendChild(edittd)
+                myTr.appendChild(deletetd)
+
+                document.querySelector("tbody").appendChild(myTr)
+
+            });
+        }
+        function deleteuser(i) {
+            console.log("delete user called !")
+            window.location.href = "delete.html?" + users[i].id
+        }
+
+    </script>
+</body>
+
+</html>
