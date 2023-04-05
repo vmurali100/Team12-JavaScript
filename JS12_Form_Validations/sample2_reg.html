@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      #fnameError,
+      #lnameError,
+      #passwordError,
+      #emailError {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="fname">First Name : </label>
+      <input type="text" name="fname" id="fname" onkeyup="checkValidation()"/> <br />
+      <p style="color: red" id="fnameError">Please Enter First Name</p>
+      <label for="fname">Last Name : </label>
+      <input type="text" name="lname" id="lname" onkeyup="checkValidation()"/> <br />
+      <p style="color: red" id="lnameError">Please Enter Last Name</p>
+
+      <label for="fname">Email : </label>
+      <input type="email" name="email" id="email" onkeyup="checkValidation()"/> <br />
+      <p style="color: red" id="emailError">Please Enter Email</p>
+
+      <label for="password">Password : </label>
+      <input type="text" name="password" id="password" onkeyup="checkValidation()"/> <br />
+      <p style="color: red" id="passwordError">Please Enter First Name</p>
+
+      <button onclick="addUser()" type="button" disabled>Add User</button>
+    </form>
+    <script>
+      function addUser() {
+      
+
+        
+      
+      }
+
+
+      function checkValidation(){
+        var user = {
+          fname: document.getElementById("fname").value,
+          lname: document.getElementById("lname").value,
+          email: document.getElementById("email").value,
+          password: document.getElementById("password").value,
+        };
+
+        var check = false;
+        for(a in user){
+            if(user[a].length==0){
+                check = true
+            }
+        }
+
+        if(check){
+            document.querySelector("button").setAttribute("disabled",true )
+        }else{
+            document.querySelector("button").removeAttribute("disabled")
+        }
+
+        console.log("checkValidation called!!")
+      }
+
+     
+    </script>
+  </body>
+</html>
