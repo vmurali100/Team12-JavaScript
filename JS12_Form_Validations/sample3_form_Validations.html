@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        padding: 30px;
+      }
+      * {
+        margin: 0;
+      }
+      p {
+        color: red;
+        font-size: 12px;
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <label for="name">Name : </label>
+      <input type="text" name="name" id="name" />
+      <br />
+      <p id="nameError">Please Enter Name</p>
+      <label for="name">Fathers Name : </label>
+      <input type="text" name="fathersName" id="fathersName" />
+      <br />
+      <p id="fathersNameError">Please Enter Fathers Name</p>
+
+      <label for="name">Mothers Name : </label>
+      <input type="text" name="mothersName" id="mothersName" />
+      <br />
+      <p id="mothersNameError">Please Enter Mothers Name</p>
+
+      <label for="name">Phone Number : </label>
+      <input type="text" name="name" id="phone" />
+      <br />
+      <p id="phoneError">Please Enter Phone Number</p>
+
+      <label for="name">Email : </label>
+      <input type="text" name="email" id="email" />
+      <br />
+      <p id="emailError">Please Enter Email</p>
+
+      <label for="gender">Gender</label>
+      <input type="radio" name="gender" value="Male" /> Male
+      <input type="radio" name="gender" value="Female" /> Female
+      <input type="radio" name="gender" value="Other" /> Other
+      <br />
+      <p id="genderError">Please Select a Gender</p>
+
+      <label for="dob">Date of Birth : </label>
+      <input type="date" name="" id="dob" />
+      <br />
+      <p id="dobError">Please Select DOB</p>
+
+      <label for="address">Address : </label>
+      <textarea name="" id="address" cols="30" rows="10"></textarea>
+      <br />
+      <p id="addressError">Please Enter Address </p>
+
+      <label for="bgroup">Blood Group : </label>
+      <select name="" id="bgroup">
+        <option value="">Select Blood Group</option>
+        <option value="A+">A+</option>
+        <option value="B+">B+</option>
+        <option value="C+">C+</option>
+        <option value="D+">D+</option>
+      </select>
+      <br />
+      <p id="bgroupError">Please Select a Blood Group </p>
+
+      <label for="department">Department : </label>
+      <input type="radio" name="department" value="CSE" /> CSE
+      <input type="radio" name="department" value="EEE" /> EEE
+      <input type="radio" name="department" value="BBA" /> BBA
+      <br />
+      <p id="departmentError">Please Select a Department </p>
+
+      <label for="course">Course : </label>
+      <input type="checkbox" name="course" value="C" /> C
+      <input type="checkbox" name="course" value="C++" /> C++
+      <input type="checkbox" name="course" value="JAVA" /> JAVA
+      <input type="checkbox" name="course" value="AI" /> AI
+      <input type="checkbox" name="course" value="Machine Learning" />ML
+      <input type="checkbox" name="course" value="Robotics" /> Robotics
+      <br />
+      <p id="courseError">Please Select at least One Course </p>
+
+      <label for="photo">Photo : </label>
+      <input type="file" name="" id="file" />
+      <br />
+      <br />
+      <button type="button" onclick="addUser()">Add User</button>
+    </form>
+    <script>
+      function addUser() {
+        var person = {
+          name: "",
+          fathersName: "",
+          mothersName: "",
+          phone: "",
+          email: "",
+          gender: "",
+          dob: "",
+          address: "",
+          bgroup: "",
+          department: "",
+          course: [],
+          file: "",
+        };
+        var allGenderElements = document.getElementsByName("gender");
+        var allDepartmentElements = document.getElementsByName("department");
+        var allCoursesElements = document.getElementsByName("course");
+        for (a in person) {
+          if (a != "gender" && a != "department" && a != "course") {
+            person[a] = document.getElementById(a).value;
+          } else if (a == "gender") {
+            allGenderElements.forEach((genderElement) => {
+              if (genderElement.checked) {
+                person[a] = genderElement.value;
+              }
+            });
+          } else if (a == "department") {
+            allDepartmentElements.forEach((departmentElement) => {
+              if (departmentElement.checked) {
+                person[a] = departmentElement.value;
+              }
+            });
+          } else if (a == "course") {
+            allCoursesElements.forEach((courseElement) => {
+              if (courseElement.checked) {
+                person.course.push(courseElement.value);
+              }
+            });
+          }
+        }
+
+        for(a in person){
+            validate(a,person[a])
+        }
+
+        console.log(person);
+      }
+
+      function validate(fieldName,value){
+            if(value.length == 0){
+                document.getElementById(`${fieldName}Error`).style.display="block"
+            }else{
+                document.getElementById(`${fieldName}Error`).style.display="none"
+            }
+        
+      }
+    </script>
+  </body>
+</html>
