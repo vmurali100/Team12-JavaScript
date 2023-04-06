@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form>
+      <label for="name">Name</label>
+      <input type="text" id="name" placeholder="Name" /><br /><br />
+      <label for="Username">Username</label>
+      <input type="text" id="urname" placeholder="Username" /><br /><br />
+      <label for="Email">Email</label>
+      <input type="email" id="email" placeholder="Email" /><br /><br />
+      <label for="Password">Password</label>
+      <input type="password" id="pass" placeholder="Password" /><br /><br />
+      <label for="ConfirmPassword">Confirm Password</label>
+      <input
+        type="password"
+        id="cmpass"
+        placeholder="Comfirm Password"
+      /><br /><br />
+      <label for="Message">Message :</label>
+      <textarea id="msg" rows="7" cols="30" placeholder="Message"></textarea>
+      <br /><br />
+      <button onclick="Adduser()">Add Users</button>
+    </form>
+    <hr />
+    <table border="1">
+      <thead>
+        <th>Name</th>
+        <th>UserName</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>ConfirmPassword</th>
+        <th>Message</th>
+        <th>Id</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      var api_url = "http://localhost:3000/user";
+      var users = [];
+      function AddUser() {
+        var users = {
+          Name:document.getElementById("name").value,
+            Username:document.getElementById("urname").value,
+            Email:document.getElementById("email").value,
+            Password:document.getElementById("pass").value,
+            ConfirmPassword:document.getElementById("cmpass").value,
+            Message:document.getElementById("msg").value,
+        };
+        var postuser = new XMLHttpRequest()
+        postuser.onreadystatechange=function(){
+            if(postuser.readyState == 4 && postuser.status == 201){
+                console.log("User add successfully");
+            }
+        }
+        postuser.open("POST",api_url)
+        postuser.setRequestHeader("Content-Type","application/json")
+        postuser.send(JSON.stringify(users))
+        console.log(users);
+     }
+     function getuserdata(){
+        var getuser=new XMLHttpRequest()
+        getuser.onreadystatechange=function(){
+            if(getuser.readyState == 4 && getuser.status ==200){
+                console.log(users);
+                users=JSON.parse(getuser.response)
+                displayUser(users)
+            }
+        }
+        getuser.open("GET","http://localhost:3000/user")
+        getuser.send()
+     }
+     function displayUser(users){
+            document.querySelector("tbody").innerHTML="";
+            users.forEach((user,i) => {
+                var myTr=document.createElement("tr")
+                for(a in user){
+                    var myTd=document.createElement("td")
+                    myTd.innerHTML=user[a]
+                    myTr.appendChild(myTd)
+                }
+                var EditTd=document.createElement("td")
+                var Editbtn=document.createElement("button")
+                Editbtn.setAttribute("onclick","Edit("+i+")")
+                Editbtn.innerHTML="Edit"
+                EditTd.appendChild(Editbtn)
+                myTr.appendChild(EditTd)
+
+                var DeleteTd=document.createElement("td")
+                var Deletebtn=document.createElement("button")
+                Deletebtn.setAttribute("onclick","deleteUser("+i+")")
+                Deletebtn.innerHTML="DELETE"
+                DeleteTd.appendChild(Deletebtn)
+                myTr.appendChild(DeleteTd)
+
+
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+        function deleteUser(i){
+            console.log("deleteusers");
+            window.location.href="delete_01.html?"+users[i].id
+        }
+      getuserdata();
+      // AddUser()
+    </script>
+  </body>
+</html>

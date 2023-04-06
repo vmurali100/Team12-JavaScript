@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background-color: black;
+      }
+      .container {
+        display: inline-block;
+        margin: 23px 12px;
+        padding: 23px 12px;
+        background-color: rgb(68 82 73);
+        box-shadow: 10px 13px rgb(105 129 105);
+        overflow: hidden;
+        transition-delay: 0.8s;
+      }
+      p {
+        align-items: center;
+        color: white;
+        font-size: 20px;
+      }
+      img {
+        height: 200px;
+        width: 200px;
+      }
+      img:hover {
+        height: 300px;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- <img src="https://th.bing.com/th/id/OIP.BWrgmqiqESP7Cs3VYTiwcQHaD4?w=299&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7" alt="Erro" -->
+    <button onclick="playstore()">click to Games</button>
+    <hr />
+    <script>
+      var Games = [
+        {
+          name: "GTA vicity",
+          Price: 350,
+          rating: 4.5,
+          pic: "https://th.bing.com/th/id/OIP.nG5hU41-7FO94KYQA4xBogHaEK?w=314&h=180&c=7&r=0&o=5&dpr=1.12&pid=1.7",
+        },
+
+        {
+          name: "Pubg",
+          Price: 450,
+          rating: 4.6,
+          pic: "https://th.bing.com/th/id/OIP.BWrgmqiqESP7Cs3VYTiwcQHaD4?w=299&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7",
+        },
+        {
+          name: "FIFA ",
+          Price: 299,
+          rating: 4.1,
+          pic: "https://th.bing.com/th/id/OIP.GgFkSTs7W6vFydZXyicsnwHaE8?w=244&h=180&c=7&r=0&o=5&dpr=1.12&pid=1.7",
+        },
+        {
+          name: "Crickte",
+          Price: 500,
+          rating: 4.7,
+          pic: "https://th.bing.com/th/id/OIP.IQPtNr3CEwM8eDatzLs0iwHaEK?w=315&h=180&c=7&r=0&o=5&dpr=1.1&pid=1.7",
+        },
+        {
+          name: "Angry Birds",
+          Price: 255,
+          rating: 4.2,
+          pic: "https://th.bing.com/th/id/OIP.HRZzfVU8Lqzb_2GXHGSufgHaFj?w=237&h=180&c=7&r=0&o=5&dpr=1.12&pid=1.77",
+        },
+        {
+          name: "Shadow Fight",
+          Price: 299,
+          rating: 4.5,
+          pic: "https://th.bing.com/th/id/OIP.ca55zmpQXbf0jGtwuBb7dAHaHa?w=181&h=181&c=7&r=0&o=5&dpr=1.12&pid=1.77",
+        },
+      ];
+      function playstore() {
+        Games.forEach((games) => {
+          var newgames = document.createElement("div");
+          newgames.setAttribute("class", "container");
+          newgames.setAttribute("id", "rating");
+          document.body.appendChild(newgames);
+
+          var myimg = document.createElement("img");
+          myimg.setAttribute("src", games.pic);
+          newgames.appendChild(myimg);
+
+          var para1 = document.createElement("p");
+          para1.innerHTML = "Action :" + games.name;
+          newgames.appendChild(para1);
+
+          var para2 = document.createElement("p");
+          para2.innerHTML = "Price: $"+ games.Price;
+          newgames.appendChild(para2);
+
+          var para3 = document.createElement("p");
+          para3.innerHTML = " rating:" + games.rating;
+          newgames.appendChild(para3);
+        });
+      }
+    </script>
+  </body>
+</html>

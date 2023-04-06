@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="Clickme()">Add User</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>FName</th>
+                <th>LName</th>
+                <th>Age</th>
+                <th>Place</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        // var user=[{name:"chandu",Lname:"yadav",Age:12,place:"bangaluru" }];
+        function Clickme(){
+            var mytr=document.querySelector("tbody").innerHTML=""
+        forEach((users) => {
+            var mytr=document.createElement("tr")
+            var mytd=document.createElement("td")
+                
+            mytr.innerHTML=user
+            mytd.appendChild(mytr)
+                
+            document.querySelector("tbody").appendChild(mytd)
+        });
+
+        }
+    </script>
+</body>
+</html>

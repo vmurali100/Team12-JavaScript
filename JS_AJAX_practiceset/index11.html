@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Click()">ON Click</button>
+    <table border="1">
+        <thead>
+            <tr>
+
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        function Click(){
+            var getInfo=new XMLHttpRequest()
+            getInfo.onreadystatechange=function(){
+                if(getInfo.readyState == 4 && getInfo.status == 200){
+                console.log(getInfo.response);
+                var users=JSON.parse(getInfo.response)
+                displayUsers(users)
+            }
+        }
+            var api_url="https://jsonplaceholder.typicode.com/users"
+            getInfo.open("GET",api_url)
+            getInfo.send()
+        }
+        function displayUsers(users){
+            document.querySelector("tbody").innerHTML=""
+            users.forEach((user) => {
+                var myTr=document.createElement("tr")
+                for(a in user){
+                    var myTd=document.createElement("td")
+                    if(a !== "address" && a !== "company"){
+
+                        myTd.innerHTML=user[a]
+                        
+                    }
+                    myTr.appendChild(myTd)
+                }
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+    </script>
+</body>
+</html>

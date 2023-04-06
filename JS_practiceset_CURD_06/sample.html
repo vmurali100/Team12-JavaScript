@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <style>
+        label#name {
+            position: relative;
+            left: -2%;
+        }
+
+        label#ema {
+            position: relative;
+            left: -2%;
+        }
+
+        label#word {
+            position: relative;
+            left: -2%;
+        }
+
+        label#conpass {
+            position: relative;
+            left: -2%;
+        }
+
+        label#name {
+            position: relative;
+            left: -2%;
+        }
+
+        label#niname {
+            position: relative;
+            left: -2%;
+        }
+
+        label#websi {
+            position: relative;
+            left: -2%;
+        }
+
+        label#about {
+            position: relative;
+            left: -2%;
+            bottom: 60px;
+        }
+
+        input#urname {
+            position: relative;
+            width: 200px;
+            left: 6px;
+        }
+
+        input#email {
+            position: relative;
+            width: 200px;
+            left: 30px;
+        }
+
+        input#pass {
+            position: relative;
+            width: 200px;
+            left: 8px;
+        }
+
+        input#compass {
+            position: relative;
+            width: 200px;
+            bottom: 16px;
+            left: 16px;
+        }
+
+        input#fname {
+            position: relative;
+            width: 200px;
+        }
+
+        input#lname {
+            position: relative;
+            width: 200px;
+        }
+
+        input#nname {
+            position: relative;
+            width: 200px;
+        }
+
+        input#web {
+            position: relative;
+            width: 200px;
+            left: 14px;
+        }
+
+        textarea#bio {
+            position: relative;
+            width: 209px;
+            left: 44px;
+        }
+
+        .form {
+            position: relative;
+            left: 5%;
+        }
+
+        form {
+            margin: 0;
+            padding: 0;
+        }
+
+        button#updateBtn {
+            background-color: black;
+            color: white;
+            font-size: large;
+            position: absolute;
+            left: 118px;
+            width: 210px;
+            border: none;
+            transition-duration: 0.3s;
+            font-size: 30px;
+            border: 3px solid cyan;
+            bottom: 31px;
+        }
+
+        button#createBtn {
+            background-color: black;
+            color: white;
+            font-size: large;
+            position: absolute;
+            left: 118px;
+            width: 210px;
+            border: none;
+            transition-duration: 0.3s;
+            font-size: 30px;
+            border: 3px solid cyan;
+
+        }
+
+
+        button#createBtn:hover {
+            color: orange;
+            cursor: pointer;
+        }
+
+        button#updateBtn:hover {
+            color: orange;
+            cursor: pointer;
+        }
+
+        #updateBtn {
+            display: none;
+        }
+
+        input#gen {
+            position: relative;
+            left: 25px;
+            bottom: 18px;
+        }
+
+        input#Gen {
+            position: relative;
+            left: 70px;
+            bottom: 18px;
+        }
+
+        label#gender {
+            position: relative;
+            left: -24px;
+            bottom: 10px;
+        }
+
+        label#Gender {
+            position: relative;
+            left: -24px;
+            bottom: 10px;
+        }
+
+        label#M {
+            position: relative;
+            left: 79px;
+            bottom: 20px;
+        }
+
+        label#F {
+            position: relative;
+            left: 100px;
+            bottom: 20px;
+        }
+    </style>
+    </head>
+
+    <body>
+        <h3>Create User :</h3>
+        <hr />
+        <form class="form">
+            <label for="Username" id="name">Username :</label>
+            <input type="text" name="" id="urname" placeholder="Enter your name" /><br /><br />
+            <label for="Email" id="ema">Email :</label>
+            <input type="email" name="" id="email" /><br /><br />
+            <label for="Password" id="word">Password :</label>
+            <input type="password" name="" id="pass" /><br /><br />
+            <label for="confirmpassword" id="conpass">confirm <br>password</label>
+            <input type="password" name="" id="compass"><br /><br>
+            <label for="FirstName" id="name">FristName :</label>
+            <input type="text" name="" id="fname" />
+            <input type="text" name="" id="lname" placeholder="Lastname" /><br /><br />
+            <label for="Nickname" id="niname">Nickname :</label>
+            <input type="text" name="" id="nname" /><br /><br />
+            <label for="Website" id="websi">Website :</label>
+            <input type="url" name="" id="web" /><br /><br />
+            <label for="Bio" id="about">Bio :</label>
+            <textarea name="" id="bio" rows="5" cols="30" placeholder="Enter something"></textarea><br /><br />
+            <label for="gender" id="gen">Gender :</label><br>
+            <label for="male" id="M">Male</label>
+            <label for="female" id="F">female</label>
+            <input type="radio" name="gender" id="gen" value="Male">
+            <input type="radio" name="gender" id="Gen" value="Female"><br>
+            <label for="Subject">Subject :</label>
+            <input type="checkbox" name="subj" value="HTML 5"> HTML 5
+            <input type="checkbox" name="subj" value="Java Script"> Java script
+            <input type="checkbox" name="subj" value="Css 3"> Css 3
+            <input type="checkbox" name="subj" value="React Js "> React Js <br><br>
+
+            <button onclick="createuser()" type="button" id="createBtn">
+                Create User</button><br /><br />
+            <button onclick="updateUser()" type="button" id="updateBtn">
+                Update User</button><br /><br />
+        </form>
+        <script src="./displayUsers.js"></script>
+        <script src="./create user.js "></script>
+        <script src="./clearform.js"></script>
+        <script src="./updateUser.js"></script>
+        <script src="./deleteuser.js"></script>
+        <script src="./edituser.js"></script>
+        <hr />
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>User Name</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>confirmpassword</th>
+                    <th>Frist Name</th>
+                    <th>Last Name</th>
+                    <th>nname</th>
+                    <th>web</th>
+                    <th>bio</th>
+                    <th>Gender</th>
+                    <th>Subjects</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </body>
+
+</html>

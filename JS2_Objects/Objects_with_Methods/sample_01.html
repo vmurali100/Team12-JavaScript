@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+
+<body>
+    <script>
+        var student = {
+            fname: "Chandrababu",
+            lname: "Yadav",
+            phoneno: 9916381671,
+
+            getfulldetails: function hello() {
+                console.log(this.fname + this.lname + this.phoneno)
+            }
+        }
+        document.write(student.fname + "<br>")
+        document.write(student.lname + "<br>")
+        document.write(student.phoneno)
+    </script>
+</body>
+
+</html>

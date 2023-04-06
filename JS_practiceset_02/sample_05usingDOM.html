@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .empname {
+        height: 14vh;
+        width: 131px;
+        display: block;
+        display: inline-block;
+        border: 1px solid green;
+      }
+      p {
+        display: inline-block;
+        align-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="fullnames()">click here to show names</button>
+    <hr />
+    <script>
+      var employees = [
+        {
+          fname: "Tonja",
+          lname: "Nacita",
+        },
+        {
+          fname: "Shelly",
+          lname: "Geisbauer",
+        },
+        {
+          fname: "Russell",
+          lname: "Spiegel",
+        },
+        {
+          fname: "Christel",
+          lname: "Fielack",
+        },
+        {
+          fname: "Brian",
+          lname: "Tuttle",
+        },
+        {
+          fname: "Otilia",
+          lname: "Jeschke",
+        },
+        {
+          fname: "Aminata",
+          lname: "Dees",
+        },
+        {
+          fname: "Elisha",
+          lname: "Soo",
+        },
+        {
+          fname: "Geoffrey",
+          lname: "Velazco",
+        },
+        {
+          fname: "Sonya",
+          lname: "Flack",
+        },
+      ];
+      function fullnames() {
+        employees.forEach(function (emp) {
+          var mydiv = document.createElement("div");
+          mydiv.setAttribute("class", "empname");
+          document.body.appendChild(mydiv);
+
+          // var par1 = document.createElement("p");
+          // par1.innerHTML = "firstname :" + emp.fname;
+          // mydiv.appendChild(par1);
+
+          // var par2 = document.createElement("p");
+          // par2.innerHTML = "lastname :" + emp.lname;
+          // mydiv.appendChild(par2);
+        });
+      }
+    </script>
+  </body>
+</html>

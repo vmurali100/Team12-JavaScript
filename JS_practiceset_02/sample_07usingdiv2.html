@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .users {
+        height: 44vh;
+        width: 181px;
+        display: inline-block;
+        border: 1px solid green;
+        text-align: left;
+        overflow: hidden;
+      }
+      p {
+        height: 14px;
+        width: 150px;
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="Usersdetails()">click to see users</button>
+    <hr />
+    <script>
+      var users = [
+        {
+          fname: "Bridgett",
+          lname: "Tobin",
+          tel: "(825)864-7978",
+          address: "8618 Dolor St",
+          city: "Senoia",
+          state: "OH",
+          zip: 91968,
+        },
+        {
+          fname: "Ilona",
+          lname: "Hershfeld",
+          tel: "(521)549-1051",
+          address: "8054 Mattis Rd",
+          city: "Warwick",
+          state: "WA",
+          zip: 78264,
+        },
+        {
+          fname: "Michel",
+          lname: "Fox",
+          tel: "(387)469-9057",
+          address: "5435 Sit Ct",
+          city: "Durham",
+          state: "OH",
+          zip: 52895,
+        },
+        {
+          fname: "Marek",
+          lname: "Worden",
+          tel: "(888)146-8963",
+          address: "1721 Pulvinar",
+          city: "Modesto",
+          state: "NC",
+          zip: 84516,
+        },
+        {
+          fname: "Camelyn",
+          lname: "Mckenzie",
+          tel: "(338)538-2859",
+          address: "6633 Consequat Ave",
+          city: "North Barrington",
+          state: "NV",
+          zip: 94445,
+        },
+        {
+          fname: "Magdalena",
+          lname: "Eaton",
+          tel: "(383)591-4093",
+          address: "927 Turpis",
+          city: "Furlong",
+          state: "ID",
+          zip: 23490,
+        },
+        {
+          fname: "Lei",
+          lname: "Richard",
+          tel: "(255)531-1503",
+          address: "7874 Dolor",
+          city: "Abbotsford",
+          state: "HI",
+          zip: 66835,
+        },
+        {
+          fname: "Alana",
+          lname: "Cohn",
+          tel: "(903)813-6023",
+          address: "5863 Pharetra",
+          city: "Raleigh",
+          state: "NM",
+          zip: 35106,
+        },
+        {
+          fname: "Hussain",
+          lname: "Burnett",
+          tel: "(452)065-9082",
+          address: "3239 Elit St",
+          city: "Saskatoon",
+          state: "PA",
+          zip: 52302,
+        },
+        {
+          fname: "Roosevelt",
+          lname: "Theiss",
+          tel: "(265)588-4266",
+          address: "9410 Morbi Ct",
+          city: "Parker",
+          state: "NJ",
+          zip: 89622,
+        },
+      ];
+      function Usersdetails() {
+        users.forEach((deatils) => {
+          var newusers = document.createElement("div");
+          newusers.setAttribute("class", "users");
+          document.body.appendChild(newusers);
+
+          var para1 = document.createElement("p");
+          para1.innerHTML = "FristName :" + deatils.fname;
+          newusers.appendChild(para1);
+
+          var para2 = document.createElement("p");
+          para2.innerHTML = "LastName :" + deatils.lname;
+          newusers.appendChild(para2);
+
+          var para3 = document.createElement("p");
+          para3.innerHTML = "teleNo :" + deatils.tel;
+          newusers.appendChild(para3);
+
+          var para4 = document.createElement("p");
+          para4.innerHTML = "Address :" + deatils.address;
+          newusers.appendChild(para4);
+
+          var para5 = document.createElement("p");
+          para5.innerHTML = "City :" + deatils.city;
+          newusers.appendChild(para5);
+
+          var para6 = document.createElement("p");
+          para6.innerHTML = "State :" + deatils.state;
+          newusers.appendChild(para6);
+
+          var para7 = document.createElement("p");
+          para7.innerHTML = "Zip :" + deatils.zip;
+          newusers.appendChild(para7);
+        });
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button onclick="dispalynamesInTable()">Click me</button>
+    <table border="1">
+      <thead>
+        <tr>
+          <th>FirstName</th>
+          <th>LastName</th>
+        </tr>
+        <tbody>
+
+        </tbody>
+      </thead>
+    </table>
+    <script>
+      var employees = [
+        {
+          fname: "Tonja",
+          lname: "Nacita",
+        },
+        {
+          fname: "Shelly",
+          lname: "Geisbauer",
+        },
+        {
+          fname: "Russell",
+          lname: "Spiegel",
+        },
+        {
+          fname: "Christel",
+          lname: "Fielack",
+        },
+        {
+          fname: "Brian",
+          lname: "Tuttle",
+        },
+        {
+          fname: "Otilia",
+          lname: "Jeschke",
+        },
+        {
+          fname: "Aminata",
+          lname: "Dees",
+        },
+        {
+          fname: "Elisha",
+          lname: "Soo",
+        },
+        {
+          fname: "Geoffrey",
+          lname: "Velazco",
+        },
+        {
+          fname: "Sonya",
+          lname: "Flack",
+        },
+      ];
+      function dispalynamesInTable() {
+        employees.forEach((emp)=>{
+          var myTr = document.createElement("tr");
+          var myTd1 = document.createElement("td");
+          myTd1.innerHTML = emp.fname;
+          var myTd2=document.createElement("td")
+          myTd2.innerHTML=emp.lname
+
+          myTr.appendChild(myTd1);
+          myTr.appendChild(myTd2);
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+    </script>
+  </body>
+</html>

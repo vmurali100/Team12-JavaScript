@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+       <fieldset>
+        <legend>Registration Details</legend>
+        <label for="University">University: </label>
+        <input type="text" id="unvers"><br><br>
+        <label for="Institute">Institute: </label>
+        <input type="text" id="Inst"><br><br>
+        Branch: <select name="Branch" id="Branch">
+        <option selected>--select--</option>
+        <option >Bangalore</option>
+        <option >Mumbai</option>
+        <option >Hyderabad</option>
+    </select><br><br>
+        Degree: <select id="Deg">
+            <option selected>--select--</option>
+            <option>BE</option>
+            <option>PUC</option>
+            <option>SSLC</option>
+        </select><br><br>
+        <label for="CPI">Avarage CPI: </label><td></td>
+        <input type="number" name="cpi" step="0.01"  id="cpi">upto<input type="number" name="semester"/><br><br>
+        <label for="Exp">Experience: </label>
+        <input type="number" step="1" id="Exp"><br><br>
+        <label for="Website">Website</label>
+        <input type="url" id="Url"  value="http://"><br><br>
+        <button onclick="addusers()">Add User</button>
+       </fieldset>
+    </form>
+    <hr>
+    <table border="1">
+        <thead>
+            <th>University</th>
+            <th>Institute</th>
+            <th>Branch</th>
+            <th>Degree</th>
+            <th>Avarage CPI</th>
+            <th>Experience</th>
+            <th>Website</th>
+            <th>ID</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        var users=[]
+        var api_url=" http://localhost:3000/users"
+        function addusers(){
+            var users={
+            University:document.getElementById("unvers").value,
+            Institute:document.getElementById("Inst").value,
+            Branch:document.getElementById("Branch").value,
+            Degree:document.getElementById("Deg").value,
+            CPI:document.getElementById("cpi").value,
+            Experience:document.getElementById("Exp").value,
+            Websit:document.getElementById("Url").value
+        }
+        var postuser = new XMLHttpRequest()
+        postuser.onreadystatechange=function(){
+            if(postuser.readyState == 4 && postuser.status == 201){
+                console.log("User add successfully");
+            }
+        }
+        postuser.open("POST",api_url)
+        postuser.setRequestHeader("Content-Type","application/json")
+        postuser.send(JSON.stringify(users))
+        console.log(users);
+     }
+     function getuserdata(){
+        var getuser=new XMLHttpRequest()
+        getuser.onreadystatechange=function(){
+            if(getuser.readyState == 4 && getuser.status ==200){
+                console.log(users);
+                users=JSON.parse(getuser.response)
+                displayUser(users)
+            }
+        }
+        getuser.open("GET","http://localhost:3000/users")
+        getuser.send()
+     }
+     function displayUser(users){
+            document.querySelector("tbody").innerHTML="";
+            users.forEach((user,i) => {
+                var myTr=document.createElement("tr")
+                for(a in user){
+                    var myTd=document.createElement("td")
+                    myTd.innerHTML=user[a]
+                    myTr.appendChild(myTd)
+                }
+                var EditTd=document.createElement("td")
+                var Editbtn=document.createElement("button")
+                Editbtn.setAttribute("onclick","Edit("+i+")")
+                Editbtn.innerHTML="Edit"
+                EditTd.appendChild(Editbtn)
+                myTr.appendChild(EditTd)
+
+                var DeleteTd=document.createElement("td")
+                var Deletebtn=document.createElement("button")
+                Deletebtn.setAttribute("onclick","deleteUser("+i+")")
+                Deletebtn.innerHTML="DELETE"
+                DeleteTd.appendChild(Deletebtn)
+                myTr.appendChild(DeleteTd)
+
+
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+        function deleteUser(i){
+            console.log("deleteusers");
+            window.location.href="delete.html?"+users[i].id
+        }
+     getuserdata()
+    </script>
+</body>
+</html>

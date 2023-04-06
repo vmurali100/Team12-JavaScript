@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .students {
+        height: 33vh;
+        width: 181px;
+        display: inline-block;
+        border: 1px solid green;
+        text-align: left;
+        overflow: hidden;
+      }
+      p {
+        height: 20px;
+        width: 150px;
+        display: inline-block;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <button onclick="StudentInfo()">click to show student info</button>
+    <hr />
+    <script>
+      var Students = [
+        {
+          id: 33,
+          email: "ADehaven@nullam.gov",
+          username: "AKeirns",
+          password: "rMdik",
+        },
+        {
+          id: 34,
+          email: "XBoyle@sit.gov",
+          username: "SRichards",
+          password: "SI0a1",
+        },
+        {
+          id: 35,
+          email: "AGrossman@sit.com",
+          username: "NMendoza",
+          password: "0jEPF",
+        },
+        {
+          id: 36,
+          email: "ADoerfler@sed.com",
+          username: "KGarner",
+          password: "DaFGz",
+        },
+        {
+          id: 37,
+          email: "CHebert@sed.gov",
+          username: "DRochester",
+          password: "vsF3J",
+        },
+        {
+          id: 38,
+          email: "QPorter@aliquam.org",
+          username: "MKarma",
+          password: "StQlp",
+        },
+        {
+          id: 39,
+          email: "GMahajan@nunc.io",
+          username: "WWuertz",
+          password: "rP3gk",
+        },
+        {
+          id: 40,
+          email: "LRovito@in.gov",
+          username: "MCasariego",
+          password: "U9ztS",
+        },
+        {
+          id: 41,
+          email: "JMedeiros@etiam.org",
+          username: "ROlson",
+          password: "IM8XM",
+        },
+        {
+          id: 42,
+          email: "CLarrabee@vestibulum.net",
+          username: "MBenson",
+          password: "x3txS",
+        },
+      ];
+      function StudentInfo() {
+        Students.forEach((studdeatils) => {
+          var newStudents = document.createElement("div");
+          newStudents.setAttribute("class", "students");
+          document.body.appendChild(newStudents);
+
+          var para1 = document.createElement("p");
+          para1.innerHTML = "Student ID :" + studdeatils.id;
+          newStudents.appendChild(para1);
+
+          var para2 = document.createElement("p");
+          para2.innerHTML = "student email:" + studdeatils.email;
+          newStudents.appendChild(para2);
+
+          var para3 = document.createElement("p");
+          para3.innerHTML = "Username:" + studdeatils.username;
+          newStudents.appendChild(para3);
+
+          var para4 = document.createElement("p");
+          para4.innerHTML = "Password :" + studdeatils.password;
+          newStudents.appendChild(para4);
+        });
+      }
+    </script>
+  </body>
+</html>

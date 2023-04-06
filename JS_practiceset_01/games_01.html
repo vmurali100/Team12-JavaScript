@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GAME</title>
+  </head>
+  <body>
+    <button onclick="displaywithforEach()">Display-toatal players</button>
+    <br />
+    <button onclick="removePlayend()">Remove a player-End</button> 
+    <br />
+    <button onclick="reomovePlaystart()">remove a player-start</button> 
+    <br />
+    <button onclick="addplayend()">Add player-End</button> 
+    <br />
+    <button onclick="addplayerstart()">Add player-start</button> 
+    <br />
+    <button onclick="addplaymiddle()">Add player-middle</button>
+    <br />
+    <button onclick="displaywithmap()">Display-with clan name</button>
+    <br />
+    <button onclick="findsingle()">Find a single value</button>
+    <br />
+    <button onclick="findmultiple()">Find a multiple value</button>
+    <br />
+    <button onclick="findtotalmatch()">Find total match played</button>
+    <br />
+    <button onclick="findtotalsome()">check</button>
+    <br />
+    <button onclick="findtotalsome1()">check2</button>
+    <br />
+    <button onclick="Toreduce()">total match played</button>
+    <br />
+    <button onclick="Toreverse()">click to reverse</button>
+    <br />
+    <button onclick="Tosort()">click to sort</button>
+    <br />
+
+    <script>
+      var players = [
+        { name: "Mr.Chandu", matchplayed: 34, finsihes: 131, wins: 15 },
+        { name: "Mr.Venu", matchplayed: 25, finsihes: 145, wins: 12 },
+        { name: "Mr.Jadadish", matchplayed: 54, finsihes: 126, wins: 10 },
+        { name: "Mr.Bethal", matchplayed: 64, finsihes: 185, wins: 14 },
+      ];
+      function displaywithforEach() {
+        var totalplayers = players.forEach(function (players) {
+          console.log(players);
+        });
+      }
+      function removePlayend() {
+        players.pop();
+        console.log(players);
+      }
+      function reomovePlaystart() {
+        players.shift();
+        console.log(players);
+      }
+      function addplayend() {
+        players.push({
+          name: "Mr.Srinivas",
+          matchplayed: 46,
+          finsihes: 146,
+          wins: 13,
+        });
+        console.log(players);
+      }
+      function addplayerstart() {
+        players.unshift({
+          name: "Mr.Revanth",
+          matchplayed: 75,
+          finsihes: 245,
+          wins: 34,
+        });
+        console.log(players);
+      }
+      function addplaymiddle() {
+        players.splice(2, 0, {
+          name: "Mr.Vip",
+          matchplayed: 400,
+          finsihes: 345,
+          wins: 35,
+        });
+        console.log(players);
+      }
+
+      function displaywithmap() {
+        var newteam = players.map(function (val) {
+          return val.name + "--Mr clan";
+        });
+        console.log(newteam);
+      }
+
+      function findsingle() {
+        var newplayer = players.find(function (val) {
+          return val.wins>= 16;
+        });
+        console.log(newplayer);
+      }
+
+      function findmultiple() {
+        var newplayer1 = players.filter(function (val) {
+          return val.finsihes >= 140;
+        });
+        console.log(newplayer1);
+      }
+
+      function findtotalsome() {
+        var check = players.some(function (val) {
+          return val.matchplayed == 34;
+        });
+        console.log(check);
+      }
+      function findtotalsome1() {
+        var check2 = players.some(function (val) {
+          return val.matchplayed == 6;
+        });
+        console.log(check2);
+      }
+
+      function Toreduce() {
+        var newtotalmatch = players.reduce(function (a, b) {
+          if (a.matchplayed) {
+            return a.matchplayed + b.matchplayed
+          } else {
+            return a+b.matchplayed
+          }
+        });
+        console.log(newtotalmatch);
+      }
+
+      function Toreverse(){
+        players.reverse();
+        console.log(players);
+      }
+
+      function Tosort(){
+        players.sort()
+        console.log(players);
+      }
+    </script>
+  </body>
+</html>

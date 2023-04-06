@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="fname">fname :</label>
+        <input type="text" id="fname" onkeyup="validate()"><br><br>
+        <p style="color: green;" id="fnameerro" class="erro">Enter minimum 6 Characters</p>
+        <label for="lname">lname :</label>
+        <input type="text" id="lname" onkeyup="validate()"><br><br>
+        <p style="color: red;" id="lnameerro" class="erro">Enter minimum 5 Characters</p>
+        <label for="Email">Email<label>
+        <input type="email" id="email" onkeyup="validate()" required="@"><br><br>
+        <p style="color:black" id="emailerro">Enter email</p>
+        <label for="password">Password</label>
+        <input type="password" id="pass" onkeyup="validate()" ><br><br>
+        <p style="color:orange" id="passerro">Enter the password</p>
+        <button disabled="true" onclick="adduser()">Add User</button>
+    </form>
+    <script>
+        var users=[]
+       
+        function validate(){ 
+            var inputuser={
+                fname:document.getElementById("fname").value,
+                fnameerro:document.getElementById("fnameerro").value,
+                fnameerro:document.getElementById("lnameerro").value,
+                lname:document.getElementById("lname").value,
+                Email:document.getElementById("email").value,
+                Password:document.getElementById("pass").value
+
+           }
+        //    if(inputuser.fname.length >= 6 && inputuser.lname.length >= 5){
+        //     document.querySelector("button").removeAttribute("disabled")
+        //     document.getElementById("fnameerro").style.display="none"
+        //     document.getElementById("lnameerro").style.display="none"
+        //    }else {
+        //     document.querySelector("button").setAttribute("button",true)
+        //     document.getElementById("fnameerro").style.display="block"
+        //     document.getElementById("lnameerro").style.display="block"
+        //    }
+                if(inputuser.fname.length >= 6 && inputuser.lname.length >= 5){
+                    document.querySelector("button").removeAttribute("disabled")
+                    document.getElementById("fnameerro").style.display="none"
+                    document.getElementById("lnameerro").style.display="none"
+                }
+                else  {
+                    document.querySelector("button").setAttribute("disabled",true)
+                    document.getElementById("fnameerro").style.display = "block"
+                    document.getElementById("lnameerro").style.display = "block"
+                }
+
+            }
+        
+    </script>
+</body>
+</html>

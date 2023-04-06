@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+<button type="button" onclick="ClickHere()">Click Me</button>
+<script>
+    var users=[
+    {
+          fname: "Tonja",
+          lname: "Nacita",
+        },
+        {
+          fname: "Shelly",
+          lname: "Geisbauer",
+        },
+        {
+          fname: "Russell",
+          lname: "Spiegel",
+        },
+        {
+          fname: "Christel",
+          lname: "Fielack",
+        },
+        {
+          fname: "Brian",
+          lname: "Tuttle",
+        },
+        {
+          fname: "Otilia",
+          lname: "Jeschke",
+        },
+        {
+          fname: "Aminata",
+          lname: "Dees",
+        },
+        {
+          fname: "Elisha",
+          lname: "Soo",
+        },
+        {
+          fname: "Geoffrey",
+          lname: "Velazco",
+        },
+        {
+          fname: "Sonya",
+          lname: "Flack",
+        },
+    ]
+    function ClickHere(){
+    users.forEach(function(user){
+        var mydiv=document.createElement("div")
+        mydiv.setAttribute("class","users")
+        document.body.appendChild(mydiv)
+        // users.forEach(function (user) {
+        //   var mydiv = document.createElement("div");
+        //   mydiv.setAttribute("class", "users");
+        //   document.body.appendChild(mydiv);
+        console.log(user);
+    })
+    }
+</script>
+</body>
+</html>

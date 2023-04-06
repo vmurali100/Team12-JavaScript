@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3></h3>
+    <form>
+      <label for="fname">Name :</label>
+      <input type="text" name="" id="fname" /><br /><br />
+      <label for="lname">Last Name:</label>
+      <input type="text" name="" id="lname" /><br /><br />
+      <label for="text">Email :</label>
+      <input type="email" name="" id="email" /><br /><br />
+      <label for="pass">Password</label>
+      <input type="password" name="" id="pass" /><br /><br />
+      <button type="button" onclick="clickme()">Adduser</button>
+    </form>
+    <script>
+      function clickme() {
+        var user = {
+          Name: document.getElementById("fname").value,
+          LastName: document.getElementById("lname").value,
+          Email: document.getElementById("email").value,
+          pass: document.getElementById("pass").value,
+        };
+        var newuser=document.querySelectorAll("h3");
+            newuser.forEach((elem)=>{
+                console.log(elem);
+                elem.innerHTML=user.Name+"<br>"+user.LastName+"<br>"+user.Email+"<br>"+user.pass
+            })
+            console.log(newuser);
+        }
+    </script>
+  </body>
+</html>

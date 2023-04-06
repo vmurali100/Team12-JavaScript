@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p id="demo"></p>
+    <script>
+      var students = [
+        { name: "chandu", age: 22, state: "karnataka" },
+        { name: "kiran", age: 18, state: "AP" },
+        { name: "sandeep", age: 24, state: "Tamilnadu" },
+        { name: "arjun", age: 21, state: "up" },
+      ];
+        students.forEach(function (val) {
+          var newnames = document.createElement("li");
+          newnames.innerHTML = val.name + " " + val.age + " " + val.state;
+          document.getElementById("demo").appendChild(newnames);
+        });
+      students.forEach(function (user) {
+        var newnames = document.createElement("h1");
+        newnames.innerHTML = user.name;
+        document.getElementById("demo").appendChild(newnames);
+      });
+    </script>
+  </body>
+</html>

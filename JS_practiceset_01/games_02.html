@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Games 2</title>
+  </head>
+  <body>
+    <button onclick="Toviewtotalgames()">click to see Total games</button>
+    <br />
+    <button onclick="Totalmoneytobuy()">
+      Total money to buy all the games
+    </button>
+    <br />
+    <button onclick="Gamelessthan10k()">click to see games lessthan 10k</button>
+    <br />
+    <button onclick="Gamemorethan10k()">click to see games morethan 10k</button>
+    <script>
+      var Games = [
+        { name: "GTA vicecity", price: 15000 },
+        { name: "BGMI", price: 5000 },
+        { name: "freefire", price: 2500 },
+        { name: "FIFA", price: 14000 },
+        { name: "cricket", price: 6000 },
+      ];
+      function Toviewtotalgames() {
+        var Toatalmoney = Games.forEach(function (abc) {
+          console.log(abc);
+        });
+      }
+      function Totalmoneytobuy() {
+        var newtotalmoneytobuy = Games.reduce(function (a, b) {
+          if (a.price) {
+            return a.price + b.price;
+          } else {
+            return a + b.price;
+          }
+        });
+        console.log("Rs:" + newtotalmoneytobuy);
+      }
+
+      function Gamelessthan10k() {
+        var newgames = Games.filter(function (val) {
+          return val.price <= 10000;
+        });
+        console.log(newgames);
+      }
+      function Gamemorethan10k() {
+        var newgames = Games.filter(function (val) {
+          return val.price > 10000;
+        });
+        console.log(newgames);
+      }
+      
+    </script>
+  </body>
+</html>

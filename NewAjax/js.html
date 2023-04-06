@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+        <button onclick="Click()">Click Me</button>
+        <script>
+            function Click(){
+            var getinfo = new XMLHttpRequest()
+            getinfo.onreadystatechange=function(){
+                if(getinfo.readyState==4 && getinfo.status==200){
+                    console.log(getinfo.response);
+                    var users=JSON.parse(getinfo.response)
+
+                }
+            }
+            var api_url="https://filltext.com/?rows=10&fname={firstName}&lname={lastName}&tel={phone|format}&address={streetAddress}&city={city}&state={usState|abbr}&zip={zip}&pretty=true"
+            getinfo.open("GET",api_url)
+            getinfo.send()
+        }
+        </script>
+</body>
+</html>

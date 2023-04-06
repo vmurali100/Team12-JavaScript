@@ -1,0 +1,94 @@
+{
+  "allusers": [
+    {
+      "fname": "Frank",
+      "lname": "Garrod",
+      "tel": "(139)229-6759",
+      "address": "971 Sed Dr",
+      "city": "Riverdale",
+      "state": "SC",
+      "zip": 88276
+    },
+    {
+      "fname": "Sangita",
+      "lname": "Kellams",
+      "tel": "(331)398-5677",
+      "address": "669 Risus Dr",
+      "city": "Central Lake",
+      "state": "MN",
+      "zip": 75499
+    },
+    {
+      "fname": "Dwain",
+      "lname": "Geddes",
+      "tel": "(292)076-1152",
+      "address": "4980 Mattis Rd",
+      "city": "Vacaville",
+      "state": "NE",
+      "zip": 38825
+    },
+    {
+      "fname": "Dante'",
+      "lname": "Norris",
+      "tel": "(294)073-8788",
+      "address": "2384 Eros Ct",
+      "city": "Wasington Dc",
+      "state": "NY",
+      "zip": 73102
+    },
+    {
+      "fname": "Aida",
+      "lname": "Phuan",
+      "tel": "(982)597-7537",
+      "address": "6778 Id Ave",
+      "city": "Palm Harbor",
+      "state": "KS",
+      "zip": 45596
+    },
+    {
+      "fname": "Terri",
+      "lname": "Marr",
+      "tel": "(600)827-8585",
+      "address": "6375 Pulvinar Ave",
+      "city": "Big Bear",
+      "state": "NM",
+      "zip": 63277
+    },
+    {
+      "fname": "Shaneka",
+      "lname": "Klepsteen",
+      "tel": "(662)982-2674",
+      "address": "7336 Amet Ave",
+      "city": "Hollywood",
+      "state": "ID",
+      "zip": 19301
+    },
+    {
+      "fname": "Coretta",
+      "lname": "Weeks",
+      "tel": "(890)947-8338",
+      "address": "9656 Eget Ct",
+      "city": "Smyrna",
+      "state": "AK",
+      "zip": 19569
+    },
+    {
+      "fname": "Renee",
+      "lname": "Majewski",
+      "tel": "(700)730-1658",
+      "address": "9091 Magna Ave",
+      "city": "Vancouver",
+      "state": "RI",
+      "zip": 69879
+    },
+    {
+      "fname": "Miroslava",
+      "lname": "Rager",
+      "tel": "(997)738-6743",
+      "address": "1334 Tincidunt Ave",
+      "city": "Lenoir",
+      "state": "GA",
+      "zip": 16491
+    }
+  ]
+}

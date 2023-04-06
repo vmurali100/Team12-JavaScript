@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        /* #updateBtn {
+            display: none;
+        } */
+
+        p#name {
+            display: table-footer-group;
+            font-size: x-small;
+            top: 26px;
+        }
+
+        input#Lname {
+            position: relative;
+            left: 190px;
+            bottom: 33px;
+        }
+
+        p#llname {
+            display: table-footer-group;
+            font-size: x-small;
+            position: relative;
+            left: 190px;
+            bottom: 51px;
+        }
+
+        p#address {
+            position: relative;
+            display: table-footer-group;
+            font-size: 12px;
+            bottom: 49px;
+        }
+
+        p#Street {
+            position: relative;
+            display: table-footer-group;
+            font-size: 12px;
+            bottom: 38px;
+        }
+
+        p#city {
+            position: relative;
+            display: table-footer-group;
+            font-size: 12px;
+            bottom: 18px;
+        }
+
+        p#pin {
+            position: relative;
+            display: table-footer-group;
+            font-size: 12px;
+            left: 187px;
+            bottom: 55px;
+        }
+
+        input#Add {
+            position: absolute;
+            width: 359px;
+            bottom: 514px;
+        }
+
+        label#add {
+            position: relative;
+            bottom: 40px;
+        }
+
+        p#address {
+            position: relative;
+            display: table-footer-group;
+            font-size: 12px;
+            bottom: 50px;
+        }
+
+        input#Staddress {
+            position: absolute;
+            width: 359px;
+            bottom: 466px;
+            left: 8px;
+        }
+
+
+        input#city {
+            position: absolute;
+            left: 8px;
+        }
+
+        input#State {
+            position: absolute;
+            left: 195px;
+            bottom: 407px;
+        }
+
+        p#pincode {
+            position: relative;
+            display: table-footer-group;
+            font-size: 12px;
+            bottom: 35px;
+            left: 3px;
+        }
+
+        input#pincode {
+            position: absolute;
+            left: 10px;
+            width: 359px;
+            bottom: 353px;
+        }
+
+        label#phone {
+            position: relative;
+            left: -43px;
+            bottom: -10px;
+        }
+
+        input#phnumber {
+            position: relative;
+            bottom: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Customer Deatils :</h2>
+    <hr>
+    <form>
+        <label for="FullName">FullName </label><br /><br />
+        <input type="text" name="" id="Fname">
+        <p id="name">Frist Name</p>
+        <input type="text" name="" id="Lname"><br /><br />
+        <p id="llname">Last Name</p>
+        <label for="Address" id="add">Address :</label><br\><br>
+        <input type="text" name="" id="Add"><br /><br />
+        <p id="address">StreetAddress</p>
+        <input type="text" name="" id="Staddress"><br /><br />
+        <p id="Street">Street Address Line2</p>
+        <input type="text" name="" id="city"><br /><br />
+        <p id="city">City</p>
+        <input type="text" name="" id="State"><br /><br />
+        <p id="pin">State/pincode</p>
+        <input type="number" name="" id="pincode"><br /><br />
+        <p id="pincode">Zip Code</p>
+        <label for="Phonenumber" id="phone">Phonenumber :</label><br><br>
+        <input type="number" name="" id="phnumber"><br /><br />
+        <button onclick="createuser()" type="button" id="createBtn">Create User</button><br /><br />
+        <button onclick="updateUser()" type="button" id="updateBtn">Update User</button><br /><br />
+    </form>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name </th>
+                <th>Last Name</th>
+                <!-- <th>Address</th> -->
+                <th>StreetAddress</th>
+                <th>StreetAddressL2</th>
+                <th>city</th>
+                <th>State</th>
+                <th>pincode</th>
+                <th>Phonenumber</th>
+                <th>Edit</th>
+                <th>Delete</th>3
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var allUsers = []
+        var gindex = null
+        function createuser() {
+            var user = {
+                Fname: document.getElementById("Fname").value,
+                Lname:document.getElementById("Lname").value,
+                // Address: document.getElementById("Address").value,
+                Address: document.getElementById("Add").value,
+                Staddress: document.getElementById("Staddress").value,
+                city: document.getElementById("city").value,
+                State: document.getElementById("State").value,
+                pincode: document.getElementById("pincode").value,
+                Phonenumber: document.getElementById("phnumber").value,
+            }
+            clearform()
+            allUsers.push(user)
+            displayUsers(allUsers)
+        }
+        function clearform() {
+            document.getElementById("Fname").value = "";
+            document.getElementById("Lname").value = "";
+            // document.getElementById("Address").value = "";
+            document.getElementById("Add").value = "";
+            document.getElementById("Staddress").value = "";
+            document.getElementById("city").value = "";
+            document.getElementById("State").value = "";
+            document.getElementById("pincode").value = "";
+            document.getElementById("phnumber").value = "";
+
+        }
+        function displayUsers(users) {
+            document.querySelector("tbody").innerHTML = ""
+            users.forEach((user, i) => {
+                var myTr = document.createElement("tr");
+                var mytd1 = document.createElement("td");
+                mytd1.innerHTML = user.Fname
+                var mytd2 = document.createElement("td")
+                mytd2.innerHTML = user.Lname
+                // var mytd3 = document.createElement("td")
+                // mytd3.innerHTML = user.Address
+                var mytd4 = document.createElement("td")
+                mytd4.innerHTML = user.Address
+                var mytd5 = document.createElement("td")
+                mytd5.innerHTML = user.Staddress
+                var mytd6 = document.createElement("td")
+                mytd6.innerHTML = user.city
+                var mytd7 = document.createElement("td")
+                mytd7.innerHTML = user.State
+                var mytd8 = document.createElement("td")
+                mytd8.innerHTML = user.pincode
+                var mytd9 = document.createElement("td")
+                mytd9.innerHTML = user.Phonenumber
+
+
+                myTr.appendChild(mytd1)
+                myTr.appendChild(mytd2)
+                // myTr.appendChild(mytd3)
+                myTr.appendChild(mytd4)
+                myTr.appendChild(mytd5)
+                myTr.appendChild(mytd6)
+                myTr.appendChild(mytd7)
+                myTr.appendChild(mytd8)
+                myTr.appendChild(mytd9)
+
+                var editTd = document.createElement("td");
+                var editBtn = document.createElement("button");
+                editBtn.innerHTML = "Edit";
+                editBtn.setAttribute("onclick", "editUser(" + i + ")");
+
+                editTd.appendChild(editBtn)
+                var deleteTd = document.createElement("td");
+                var deleteBtn = document.createElement("button");
+                deleteBtn.innerHTML = "Delete";
+                deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+                deleteTd.appendChild(deleteBtn);
+                myTr.appendChild(editTd);
+                myTr.appendChild(deleteTd);
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+        function deleteUser(i) {
+            var latestUsers = allUsers.filter(function (user, index) {
+                return i !== index
+            })
+            console.log(latestUsers);
+            displayUsers(latestUsers)
+        }
+
+        function editUser(i) {
+            console.log(i)
+            gindex = i;
+            document.getElementById("Fname").value = allUsers[i].Fname
+            document.getElementById("Lname").value = allUsers[i].Lname
+            // document.getElementById("Address").value = allUsers[i].Address
+            document.getElementById("Add").value = allUsers[i].Address
+            document.getElementById("Sataddress").value = allUsers[i].Staddress
+            document.getElementById("city").value = allUsers[i].city
+            document.getElementById("State").value = allUsers[i].State
+            document.getElementById("pincode").value = allUsers[i].pincode
+            document.getElementById("phnumber").value = allUsers[i].Phonenumber
+            document.getElementById("createBtn").style.display = "none"
+            document.getElementById("updateBtn").style.display = "block"
+        }
+        function updateUser() {
+            var user = {
+                Fname: document.getElementById("Fname").value,
+                Lname: document.getElementById("Lname").value,
+                // Address: document.getElementById("Address").value,
+                Address: document.getElementById("Add").value,
+                Staddress: document.getElementById("Sataddress").value,
+                city: document.getElementById("city").value,
+                State: document.getElementById("State").value,
+                pincode: document.getElementById("pincode").value,
+                Phonenumber: document.getElementById("phnumber").value,
+            }
+            allUsers[gindex] = user
+
+            displayUsers(allUsers);
+            clearform()
+            document.getElementById("createBtn").style.display = "block"
+            document.getElementById("updateBtn").style.display = "none"
+        }
+
+        displayUsers(allUsers)
+
+    </script>
+
+</body>
+
+</html>

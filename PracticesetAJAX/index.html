@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+      <button onclick="Getinfo()">Get Info for server</button>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Fname</th>
+            <th>lname</th>
+            <th>tel</th>
+            <th>address</th>
+            <th>city</th>
+            <th>state</th>
+            <th>zip</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+    </thead>
+    <tbody>        
+
+    </tbody>
+</table>
+    <script>
+        var users = [];
+      function Getinfo() {
+        var getinfo = new XMLHttpRequest();
+        getinfo.onreadystatechange = function () {
+          if (getinfo.readyState == 4 && getinfo.status == 200) {
+            console.log(getinfo.response);
+            users = JSON.parse(getinfo.response);
+            displayUsers(users)
+        }
+        
+    };
+    var api_url=("http://localhost:3000/allusers")
+    getinfo.open("GET", api_url);
+    getinfo.send();
+}
+Getinfo()
+
+      function displayUsers(users){
+        document.querySelector("tbody").innerHTML=""
+        users.forEach((user,i) => {
+            var mytr=document.createElement("tr")
+            for(a in user){
+                var mytd=document.createElement("td")
+                mytd.innerHTML=user[a]
+                mytr.appendChild(mytd)
+            }
+            // create edit button
+            var edittd=document.createElement("td")
+            var editbtn=document.createElement("button")
+            editbtn.setAttribute("onclick","EditUser("+i+")")
+            editbtn.innerHTML="EDIT"
+            edittd.appendChild(editbtn)
+            mytr.appendChild(edittd)
+
+            // create delete button
+            var deletetd=document.createElement("td")
+            var deletebtn=document.createElement("button")
+            deletebtn.setAttribute("onclick","DeleteUser("+i+")")
+            deletebtn.innerHTML="DELETE"
+            deletetd.appendChild(deletebtn)
+            mytr.appendChild(deletetd)
+
+            document.querySelector("tbody").appendChild(mytr)
+        });
+      }
+      function DeleteUser(i){
+        var deleteinfo=new XMLHttpRequest()
+        deleteinfo.onreadystatechange=function(){
+            if(deleteinfo.readyState == 4 && deleteinfo.status == 200){
+            console.log("You clicked Delete button");
+        }
+    }
+        deleteinfo.open("DELETE","http://localhost:3000/allusers/"+users[i].fname)
+        deleteinfo.send()
+      }
+    </script>
+  </body>
+</html>

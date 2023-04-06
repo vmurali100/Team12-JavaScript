@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>java script</title>
+    <script>
+        // four ways to create object
+        // literal method to create object
+    var person={
+        fname:"chandu",
+        age:22,
+        lname:"yadav"
+    };
+    document.write(person.fname+"<br>")
+    document.write(person.age+"<br>")
+    document.write(person.lname+"<br>")
+    document.write("<br/>")
+
+    // built in object method 
+    var person2=new Object({fname:"soul",lname:"chandu",age:21});
+    document.write(person2.fname+"<br>")
+    document.write(person2.lname+"<br>")
+    document.write(person2.age+"<br>")
+    document.write("<br/>")
+
+    // using funtion(constuctor) method to create object
+    function Person(name,age,height){
+        this.name=name;
+        this.age=age;
+        this.height=height
+    }
+    var stud1=new Person("chandu",21,6.5)
+    document.write(stud1.name+"<br>")
+    document.write(stud1.age+"<br>")
+    document.write(stud1.height+"<br>")
+    document.write("<br/>")
+
+    // using class to create object
+    class Student{
+        constructor(name,lname,age,email){
+            this.name=name;
+            this.lname=lname;
+            this.age=age;
+            this.email=email
+        }
+    }
+    Student.contact=8834234533;
+    var stud2=new Student("ram","kumar",34,"ram@gmail.com")
+    document.write(stud2.name+"<br>")
+    document.write(stud2.lname+"<br>")
+    document.write(stud2.age+"<br>")
+    document.write(stud2.email+"<br>")
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

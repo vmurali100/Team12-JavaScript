@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            display: inline-block;
+            width: 100px;
+            border: 1px solid red;
+            padding: 10px;
+            border-radius: 1px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        var val=prompt("Enter Any No")
+        for(i=1;i<=val;i++){
+            var mydiv=document.createElement("div");
+            var results=""
+            for(j=1;j<=val;j++){
+            results=results+i+"*"+j+"="+i*j+"<br>"
+            }
+            mydiv.innerHTML=results
+            document.body.appendChild(mydiv)
+        }
+
+    </script>
+</body>
+</html>

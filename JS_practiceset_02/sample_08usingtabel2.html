@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Usersdetails()">click to see users</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>FristName</th>
+                <th>LastName</th>
+                <th>TeleNo</th>
+                <th>Address</th>
+                <th>City</th>
+                <th>State</th>
+                <th>Zip</th>
+            </tr>
+            <tbody>
+
+            </tbody>
+        </thead>
+    </table>
+    <script>
+        var users = [
+        {
+          fname: "Bridgett",
+          lname: "Tobin",
+          tel: "(825)864-7978",
+          address: "8618 Dolor St",
+          city: "Senoia",
+          state: "OH",
+          zip: 91968,
+        },
+        {
+          fname: "Ilona",
+          lname: "Hershfeld",
+          tel: "(521)549-1051",
+          address: "8054 Mattis Rd",
+          city: "Warwick",
+          state: "WA",
+          zip: 78264,
+        },
+        {
+          fname: "Michel",
+          lname: "Fox",
+          tel: "(387)469-9057",
+          address: "5435 Sit Ct",
+          city: "Durham",
+          state: "OH",
+          zip: 52895,
+        },
+        {
+          fname: "Marek",
+          lname: "Worden",
+          tel: "(888)146-8963",
+          address: "1721 Pulvinar",
+          city: "Modesto",
+          state: "NC",
+          zip: 84516,
+        },
+        {
+          fname: "Camelyn",
+          lname: "Mckenzie",
+          tel: "(338)538-2859",
+          address: "6633 Consequat Ave",
+          city: "North Barrington",
+          state: "NV",
+          zip: 94445,
+        },
+        {
+          fname: "Magdalena",
+          lname: "Eaton",
+          tel: "(383)591-4093",
+          address: "927 Turpis",
+          city: "Furlong",
+          state: "ID",
+          zip: 23490,
+        },
+        {
+          fname: "Lei",
+          lname: "Richard",
+          tel: "(255)531-1503",
+          address: "7874 Dolor",
+          city: "Abbotsford",
+          state: "HI",
+          zip: 66835,
+        },
+        {
+          fname: "Alana",
+          lname: "Cohn",
+          tel: "(903)813-6023",
+          address: "5863 Pharetra",
+          city: "Raleigh",
+          state: "NM",
+          zip: 35106,
+        },
+        {
+          fname: "Hussain",
+          lname: "Burnett",
+          tel: "(452)065-9082",
+          address: "3239 Elit St",
+          city: "Saskatoon",
+          state: "PA",
+          zip: 52302,
+        },
+        {
+          fname: "Roosevelt",
+          lname: "Theiss",
+          tel: "(265)588-4266",
+          address: "9410 Morbi Ct",
+          city: "Parker",
+          state: "NJ",
+          zip: 89622,
+        },
+      ];
+      function Usersdetails() {
+        users.forEach((users)=>{
+          var myTr = document.createElement("tr");
+          var myTd1 = document.createElement("td");
+          myTd1.innerHTML = users.fname;
+          var myTd2=document.createElement("td")
+          myTd2.innerHTML=users.lname
+          var myTd3=document.createElement("td")
+          myTd3.innerHTML=users.tel
+          var myTd4 = document.createElement("td");
+          myTd4.innerHTML = users.address;
+          var myTd5=document.createElement("td")
+          myTd5.innerHTML=users.city
+          var myTd6 = document.createElement("td");
+          myTd6.innerHTML = users.state;
+          var myTd7=document.createElement("td")
+          myTd7.innerHTML=users.zip
+
+          myTr.appendChild(myTd1);
+          myTr.appendChild(myTd2);
+          myTr.appendChild(myTd3);
+          myTr.appendChild(myTd4);
+          myTr.appendChild(myTd5);
+          myTr.appendChild(myTd6);
+          myTr.appendChild(myTd7);
+          document.querySelector("tbody").appendChild(myTr);
+        });
+      }
+
+    </script>
+</body>
+</html>

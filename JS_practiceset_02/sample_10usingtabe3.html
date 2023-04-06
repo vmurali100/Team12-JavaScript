@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="StudentInfo()">Click Me</button>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>UserID</th>
+                <th>Email</th>
+                <th>Username</th>
+                <th>Password</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+         var Students = [
+        {
+          id: 33,
+          email: "ADehaven@nullam.gov",
+          username: "AKeirns",
+          password: "rMdik",
+        },
+        {
+          id: 34,
+          email: "XBoyle@sit.gov",
+          username: "SRichards",
+          password: "SI0a1",
+        },
+        {
+          id: 35,
+          email: "AGrossman@sit.com",
+          username: "NMendoza",
+          password: "0jEPF",
+        },
+        {
+          id: 36,
+          email: "ADoerfler@sed.com",
+          username: "KGarner",
+          password: "DaFGz",
+        },
+        {
+          id: 37,
+          email: "CHebert@sed.gov",
+          username: "DRochester",
+          password: "vsF3J",
+        },
+        {
+          id: 38,
+          email: "QPorter@aliquam.org",
+          username: "MKarma",
+          password: "StQlp",
+        },
+        {
+          id: 39,
+          email: "GMahajan@nunc.io",
+          username: "WWuertz",
+          password: "rP3gk",
+        },
+        {
+          id: 40,
+          email: "LRovito@in.gov",
+          username: "MCasariego",
+          password: "U9ztS",
+        },
+        {
+          id: 41,
+          email: "JMedeiros@etiam.org",
+          username: "ROlson",
+          password: "IM8XM",
+        },
+        {
+          id: 42,
+          email: "CLarrabee@vestibulum.net",
+          username: "MBenson",
+          password: "x3txS",
+        },
+      ];
+        function StudentInfo(){
+            Students.forEach((studdeatils)=>{
+                var newStudents=document.createElement("tr")
+                var Student1=document.createElement("td")
+                Student1.innerHTML=studdeatils.id
+
+                var Student2=document.createElement("td")
+                Student2.innerHTML=studdeatils.email
+
+                var Student3=document.createElement("td")
+                Student3.innerHTML=studdeatils.username
+
+                var Student4=document.createElement("td")
+                Student4.innerHTML=studdeatils.password
+
+                newStudents.appendChild(Student1)
+                newStudents.appendChild(Student2)
+                newStudents.appendChild(Student3)
+                newStudents.appendChild(Student4)
+
+                document.querySelector("tbody").appendChild(newStudents)
+            })
+        }
+    </script>
+</body>
+</html>

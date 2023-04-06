@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Registration Details</legend>
+        <label for="University">University: </label>
+        <input type="text" id="Univ"><br><br>
+        <label for="Institude">Institude: </label>
+        <input type="text" id="inst"><br><br>
+        <label for="Branch">Branch: </label>
+        <select id="branch">
+        <option value="select">--Select--</option>
+        <option value="CSE">Bangalore</option>
+        <option value="Mech">Mumbai</option>
+        <option value="Civil">Hyderabad</option>
+        </select><br><br>
+        <label for="Degree">Degree: </label>
+        <select id="Deg">
+            <option value="select">--Select--</option>
+            <option value="SSLC">SSLC</option>
+            <option value="PUC">PUC</option>
+            <option value="Btech">Btech</option>
+        </select><br><br>
+        <label for="AvarageCPI">AvarageCPI: </label>
+        <input type="number" step="0.2" id="avg"><br><br>
+        <label for="ThSemester">Th Semester: </label>
+        <input type="number" step="1" id="thsem"><br><br>
+        <label for="Experience">Experience: </label>
+        <input type="number" step="0" id="Exp"><br><br>
+        <label for="Blog">Your Website Or Blog: </label>
+        <input type="url" id="blog" value="http://" ><br><br>
+        <button onclick="Adduser()">Click to Addusers</button>
+    </fieldset>
+    <hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>University</th>
+                <th>Institude</th>
+                <th>Branch</th>
+                <th>Degree</th>
+                <th>AverageCPI</th>
+                <!-- <th>ThSemester</th> -->
+                <th>Experience</th>
+                <th>Blog</th>
+                <th>ID</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script>
+        function Adduser(){
+            var users={
+                University:document.getElementById("Univ").value,
+                Institude:document.getElementById("inst").value,
+                Branch:document.getElementById("branch").value,
+                Degree:document.getElementById("Deg").value,
+                AverageCPI:document.getElementById("avg").value,
+                // ThSemester:document.getElementById("thsem").value,
+                Experience:document.getElementById("Exp").value,
+                Blog:document.getElementById("blog").value,
+
+            }
+            console.log(users);
+            var api_url="  http://localhost:3000/users"
+            var Postuser=new XMLHttpRequest()
+            Postuser.onreadystatechange=function(){
+                if(Postuser.readaystate==4 && Postuser.status==201){
+                    users("users Added successfully")
+                }
+            }
+            Postuser.open("POST",api_url)
+            Postuser.setRequestHeader("Content-Type","application/json")
+            Postuser.send(JSON.stringify(users))
+        }
+        function getusersdata(){
+            var getinfo=new XMLHttpRequest()
+            getinfo.onreadystatechange=function(){
+                if(getinfo.readyState==4 && getinfo.status== 200){
+                    displayUser(JSON.parse(getinfo.response));
+                }
+            }
+            var api_url="http://localhost:3000/users"
+            getinfo.open("GET",api_url)
+            getinfo.send()
+        }
+        function displayUser(users){
+            document.querySelector("tbody").innerHTML=""
+            users.forEach((user) => {
+                var Mytr=document.createElement("tr")
+                for(a in user){
+                    var Mytd=document.createElement("td")
+                    Mytd.innerHTML=user[a]
+                    Mytr.appendChild(Mytd)
+                }
+                var edittd=document.createElement("td")
+                var deletetd=document.createElement("td")
+
+                var editbtn=document.createElement("button")
+                editbtn.innerHTML="Edit User"
+                edittd.appendChild(editbtn)
+
+                var deletebtn=document.createElement("button")
+                deletebtn.innerHTML="Delete User"
+                deletetd.appendChild(deletebtn)
+
+                Mytr.appendChild(edittd)
+                Mytr.appendChild(deletetd)
+                document.querySelector("tbody").appendChild(Mytr)
+            });
+        }
+        getusersdata()
+    </script>
+</body>
+</html>

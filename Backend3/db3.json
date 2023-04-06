@@ -1,0 +1,16 @@
+{
+  "users": [
+    {
+      "Username": "sdas",
+      "Email": "dsa",
+      "Password": "asda",
+      "confirmpassword": "asdfa",
+      "FirstName": "dasfa",
+      "LastName": "dfa",
+      "Nickname": "da",
+      "Website": "das",
+      "Bio": "sa",
+      "id": 1
+    }
+  ]
+}

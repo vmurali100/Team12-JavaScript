@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+<body>
+    <button onclick="changingname()">click me</button>
+    <button onclick="changeusingid()">click me</button>
+    <button onclick="changusingelement()">click me</button>
+    <button onclick="addtext()">click me</button>
+    <button onclick="addinput()">click here</button>
+    <button onclick="classandname()">click here</button>
+    <h1 id="myheading">Hello world</h1>
+    <h1 id="myheading">Hello world</h1>
+    <h2 id="myheading">Hello world</h2>
+    <h2 id="myheading" class="myclass" name="myname">Hello world</h2>
+    <P id="demo"></P>
+    <input id="myinput" type="text" >
+    <script>
+        function changingname(){
+        document.getElementById("myheading").innerHTML="Welcom to my world";
+    }
+        function changeusingid(){
+        document.getElementById("myheading").style.color="red";
+    }
+    function changusingelement(){
+        document.querySelector("h2").innerHTML="Hello this is javascript";
+    }
+    function addtext(){
+        document.getElementById("demo").innerHTML="I will add text in Paragraph tag";
+    }
+    function addinput(){
+        document.getElementsByTagName("h1")[1].innerHTML="Hello hai";
+    }
+    function classandname(){
+        document.getElementsByName("myname")[0].innerHTML="Hello hai";
+    }
+    function classandname(){
+        document.getElementsByClassName("myclass")[0].innerHTML="Welcome to javascript";
+    }
+
+    // function addinput(){
+    //     document.getElementById("demo").value;
+    // }
+    </script>
+</body>
+</html>

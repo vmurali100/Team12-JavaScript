@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Welcome to Delete Page</h2>
+    <h3 id="unvers">
+
+    </h3>
+    <h3 id="Inst">
+
+    </h3>
+    <h3 id="Branch">
+
+    </h3>
+    <h3 id="Deg">
+
+    </h3>
+    <h3 id="cpi">
+
+    </h3>
+    <h3 id="Exp">
+
+    </h3>
+    <h3 id="Url">
+
+    </h3>
+    <button onclick="Delete()">Confirm to delete</button>
+    <script>
+        var url=window.location.href
+        var id=url.substring(url.lastIndexOf("?")+1)
+        function getuserdata(){
+            var getuser=new XMLHttpRequest()
+            getuser.onreadystatechange=function(){
+                if(getuser.readyState ==4  && getuser.status == 200){
+                    console.log(users);
+                    var users=JSON.parse(getuser.response)
+                    document.getElementById("unvers").innerHTML="University:"+users.University
+                    document.getElementById("Inst").innerHTML="Institute:"+users.Institute
+                    document.getElementById("Branch").innerHTML="Branch:"+users.Branch
+                    document.getElementById("Deg").innerHTML="Degree:"+users.Degree
+                    document.getElementById("cpi").innerHTML="Avarage CPI:"+users.CPI
+                    document.getElementById("Exp").innerHTML="Experience:"+users.Experience
+                    document.getElementById("Url").innerHTML="Website:"+users.Websit
+                }
+            }
+            getuser.open("GET"," http://localhost:3000/users/"+id)
+            getuser.send()
+        }
+        function Delete(){
+            var getuser =new XMLHttpRequest()
+            getuser.onreadystatechange=function(){
+                if(getuser.readyState==4 && getuser.status==200 ){
+                    window.location.href="sample.html"
+                }
+            }
+            getuser.open("DELETE","http://localhost:3000/users/"+id)
+            getuser.send()
+        }
+        getuserdata()
+    </script>
+</body>
+</html>

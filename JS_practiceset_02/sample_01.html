@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+
+    </ul>
+    <script>
+      var Games = [
+        { name: "GTA vicecity", price: 15000 },
+        { name: "BGMI", price: 5000 },
+        { name: "freefire", price: 2500 },
+        { name: "FIFA", price: 14000 },
+        { name: "cricket", price: 6000 },
+      ];
+    //   Games.filter(function(val){
+    //     var newgames=document.createElement("li");
+    //     newgames.innerHTML=val.name
+    //     document.querySelector("ul").appendChild(newgames)
+    //   })
+    //   document.write("<br>")
+    //   Games.filter(function(val){
+    //     var newgames=document.createElement("li");
+    //     newgames.innerHTML=val.price
+    //     document.querySelector("ul").appendChild(newgames)
+    //   })
+      Games.forEach(function(val){
+        var newgames=document.createElement("li");
+        if(price==2500){
+            newgames.innerHTML=val.price
+        }else{
+            newgames.innerHTML=val.price+"not found"
+        }
+       
+        document.querySelector("ul").appendChild(newgames)
+      })
+    
+    </script>
+</body>
+</html>

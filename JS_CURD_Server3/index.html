@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #updateBtn{
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <form class="form">
+        <label for="Username" id="name">Username :</label>
+        <input type="text" name="" id="urname" placeholder="Enter your name" /><br /><br />
+        <label for="Email" id="ema">Email :</label>
+        <input type="email" name="" id="email" /><br /><br />
+        <label for="Password" id="word">Password :</label>
+        <input type="password" name="" id="pass" /><br /><br />
+        <label for="confirmpassword" id="conpass">confirm <br>password</label>
+        <input type="password" name="" id="compass"><br /><br>
+        <label for="FirstName" id="name">FristName :</label>
+        <input type="text" name="" id="fname" />
+        <input type="text" name="" id="lname" placeholder="Lastname" /><br /><br />
+        <label for="Nickname" id="niname">Nickname :</label>
+        <input type="text" name="" id="nname" /><br /><br />
+        <label for="Website" id="websi">Website :</label>
+        <input type="url" name="" id="web" /><br /><br />
+        <label for="Bio" id="about">Bio :</label>
+        <textarea name="" id="bio" rows="5" cols="30" placeholder="Enter something"></textarea><br /><br />
+        <button type="button" onclick="addUser()" id="addBtn">Add User</button>
+        <button type="button" onclick="updateUser()" id="updateBtn">Update User</button>
+      </form>
+      <br><hr>
+
+    <br><hr>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>User Name</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>confirm Password</th>
+                <th>Frist Name</th>
+                <th>Last Name</th>
+                <th>Nickname</th>
+                <th>Website</th>
+                <th>Bio</th>
+                <th>ID</th>
+                <th>Edit</th>
+                <th>Delete</th>
+
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script src="./create.js"></script>
+    <script src="./read.js"></script>
+    <script src="./delete.js"></script>
+    <script src="./edit.js"></script>
+</body>
+</html>

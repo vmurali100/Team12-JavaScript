@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <label for="Street">Street</label>
+        <input type="text" id="street"><br><br>
+        <label for="city">City,State</label>
+        <input type="text" id="city"><br><br>
+        <label for="zip">Zip Code</label>
+        <input type="number" id="code"><br><br>
+        <label for="Country">Country</label>
+        <input type="text" id="count"><br><br>
+        <button onclick="addusers()">Add User</button>
+       </fieldset>
+    </form>
+    <hr>
+    <table border="1">
+        <thead>
+            <th>Street</th>
+            <th>City,State</th>
+            <th>Zip Code</th>
+            <th>Country</th>
+            <th>ID</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+
+    <script>
+        var users=[]
+        var api_url="http://localhost:3000/users"
+        function addusers(){
+            var users={
+            Street:document.getElementById("street").value,
+            City,State:document.getElementById("city").value,
+            ZipCode:document.getElementById("code").value,
+            Country:document.getElementById("count").value
+        }
+        var postuser = new XMLHttpRequest()
+        postuser.onreadystatechange=function(){
+            if(postuser.readyState == 4 && postuser.status == 201){
+                console.log("User add successfully");
+            }
+        }
+        postuser.open("POST",api_url)
+        postuser.setRequestHeader("Content-Type","application/json")
+        postuser.send(JSON.stringify(users))
+        console.log(users);
+     }
+     function getuserdata(){
+        var getuser=new XMLHttpRequest()
+        getuser.onreadystatechange=function(){
+            if(getuser.readyState == 4 && getuser.status ==200){
+                console.log(users);
+                users=JSON.parse(getuser.response)
+                displayUser(users)
+            }
+        }
+        getuser.open("GET","http://localhost:3000/users")
+        getuser.send()
+     }
+     function displayUser(users){
+            document.querySelector("tbody").innerHTML="";
+            users.forEach((user,i) => {
+                var myTr=document.createElement("tr")
+                for(a in user){
+                    var myTd=document.createElement("td")
+                    myTd.innerHTML=user[a]
+                    myTr.appendChild(myTd)
+                }
+                var EditTd=document.createElement("td")
+                var Editbtn=document.createElement("button")
+                Editbtn.setAttribute("onclick","Edit("+i+")")
+                Editbtn.innerHTML="Edit"
+                EditTd.appendChild(Editbtn)
+                myTr.appendChild(EditTd)
+
+                var DeleteTd=document.createElement("td")
+                var Deletebtn=document.createElement("button")
+                Deletebtn.setAttribute("onclick","deleteUser("+i+")")
+                Deletebtn.innerHTML="DELETE"
+                DeleteTd.appendChild(Deletebtn)
+                myTr.appendChild(DeleteTd)
+
+
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+        function deleteUser(i){
+            console.log("deleteusers");
+            window.location.href="delete.html?"+users[i].id
+        }
+     getuserdata()
+    </script>
+</body>
+</html>

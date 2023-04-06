@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var mobile = {
+            name: "Poco X3",
+            model: "2019",
+            ram: "12gb"
+        }
+        for (a in mobile) {
+            document.write(mobile[a] + "<br/>")
+        }
+        document.write("<br>")
+
+        var student = new Object({ fname: "chandu", lname: "yadav", age: 22 })
+        student.usn = "1bh19cs036";
+        student["fees"] = 64000;
+        for (a in student) {
+            document.write(student[a] + "<br/>")
+        }
+        document.write("<br>")
+
+        function Person(fname, lname, age) {
+            this.fname = fname;
+            this.lname = lname;
+            this.age = age;
+        }
+        var person4 = new Person("krishan", "kumar", 43);
+        person4.contact = 9916381671;
+        person4["height"] = "5.7ft";
+        for (a in person4) {
+            document.write(person4[a] + "<br/>")
+        }
+        document.write("<br>")
+
+        class Bike {
+            constructor(name, model, topspeed) {
+                this.name = name;
+                this.model = model;
+                this.topspeed = topspeed
+            }
+        }
+        var bike1 = new Bike("duke", 2018, "165kmpl");
+        bike1.engine = "250cc";
+        bike1["price"] = 250000;
+        console.log(bike1);
+        for (a in bike1) {
+            document.write(bike1[a] + "<br/>")
+        }
+    </script>
+</body>
+
+</html>

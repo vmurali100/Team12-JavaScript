@@ -1,0 +1,34 @@
+{
+  "users": [
+    {
+      "University": "Bangalore University",
+      "Institute": "BTI",
+      "Branch": "Bangalore",
+      "Degree": "BE",
+      "CPI": "89",
+      "Experience": "2",
+      "Websit": "http://www.google.com",
+      "id": 1
+    },
+    {
+      "University": "Mumbai University",
+      "Institute": "Mumbai Institute",
+      "Branch": "Mumbai",
+      "Degree": "PUC",
+      "CPI": "76",
+      "Experience": "3",
+      "Websit": "http://www.youtube.com",
+      "id": 2
+    },
+    {
+      "University": "Hyderabad",
+      "Institute": "Hyderabad Institute",
+      "Branch": "Hyderabad",
+      "Degree": "SSLC",
+      "CPI": "87",
+      "Experience": "1",
+      "Websit": "http://www.sslchyderabad.com",
+      "id": 3
+    }
+  ]
+}

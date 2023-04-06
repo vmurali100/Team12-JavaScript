@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #updateBtn{
+        display: none;
+    }
+</style>
+<body>
+    <hr />
+    <form>
+      <fieldset>
+        <legend><b>Register From :</b></legend>
+        <label for="ActionName">ActionName :</label>
+        <input type="text" name="" id="actname" placeholder="Register User" /><br /><br />
+        <label for="EmailUser">UserEmail :</label>
+        <input type="email" name="" id="email" /><br /><br />
+        <label for="Password">Password :</label>
+        <input type="password" name="" id="pass" /><br /><br />
+        <label for="FirstName">FristName :</label>
+        <input type="text" name="" id="fname" /><br /><br />
+        <label for="LastName">LastName :</label>
+        <input type="text" name="" id="lname" /><br /><br />
+        <label for="DisplayName">DisplayName :</label>
+        <input type="text" name="" id="disname" /><br /><br />
+        <label for="Website">Website :</label>
+        <input type="url" name="" id="website" /><br /><br />
+        <label for="UserRole">UserRole :</label>
+        <input type="text" name="" id="role" /><br /><br />
+        <button onclick="createuser()" type="button" id="createBtn">
+          Create User</button><br /><br />
+        <button onclick="updateUser()" type="button" id="updateBtn">
+          Update User</button><br /><br />
+      </fieldset>
+    </form>
+    <hr />
+    <table border="1">
+      <thead>
+        <tr>
+          <th>Register User</th>
+          <th>User Email</th>
+          <th>Password</th>
+          <th>Frist Name</th>
+          <th>Last Name</th>
+          <th>DisplayName</th>
+          <th>Website</th>
+          <th>User role</th>
+          <th>ID</th>
+          <th>Edit</th>
+          <th>Delete</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <script src="./create.js"></script>
+    <script src="./read.js"></script>
+    <script src="./delete.js"></script>
+    <script src="./edit.js"></script>
+    
+</body>
+</html>

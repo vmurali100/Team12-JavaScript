@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="Clickhere()">Click to view users</button>
+    <table border="1">
+        <thead>
+                <th>PostID</th>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Body</th>
+                <th>Edit</th>
+                <th>Delete</th>
+        </thead>
+        <tbody>
+
+        </tbody>
+    </table>
+    <script src="./delete.js"></script>
+    <script src="./edit.js"></script>
+    <script>
+         var users=[]
+        function Clickhere(){
+           
+            var getinfo = new XMLHttpRequest()
+            getinfo.onreadystatechange=function(){
+                if(getinfo.readyState == 4 && getinfo.status == 200){
+                    console.log(getinfo.response);
+                 users=JSON.parse(getinfo.response)
+                    displayUser(users)
+                }
+            }
+            var api_url=" http://localhost:3000/allusers"
+            getinfo.open("GET",api_url)
+            getinfo.send()
+        }
+        function displayUser(users){
+            document.querySelector("tbody").innerHTML="";
+            users.forEach((user,i) => {
+                var myTr=document.createElement("tr")
+                for(a in user){
+                    var myTd=document.createElement("td")
+                    myTd.innerHTML=user[a]
+                    myTr.appendChild(myTd)
+                }
+                var EditTd=document.createElement("td")
+                var Editbtn=document.createElement("button")
+                Editbtn.setAttribute("onclick","Edit("+i+")")
+                Editbtn.innerHTML="Edit"
+                EditTd.appendChild(Editbtn)
+                myTr.appendChild(EditTd)
+
+                var DeleteTd=document.createElement("td")
+                var Deletebtn=document.createElement("button")
+                Deletebtn.setAttribute("onclick","deleteUser("+i+")")
+                Deletebtn.innerHTML="DELETE"
+                DeleteTd.appendChild(Deletebtn)
+                myTr.appendChild(DeleteTd)
+
+
+                document.querySelector("tbody").appendChild(myTr)
+            });
+        }
+        Clickhere()
+    </script>
+</body>
+</html>

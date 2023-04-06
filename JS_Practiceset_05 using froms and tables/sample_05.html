@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        .form {
+            transform: translate(200%, 1px);
+            position: relative;
+            background-color: rgb(240, 138, 59);
+            display: inline-block;
+            height: 80vh;
+            overflow: hidden;
+            color: black;
+            border:7px solid red ;
+        }
+
+        input[type="text"] {
+            outline: none;
+            width: 200px;
+            height: 21px;
+            text-align: center;
+            text-transform: capitalize;
+            padding: 6px;
+            padding-left: 19px;
+            box-shadow: 0px 0px 0px 0px rgb(0, 0, 0, 0.5);
+        }
+
+        input[type="number"] {
+            outline: none;
+            width: 200px;
+            height: 21px;
+            text-align: center;
+            text-transform: capitalize;
+            padding: 6px;
+            padding-left: 19px;
+            box-shadow: 0px 0px 0px 0px rgb(0, 0, 0, 0.5);
+        }
+
+        button#updateBtn {
+            background-color: black;
+            color: white;
+            font-size: large;
+            position: absolute;
+            left: 25%;
+            border: none;
+            border-radius: 12px;
+            transition-duration: 0.3s;
+            font-size: 30px;
+            border: 3px solid cyan;
+            bottom: 31px;
+        }
+
+        button#createBtn {
+            background-color: black;
+            color: white;
+            font-size: large;
+            position: absolute;
+            left: 25%;
+            border: none;
+            border-radius: 12px;
+            transition-duration: 0.3s;
+            font-size: 30px;
+            border: 3px solid cyan;
+            
+        }
+
+
+        button#createBtn:hover {
+            color:orange;
+            cursor: pointer;
+        }
+
+        button#updateBtn:hover {
+            color:orange;
+            cursor: pointer;
+        }
+
+        #updateBtn {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Register From :</h2>
+    <hr />
+    <form class="form">
+        <label for="Fname">Fname :</label>
+        <input type="text" name="" id="Fname" placeholder="Enter your first name" /><br /><br />
+        <label for="Lname">Lname :</label>
+        <input type="text" name="" id="Lname" placeholder="Enter your last name" /><br /><br />
+        <label for="Patronymic">Patronymic :</label>
+        <input type="text" name="" id="patronymic" /><br /><br />
+        <label for="Email">Email :</label>
+        <input type="text" name="" id="email" placeholder="Enter your Email" /><br /><br />
+        <label for="Password">Password :</label>
+        <input type="text" name="" id="password" placeholder="Enter your password" /><br /><br />
+        <label for="Age">Age :</label>
+        <input type="number" name="" id="age" placeholder="Enter your Age " /><br /><br />
+        <label for="Author">Author :</label>
+        <input type="text" name="" id="author" /><br /><br />
+        <label for="Bio">Bio :</label>
+        <textarea name="" id="bio" rows="5" cols="30" placeholder="Enter something"></textarea><br /><br />
+        <button onclick="createuser()" type="button" id="createBtn">
+            Create User</button><br /><br />
+        <button onclick="updateUser()" type="button" id="updateBtn">
+            Update User</button><br /><br />
+    </form>
+    <hr />
+    <table border="1">
+        <thead>
+            <tr>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Patronymic</th>
+                <th>Email</th>
+                <th>Password</th>
+                <th>Age</th>
+                <th>Author</th>
+                <th>Bio</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var allUsers = [];
+        var gindex = null;
+        function createuser() {
+            var user = {
+                Fname: document.getElementById("Fname").value,
+                Lname: document.getElementById("Lname").value,
+                Patronymic: document.getElementById("patronymic").value,
+                Email: document.getElementById("email").value,
+                Password: document.getElementById("password").value,
+                Age: document.getElementById("age").value,
+                Author: document.getElementById("author").value,
+                Bio: document.getElementById("bio").value,
+            };
+            clearform();
+            allUsers.push(user);
+            displayUsers(allUsers);
+        }
+        function clearform() {
+            document.getElementById("Fname").value = "";
+            document.getElementById("Lname").value = "";
+            document.getElementById("patronymic").value = "";
+            document.getElementById("email").value = "";
+            document.getElementById("password").value = "";
+            document.getElementById("age").value = "";
+            document.getElementById("author").value = "";
+            document.getElementById("bio").value = "";
+        }
+        function displayUsers(users) {
+            document.querySelector("tbody").innerHTML = "";
+            users.forEach((user, i) => {
+                var myTr = document.createElement("tr");
+                var mytd1 = document.createElement("td");
+                mytd1.innerHTML = user.Fname;
+                var mytd2 = document.createElement("td");
+                mytd2.innerHTML = user.Lname;
+                var mytd3 = document.createElement("td");
+                mytd3.innerHTML = user.Patronymic;
+                var mytd4 = document.createElement("td");
+                mytd4.innerHTML = user.Email;
+                var mytd5 = document.createElement("td");
+                mytd5.innerHTML = user.Password;
+                var mytd6 = document.createElement("td");
+                mytd6.innerHTML = user.Age;
+                var mytd7 = document.createElement("td");
+                mytd7.innerHTML = user.Author;
+                var mytd8 = document.createElement("td");
+                mytd8.innerHTML = user.Bio;
+
+                myTr.appendChild(mytd1);
+                myTr.appendChild(mytd2);
+                myTr.appendChild(mytd3);
+                myTr.appendChild(mytd4);
+                myTr.appendChild(mytd5);
+                myTr.appendChild(mytd6);
+                myTr.appendChild(mytd7);
+                myTr.appendChild(mytd8);
+
+                var editTd = document.createElement("td");
+                var editBtn = document.createElement("button");
+                editBtn.innerHTML = "Edit";
+                editBtn.setAttribute("onclick", "editUser(" + i + ")");
+
+                editTd.appendChild(editBtn);
+                var deleteTd = document.createElement("td");
+                var deleteBtn = document.createElement("button");
+                deleteBtn.innerHTML = "Delete";
+                deleteBtn.setAttribute("onclick", "deleteUser(" + i + ")");
+                deleteTd.appendChild(deleteBtn);
+                myTr.appendChild(editTd);
+                myTr.appendChild(deleteTd);
+                document.querySelector("tbody").appendChild(myTr);
+            });
+        }
+        function deleteUser(i) {
+            var latestUsers = allUsers.filter(function (user, index) {
+                return i !== index;
+            });
+            console.log(latestUsers);
+            displayUsers(latestUsers);
+        }
+
+        function editUser(i) {
+            console.log(i);
+            gindex = i;
+            document.getElementById("Fname").value = allUsers[i].Fname;
+            document.getElementById("Lname").value = allUsers[i].Lname;
+            document.getElementById("patronymic").value = allUsers[i].Patronymic;
+            document.getElementById("email").value = allUsers[i].Email;
+            document.getElementById("password").value = allUsers[i].Password;
+            document.getElementById("age").value = allUsers[i].Age;
+            document.getElementById("author").value = allUsers[i].Author;
+            document.getElementById("bio").value = allUsers[i].Bio;
+            document.getElementById("createBtn").style.display = "none";
+            document.getElementById("updateBtn").style.display = "block";
+        }
+        function updateUser() {
+            var user = {
+                Fname: document.getElementById("Fname").value,
+                Lname: document.getElementById("Lname").value,
+                Patronymic: document.getElementById("patronymic").value,
+                Email: document.getElementById("email").value,
+                Password: document.getElementById("password").value,
+                Age: document.getElementById("age").value,
+                Author: document.getElementById("author").value,
+                Bio: document.getElementById("bio").value,
+            };
+            allUsers[gindex] = user;
+
+            displayUsers(allUsers);
+            clearform();
+            document.getElementById("createBtn").style.display = "block";
+            document.getElementById("updateBtn").style.display = "none";
+        }
+
+        displayUsers(allUsers);
+    </script>
+</body>
+
+</html>

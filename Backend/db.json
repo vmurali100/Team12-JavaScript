@@ -1,0 +1,14 @@
+{
+  "users": [
+    {
+      "Email": "srinivas9066275530@gmail.com",
+      "Password": "asdfa",
+      "Address": "Yemalur Road",
+      "Address2": "66, Raju Colony",
+      "City": "Bengalurudad",
+      "State": "Karnataka",
+      "Zip": "560037",
+      "id": 1
+    }
+  ]
+}
