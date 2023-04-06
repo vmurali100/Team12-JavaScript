@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    #NameError,
+    #UserError,
+    #EmailError,
+    #PassError,
+    #ConfPassError {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  <form>
+    <h1>Sign Up</h1>
+    <input type="text" id="Name" placeholder="Name" onkeyup="checkValidation()" /><br /><br />
+    <p style="color: rgb(255, 11, 11)" id="NameError">Please Enter Name</p>
+    <input type="text" id="User" placeholder="UserName" onkeyup="checkValidation()" /><br /><br />
+    <p style="color: rgb(255, 11, 11)" id="UserError">
+      Please Enter User Name
+    </p>
+    <input type="text" id="Email" placeholder="Email" onkeyup="checkValidation()" /><br /><br />
+    <p style="color: rgb(255, 11, 11)" id="EmailError">Please Enter Email</p>
+    <input type="password" id="Pass" placeholder="Password" onkeyup="checkValidation()" /><br /><br />
+    <p style="color: rgb(255, 11, 11)" id="PassError">
+      Please Enter Password
+    </p>
+    <input type="Confrpassword" id="ConfPass" placeholder="Confirm Password" onkeyup="checkValidation()" /><br /><br />
+    <p style="color: rgb(255, 11, 11)" id="ConfPassError">
+      Please Enter Confirm Password
+    </p>
+    <button type="button" onclick="AddUsers()" disabled>Sign Up</button>
+  </form>
+  <script>
+    function AddUsers() { }
+    function checkValidation() {
+      var users = {
+        Name: document.getElementById("Name").value,
+        UserName: document.getElementById("User").value,
+        Email: document.getElementById("Email").value,
+        Password: document.getElementById("Pass").value,
+        Confrpassowrd: document.getElementById("ConfPass").value,
+      };
+      var check = false;
+      for (a in users) {
+        if (users[a].length == 0) {
+          check = true;
+        }
+      }
+      if (check) {
+        document.querySelector("button").setAttribute("disabled", true);
+      } else {
+        document.querySelector("button").removeAttribute("disabled");
+      }
+    }
+  </script>
+</body>
+
+</html>
