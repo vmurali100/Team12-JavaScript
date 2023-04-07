@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form validation</title>
+    <style>
+        p{
+            color: red;
+        }
+        fieldset{
+            display: inline; 
+            width: 55%;  
+        }
+        form{
+            background-color: rgb(62, 116, 214);
+        }
+    </style>
+  </head>
+  <body>
+    <form>
+      <fieldset>
+        <legend >Registration Details</legend>
+        <label for="University">Universtiy :</label>
+        <input type="text" id="University" />
+        <p id="univers">Please Enter University</p>
+        <br />
+
+        <label for="Institute">Institute :</label>
+        <input type="text" id="inst" />
+        <p id="inst">Please Enter Institute</p>
+        <br />
+
+        <label for="Branch">Branch :</label>
+        <select id="branch">
+          <option>---Select---</option>
+          <option>CSE</option>
+          <option>EEE</option>
+          <option>AI</option>
+        </select>
+        <p id="branch">Please select Branch</p>
+        <br />
+
+        <label for="Degree">Degree</label>
+        <select id="degree">
+          <option>---Select---</option>
+          <option>SSLC</option>
+          <option>PUC</option>
+          <option>Btech</option>
+        </select>
+        <input type="radio" name="Com" value="Pursuing" />Pursuing
+        <input type="radio" name="Com" value="Completed" />Completed
+        <p id="Deg">Please Select Degree</p>
+        <br />
+
+        <label for="CPI">Avarage CPI : </label>
+        <input type="number" id="Cpi" />
+        Upto<input type="number" id="up" />Th Semester 
+        <p id="cpi">Please Enter CPI</p>
+        <br />
+
+        <label for="Exp">Experience :</label>
+        <input type="number" id="Exp" />Years 
+        <br /><br />
+
+        <label for="Web">Your Website Or Blog :</label>
+        <input type="url" id="web" value="http://" />
+        <p id="web">Please Enter  Website</p>
+        <br><br>
+
+        <button onclick="Addusers()" type="button">Submit</button>
+
+      </fieldset>
+    </form>
+  </body>
+</html>
