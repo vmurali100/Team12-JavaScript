@@ -12,20 +12,21 @@
         fieldset{
             display: inline; 
             width: 55%;  
-        }
-        form{
-            background-color: rgb(62, 116, 214);
+            background-color: rgb(110, 110, 216);
         }
     </style>
   </head>
   <body>
     <form>
       <fieldset>
-        <legend >Registration Details</legend>
+        <legend style="color: #030600b0;
+        width: 256Px;
+        font-size: xx-large;background-color: #6e6ed8;">Registration Details</legend>
+        <br>
         <label for="University">Universtiy :</label>
         <input type="text" id="University" />
         <p id="univers">Please Enter University</p>
-        <br />
+        <br>
 
         <label for="Institute">Institute :</label>
         <input type="text" id="inst" />
@@ -73,5 +74,33 @@
 
       </fieldset>
     </form>
+    <script>
+      function Addusers(){
+        var person={
+          University:"",
+          inst:"",
+          branch:"",
+          degree:"",
+          Com:"",
+          Cpi:"",
+          up:"",
+          Exp:"",
+          web:"",
+        }
+        console.log(person);
+        var allcomp=document.getElementsByName("Com");
+        for(a in person){
+          if(a!="Com" ){
+            person[a]=document.getElementById(a).value
+          }else if(a=="Com"){
+            allcomp.forEach((Course)=>{
+              if(Course.checked){
+                person[a]=Course.value
+              }
+            })
+          }
+        }
+      }
+    </script>
   </body>
 </html>
