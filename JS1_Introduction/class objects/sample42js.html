@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class ATM{
+            constructor(atm1,atm2){
+                this.atm1=atm1;
+                this.atm2=atm2;
+            }
+        }
+        var atms=new ATM("indian","axis")
+        atms.atm3="indusland";
+        atms["atm4"]="hdfc";
+
+        for(a in atms){
+            document.write(atms[a]+"<br>")
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" onclick="getdata()">click here to get data</button>
+    <table border="1">
+        <thead>
+             <th>fname</th>
+             <th>lname</th>
+             <th>tel</th>
+             <th>address</th>
+             <th>city</th>
+             <th>state</th>
+             <th>zipcode</th>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        var users=[]
+        function getdata(){
+            var info=new XMLHttpRequest()
+
+            info.onreadystatechange=function(){
+                if(info.readyState==4 && info.status==200){
+                    console.log(info.response)
+                    var users=JSON.parse(info.response)
+                    displayuser(users)
+                }
+            }
+
+            var url="http://filltext.com/?rows=10&fname={firstName}&lname={lastName}&tel={phone|format}&address={streetAddress}&city={city}&state={usState|abbr}&zip={zip}&pretty=true"
+            info.open("GET",url );
+            info.send()
+        }
+
+        function displayuser(users){
+            console.log(users)
+            document.querySelector("tbody").innerHTML="";
+            users.forEach((users) => {
+                var mytr=document.createElement("tr");
+                for(a in users){ 
+                    var mytd=document.createElement("td")
+                    mytd.innerHTML=users[a]
+                    mytr.appendChild(mytd)
+                }
+                document.querySelector("tbody").appendChild(mytr)
+            });
+        }
+    </script>
+</body>
+</html>

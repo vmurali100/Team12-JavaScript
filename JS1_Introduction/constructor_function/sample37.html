@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Person(name,lname){
+            this.name=name;
+            this.lname=lname;
+        }
+        var person1=new Person("Revanth","Reddy")
+        person1.email="revanthreddy.mukundha@gmail.com";
+        person1["phoneno"]=9353610141;
+
+        for (a in person1){
+            document.write(person1[a]+"<br>")
+        }
+    </script>
+</body>
+</html>

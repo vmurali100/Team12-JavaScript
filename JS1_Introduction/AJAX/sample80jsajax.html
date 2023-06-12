@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="getDataFromServer()">Get Data From Server</button>
+    <table border="1">
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>email</th>
+                <th>username</th>
+                <th>password</th>
+            </tr>
+        </thead>
+        <tbody></tbody>
+    </table>
+    <script>
+        function getDataFromServer(){
+           
+
+            var getInfo = new XMLHttpRequest() 
+        
+            getInfo.onreadystatechange = function(){
+                if(getInfo.readyState == 4 && getInfo.status == 200){
+                    console.log(getInfo.response)
+                    var users= JSON.parse(getInfo.response)
+                    displayUsers(users)
+                }
+            }
+            var api_url = "https://filltext.com/?rows=10&id=%7Bindex%7D&email=%7Bemail%7D&username=%7Busername%7D&password=%7BrandomString%7C5%7D&pretty=true"
+            getInfo.open("GET",api_url);
+            getInfo.send()
+        }
+
+        function displayUsers(users){
+            document.querySelector("tbody").innerHTML = ""
+            console.log(users.length)
+            users.forEach((user)=>{
+                var myTr = document.createElement("tr");
+                for(a in user){
+                    var myTd = document.createElement("td")
+                    myTd.innerHTML = user[a]
+                    myTr.appendChild(myTd)
+                }
+                document.querySelector("tbody").appendChild(myTr)
+            })
+        }
+
+    </script>
+</body>
+</html>

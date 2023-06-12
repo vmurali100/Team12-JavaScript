@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button:hover{
+            color: aqua;
+            background-color: darkcyan;
+        }
+    </style>
+</head>
+<body>
+    <button onclick="changing()" id="red">click here.. Mama</button>
+    <h1 id="red1">Please change my text by clicking above button</h1>
+    <script>
+        function changing(){
+            document.getElementsByTagName("h1")[0].innerHTML="Text changed by clicking above button"
+            document.getElementById("red").style.background="red"
+            document.getElementById("red").style.color="white"
+            document.getElementById("red1").style.color="darkcyan"
+            document.getElementById("red").innerHTML="You clicked MAMA"
+        }
+    </script>
+</body>
+</html>

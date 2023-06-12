@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        h1 {
+            font-family: cursive;
+            color: royalblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h1>Registration Details</h1><br>
+                <form>
+                    <div class="mb-3">
+                        <label for="University" class="form-label">University</label>
+                        <input type="text" class="form-control" id="University">
+                    </div>
+                    <div class="mb-3">
+                        <label for="institute" class="form-label">institute</label>
+                        <input type="text" class="form-control" id="institute">
+                    </div>
+                    <div class="mb-3">
+                        <label for="branch" class="form-label">branch</label>
+                        <input type="text" class="form-control" id="branch">
+                    </div>
+                    <div class="mb-3">
+                        <label for="degree" class="form-label">degree</label>
+                        <input type="text" class="form-control" id="degree">
+                    </div>
+                    <div class="mb-3">
+                        <label for="average" class="form-label">Average CPI</label>
+                        <input type="number" class="form-control" id="average">
+                    </div>
+                    <div class="mb-3">
+                        <label for="experience" class="form-label">experience</label>
+                        <input type="number" class="form-control" id="experience">
+                    </div>
+                    <button type="button" class="btn btn-primary" onclick="adduser()">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">University</th>
+                <th scope="col">institute</th>
+                <th scope="col">branch</th>
+                <th scope="col">degree</th>
+                <th scope="col">Average CPI</th>
+                <th scope="col">experience</th>
+            </tr>
+        </thead>
+        <tbody>
+        </tbody>
+    </table>
+    <script>
+        var url = "http://localhost:3000/user";
+        function adduser() {
+            var user = {
+                University: document.getElementById("University").value,
+                institute: document.getElementById("institute").value,
+                branch: document.getElementById("branch").value,
+                degree: document.getElementById("degree").value,
+                average: document.getElementById("average").value,
+                experience: document.getElementById("experience").value,
+            }
+            var sendinfo = new XMLHttpRequest();
+            sendinfo.onreadystatechange = function () {
+                if (sendinfo.readyState == 4 && sendinfo.status == 201) {
+                    console.log("User added Succesfully")
+                }
+            }
+            sendinfo.open("POST", url);
+            sendinfo.setRequestHeader("Content-Type", "application/json")
+            sendinfo.send(JSON.stringify(user))
+
+        }
+
+        function getdata() {
+            var getdatapi = new XMLHttpRequest();
+            getdatapi.onreadystatechange = function () {
+                if (getdatapi.readyState == 4 && getdatapi.status == 201) {
+                    console.log(JSON.parse(getdatapi.response))
+                    displayuser(JSON.parse(getdatapi.response))
+                }
+            }
+            getdatapi.open("GET", "http://localhost:3000/user")
+            getdatapi.send()
+        }
+        getdata()
+
+        function displayuser(users){
+          users.forEach((usr) => {
+            var mytr=document.createElement("tr")
+            for(a in usr){
+                var mytd=document.createElement("td")
+                mytd.innerHTML=usr[a]
+                mytr.appendChild(mytd)
+            }
+            document.querySelector("tbody").appendChild(mytr)
+          });
+        }
+    </script>
+</body>
+
+</html>
